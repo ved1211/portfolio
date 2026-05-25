@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ved Gawade — TPM & AI Operator</title>
+<meta name="description" content="Technical Program Manager and AI Product Operations professional based in Ulm, Germany. I build systems that make teams move faster.">
+<meta property="og:title" content="Ved Gawade — TPM & AI Operator">
+<meta property="og:description" content="TPM · AI Product Operations · Founder Associate — I build AI-first operational systems at the intersection of automation, product execution & intelligent workflows.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Cabinet+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   DARK THEME TOKENS
+═══════════════════════════════════════════════════ */
+:root {
+  --bg:          #080808;
+  --bg2:         #0D0D0D;
+  --surface:     rgba(255,255,255,0.03);
+  --border:      rgba(255,255,255,0.07);
+  --text:        #E8E8E8;
+  --muted:       #666;
+  --dim:         #333;
+  --nav-bg:      rgba(8,8,8,0.78);
+  --glass-bg:    rgba(255,255,255,0.035);
+  --glass-border:rgba(255,255,255,0.09);
+  --gold:        #C8FF57;
+  --gold-dim:    rgba(200,255,87,0.22);
+  --gold-rgb:    200,255,87;
+  --canvas-op:   0.9;
+}
+
+/* ═══════════════════════════════════════════════════
+   LIGHT THEME TOKENS
+═══════════════════════════════════════════════════ */
+html.light {
+  --bg:          #F0F2F5;
+  --bg2:         #E8EAF0;
+  --surface:     rgba(255,255,255,0.65);
+  --border:      rgba(100,80,180,0.13);
+  --text:        #1A1A2E;
+  --muted:       #6B6B8A;
+  --dim:         #B0B0C8;
+  --nav-bg:      rgba(240,242,245,0.82);
+  --glass-bg:    rgba(255,255,255,0.58);
+  --glass-border:rgba(160,140,220,0.22);
+  --gold:        #4A7000;
+  --gold-dim:    rgba(74,112,0,0.18);
+  --gold-rgb:    74,112,0;
+  --canvas-op:   0.42;
+}
+
+/* Light orb overrides */
+html.light .orb-1{background:radial-gradient(circle,rgba(168,100,255,.26) 0%,rgba(100,120,255,.11) 40%,transparent 70%)}
+html.light .orb-2{background:radial-gradient(circle,rgba(0,200,170,.24) 0%,rgba(0,160,255,.10) 45%,transparent 70%)}
+html.light .orb-3{background:radial-gradient(circle,rgba(255,120,80,.20) 0%,rgba(255,180,60,.09) 45%,transparent 70%)}
+html.light .orb-4{background:radial-gradient(circle,rgba(80,180,255,.24) 0%,rgba(120,100,255,.11) 50%,transparent 70%)}
+html.light .orb-5{background:radial-gradient(circle,rgba(255,80,160,.18) 0%,rgba(180,80,255,.09) 50%,transparent 70%)}
+html.light .orb-6{background:radial-gradient(circle,rgba(60,220,180,.22) 0%,rgba(60,200,255,.09) 50%,transparent 70%)}
+html.light .orb-b1{background:radial-gradient(circle,rgba(168,100,255,.48) 0%,rgba(100,160,255,.22) 55%,transparent 75%)}
+html.light .orb-b2{background:radial-gradient(circle,rgba(0,210,170,.52) 0%,rgba(0,170,255,.22) 55%,transparent 75%)}
+html.light .orb-b3{background:radial-gradient(circle,rgba(255,130,60,.52) 0%,rgba(255,200,60,.22) 55%,transparent 75%)}
+html.light .orb-b4{background:radial-gradient(circle,rgba(255,60,140,.42) 0%,rgba(180,60,255,.18) 55%,transparent 75%)}
+html.light .orb-b5{background:radial-gradient(circle,rgba(60,210,255,.50) 0%,rgba(60,255,180,.20) 55%,transparent 75%)}
+html.light .orb-b6{background:radial-gradient(circle,rgba(200,160,255,.58) 0%,rgba(100,200,255,.22) 55%,transparent 75%)}
+html.light #canvas{opacity:.42}
+html.light body{background:var(--bg)}
+html.light .glass{background:var(--glass-bg);border-color:var(--glass-border)}
+html.light .card-accent-bar{background:linear-gradient(90deg,var(--gold),transparent)}
+html.light .theme-toggle:hover{border-color:rgba(74,112,0,.28);background:rgba(74,112,0,.06)}
+html.light .theme-toggle-track{background:rgba(74,112,0,.14);border-color:rgba(74,112,0,.24)}
+html.light .theme-toggle-thumb{transform:translateX(14px);background:var(--gold)}
+html.light #mob-menu{background:rgba(240,242,245,.98)}
+
+/* ═══════════════════════════════════════════════════
+   RESET
+═══════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Inter',system-ui,sans-serif;
+  line-height:1.6;overflow-x:hidden;cursor:none;
+  transition:background .4s ease,color .4s ease;
+}
+@media(pointer:coarse){body{cursor:auto}}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--dim);border-radius:2px}
+::selection{background:rgba(var(--gold-rgb),.22);color:var(--text)}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:none;border:none;background:none}
+@media(pointer:coarse){button,a{cursor:pointer}}
+
+/* ═══════════════════════════════════════════════════
+   ORB + CANVAS BACKGROUND SYSTEM
+═══════════════════════════════════════════════════ */
+#canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:var(--canvas-op)}
+.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0}
+.orb-1{width:700px;height:700px;background:radial-gradient(circle,rgba(168,100,255,.19) 0%,rgba(100,120,255,.08) 40%,transparent 70%);filter:blur(90px);top:-180px;right:-180px;animation:driftA 18s ease-in-out infinite alternate}
+.orb-2{width:600px;height:600px;background:radial-gradient(circle,rgba(0,220,180,.17) 0%,rgba(0,180,255,.08) 45%,transparent 70%);filter:blur(100px);bottom:15%;left:-180px;animation:driftB 22s ease-in-out infinite alternate}
+.orb-3{width:500px;height:500px;background:radial-gradient(circle,rgba(255,120,80,.15) 0%,rgba(255,180,60,.08) 45%,transparent 70%);filter:blur(110px);top:45%;right:5%;animation:driftA 16s ease-in-out infinite alternate-reverse}
+.orb-4{width:380px;height:380px;background:radial-gradient(circle,rgba(80,200,255,.17) 0%,rgba(120,100,255,.08) 50%,transparent 70%);filter:blur(70px);top:30%;left:20%;animation:driftB 14s ease-in-out infinite alternate}
+.orb-5{width:320px;height:320px;background:radial-gradient(circle,rgba(255,80,160,.13) 0%,rgba(180,80,255,.07) 50%,transparent 70%);filter:blur(80px);bottom:30%;right:15%;animation:driftA 20s ease-in-out infinite alternate-reverse}
+.orb-6{width:280px;height:280px;background:radial-gradient(circle,rgba(60,255,180,.15) 0%,rgba(60,200,255,.07) 50%,transparent 70%);filter:blur(60px);top:70%;left:40%;animation:driftB 17s ease-in-out infinite alternate}
+.orb-b1{width:160px;height:160px;background:radial-gradient(circle,rgba(168,100,255,.40) 0%,rgba(100,160,255,.17) 55%,transparent 75%);filter:blur(28px);top:18%;left:8%;animation:floatA 10s ease-in-out infinite alternate}
+.orb-b2{width:120px;height:120px;background:radial-gradient(circle,rgba(0,230,180,.50) 0%,rgba(0,180,255,.19) 55%,transparent 75%);filter:blur(22px);top:12%;right:22%;animation:floatB 13s ease-in-out infinite alternate}
+.orb-b3{width:100px;height:100px;background:radial-gradient(circle,rgba(255,130,60,.50) 0%,rgba(255,200,60,.17) 55%,transparent 75%);filter:blur(20px);bottom:22%;left:12%;animation:floatA 11s ease-in-out infinite alternate-reverse}
+.orb-b4{width:140px;height:140px;background:radial-gradient(circle,rgba(255,60,140,.36) 0%,rgba(180,60,255,.15) 55%,transparent 75%);filter:blur(26px);bottom:35%;right:8%;animation:floatB 9s ease-in-out infinite alternate}
+.orb-b5{width:90px;height:90px;background:radial-gradient(circle,rgba(60,220,255,.46) 0%,rgba(60,255,180,.17) 55%,transparent 75%);filter:blur(18px);top:55%;left:55%;animation:floatA 15s ease-in-out infinite alternate}
+.orb-b6{width:70px;height:70px;background:radial-gradient(circle,rgba(200,160,255,.52) 0%,rgba(100,200,255,.17) 55%,transparent 75%);filter:blur(14px);top:80%;right:30%;animation:floatB 8s ease-in-out infinite alternate-reverse}
+
+@keyframes driftA{from{transform:translateY(0) translateX(0)}to{transform:translateY(60px) translateX(-40px)}}
+@keyframes driftB{from{transform:translateY(0) translateX(0)}to{transform:translateY(-50px) translateX(60px)}}
+@keyframes floatA{from{transform:translateY(0) translateX(0) scale(1)}to{transform:translateY(-30px) translateX(20px) scale(1.08)}}
+@keyframes floatB{from{transform:translateY(0) translateX(0) scale(1)}to{transform:translateY(25px) translateX(-18px) scale(.94)}}
+
+/* ═══════════════════════════════════════════════════
+   NOISE OVERLAY
+═══════════════════════════════════════════════════ */
+.noise{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.024;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") repeat;
+  background-size:128px}
+
+/* ═══════════════════════════════════════════════════
+   CURSOR
+═══════════════════════════════════════════════════ */
+#cur-dot,#cur-ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0;transition:opacity .2s,width .16s cubic-bezier(.16,1,.3,1),height .16s cubic-bezier(.16,1,.3,1),border-color .2s,background .2s}
+#cur-dot{width:5px;height:5px;background:var(--gold)}
+#cur-ring{width:30px;height:30px;border:1px solid rgba(var(--gold-rgb),.4)}
+#cur-dot.h{width:8px;height:8px}
+#cur-ring.h{width:46px;height:46px;border-color:rgba(var(--gold-rgb),.7)}
+#cur-dot.c,#cur-ring.c{transform:translate(-50%,-50%) scale(.78)}
+@media(pointer:coarse){#cur-dot,#cur-ring{display:none}}
+
+/* ═══════════════════════════════════════════════════
+   THEME TOGGLE  (exact onchained.html component)
+═══════════════════════════════════════════════════ */
+.theme-toggle{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:100px;padding:5px 6px 5px 10px;transition:all .25s;user-select:none;cursor:none}
+.theme-toggle:hover{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.06)}
+.theme-toggle-label{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted);transition:color .2s;text-transform:uppercase}
+.theme-toggle-track{width:32px;height:18px;border-radius:100px;background:rgba(255,255,255,.08);border:1px solid var(--border);position:relative;transition:background .3s,border-color .3s;flex-shrink:0}
+.theme-toggle-thumb{position:absolute;top:2px;left:2px;width:12px;height:12px;border-radius:50%;background:var(--muted);transition:transform .3s cubic-bezier(.34,1.56,.64,1),background .3s}
+.theme-icon{font-size:12px;line-height:1}
+@media(pointer:coarse){.theme-toggle{cursor:pointer}}
+
+/* ═══════════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════════ */
+.container{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 clamp(1.5rem,5vw,2.5rem)}
+.section{padding:100px 0;position:relative;z-index:1}
+@media(max-width:768px){.section{padding:72px 0}}
+
+/* ═══════════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════════ */
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border);padding:13px 24px;transition:background .3s,border-color .3s}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-logo{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:15px;color:var(--text);letter-spacing:-.3px;transition:color .2s}
+.nav-logo span{color:var(--gold)}
+.nav-logo:hover{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none}
+.nav-link{font-family:'Fira Code',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.06em;position:relative;padding-bottom:2px;transition:color .2s}
+.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .25s cubic-bezier(.16,1,.3,1)}
+.nav-link:hover{color:var(--text)}
+.nav-link:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:.875rem}
+.nav-cta{font-family:'Fira Code',monospace;font-size:.64rem;color:var(--gold);letter-spacing:.08em;border:1px solid var(--gold-dim);padding:6px 14px;border-radius:4px;transition:all .2s;text-transform:uppercase}
+.nav-cta:hover{background:var(--gold-dim);border-color:var(--gold);box-shadow:0 0 18px rgba(var(--gold-rgb),.14)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:4px}
+.hamburger span{display:block;height:1.5px;background:var(--muted);border-radius:1px;transition:all .25s}
+.hamburger span:nth-child(1){width:22px}
+.hamburger span:nth-child(2){width:14px}
+.hamburger span:nth-child(3){width:18px}
+@media(max-width:767px){.nav-links,.nav-cta{display:none}.hamburger{display:flex}.theme-toggle .theme-toggle-label{display:none}}
+
+/* ═══════════════════════════════════════════════════
+   MOBILE MENU
+═══════════════════════════════════════════════════ */
+#mob-menu{position:fixed;inset:0;z-index:40;background:rgba(8,8,8,.98);backdrop-filter:blur(24px);display:none;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;transition:background .4s}
+#mob-menu.open{display:flex}
+.mob-link{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:2.75rem;color:var(--muted);transition:color .2s;letter-spacing:-.03em}
+.mob-link:hover{color:var(--text)}
+
+/* ═══════════════════════════════════════════════════
+   SECTION EYEBROW
+═══════════════════════════════════════════════════ */
+.section-label{font-family:'Fira Code',monospace;font-size:.6rem;color:var(--gold);letter-spacing:.2em;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;text-transform:uppercase}
+.section-label .num{color:var(--dim);font-size:.54rem}
+
+/* ═══════════════════════════════════════════════════
+   SECTION TITLE
+═══════════════════════════════════════════════════ */
+.sec-h2{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.9rem,5vw,3.1rem);font-weight:400;color:var(--text);letter-spacing:-.02em;line-height:1.08;margin-bottom:3rem}
+.sec-h2 em{font-style:italic;color:var(--gold)}
+
+/* ═══════════════════════════════════════════════════
+   GLASS CARD
+═══════════════════════════════════════════════════ */
+.glass{background:var(--glass-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:12px;padding:1.75rem;transition:border-color .3s,transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s,background .4s;position:relative;overflow:hidden}
+.glass:hover{border-color:rgba(255,255,255,.14);transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+html.light .glass:hover{box-shadow:0 20px 60px rgba(100,80,180,.1)}
+.glass::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .4s;background:radial-gradient(circle at 30% 0%,rgba(var(--gold-rgb),.035),transparent 55%);pointer-events:none}
+.glass:hover::before{opacity:1}
+.card-accent-bar{position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);opacity:0;transition:opacity .35s}
+.glass:hover .card-accent-bar{opacity:1}
+
+/* ═══════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════ */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 80px;position:relative;z-index:1}
+.hero-eyebrow{font-family:'Fira Code',monospace;font-size:.68rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.75rem;display:flex;align-items:center;gap:.75rem;opacity:0;animation:riseIn .6s cubic-bezier(.22,1,.36,1) .05s forwards}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-name{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(3rem,9vw,7rem);font-weight:400;line-height:.92;letter-spacing:-.02em;color:var(--text);margin-bottom:.25rem}
+.hero-name .block{display:block;opacity:0;transform:translateY(28px);animation:riseIn .8s cubic-bezier(.22,1,.36,1) forwards}
+.hero-name .block:nth-child(2){animation-delay:.1s}
+.hero-name .accent{color:var(--gold);font-style:italic}
+.hero-role{font-family:'Cabinet Grotesk',sans-serif;font-weight:500;font-size:clamp(.85rem,2vw,1.05rem);color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:riseIn .6s cubic-bezier(.22,1,.36,1) .24s forwards}
+.hero-sub{font-family:'Inter',sans-serif;font-size:clamp(.9rem,2.2vw,1.08rem);color:var(--muted);max-width:510px;line-height:1.75;font-weight:300;margin-bottom:2.25rem;opacity:0;animation:riseIn .8s cubic-bezier(.22,1,.36,1) .38s forwards}
+.hero-badges{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:2.5rem;opacity:0;animation:riseIn .8s cubic-bezier(.22,1,.36,1) .5s forwards}
+.badge{font-family:'Fira Code',monospace;font-size:.6rem;letter-spacing:.08em;padding:4px 10px;border-radius:3px;border:1px solid var(--border);color:var(--muted);background:var(--surface);text-transform:uppercase}
+.badge-gold{border-color:var(--gold-dim);color:var(--gold)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.875rem;opacity:0;animation:riseIn .6s cubic-bezier(.22,1,.36,1) .62s forwards}
+.btn-p{font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:.875rem;background:var(--gold);color:#080808;padding:11px 24px;border-radius:4px;letter-spacing:-.01em;transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s;display:inline-flex;align-items:center;gap:7px}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 0 24px rgba(var(--gold-rgb),.28)}
+.btn-s{font-family:'Cabinet Grotesk',sans-serif;font-weight:500;font-size:.875rem;color:var(--text);border:1px solid var(--border);padding:11px 24px;border-radius:4px;transition:border-color .2s,color .2s,background .2s;display:inline-flex;align-items:center;gap:7px}
+.btn-s:hover{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.04)}
+.hero-status{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.5rem;padding-top:2rem;border-top:1px solid var(--border);margin-top:2rem;opacity:0;animation:riseIn .8s cubic-bezier(.22,1,.36,1) .78s forwards}
+.status-dot{display:flex;align-items:center;gap:.4rem;font-family:'Fira Code',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.pulse{display:block;width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pulseAnim 2s ease-in-out infinite}
+.scroll-hint{position:absolute;bottom:38px;left:clamp(1.5rem,5vw,2.5rem);display:flex;align-items:center;gap:9px;opacity:0;animation:riseIn 1s 1.1s forwards}
+.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,transparent,var(--gold));animation:scrollPulse 2s ease-in-out infinite}
+.scroll-txt{font-family:'Fira Code',monospace;font-size:.54rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg)}
+
+/* ═══════════════════════════════════════════════════
+   CAPABILITIES
+═══════════════════════════════════════════════════ */
+#about{background:transparent}
+.cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:620px){.cap-grid{grid-template-columns:1fr}}
+.cap-num{position:absolute;top:1.1rem;right:1.25rem;font-family:'Fira Code',monospace;font-size:.54rem;color:var(--dim)}
+.cap-icon{width:38px;height:38px;border-radius:8px;background:rgba(var(--gold-rgb),.08);border:1px solid rgba(var(--gold-rgb),.14);display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:1.1rem;color:var(--gold);transition:background .3s}
+.glass:hover .cap-icon{background:rgba(var(--gold-rgb),.16)}
+.cap-title{font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:var(--text);letter-spacing:-.02em;margin-bottom:.6rem;line-height:1.25}
+.cap-body{font-size:.875rem;color:var(--muted);line-height:1.72;margin-bottom:1.1rem;font-weight:300}
+.cap-tags{display:flex;flex-wrap:wrap;gap:.3rem}
+.cap-tag{font-family:'Fira Code',monospace;font-size:.54rem;letter-spacing:.05em;color:var(--dim);background:rgba(255,255,255,.03);border:1px solid var(--border);padding:2px 7px;border-radius:3px}
+html.light .cap-tag{background:rgba(0,0,0,.03)}
+.stats-strip{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:3rem;background:var(--glass-bg);backdrop-filter:blur(12px)}
+@media(max-width:560px){.stats-strip{grid-template-columns:1fr}}
+.stat-cell{padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.875rem;border-right:1px solid var(--border)}
+.stat-cell:last-child{border-right:none}
+@media(max-width:560px){.stat-cell{border-right:none;border-bottom:1px solid var(--border)}}
+@media(max-width:560px){.stat-cell:last-child{border-bottom:none}}
+.stat-n{font-family:'Instrument Serif',Georgia,serif;font-size:1.9rem;color:var(--text);line-height:1}
+.stat-l{font-size:.78rem;color:var(--muted);line-height:1.4;max-width:115px;font-weight:300}
+
+/* ═══════════════════════════════════════════════════
+   WORK / EXPERIENCE — ACCORDION
+═══════════════════════════════════════════════════ */
+#work{background:transparent}
+.proj-list{display:flex;flex-direction:column;gap:.875rem}
+.proj-card{background:var(--glass-bg);backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:10px;overflow:hidden;cursor:pointer;transition:border-color .35s,box-shadow .35s,transform .3s cubic-bezier(.16,1,.3,1);position:relative}
+.proj-card:hover{border-color:rgba(255,255,255,.13);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+html.light .proj-card:hover{box-shadow:0 12px 40px rgba(100,80,180,.1)}
+.proj-top-bar{position:absolute;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);width:0;transition:width .45s cubic-bezier(.16,1,.3,1)}
+.proj-card:hover .proj-top-bar{width:45%}
+.proj-card.open .proj-top-bar{width:100%}
+.proj-card.open{border-color:rgba(255,255,255,.13);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.proj-row{display:flex;align-items:flex-start;justify-content:space-between;padding:1.35rem 1.5rem;gap:1rem;position:relative}
+.proj-idx{font-family:'Fira Code',monospace;font-size:.54rem;color:var(--dim);margin-top:3px;flex-shrink:0}
+.proj-meta{margin-left:1rem;flex:1;min-width:0}
+.proj-meta-top{display:flex;align-items:center;gap:.4rem;margin-bottom:.2rem;font-family:'Fira Code',monospace;font-size:.56rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+.proj-company{color:var(--gold);font-size:.56rem}
+.proj-title{font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:var(--text);letter-spacing:-.02em}
+.proj-right{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.impact-pill{font-family:'Fira Code',monospace;font-size:.56rem;letter-spacing:.04em;color:var(--gold);background:rgba(var(--gold-rgb),.08);border:1px solid rgba(var(--gold-rgb),.2);padding:3px 9px;border-radius:3px;white-space:nowrap}
+.proj-toggle{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);flex-shrink:0;transition:border-color .2s,color .2s,transform .3s cubic-bezier(.16,1,.3,1)}
+.proj-card:hover .proj-toggle{border-color:rgba(255,255,255,.18);color:var(--text)}
+.proj-card.open .proj-toggle{transform:rotate(90deg)}
+.proj-expand{max-height:0;overflow:hidden;transition:max-height .42s cubic-bezier(.16,1,.3,1),opacity .25s;opacity:0}
+.proj-card.open .proj-expand{max-height:500px;opacity:1;border-top:1px solid var(--border)}
+.proj-expand-inner{padding:1.35rem 1.5rem;display:grid;gap:1.4rem}
+@media(min-width:580px){.proj-expand-inner{grid-template-columns:1fr auto}}
+.proj-body{font-size:.875rem;color:var(--muted);line-height:1.72;font-weight:300}
+.proj-bullets{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-top:.75rem}
+.proj-bullets li{font-size:.85rem;color:var(--muted);font-weight:300;padding-left:1rem;border-left:1px solid var(--dim);line-height:1.6}
+.proj-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.875rem}
+.proj-impacts{display:flex;flex-direction:column;gap:.4rem;min-width:160px}
+.impact-lbl{font-family:'Fira Code',monospace;font-size:.54rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem}
+.divider-row{display:flex;align-items:center;gap:.875rem;margin-top:2.5rem}
+.divider-line{flex:1;height:1px;background:var(--border)}
+.divider-txt{font-family:'Fira Code',monospace;font-size:.54rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}
+@media(max-width:480px){.proj-right .impact-pill:first-child{display:none}}
+
+/* ═══════════════════════════════════════════════════
+   PROJECTS (Academic/Side)
+═══════════════════════════════════════════════════ */
+#projects{background:transparent}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:640px){.proj-grid{grid-template-columns:1fr}}
+.proj-g-tag{font-family:'Fira Code',monospace;font-size:.54rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem}
+.proj-g-title{font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--text);letter-spacing:-.02em;margin-bottom:.6rem;line-height:1.25}
+.proj-g-body{font-size:.85rem;color:var(--muted);line-height:1.7;font-weight:300;margin-bottom:1rem}
+.proj-g-link{font-family:'Fira Code',monospace;font-size:.6rem;color:var(--gold);letter-spacing:.06em;display:inline-flex;align-items:center;gap:5px;transition:gap .2s cubic-bezier(.16,1,.3,1),color .2s}
+.proj-g-link:hover{gap:8px}
+
+/* ═══════════════════════════════════════════════════
+   THINKING / PRINCIPLES
+═══════════════════════════════════════════════════ */
+#thinking{background:transparent}
+.principles-box{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--glass-bg);backdrop-filter:blur(12px)}
+.principles-hd{padding:.7rem 1.4rem;border-bottom:1px solid var(--border)}
+.principle-row{display:flex;align-items:center;gap:.875rem;padding:.8rem 1.4rem;border-bottom:1px solid var(--border);transition:background .2s}
+.principle-row:last-child{border-bottom:none}
+.principle-row:hover{background:rgba(255,255,255,.025)}
+html.light .principle-row:hover{background:rgba(0,0,0,.025)}
+.p-n{font-family:'Fira Code',monospace;font-size:.54rem;color:var(--dim);flex-shrink:0}
+.p-text{font-size:.875rem;color:var(--muted);transition:color .2s;font-weight:300}
+.principle-row:hover .p-text{color:var(--text)}
+
+/* ═══════════════════════════════════════════════════
+   EDUCATION
+═══════════════════════════════════════════════════ */
+#education{background:transparent}
+.edu-list{display:flex;flex-direction:column;gap:.875rem}
+.edu-card{background:var(--glass-bg);backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:10px;padding:1.4rem 1.6rem;transition:border-color .3s,transform .3s cubic-bezier(.16,1,.3,1)}
+.edu-card:hover{border-color:rgba(255,255,255,.13);transform:translateY(-2px)}
+.edu-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.35rem}
+.edu-school{font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--text);letter-spacing:-.02em}
+.edu-period{font-family:'Fira Code',monospace;font-size:.56rem;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;margin-top:3px}
+.edu-degree{font-size:.875rem;color:var(--gold);font-weight:400;margin-bottom:.3rem;font-family:'Cabinet Grotesk',sans-serif}
+.edu-detail{font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.5}
+
+/* ═══════════════════════════════════════════════════
+   STACK
+═══════════════════════════════════════════════════ */
+#stack{background:transparent}
+.stack-table{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--glass-bg);backdrop-filter:blur(12px)}
+.stack-headers{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border)}
+@media(max-width:640px){.stack-headers,.stack-cols{grid-template-columns:repeat(2,1fr)}}
+.stack-hcell{padding:.55rem 1.1rem;font-family:'Fira Code',monospace;font-size:.54rem;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;border-right:1px solid var(--border)}
+.stack-hcell:last-child{border-right:none}
+.stack-cols{display:grid;grid-template-columns:repeat(4,1fr)}
+.stack-col{border-right:1px solid var(--border)}
+.stack-col:last-child{border-right:none}
+.stack-item{display:flex;align-items:center;gap:.45rem;padding:.55rem 1.1rem;border-bottom:1px solid var(--border);font-size:.82rem;color:var(--muted);font-weight:300;transition:color .2s,padding-left .2s cubic-bezier(.16,1,.3,1)}
+.stack-item:last-child{border-bottom:none}
+.stack-item:hover{color:var(--text);padding-left:1.3rem}
+.stack-item.hl{color:var(--gold);font-weight:400}
+.stack-item.hl:hover{color:rgba(var(--gold-rgb),.75)}
+.s-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.stack-extras{display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin-top:.875rem}
+@media(max-width:640px){.stack-extras{grid-template-columns:1fr}}
+.s-extra{border:1px solid var(--border);border-radius:10px;padding:1.1rem;background:var(--glass-bg);backdrop-filter:blur(10px)}
+.s-extra-lbl{font-family:'Fira Code',monospace;font-size:.54rem;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.875rem}
+.lang-row{margin-bottom:.75rem}
+.lang-row:last-child{margin-bottom:0}
+.lang-top{display:flex;justify-content:space-between;margin-bottom:.3rem}
+.lang-name{font-size:.82rem;color:var(--muted);font-weight:300}
+.lang-lvl{font-family:'Fira Code',monospace;font-size:.54rem;color:var(--dim);text-transform:uppercase}
+.lang-bg{height:1.5px;background:var(--border);border-radius:1px;overflow:hidden}
+.lang-fill{height:100%;background:var(--gold);border-radius:1px;width:0;transition:width 1s cubic-bezier(.16,1,.3,1)}
+.expl-item{display:flex;align-items:flex-start;gap:.45rem;margin-bottom:.55rem;font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.45}
+.expl-item:last-child{margin-bottom:0}
+.expl-arr{color:var(--gold);font-size:.68rem;margin-top:2px;flex-shrink:0;font-family:'Fira Code',monospace}
+
+/* ═══════════════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════════════ */
+#contact{background:transparent;text-align:center}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;pointer-events:none;background:radial-gradient(ellipse,rgba(var(--gold-rgb),.055),transparent 65%);z-index:0}
+.cta-h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;color:var(--text);letter-spacing:-.025em;line-height:.95;margin-bottom:1.4rem;font-size:clamp(2.5rem,7vw,5rem)}
+.cta-h2 em{font-style:italic;color:var(--gold)}
+.cta-sub{font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--muted);line-height:1.75;max-width:480px;margin:0 auto 2.5rem;font-weight:300}
+.cta-btns{display:flex;flex-wrap:wrap;gap:.875rem;justify-content:center;margin-bottom:2.5rem}
+.cta-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.5rem 1.5rem;margin-bottom:2.5rem}
+.cta-meta span{font-family:'Fira Code',monospace;font-size:.56rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em}
+.cta-links{display:flex;align-items:center;justify-content:center;gap:1.4rem;padding-top:1.75rem;border-top:1px solid var(--border)}
+.cta-link{font-family:'Fira Code',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.06em;transition:color .2s}
+.cta-link:hover{color:var(--gold)}
+.cta-vline{width:1px;height:12px;background:var(--dim)}
+.cta-micro{font-family:'Inter',sans-serif;font-size:.78rem;color:var(--dim);font-style:italic;margin-top:2rem;font-weight:300}
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════ */
+footer{border-top:1px solid var(--border);padding:1.75rem 0;position:relative;z-index:1}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 clamp(1.5rem,5vw,2.5rem);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.875rem}
+.footer-copy,.footer-right{font-family:'Fira Code',monospace;font-size:.56rem;color:var(--dim);letter-spacing:.05em}
+.footer-email{color:var(--muted);transition:color .2s}
+.footer-email:hover{color:var(--gold)}
+
+/* ═══════════════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════════════ */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ═══════════════════════════════════════════════════
+   KEYFRAMES
+═══════════════════════════════════════════════════ */
+@keyframes riseIn{to{opacity:1;transform:translateY(0)}}
+@keyframes pulseAnim{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
+@keyframes scrollPulse{0%,100%{opacity:.25}50%{opacity:.85}}
+</style>
+</head>
+<body>
+
+<!-- Background system: 6 large orbs + 6 bubble orbs + canvas particles -->
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+<div class="orb orb-4"></div><div class="orb orb-5"></div><div class="orb orb-6"></div>
+<div class="orb orb-b1"></div><div class="orb orb-b2"></div><div class="orb orb-b3"></div>
+<div class="orb orb-b4"></div><div class="orb orb-b5"></div><div class="orb orb-b6"></div>
+<canvas id="canvas"></canvas>
+<div class="noise" aria-hidden="true"></div>
+<div id="cur-dot" aria-hidden="true"></div>
+<div id="cur-ring" aria-hidden="true"></div>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="scrollTo({top:0,behavior:'smooth'});return false">Ved<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#work"      class="nav-link">Experience</a></li>
+      <li><a href="#projects"  class="nav-link">Projects</a></li>
+      <li><a href="#thinking"  class="nav-link">Thinking</a></li>
+      <li><a href="#stack"     class="nav-link">Stack</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-toggle-label" id="themeLabel">DARK</span>
+        <div class="theme-toggle-track"><div class="theme-toggle-thumb"></div></div>
+        <span class="theme-icon" id="themeIcon">🌙</span>
+      </button>
+      <a href="#contact" class="nav-cta">Let's Talk</a>
+      <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div id="mob-menu">
+  <a href="#work"      class="mob-link" onclick="closeMob()">Experience</a>
+  <a href="#projects"  class="mob-link" onclick="closeMob()">Projects</a>
+  <a href="#thinking"  class="mob-link" onclick="closeMob()">Thinking</a>
+  <a href="#stack"     class="mob-link" onclick="closeMob()">Stack</a>
+  <a href="#education" class="mob-link" onclick="closeMob()">Education</a>
+  <button onclick="toggleTheme();closeMob()" style="font-family:'Fira Code',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;margin-top:.25rem">Toggle Theme</button>
+  <a href="#contact" class="btn-p" style="margin-top:.5rem;padding:13px 30px;font-size:1rem" onclick="closeMob()">Let's Talk →</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-eyebrow">TPM · AI Product Operations · Founder Associate</div>
+
+    <h1 class="hero-name">
+      <span class="block">Ved Gawade</span>
+      <span class="block">Builds <em>systems.</em></span>
+    </h1>
+
+    <p class="hero-role">Technical Program Manager · AI Operator · M.Sc. Digital Innovation</p>
+
+    <p class="hero-sub">
+      I build AI-first operational systems at the intersection of automation, product execution &amp; intelligent workflows — turning ambiguous problems into running infrastructure.
+    </p>
+
+    <div class="hero-badges">
+      <span class="badge badge-gold">Technical PM</span>
+      <span class="badge badge-gold">AI Ops</span>
+      <span class="badge">Agentic Workflows</span>
+      <span class="badge">0→1 Execution</span>
+      <span class="badge">Cross-functional</span>
+      <span class="badge">SuperAGI Alumni</span>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="#work"   class="btn-p">See My Work →</a>
+      <a href="mailto:vedgawade1219@gmail.com" class="btn-s">Let's Talk</a>
+    </div>
+
+    <div class="hero-status">
+      <div class="status-dot"><span class="pulse"></span>Ulm, Germany</div>
+      <span style="width:1px;height:10px;background:var(--dim)"></span>
+      <div class="status-dot">Open to TPM · Product Ops · Founding Team</div>
+      <span style="width:1px;height:10px;background:var(--dim)"></span>
+      <div class="status-dot">M.Sc. Digital Innovation Management · HNU</div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-txt">scroll</span>
+  </div>
+</section>
+
+<!-- ═══════════ CAPABILITIES ═══════════ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-label fade-up"><span class="num">01 //</span> Operating Modes</div>
+    <h2 class="sec-h2 fade-up">How I create <em>leverage.</em></h2>
+
+    <div class="cap-grid">
+      <div class="glass fade-up">
+        <span class="cap-num">01</span>
+        <div class="cap-icon">◈</div>
+        <div class="cap-title">Technical Program Management</div>
+        <p class="cap-body">I manage end-to-end technical programs across engineering, product, and leadership — translating ambiguous requirements into execution plans, tracking dependencies, and shipping on time.</p>
+        <div class="cap-tags"><span class="cap-tag">Sprint Planning</span><span class="cap-tag">Roadmapping</span><span class="cap-tag">Risk Mitigation</span><span class="cap-tag">Stakeholder Alignment</span></div>
+        <div class="card-accent-bar"></div>
+      </div>
+
+      <div class="glass fade-up" style="transition-delay:.07s">
+        <span class="cap-num">02</span>
+        <div class="cap-icon">⬡</div>
+        <div class="cap-title">AI-Native Product Operations</div>
+        <p class="cap-body">I design operational systems around AI — LLM workflow orchestration, agentic pipelines, AI SDR systems, and automation layers that reduce manual overhead and improve execution velocity.</p>
+        <div class="cap-tags"><span class="cap-tag">LLM Workflows</span><span class="cap-tag">Agentic Systems</span><span class="cap-tag">AI Tooling</span><span class="cap-tag">CRM Automation</span></div>
+        <div class="card-accent-bar"></div>
+      </div>
+
+      <div class="glass fade-up" style="transition-delay:.14s">
+        <span class="cap-num">03</span>
+        <div class="cap-icon">⊙</div>
+        <div class="cap-title">Cross-functional Execution</div>
+        <p class="cap-body">I bridge the gap between engineering and product — acting as the primary liaison that resolves blockers, aligns teams, and ensures every workstream stays in sync with business goals.</p>
+        <div class="cap-tags"><span class="cap-tag">Agile / Scrum</span><span class="cap-tag">DACI</span><span class="cap-tag">Blocker Resolution</span><span class="cap-tag">Status Reporting</span></div>
+        <div class="card-accent-bar"></div>
+      </div>
+
+      <div class="glass fade-up" style="transition-delay:.21s">
+        <span class="cap-num">04</span>
+        <div class="cap-icon">◎</div>
+        <div class="cap-title">Founding Team Operator</div>
+        <p class="cap-body">I've built from 0→1 twice — co-founding an education platform and setting up ops infrastructure from scratch. I operate with ownership mindset regardless of title, and I move fast when stakes are real.</p>
+        <div class="cap-tags"><span class="cap-tag">0→1 Execution</span><span class="cap-tag">Ops Setup</span><span class="cap-tag">Strategic Vision</span><span class="cap-tag">High Ambiguity</span></div>
+        <div class="card-accent-bar"></div>
+      </div>
+    </div>
+
+    <div class="stats-strip fade-up" style="transition-delay:.1s">
+      <div class="stat-cell"><span class="stat-n">30%</span><span class="stat-l">Task completion increase at SuperAGI via Agile sprint system</span></div>
+      <div class="stat-cell"><span class="stat-n">400+</span><span class="stat-l">Students mentored to Trinity College certifications</span></div>
+      <div class="stat-cell"><span class="stat-n">5k+</span><span class="stat-l">Users served on E-Cell portal during Mumbai's largest hackathon</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EXPERIENCE ═══════════ -->
+<section id="work" class="section">
+  <div class="container">
+    <div class="section-label fade-up"><span class="num">02 //</span> Experience</div>
+    <h2 class="sec-h2 fade-up">Proof, not <em>promises.</em></h2>
+
+    <div class="proj-list">
+
+      <!-- SuperAGI -->
+      <div class="proj-card fade-up" onclick="toggleProj(this)">
+        <div class="proj-top-bar"></div>
+        <div class="proj-row">
+          <span class="proj-idx">01</span>
+          <div class="proj-meta">
+            <div class="proj-meta-top">
+              <span class="proj-company">SuperAGI</span><span style="color:var(--dim)">·</span>
+              <span>Technical Program Manager</span><span style="color:var(--dim)">·</span>
+              <span>Dec 2024 – Jun 2025</span>
+            </div>
+            <div class="proj-title">AI-Driven Product Execution · Remote</div>
+          </div>
+          <div class="proj-right">
+            <span class="impact-pill">↑ 30% task completion</span>
+            <div class="proj-toggle"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+        <div class="proj-expand">
+          <div class="proj-expand-inner">
+            <div>
+              <ul class="proj-bullets">
+                <li>Managed end-to-end technical programs for AI-driven products including CRM integrations, AI SDR workflows, Chrome Plugin &amp; Mobile App — from architecture planning through to launch.</li>
+                <li>Introduced 2-week Agile sprint system using ClickUp &amp; Notion, reducing project bottlenecks and increasing task completion by 30%.</li>
+                <li>Acted as primary liaison between engineering &amp; product, ensuring resolution of technical blockers, smooth delivery &amp; continuous alignment with business goals.</li>
+                <li>Orchestrated Agile ceremonies — sprint reviews, retrospectives &amp; daily standups — slashing communication friction across frontend, backend &amp; leadership teams.</li>
+                <li>Collaborated directly with engineering to map technical dependencies, proactively mitigate architecture risks &amp; rapidly triage production blockers.</li>
+              </ul>
+              <div class="proj-tags" style="margin-top:1rem"><span class="cap-tag">Technical PM</span><span class="cap-tag">Agile / Scrum</span><span class="cap-tag">AI Products</span><span class="cap-tag">ClickUp</span><span class="cap-tag">Notion</span><span class="cap-tag">CRM</span><span class="cap-tag">AISDR</span></div>
+            </div>
+            <div class="proj-impacts">
+              <p class="impact-lbl">Impact</p>
+              <span class="impact-pill">↑ 30% task completion</span>
+              <span class="impact-pill" style="margin-top:.35rem">↓ Project bottlenecks</span>
+              <span class="impact-pill" style="margin-top:.35rem">7 AI products shipped</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TUM Business Game -->
+      <div class="proj-card fade-up" style="transition-delay:.06s" onclick="toggleProj(this)">
+        <div class="proj-top-bar"></div>
+        <div class="proj-row">
+          <span class="proj-idx">02</span>
+          <div class="proj-meta">
+            <div class="proj-meta-top">
+              <span class="proj-company">TUM Business Game</span><span style="color:var(--dim)">·</span>
+              <span>Website Marketing Manager</span><span style="color:var(--dim)">·</span>
+              <span>May 2026 – Present</span>
+            </div>
+            <div class="proj-title">Digital Operations · Munich, Germany</div>
+          </div>
+          <div class="proj-right">
+            <span class="impact-pill">Europe's premier case competition</span>
+            <div class="proj-toggle"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+        <div class="proj-expand">
+          <div class="proj-expand-inner">
+            <div>
+              <ul class="proj-bullets">
+                <li>Leading web architecture &amp; digital tracking optimization strategies to maximize application conversion &amp; user engagement for Europe's premier student-led case competition.</li>
+                <li>Partnering with cross-functional design and communications teams to implement automated workflows &amp; ensure robust performance during peak traffic windows.</li>
+              </ul>
+              <div class="proj-tags" style="margin-top:1rem"><span class="cap-tag">Web Ops</span><span class="cap-tag">Digital Tracking</span><span class="cap-tag">Automation</span><span class="cap-tag">Cross-functional</span></div>
+            </div>
+            <div class="proj-impacts">
+              <p class="impact-lbl">Status</p>
+              <span class="impact-pill">Currently Active</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Greenox Tech -->
+      <div class="proj-card fade-up" style="transition-delay:.12s" onclick="toggleProj(this)">
+        <div class="proj-top-bar"></div>
+        <div class="proj-row">
+          <span class="proj-idx">03</span>
+          <div class="proj-meta">
+            <div class="proj-meta-top">
+              <span class="proj-company">Greenox Tech</span><span style="color:var(--dim)">·</span>
+              <span>Junior Project Manager</span><span style="color:var(--dim)">·</span>
+              <span>Aug – Nov 2024</span>
+            </div>
+            <div class="proj-title">GoOutbound Phase 1 Delivery · Hybrid</div>
+          </div>
+          <div class="proj-right">
+            <span class="impact-pill">↑ 25% GTM velocity</span>
+            <div class="proj-toggle"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+        <div class="proj-expand">
+          <div class="proj-expand-inner">
+            <div>
+              <ul class="proj-bullets">
+                <li>Led GoOutbound Phase 1 delivery with real-time Kanban &amp; milestone tracking, improving go-to-market delivery timelines by 25% &amp; cross-team velocity by 20% through structured Agile ceremonies.</li>
+                <li>Coordinated cross-functional workstreams across design, engineering &amp; sales, maintaining stakeholder alignment through structured status reporting &amp; action item tracking.</li>
+                <li>Led daily standups, sprint reviews &amp; retrospectives — bridging communication between business stakeholders &amp; technical developers.</li>
+              </ul>
+              <div class="proj-tags" style="margin-top:1rem"><span class="cap-tag">Project Management</span><span class="cap-tag">Kanban</span><span class="cap-tag">Agile</span><span class="cap-tag">GTM</span><span class="cap-tag">Stakeholder Mgmt</span></div>
+            </div>
+            <div class="proj-impacts">
+              <p class="impact-lbl">Impact</p>
+              <span class="impact-pill">↑ 25% GTM delivery</span>
+              <span class="impact-pill" style="margin-top:.35rem">↑ 20% team velocity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maestro Music Institute -->
+      <div class="proj-card fade-up" style="transition-delay:.18s" onclick="toggleProj(this)">
+        <div class="proj-top-bar"></div>
+        <div class="proj-row">
+          <span class="proj-idx">04</span>
+          <div class="proj-meta">
+            <div class="proj-meta-top">
+              <span class="proj-company">Maestro Music Institute</span><span style="color:var(--dim)">·</span>
+              <span>Founding Member</span><span style="color:var(--dim)">·</span>
+              <span>Oct 2020 – Dec 2024</span>
+            </div>
+            <div class="proj-title">0→1 Platform Build · 4 Years 3 Months</div>
+          </div>
+          <div class="proj-right">
+            <span class="impact-pill">400+ students</span>
+            <div class="proj-toggle"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+        <div class="proj-expand">
+          <div class="proj-expand-inner">
+            <div>
+              <ul class="proj-bullets">
+                <li>Co-founded &amp; scaled a remote music education platform from inception — drove initial business strategy, student acquisition frameworks &amp; operational growth infrastructure.</li>
+                <li>Designed &amp; implemented structured, competency-based lesson plans using performance tracking frameworks, mentoring 400+ students for Trinity College of Music (TCM) graded examinations with high success rates.</li>
+                <li>Managed scheduling, operational workflows &amp; student CRM processes — built the institutional systems that allowed the platform to grow without operational debt.</li>
+              </ul>
+              <div class="proj-tags" style="margin-top:1rem"><span class="cap-tag">Founding Ops</span><span class="cap-tag">0→1</span><span class="cap-tag">CRM</span><span class="cap-tag">Team Management</span><span class="cap-tag">Student Lifecycle</span></div>
+            </div>
+            <div class="proj-impacts">
+              <p class="impact-lbl">Impact</p>
+              <span class="impact-pill">400+ students mentored</span>
+              <span class="impact-pill" style="margin-top:.35rem">4+ yrs operational</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- E-Cell Leadership callout -->
+    <div class="glass fade-up" style="margin-top:1rem;transition-delay:.24s">
+      <div class="section-label" style="margin-bottom:.75rem"><span class="num">// </span>Leadership · E-Cell SIES GST · 3 Years</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+        <div>
+          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:.9rem;color:var(--text);margin-bottom:.3rem">Chairperson</div>
+          <div style="font-family:'Fira Code',monospace;font-size:.54rem;color:var(--muted);margin-bottom:.4rem">May 2023 – May 2024</div>
+          <div style="font-size:.8rem;color:var(--muted);font-weight:300;line-height:1.5">Directed overall strategy for the university's premier entrepreneurship ecosystem. Led executive board of 25 members. Spearheaded Mumbai's largest 24-hr student business hackathon.</div>
+        </div>
+        <div>
+          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:.9rem;color:var(--text);margin-bottom:.3rem">Treasurer</div>
+          <div style="font-family:'Fira Code',monospace;font-size:.54rem;color:var(--muted);margin-bottom:.4rem">Jun 2022 – Apr 2023</div>
+          <div style="font-size:.8rem;color:var(--muted);font-weight:300;line-height:1.5">Managed complete financial ledger &amp; budget allocation for multiple large-scale student events. Built partnerships with startup founders &amp; angel investors.</div>
+        </div>
+        <div>
+          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:.9rem;color:var(--text);margin-bottom:.3rem">Jr. Technical Coordinator</div>
+          <div style="font-family:'Fira Code',monospace;font-size:.54rem;color:var(--muted);margin-bottom:.4rem">Jun 2021 – May 2022</div>
+          <div style="font-size:.8rem;color:var(--muted);font-weight:300;line-height:1.5">Maintained web infrastructure using HTML, CSS &amp; GitHub. Managed web presence and event communication systems.</div>
+        </div>
+      </div>
+      <div class="card-accent-bar"></div>
+    </div>
+
+    <div class="divider-row fade-up" style="transition-delay:.3s">
+      <div class="divider-line"></div>
+      <span class="divider-txt">Full CV available on request</span>
+      <div class="divider-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PROJECTS ═══════════ -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-label fade-up"><span class="num">03 //</span> Projects</div>
+    <h2 class="sec-h2 fade-up">Built, shipped, <em>published.</em></h2>
+
+    <div class="proj-grid">
+      <div class="glass fade-up">
+        <div class="proj-g-tag">IoT · AI Navigation · Published Research</div>
+        <div class="proj-g-title">Advanced Aerial Medical Logistics — Cold Chain Drone</div>
+        <p class="proj-g-body">Led development of an IoT-powered drone with temperature control, real-time monitoring &amp; autonomous navigation to support medical logistics. Ensured compliance with industry standards. Published at IEEE AECE 2024 International Conference.</p>
+        <div class="cap-tags" style="margin-bottom:.875rem"><span class="cap-tag">IoT</span><span class="cap-tag">Embedded Systems</span><span class="cap-tag">AI Navigation</span><span class="cap-tag">Real-time Monitoring</span></div>
+        <a href="https://doi.org/10.1109/AECE62803.2024.10911424" target="_blank" class="proj-g-link">IEEE Paper → DOI: 10.1109/AECE62803.2024.10911424 ↗</a>
+        <div class="card-accent-bar"></div>
+      </div>
+
+      <div class="glass fade-up" style="transition-delay:.07s">
+        <div class="proj-g-tag">React · MongoDB · Figma · 2000+ Users</div>
+        <div class="proj-g-title">Entrepreneurship Cell Portal — SIES GST</div>
+        <p class="proj-g-body">Led development of a dynamic entrepreneurship portal improving usability &amp; real-time updates for student &amp; faculty engagement. Scaled to 2,000+ active users as the central hub for event registration. Managed a 5,000+ user surge during Mumbai's largest business hackathon in one month.</p>
+        <div class="cap-tags" style="margin-bottom:.875rem"><span class="cap-tag">React</span><span class="cap-tag">MongoDB</span><span class="cap-tag">Figma</span><span class="cap-tag">Agile Dev</span></div>
+        <a href="https://ecell.siesgst.ac.in/" target="_blank" class="proj-g-link">Live Site → ecell.siesgst.ac.in ↗</a>
+        <div class="card-accent-bar"></div>
+      </div>
+
+      <div class="glass fade-up" style="transition-delay:.14s">
+        <div class="proj-g-tag">on.chained · AI-First Operating System</div>
+        <div class="proj-g-title">on.chained — Founder Associate Application</div>
+        <p class="proj-g-body">Built a production-grade AI operating system for a Web3 / RWA startup — Regulatory Intel Pipeline, Asset Documentation Workflow, and Investor Profiler. All pipelines live against the Anthropic API within 5 days. Demonstrated what a Founding Operator who thinks like a builder can ship.</p>
+        <div class="cap-tags" style="margin-bottom:.875rem"><span class="cap-tag">AI Pipelines</span><span class="cap-tag">Claude API</span><span class="cap-tag">Apps Script</span><span class="cap-tag">Notion</span><span class="cap-tag">0→1</span></div>
+        <span class="proj-g-link" style="color:var(--muted);cursor:default">Production artifact · Available on request</span>
+        <div class="card-accent-bar"></div>
+      </div>
+
+      <div class="glass fade-up" style="transition-delay:.21s">
+        <div class="proj-g-tag">Automation · Reporting · Ops</div>
+        <div class="proj-g-title">AI Reporting Pipeline — Internal Ops Tool</div>
+        <p class="proj-g-body">Identified a team burning 6+ hours per week on manual status updates. Designed and shipped an automated reporting pipeline using Notion, Zapier &amp; GPT. Freed up meaningful time that went back into product work. Adopted org-wide within 2 weeks of deployment.</p>
+        <div class="cap-tags" style="margin-bottom:.875rem"><span class="cap-tag">GPT API</span><span class="cap-tag">Zapier</span><span class="cap-tag">Notion</span><span class="cap-tag">No-code Ops</span></div>
+        <span class="proj-g-link" style="color:var(--gold)">6 hrs/week recovered · Org-wide in 2 weeks</span>
+        <div class="card-accent-bar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ THINKING ═══════════ -->
+<section id="thinking" class="section">
+  <div class="container">
+    <div class="section-label fade-up"><span class="num">04 //</span> Thinking</div>
+    <h2 class="sec-h2 fade-up">How I see <em>the work.</em></h2>
+
+    <div class="principles-box fade-up">
+      <div class="principles-hd"><span class="section-label" style="margin:0"><span class="num">// </span>Operating Principles</span></div>
+      <div class="principle-row"><span class="p-n">01</span><span class="p-text">Roadmaps are communication tools, not contracts. The moment they become commitments, they stop being useful.</span></div>
+      <div class="principle-row"><span class="p-n">02</span><span class="p-text">The best process is the one your team actually uses — not the most sophisticated one you can design.</span></div>
+      <div class="principle-row"><span class="p-n">03</span><span class="p-text">AI doesn't replace operators. It multiplies the good ones and exposes the bad ones.</span></div>
+      <div class="principle-row"><span class="p-n">04</span><span class="p-text">Shipping is a strategy. Every week something doesn't ship is a week of signal you didn't collect.</span></div>
+      <div class="principle-row"><span class="p-n">05</span><span class="p-text">The gap between strategy and execution is almost always a coordination problem, not an intelligence problem.</span></div>
+      <div class="principle-row"><span class="p-n">06</span><span class="p-text">The operator who thinks like a founder is rarer than the founder who thinks like an operator.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ STACK ═══════════ -->
+<section id="stack" class="section">
+  <div class="container">
+    <div class="section-label fade-up"><span class="num">05 //</span> Stack</div>
+    <h2 class="sec-h2 fade-up">Tools are a means.<br><em>Systems are the end.</em></h2>
+
+    <div class="stack-table fade-up">
+      <div class="stack-headers">
+        <div class="stack-hcell">PM Tools</div>
+        <div class="stack-hcell">Methods</div>
+        <div class="stack-hcell">AI & Technical</div>
+        <div class="stack-hcell">Exploring Now</div>
+      </div>
+      <div class="stack-cols">
+        <div class="stack-col">
+          <div class="stack-item">ClickUp</div>
+          <div class="stack-item">Notion</div>
+          <div class="stack-item">Jira</div>
+          <div class="stack-item">Figma</div>
+          <div class="stack-item">GitHub</div>
+          <div class="stack-item">Tableau</div>
+          <div class="stack-item">Google Sheets</div>
+        </div>
+        <div class="stack-col">
+          <div class="stack-item">Agile / Scrum</div>
+          <div class="stack-item">Sprint Planning</div>
+          <div class="stack-item">DACI Mapping</div>
+          <div class="stack-item">Risk Management</div>
+          <div class="stack-item">OKR Frameworks</div>
+          <div class="stack-item">Postmortems</div>
+          <div class="stack-item">Working Backwards</div>
+        </div>
+        <div class="stack-col">
+          <div class="stack-item">GPT / Claude APIs</div>
+          <div class="stack-item">Prompt Engineering</div>
+          <div class="stack-item">Apps Script</div>
+          <div class="stack-item">Python (scripting)</div>
+          <div class="stack-item">SQL (analytics)</div>
+          <div class="stack-item">Google Cloud</div>
+          <div class="stack-item">Kubernetes basics</div>
+        </div>
+        <div class="stack-col">
+          <div class="stack-item hl"><span class="s-dot"></span>Agentic Workflows</div>
+          <div class="stack-item hl"><span class="s-dot"></span>AI Agent Orchestration</div>
+          <div class="stack-item hl"><span class="s-dot"></span>LangGraph / n8n</div>
+          <div class="stack-item hl"><span class="s-dot"></span>MCP Integrations</div>
+          <div class="stack-item hl"><span class="s-dot"></span>Vibe Coding</div>
+          <div class="stack-item hl"><span class="s-dot"></span>Digital Innovation Mgmt</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-extras fade-up" style="transition-delay:.12s">
+      <div class="s-extra">
+        <p class="s-extra-lbl">/ Languages</p>
+        <div class="lang-row">
+          <div class="lang-top"><span class="lang-name">English</span><span class="lang-lvl">Advanced C1</span></div>
+          <div class="lang-bg"><div class="lang-fill" data-w="92%"></div></div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-top"><span class="lang-name">German</span><span class="lang-lvl">Elementary A2</span></div>
+          <div class="lang-bg"><div class="lang-fill" data-w="22%"></div></div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-top"><span class="lang-name">Hindi</span><span class="lang-lvl">Native</span></div>
+          <div class="lang-bg"><div class="lang-fill" data-w="100%"></div></div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-top"><span class="lang-name">Marathi</span><span class="lang-lvl">Native</span></div>
+          <div class="lang-bg"><div class="lang-fill" data-w="100%"></div></div>
+        </div>
+      </div>
+      <div class="s-extra">
+        <p class="s-extra-lbl">/ Currently Exploring</p>
+        <div class="expl-item"><span class="expl-arr">→</span>Building AI-native operating systems for early-stage teams</div>
+        <div class="expl-item"><span class="expl-arr">→</span>Agentic workflow orchestration (LangGraph, n8n, MCP)</div>
+        <div class="expl-item"><span class="expl-arr">→</span>Digital Innovation &amp; Transformation (M.Sc. coursework)</div>
+        <div class="expl-item"><span class="expl-arr">→</span>Founder-led product org structures &amp; GTM execution</div>
+        <div class="expl-item"><span class="expl-arr">→</span>Vibe coding for rapid internal tooling &amp; AI prototyping</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EDUCATION ═══════════ -->
+<section id="education" class="section">
+  <div class="container">
+    <div class="section-label fade-up"><span class="num">06 //</span> Education</div>
+    <h2 class="sec-h2 fade-up">Academic <em>foundation.</em></h2>
+
+    <div class="edu-list">
+      <div class="edu-card fade-up">
+        <div class="edu-top">
+          <div>
+            <div class="edu-school">Hochschule Neu-Ulm (HNU)</div>
+            <div class="edu-degree">M.Sc. Digital Innovation Management</div>
+          </div>
+          <div class="edu-period">Oct 2025 – Jul 2027</div>
+        </div>
+        <div class="edu-detail">Ulm, Germany · <span style="color:var(--gold)">Currently enrolled</span> · Relevant coursework: Digital Innovation Strategy, Digital Transformation &amp; Entrepreneurship, Digital Business Models, Innovation Project, Organization &amp; Process, Digital Innovation in Industry, Information Systems Research.</div>
+      </div>
+
+      <div class="edu-card fade-up" style="transition-delay:.08s">
+        <div class="edu-top">
+          <div>
+            <div class="edu-school">SIES Graduate School of Technology</div>
+            <div class="edu-degree">B.E. Electronics &amp; Computer Science</div>
+          </div>
+          <div class="edu-period">Aug 2020 – Jul 2024</div>
+        </div>
+        <div class="edu-detail">University of Mumbai, India · CGPI: <span style="color:var(--gold)">8.76 / 10</span> · Relevant coursework: Artificial Intelligence, Machine Learning, Deep Learning, Project Management, MIS, Software Engineering, NLP, Cloud Computing, DSA, DBMS, Software Testing &amp; QA.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section id="contact" class="section">
+  <div class="container" style="position:relative">
+    <div class="cta-glow"></div>
+    <div style="position:relative;z-index:1;max-width:640px;margin:0 auto">
+      <div class="section-label fade-up" style="justify-content:center"><span class="num">07 //</span> Let's Work</div>
+      <h2 class="cta-h2 fade-up" style="transition-delay:.06s">Open to the right <em>opportunity.</em></h2>
+      <p class="cta-sub fade-up" style="transition-delay:.12s">Not looking for just any role. Looking for a team that's building something real, moving fast, and needs someone who can hold the complexity together — and ship.</p>
+      <div class="cta-btns fade-up" style="transition-delay:.18s">
+        <a href="mailto:vedgawade1219@gmail.com" class="btn-p" style="font-size:.9rem;padding:13px 28px">Send me a message →</a>
+        <a href="https://www.linkedin.com/in/ved-gawade/" target="_blank" class="btn-s" style="font-size:.9rem;padding:13px 28px">View LinkedIn ↗</a>
+      </div>
+      <div class="cta-meta fade-up" style="transition-delay:.24s">
+        <span>Ulm, Germany</span>
+        <span>+49 163 7215279</span>
+        <span>Open to hybrid + remote</span>
+        <span>Available now</span>
+      </div>
+      <div class="cta-links fade-up" style="transition-delay:.3s">
+        <a href="https://www.linkedin.com/in/ved-gawade/" class="cta-link" target="_blank">LinkedIn →</a>
+        <div class="cta-vline"></div>
+        <a href="https://github.com/ved1211" class="cta-link" target="_blank">GitHub →</a>
+        <div class="cta-vline"></div>
+        <a href="mailto:vedgawade1219@gmail.com" class="cta-link">vedgawade1219@gmail.com →</a>
+      </div>
+      <p class="cta-micro fade-up" style="transition-delay:.36s">I respond within 24 hours. If what you're building is interesting, probably faster.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025 Ved Gawade · Ulm, Germany</span>
+    <div class="footer-right" style="display:flex;align-items:center;gap:.875rem">
+      <span>Built for operators, by an operator.</span>
+      <span style="width:1px;height:10px;background:var(--dim)"></span>
+      <a href="mailto:vedgawade1219@gmail.com" class="footer-email">vedgawade1219@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════ -->
+<script>
+/* ── PARTICLE CANVAS (onchained system — exact match) ────── */
+const canvas = document.getElementById('canvas');
+const ctx    = canvas.getContext('2d');
+let W, H;
+let particles = [];
+
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight}
+resize();
+window.addEventListener('resize',resize,{passive:true});
+
+class Particle{
+  constructor(){this.reset(true)}
+  reset(init){
+    this.x=Math.random()*W;
+    this.y=init?Math.random()*H:H+10;
+    this.size=Math.random()*2+0.4;
+    this.speedY=-(Math.random()*0.5+0.1);
+    this.speedX=(Math.random()-0.5)*0.25;
+    this.opacity=Math.random()*0.55+0.1;
+    this.life=0;
+    this.maxLife=Math.random()*300+200;
+    const p=['168,100,255','0,220,180','80,180,255','255,120,60','255,60,140','60,230,200','200,160,255','255,200,60'];
+    this.color=p[Math.floor(Math.random()*p.length)];
+  }
+  update(){this.x+=this.speedX;this.y+=this.speedY;this.life++;if(this.life>this.maxLife||this.y<-10)this.reset(false)}
+  draw(){
+    const fade=Math.min(this.life/40,1)*Math.min((this.maxLife-this.life)/40,1);
+    ctx.beginPath();
+    ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+    ctx.fillStyle=`rgba(${this.color},${this.opacity*fade})`;
+    ctx.fill();
+  }
+}
+for(let i=0;i<120;i++)particles.push(new Particle());
+function animate(){ctx.clearRect(0,0,W,H);particles.forEach(p=>{p.update();p.draw()});requestAnimationFrame(animate)}
+animate();
+
+/* ── THEME TOGGLE ─────────────────────────────────────── */
+const html_el=document.documentElement;
+const toggle=document.getElementById('themeToggle');
+const themeIcon=document.getElementById('themeIcon');
+const themeLabel=document.getElementById('themeLabel');
+const saved=localStorage.getItem('vg-theme');
+if(saved==='light')applyLight();
+else if(!saved&&window.matchMedia('(prefers-color-scheme:light)').matches)applyLight();
+function applyLight(){html_el.classList.add('light');themeIcon.textContent='☀️';themeLabel.textContent='LIGHT'}
+function applyDark(){html_el.classList.remove('light');themeIcon.textContent='🌙';themeLabel.textContent='DARK'}
+function toggleTheme(){
+  if(html_el.classList.contains('light')){applyDark();localStorage.setItem('vg-theme','dark')}
+  else{applyLight();localStorage.setItem('vg-theme','light')}
+}
+toggle.addEventListener('click',toggleTheme);
+
+/* ── CUSTOM CURSOR ────────────────────────────────────── */
+(function(){
+  if(!window.matchMedia('(pointer:fine)').matches)return;
+  const dot=document.getElementById('cur-dot');
+  const ring=document.getElementById('cur-ring');
+  let mx=0,my=0,rx=0,ry=0;
+  const L=0.13;
+  const lerp=(a,b,t)=>a+(b-a)*t;
+  function tick(){
+    rx=lerp(rx,mx,L);ry=lerp(ry,my,L);
+    dot.style.left=mx+'px';dot.style.top=my+'px';
+    ring.style.left=rx+'px';ring.style.top=ry+'px';
+    requestAnimationFrame(tick);
+  }
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.opacity='1';ring.style.opacity='1'},{passive:true});
+  document.addEventListener('mouseleave',()=>{dot.style.opacity='0';ring.style.opacity='0'});
+  document.addEventListener('mouseover',e=>{
+    if(e.target.closest('a,button')){dot.classList.add('h');ring.classList.add('h')}
+    else{dot.classList.remove('h');ring.classList.remove('h')}
+  },{passive:true});
+  document.addEventListener('mousedown',()=>{dot.classList.add('c');ring.classList.add('c')});
+  document.addEventListener('mouseup',()=>{dot.classList.remove('c');ring.classList.remove('c')});
+  tick();
+})();
+
+/* ── MOBILE MENU ──────────────────────────────────────── */
+const mobMenu=document.getElementById('mob-menu');
+document.getElementById('ham').addEventListener('click',()=>{
+  mobMenu.classList.toggle('open');
+  document.body.style.overflow=mobMenu.classList.contains('open')?'hidden':'';
+});
+function closeMob(){mobMenu.classList.remove('open');document.body.style.overflow=''}
+
+/* ── SCROLL REVEAL ────────────────────────────────────── */
+const revObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target)}});
+},{threshold:.1,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>revObs.observe(el));
+
+/* ── PROJECT ACCORDION ────────────────────────────────── */
+function toggleProj(card){
+  const wasOpen=card.classList.contains('open');
+  document.querySelectorAll('.proj-card.open').forEach(c=>c.classList.remove('open'));
+  if(!wasOpen)card.classList.add('open');
+}
+
+/* ── LANGUAGE BARS ────────────────────────────────────── */
+const langObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const b=e.target,w=b.getAttribute('data-w');
+      setTimeout(()=>{b.style.width=w},200);
+      langObs.unobserve(b);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('.lang-fill').forEach(b=>langObs.observe(b));
+</script>
+</body>
+</html>
