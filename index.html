@@ -25,7 +25,7 @@
   --text:         #F8FAFC;
   --text-sec:     #CBD5E1;
   --muted:        #64748B;
-  --dim:          #1E293B;
+  --dim:          #475569;
   --nav-bg:       rgba(6,8,22,0.88);
   --glass-bg:     rgba(17,24,39,0.82);
   --glass-border: rgba(255,255,255,0.06);
@@ -192,7 +192,7 @@ html.light .cap-tag{background:rgba(15,23,42,.025);border-color:rgba(15,23,42,.0
    SECTION EYEBROW
 ═══════════════════════════════════════════════════ */
 .section-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--gold);letter-spacing:.2em;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;text-transform:uppercase}
-.section-label .num{color:var(--dim);font-size:.54rem}
+.section-label .num{color:#475569;font-size:.56rem}
 
 /* ═══════════════════════════════════════════════════
    SECTION TITLE
@@ -211,7 +211,7 @@ html.light .cap-tag{background:rgba(15,23,42,.025);border-color:rgba(15,23,42,.0
   .sec-head{flex-direction:row;align-items:flex-end;justify-content:space-between}
   .sec-head .sec-h2{margin-bottom:0}
 }
-.sec-note{font-family:'DM Sans',system-ui,sans-serif;font-size:.9rem;color:var(--muted);max-width:220px;line-height:1.6;font-weight:300;flex-shrink:0}
+.sec-note{font-family:'DM Sans',system-ui,sans-serif;font-size:.9375rem;color:var(--muted);max-width:220px;line-height:1.6;font-weight:300;flex-shrink:0}
 
 /* ═══════════════════════════════════════════════════
    GLASS CARD
@@ -302,7 +302,7 @@ html.light #hero::before{
 .badge{
   font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.08em;
   padding:4px 10px;border-radius:9999px;
-  border:1px solid var(--border);color:var(--muted);background:var(--surface);text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.12);color:#94A3B8;background:rgba(255,255,255,.06);text-transform:uppercase;
 }
 .badge-gold{border-color:var(--gold-dim);color:var(--gold)}
 /* CTAs — pill shape exactly like screenshot */
@@ -358,14 +358,14 @@ html.light #hero::before{
 #about{background:transparent}
 .cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media(max-width:620px){.cap-grid{grid-template-columns:1fr}}
-.cap-num{position:absolute;top:1.1rem;right:1.25rem;font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--dim)}
+.cap-num{position:absolute;top:1.1rem;right:1.25rem;font-family:'JetBrains Mono',monospace;font-size:.54rem;color:#475569}
 .cap-icon{width:38px;height:38px;border-radius:8px;background:rgba(var(--gold-rgb),.08);border:1px solid rgba(var(--gold-rgb),.14);display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:1.1rem;color:var(--gold);transition:background .3s}
 .glass:hover .cap-icon{background:rgba(var(--gold-rgb),.16)}
 .cap-title{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:1.05rem;color:var(--text);letter-spacing:-.02em;margin-bottom:.6rem;line-height:1.25}
-.cap-body{font-size:.875rem;color:var(--muted);line-height:1.72;margin-bottom:1.1rem;font-weight:300}
+.cap-body{font-size:.9375rem;color:var(--muted);line-height:1.72;margin-bottom:1.1rem;font-weight:300}
 .cap-tags{display:flex;flex-wrap:wrap;gap:.3rem}
-.cap-tag{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.05em;color:var(--dim);background:rgba(255,255,255,.03);border:1px solid var(--border);padding:2px 7px;border-radius:3px}
-html.light .cap-tag{background:rgba(0,0,0,.03)}
+.cap-tag{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.05em;color:#94A3B8;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:2px 7px;border-radius:3px}
+html.light .cap-tag{color:#334155;background:rgba(15,23,42,.06);border-color:rgba(15,23,42,.14)}
 .stats-strip{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:3rem;background:var(--glass-bg);backdrop-filter:blur(12px)}
 @media(max-width:560px){.stats-strip{grid-template-columns:1fr}}
 .stat-cell{padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.875rem;border-right:1px solid var(--border)}
@@ -373,7 +373,7 @@ html.light .cap-tag{background:rgba(0,0,0,.03)}
 @media(max-width:560px){.stat-cell{border-right:none;border-bottom:1px solid var(--border)}}
 @media(max-width:560px){.stat-cell:last-child{border-bottom:none}}
 .stat-n{font-family:'Playfair Display',Georgia,serif;font-size:1.9rem;color:var(--text);line-height:1}
-.stat-l{font-size:.78rem;color:var(--muted);line-height:1.4;max-width:115px;font-weight:300}
+.stat-l{font-size:.8125rem;color:var(--muted);line-height:1.4;max-width:115px;font-weight:300}
 
 /* ═══════════════════════════════════════════════════
    WORK / EXPERIENCE — ACCORDION
@@ -388,7 +388,7 @@ html.light .proj-card:hover{box-shadow:0 12px 40px rgba(100,80,180,.1)}
 .proj-card.open .proj-top-bar{width:100%}
 .proj-card.open{border-color:rgba(255,255,255,.13);box-shadow:0 12px 40px rgba(0,0,0,.3)}
 .proj-row{display:flex;align-items:flex-start;justify-content:space-between;padding:1.35rem 1.5rem;gap:1rem;position:relative}
-.proj-idx{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--dim);margin-top:3px;flex-shrink:0}
+.proj-idx{font-family:'JetBrains Mono',monospace;font-size:.56rem;color:#475569;margin-top:3px;flex-shrink:0}
 .proj-meta{margin-left:1rem;flex:1;min-width:0}
 .proj-meta-top{display:flex;align-items:center;gap:.4rem;margin-bottom:.2rem;font-family:'JetBrains Mono',monospace;font-size:.56rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
 .proj-company{color:var(--gold);font-size:.56rem}
@@ -402,15 +402,15 @@ html.light .proj-card:hover{box-shadow:0 12px 40px rgba(100,80,180,.1)}
 .proj-card.open .proj-expand{max-height:500px;opacity:1;border-top:1px solid var(--border)}
 .proj-expand-inner{padding:1.35rem 1.5rem;display:grid;gap:1.4rem}
 @media(min-width:580px){.proj-expand-inner{grid-template-columns:1fr auto}}
-.proj-body{font-size:.875rem;color:var(--muted);line-height:1.72;font-weight:300}
+.proj-body{font-size:.9375rem;color:var(--muted);line-height:1.72;font-weight:300}
 .proj-bullets{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-top:.75rem}
-.proj-bullets li{font-size:.85rem;color:var(--muted);font-weight:300;padding-left:1rem;border-left:1px solid var(--dim);line-height:1.6}
+.proj-bullets li{font-size:.875rem;color:var(--muted);font-weight:300;padding-left:1rem;border-left:1px solid var(--dim);line-height:1.65}
 .proj-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.875rem}
 .proj-impacts{display:flex;flex-direction:column;gap:.4rem;min-width:160px}
-.impact-lbl{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem}
+.impact-lbl{font-family:'JetBrains Mono',monospace;font-size:.56rem;color:#64748B;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem}
 .divider-row{display:flex;align-items:center;gap:.875rem;margin-top:2.5rem}
 .divider-line{flex:1;height:1px;background:var(--border)}
-.divider-txt{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}
+.divider-txt{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:#64748B;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}
 @media(max-width:480px){.proj-right .impact-pill:first-child{display:none}}
 
 /* ═══════════════════════════════════════════════════
@@ -421,7 +421,7 @@ html.light .proj-card:hover{box-shadow:0 12px 40px rgba(100,80,180,.1)}
 @media(max-width:640px){.proj-grid{grid-template-columns:1fr}}
 .proj-g-tag{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem}
 .proj-g-title{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:1rem;color:var(--text);letter-spacing:-.02em;margin-bottom:.6rem;line-height:1.25}
-.proj-g-body{font-size:.85rem;color:var(--muted);line-height:1.7;font-weight:300;margin-bottom:1rem}
+.proj-g-body{font-size:.875rem;color:var(--muted);line-height:1.7;font-weight:300;margin-bottom:1rem}
 .proj-g-link{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--gold);letter-spacing:.06em;display:inline-flex;align-items:center;gap:5px;transition:gap .2s cubic-bezier(.16,1,.3,1),color .2s}
 .proj-g-link:hover{gap:8px}
 
@@ -435,8 +435,8 @@ html.light .proj-card:hover{box-shadow:0 12px 40px rgba(100,80,180,.1)}
 .principle-row:last-child{border-bottom:none}
 .principle-row:hover{background:rgba(255,255,255,.025)}
 html.light .principle-row:hover{background:rgba(0,0,0,.025)}
-.p-n{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--dim);flex-shrink:0}
-.p-text{font-size:.875rem;color:var(--muted);transition:color .2s;font-weight:300}
+.p-n{font-family:'JetBrains Mono',monospace;font-size:.56rem;color:#64748B;flex-shrink:0}
+.p-text{font-size:.9375rem;color:var(--muted);transition:color .2s;font-weight:300}
 .principle-row:hover .p-text{color:var(--text)}
 
 /* ═══════════════════════════════════════════════════
@@ -448,9 +448,9 @@ html.light .principle-row:hover{background:rgba(0,0,0,.025)}
 .edu-card:hover{border-color:rgba(255,255,255,.13);transform:translateY(-2px)}
 .edu-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.35rem}
 .edu-school{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:1rem;color:var(--text);letter-spacing:-.02em}
-.edu-period{font-family:'JetBrains Mono',monospace;font-size:.56rem;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;margin-top:3px}
+.edu-period{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:#64748B;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;margin-top:3px}
 .edu-degree{font-size:.875rem;color:var(--gold);font-weight:400;margin-bottom:.3rem;font-family:'Syne',system-ui,sans-serif}
-.edu-detail{font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.5}
+.edu-detail{font-size:.875rem;color:var(--muted);font-weight:300;line-height:1.6}
 
 /* ═══════════════════════════════════════════════════
    STACK
@@ -464,7 +464,7 @@ html.light .principle-row:hover{background:rgba(0,0,0,.025)}
 .stack-cols{display:grid;grid-template-columns:repeat(4,1fr)}
 .stack-col{border-right:1px solid var(--border)}
 .stack-col:last-child{border-right:none}
-.stack-item{display:flex;align-items:center;gap:.45rem;padding:.55rem 1.1rem;border-bottom:1px solid var(--border);font-size:.82rem;color:var(--muted);font-weight:300;transition:color .2s,padding-left .2s cubic-bezier(.16,1,.3,1)}
+.stack-item{display:flex;align-items:center;gap:.45rem;padding:.55rem 1.1rem;border-bottom:1px solid var(--border);font-size:.875rem;color:var(--muted);font-weight:300;transition:color .2s,padding-left .2s cubic-bezier(.16,1,.3,1)}
 .stack-item:last-child{border-bottom:none}
 .stack-item:hover{color:var(--text);padding-left:1.3rem}
 .stack-item.hl{color:var(--gold);font-weight:400}
@@ -477,11 +477,11 @@ html.light .principle-row:hover{background:rgba(0,0,0,.025)}
 .lang-row{margin-bottom:.75rem}
 .lang-row:last-child{margin-bottom:0}
 .lang-top{display:flex;justify-content:space-between;margin-bottom:.3rem}
-.lang-name{font-size:.82rem;color:var(--muted);font-weight:300}
-.lang-lvl{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--dim);text-transform:uppercase}
+.lang-name{font-size:.875rem;color:var(--muted);font-weight:300}
+.lang-lvl{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:#64748B;text-transform:uppercase}
 .lang-bg{height:1.5px;background:var(--border);border-radius:1px;overflow:hidden}
 .lang-fill{height:100%;background:var(--gold);border-radius:1px;width:0;transition:width 1s cubic-bezier(.16,1,.3,1)}
-.expl-item{display:flex;align-items:flex-start;gap:.45rem;margin-bottom:.55rem;font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.45}
+.expl-item{display:flex;align-items:flex-start;gap:.45rem;margin-bottom:.55rem;font-size:.875rem;color:var(--muted);font-weight:300;line-height:1.55}
 .expl-item:last-child{margin-bottom:0}
 .expl-arr{color:var(--gold);font-size:.68rem;margin-top:2px;flex-shrink:0;font-family:'JetBrains Mono',monospace}
 
@@ -492,22 +492,22 @@ html.light .principle-row:hover{background:rgba(0,0,0,.025)}
 .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;pointer-events:none;background:radial-gradient(ellipse,rgba(var(--gold-rgb),.055),transparent 65%);z-index:0}
 .cta-h2{font-family:'Playfair Display',Georgia,serif;font-weight:900;color:var(--text);letter-spacing:-.025em;line-height:.95;margin-bottom:1.4rem;font-size:clamp(2.5rem,7vw,5rem)}
 .cta-h2 em{font-style:italic;color:var(--gold)}
-.cta-sub{font-size:clamp(.88rem,2.2vw,1.05rem);color:var(--muted);line-height:1.75;max-width:480px;margin:0 auto 2.5rem;font-weight:300}
+.cta-sub{font-size:clamp(.9375rem,2.2vw,1.1rem);color:var(--muted);line-height:1.75;max-width:480px;margin:0 auto 2.5rem;font-weight:300}
 .cta-btns{display:flex;flex-wrap:wrap;gap:.875rem;justify-content:center;margin-bottom:2.5rem}
 .cta-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.5rem 1.5rem;margin-bottom:2.5rem}
-.cta-meta span{font-family:'JetBrains Mono',monospace;font-size:.56rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em}
+.cta-meta span{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:#64748B;text-transform:uppercase;letter-spacing:.1em}
 .cta-links{display:flex;align-items:center;justify-content:center;gap:1.4rem;padding-top:1.75rem;border-top:1px solid var(--border)}
 .cta-link{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.06em;transition:color .2s}
 .cta-link:hover{color:var(--gold)}
 .cta-vline{width:1px;height:12px;background:var(--dim)}
-.cta-micro{font-family:'DM Sans',system-ui,sans-serif;font-size:.78rem;color:var(--dim);font-style:italic;margin-top:2rem;font-weight:300}
+.cta-micro{font-family:'DM Sans',system-ui,sans-serif;font-size:.8125rem;color:#64748B;font-style:italic;margin-top:2rem;font-weight:300}
 
 /* ═══════════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════════ */
 footer{border-top:1px solid var(--border);padding:1.75rem 0;position:relative;z-index:1}
 .footer-inner{max-width:1100px;margin:0 auto;padding:0 clamp(1.5rem,5vw,2.5rem);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.875rem}
-.footer-copy,.footer-right{font-family:'JetBrains Mono',monospace;font-size:.56rem;color:var(--dim);letter-spacing:.05em}
+.footer-copy,.footer-right{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:#64748B;letter-spacing:.05em}
 .footer-email{color:var(--muted);transition:color .2s}
 .footer-email:hover{color:var(--gold)}
 
@@ -833,17 +833,17 @@ footer{border-top:1px solid var(--border);padding:1.75rem 0;position:relative;z-
         <div>
           <div style="font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.9rem;color:var(--text);margin-bottom:.3rem">Chairperson</div>
           <div style="font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--muted);margin-bottom:.4rem">May 2023 – May 2024</div>
-          <div style="font-size:.8rem;color:var(--muted);font-weight:300;line-height:1.5">Directed overall strategy for the university's premier entrepreneurship ecosystem. Led executive board of 25 members. Spearheaded Mumbai's largest 24-hr student business hackathon.</div>
+          <div style="font-size:.875rem;color:var(--muted);font-weight:300;line-height:1.6">Directed overall strategy for the university's premier entrepreneurship ecosystem. Led executive board of 25 members. Spearheaded Mumbai's largest 24-hr student business hackathon.</div>
         </div>
         <div>
           <div style="font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.9rem;color:var(--text);margin-bottom:.3rem">Treasurer</div>
           <div style="font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--muted);margin-bottom:.4rem">Jun 2022 – Apr 2023</div>
-          <div style="font-size:.8rem;color:var(--muted);font-weight:300;line-height:1.5">Managed complete financial ledger &amp; budget allocation for multiple large-scale student events. Built partnerships with startup founders &amp; angel investors.</div>
+          <div style="font-size:.875rem;color:var(--muted);font-weight:300;line-height:1.6">Managed complete financial ledger &amp; budget allocation for multiple large-scale student events. Built partnerships with startup founders &amp; angel investors.</div>
         </div>
         <div>
           <div style="font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.9rem;color:var(--text);margin-bottom:.3rem">Jr. Technical Coordinator</div>
           <div style="font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--muted);margin-bottom:.4rem">Jun 2021 – May 2022</div>
-          <div style="font-size:.8rem;color:var(--muted);font-weight:300;line-height:1.5">Maintained web infrastructure using HTML, CSS &amp; GitHub. Managed web presence and event communication systems.</div>
+          <div style="font-size:.875rem;color:var(--muted);font-weight:300;line-height:1.6">Maintained web infrastructure using HTML, CSS &amp; GitHub. Managed web presence and event communication systems.</div>
         </div>
       </div>
       <div class="card-accent-bar"></div>
