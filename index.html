@@ -495,12 +495,21 @@ html.light .principle-row:hover{background:rgba(0,0,0,.025)}
 .cta-sub{font-size:clamp(.9375rem,2.2vw,1.1rem);color:var(--muted);line-height:1.75;max-width:480px;margin:0 auto 2.5rem;font-weight:300}
 .cta-btns{display:flex;flex-wrap:wrap;gap:.875rem;justify-content:center;margin-bottom:2.5rem}
 .cta-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.5rem 1.5rem;margin-bottom:2.5rem}
-.cta-meta span{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:#64748B;text-transform:uppercase;letter-spacing:.1em}
-.cta-links{display:flex;align-items:center;justify-content:center;gap:1.4rem;padding-top:1.75rem;border-top:1px solid var(--border)}
-.cta-link{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.06em;transition:color .2s}
-.cta-link:hover{color:var(--gold)}
-.cta-vline{width:1px;height:12px;background:var(--dim)}
-.cta-micro{font-family:'DM Sans',system-ui,sans-serif;font-size:.8125rem;color:#64748B;font-style:italic;margin-top:2rem;font-weight:300}
+.cta-meta span{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:#94A3B8;text-transform:uppercase;letter-spacing:.1em}
+.cta-links{display:flex;align-items:center;justify-content:center;gap:2rem;padding-top:2rem;border-top:1px solid var(--border)}
+.cta-link{
+  font-family:'JetBrains Mono',monospace;font-size:.78rem;color:#94A3B8;
+  letter-spacing:.06em;position:relative;padding-bottom:3px;
+  transition:color .25s cubic-bezier(.16,1,.3,1),text-shadow .25s;
+}
+.cta-link::after{
+  content:'';position:absolute;bottom:0;left:0;width:0;height:1px;
+  background:var(--accent);transition:width .3s cubic-bezier(.16,1,.3,1);
+}
+.cta-link:hover{color:var(--accent);text-shadow:0 0 18px rgba(var(--gold-rgb),.35)}
+.cta-link:hover::after{width:100%}
+.cta-vline{width:1px;height:14px;background:rgba(255,255,255,.1)}
+.cta-micro{font-family:'DM Sans',system-ui,sans-serif;font-size:.875rem;color:#64748B;font-style:italic;margin-top:2rem;font-weight:300}
 
 /* ═══════════════════════════════════════════════════
    FOOTER
@@ -523,6 +532,225 @@ footer{border-top:1px solid var(--border);padding:1.75rem 0;position:relative;z-
 @keyframes riseIn{to{opacity:1;transform:translateY(0)}}
 @keyframes pulseAnim{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
 @keyframes scrollPulse{0%,100%{opacity:.25}50%{opacity:.85}}
+
+/* ═══════════════════════════════════════════════════
+   ABOUT ME / VIDEO SECTION
+═══════════════════════════════════════════════════ */
+#about-me{background:transparent}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr}}
+
+/* Video player container */
+.video-wrap{
+  position:relative;width:100%;border-radius:14px;overflow:hidden;
+  background:rgba(17,24,39,0.9);border:1px solid var(--glass-border);
+  /* 16:9 aspect ratio */
+  aspect-ratio:16/9;
+  box-shadow:0 24px 64px rgba(0,0,0,.5),0 0 0 1px rgba(59,130,246,.08);
+  transition:box-shadow .35s,border-color .35s;
+}
+.video-wrap:hover{
+  box-shadow:0 32px 80px rgba(0,0,0,.55),0 0 32px rgba(59,130,246,.12);
+  border-color:rgba(59,130,246,.18);
+}
+/* Thumbnail image */
+.video-thumb{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:opacity .35s,transform .5s cubic-bezier(.16,1,.3,1);
+  z-index:1;
+}
+/* Iframe — hidden until play */
+.video-iframe{
+  position:absolute;inset:0;width:100%;height:100%;border:none;
+  z-index:2;opacity:0;transition:opacity .4s;pointer-events:none;
+}
+.video-wrap.playing .video-thumb{opacity:0;transform:scale(1.03)}
+.video-wrap.playing .video-iframe{opacity:1;pointer-events:all}
+.video-wrap.playing .video-play-btn{opacity:0;pointer-events:none}
+/* Play button overlay */
+.video-play-btn{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  z-index:3;cursor:pointer;transition:opacity .25s;
+}
+.video-play-circle{
+  width:68px;height:68px;border-radius:50%;
+  background:rgba(59,130,246,.85);
+  border:2px solid rgba(255,255,255,.3);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1),background .2s,box-shadow .2s;
+  box-shadow:0 0 32px rgba(59,130,246,.35);
+}
+.video-play-btn:hover .video-play-circle{
+  transform:scale(1.12);
+  background:var(--accent);
+  box-shadow:0 0 48px rgba(59,130,246,.55);
+}
+.video-play-circle svg{margin-left:4px}
+/* Gradient overlay at bottom of video */
+.video-overlay-grad{
+  position:absolute;bottom:0;left:0;right:0;height:60px;
+  background:linear-gradient(to top,rgba(6,8,22,.7),transparent);
+  pointer-events:none;z-index:4;
+}
+/* Video label strip */
+.video-label{
+  position:absolute;bottom:12px;left:14px;z-index:5;
+  display:flex;align-items:center;gap:8px;pointer-events:none;
+}
+.video-label-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
+  animation:pulseAnim 2s ease-in-out infinite;
+}
+.video-label-txt{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:rgba(255,255,255,.7);letter-spacing:.1em;text-transform:uppercase}
+
+/* Right side content */
+.about-content{}
+.about-name{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem}
+.about-title{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:clamp(1.6rem,4vw,2.5rem);color:var(--text);letter-spacing:-.03em;line-height:1.1;margin-bottom:1.25rem}
+.about-bio{font-size:.9375rem;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:1.75rem}
+.about-checks{display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
+.about-check{display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:var(--text-sec);font-weight:300}
+.about-check-icon{
+  width:20px;height:20px;border-radius:50%;border:1px solid rgba(59,130,246,.4);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  background:rgba(59,130,246,.08);
+  font-size:.6rem;color:var(--accent);
+}
+/* Quick-link cards below video */
+.about-quick{display:grid;grid-template-columns:repeat(2,1fr);gap:.625rem;margin-top:1.5rem}
+.about-quick-card{
+  background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:8px;
+  padding:.75rem 1rem;cursor:pointer;transition:border-color .25s,transform .25s cubic-bezier(.16,1,.3,1),background .25s;
+  text-decoration:none;display:block;
+}
+.about-quick-card:hover{border-color:rgba(59,130,246,.3);transform:translateY(-2px);background:rgba(17,24,39,.95)}
+.about-quick-label{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.about-quick-name{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.875rem;color:var(--text);letter-spacing:-.01em}
+
+/* Light mode overrides */
+html.light .video-wrap{background:rgba(255,255,255,.95)}
+html.light .about-quick-card:hover{background:rgba(255,255,255,.98)}
+
+/* ═══════════════════════════════════════════════════
+   WORKFLOWS / SYSTEMS SECTION
+═══════════════════════════════════════════════════ */
+#workflows{background:transparent}
+.wf-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+}
+@media(max-width:900px){.wf-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.wf-grid{grid-template-columns:1fr}}
+
+/* Workflow card */
+.wf-card{
+  position:relative;border-radius:12px;overflow:hidden;
+  background:var(--glass-bg);border:1px solid var(--glass-border);
+  cursor:pointer;
+  transition:border-color .35s,box-shadow .35s,transform .35s cubic-bezier(.16,1,.3,1);
+  aspect-ratio:16/10;
+}
+.wf-card:hover{
+  border-color:rgba(59,130,246,.3);transform:translateY(-4px);
+  box-shadow:0 20px 56px rgba(0,0,0,.4),0 0 32px rgba(59,130,246,.1);
+}
+/* Screenshot image — zooms on hover */
+.wf-img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .55s cubic-bezier(.16,1,.3,1),opacity .3s;
+  z-index:1;
+}
+.wf-card:hover .wf-img{transform:scale(1.06)}
+/* Placeholder shown when no image is set */
+.wf-placeholder{
+  position:absolute;inset:0;z-index:1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;
+  background:linear-gradient(135deg,rgba(17,24,39,.9),rgba(10,15,30,.95));
+}
+.wf-placeholder-icon{font-size:2rem;opacity:.4}
+.wf-placeholder-txt{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:#475569;letter-spacing:.12em;text-transform:uppercase}
+/* Gradient overlay — always on */
+.wf-grad{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(to top,rgba(6,8,22,.92) 0%,rgba(6,8,22,.4) 45%,transparent 75%);
+  transition:background .35s;
+}
+.wf-card:hover .wf-grad{
+  background:linear-gradient(to top,rgba(6,8,22,.95) 0%,rgba(6,8,22,.55) 45%,transparent 70%);
+}
+/* Top accent bar */
+.wf-top-bar{
+  position:absolute;top:0;left:0;right:0;height:2px;z-index:3;
+  background:linear-gradient(90deg,var(--accent),var(--accent2),transparent);
+  opacity:0;transition:opacity .35s;
+}
+.wf-card:hover .wf-top-bar{opacity:1}
+/* Card info */
+.wf-info{
+  position:absolute;bottom:0;left:0;right:0;z-index:3;
+  padding:.875rem 1rem;
+}
+.wf-stack{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--accent2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem;opacity:.85}
+.wf-title{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.95rem;color:#F8FAFC;letter-spacing:-.02em;line-height:1.2}
+/* Hover arrow */
+.wf-arrow{
+  position:absolute;top:.875rem;right:.875rem;z-index:3;
+  width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:scale(.8);
+  transition:opacity .25s,transform .3s cubic-bezier(.34,1.56,.64,1),border-color .2s;
+}
+.wf-card:hover .wf-arrow{opacity:1;transform:scale(1)}
+
+/* ── MODAL / LIGHTBOX ── */
+.wf-modal-overlay{
+  position:fixed;inset:0;z-index:500;
+  background:rgba(0,0,0,.85);backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:center;padding:1.5rem;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.wf-modal-overlay.open{opacity:1;pointer-events:all}
+.wf-modal{
+  background:rgba(10,15,30,.98);border:1px solid rgba(59,130,246,.2);
+  border-radius:16px;overflow:hidden;width:100%;max-width:860px;
+  max-height:90vh;overflow-y:auto;
+  transform:translateY(24px) scale(.97);
+  transition:transform .35s cubic-bezier(.16,1,.3,1);
+  box-shadow:0 40px 100px rgba(0,0,0,.7),0 0 0 1px rgba(59,130,246,.1);
+}
+.wf-modal-overlay.open .wf-modal{transform:translateY(0) scale(1)}
+.wf-modal-img-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#0A0F1E}
+.wf-modal-img{width:100%;height:100%;object-fit:cover;display:block}
+.wf-modal-placeholder{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#0A0F1E,#111827);
+  font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#475569;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+.wf-modal-body{padding:1.75rem 2rem 2rem}
+.wf-modal-stack{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--accent2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem}
+.wf-modal-title{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:1.4rem;color:var(--text);letter-spacing:-.03em;margin-bottom:.875rem}
+.wf-modal-desc{font-size:.9375rem;color:var(--muted);line-height:1.72;font-weight:300}
+.wf-modal-close{
+  position:absolute;top:1rem;right:1rem;z-index:10;
+  width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);
+  background:rgba(6,8,22,.8);display:flex;align-items:center;justify-content:center;
+  color:var(--muted);cursor:pointer;transition:border-color .2s,color .2s,background .2s;
+}
+.wf-modal-close:hover{border-color:rgba(255,255,255,.3);color:var(--text);background:rgba(17,24,39,.95)}
+/* Tags inside modal */
+.wf-modal-tags{display:flex;flex-wrap:wrap;gap:.375rem;margin-top:1.1rem}
+
+html.light .wf-card{background:rgba(255,255,255,.88)}
+html.light .wf-placeholder{background:linear-gradient(135deg,rgba(241,245,249,.95),rgba(248,250,252,.98))}
+html.light .wf-placeholder-txt{color:#94A3B8}
+html.light .wf-grad{background:linear-gradient(to top,rgba(15,23,42,.8) 0%,rgba(15,23,42,.25) 50%,transparent 75%)}
+html.light .wf-modal{background:rgba(255,255,255,.98);border-color:rgba(37,99,235,.15)}
+html.light .wf-modal-body{border-top:1px solid rgba(15,23,42,.07)}
+html.light .wf-modal-close{background:rgba(248,250,252,.95);border-color:rgba(15,23,42,.12)}
+html.light .wf-title{color:#0F172A}
+
 </style>
 </head>
 <body>
@@ -544,6 +772,8 @@ footer{border-top:1px solid var(--border);padding:1.75rem 0;position:relative;z-
     <ul class="nav-links">
       <li><a href="#work"      class="nav-link">Experience</a></li>
       <li><a href="#projects"  class="nav-link">Projects</a></li>
+      <li><a href="#workflows" class="nav-link">Systems</a></li>
+      <li><a href="#about-me"  class="nav-link">About Me</a></li>
       <li><a href="#thinking"  class="nav-link">Thinking</a></li>
       <li><a href="#stack"     class="nav-link">Stack</a></li>
       <li><a href="#education" class="nav-link">Education</a></li>
@@ -564,6 +794,8 @@ footer{border-top:1px solid var(--border);padding:1.75rem 0;position:relative;z-
 <div id="mob-menu">
   <a href="#work"      class="mob-link" onclick="closeMob()">Experience</a>
   <a href="#projects"  class="mob-link" onclick="closeMob()">Projects</a>
+  <a href="#workflows" class="mob-link" onclick="closeMob()">Systems</a>
+  <a href="#about-me"  class="mob-link" onclick="closeMob()">About Me</a>
   <a href="#thinking"  class="mob-link" onclick="closeMob()">Thinking</a>
   <a href="#stack"     class="mob-link" onclick="closeMob()">Stack</a>
   <a href="#education" class="mob-link" onclick="closeMob()">Education</a>
@@ -612,6 +844,139 @@ footer{border-top:1px solid var(--border);padding:1.75rem 0;position:relative;z-
   <div class="scroll-hint">
     <div class="scroll-line"></div>
     <span class="scroll-txt">scroll</span>
+  </div>
+</section>
+
+
+<!-- ═══════════ ABOUT ME / VIDEO ═══════════ -->
+<!-- ─────────────────────────────────────────────────────────
+     HOW TO UPDATE VIDEO:
+     Option A — YouTube:  set data-src="https://www.youtube.com/embed/YOUR_ID?autoplay=1"
+     Option B — Loom:     set data-src="https://www.loom.com/embed/YOUR_ID?autoplay=1"
+     Option C — MP4:      change <iframe> to <video src="your-video.mp4" controls>
+     THUMBNAIL: replace src on .video-thumb <img> with your thumbnail image path
+───────────────────────────────────────────────────────────── -->
+<section id="about-me" class="section">
+  <div class="container">
+    <div class="section-label fade-up"><span class="num">00 //</span> About Me</div>
+
+    <div class="about-grid">
+
+      <!-- LEFT — Video player -->
+      <div class="fade-up">
+        <!--
+          VIDEO WRAPPER
+          To activate: add class "playing" via JS (already wired below)
+          or swap the entire block for a plain <video> tag
+        -->
+        <div class="video-wrap" id="videoWrap">
+          <!--
+            THUMBNAIL — replace this src with your actual thumbnail
+            Recommended: 1280×720px JPG/WebP
+          -->
+          <img
+            class="video-thumb"
+            src="./video-thumb.jpg"
+            alt="Ved Gawade — Introduction"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          >
+
+          <!--
+            IFRAME — replace data-src with your actual video embed URL
+            YouTube:  https://www.youtube.com/embed/VIDEO_ID?autoplay=1&rel=0
+            Loom:     https://www.loom.com/embed/VIDEO_ID?autoplay=1
+          -->
+          <iframe
+            id="videoIframe"
+            class="video-iframe"
+            data-src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&rel=0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+            allowfullscreen
+          ></iframe>
+
+          <!-- Play button overlay -->
+          <div class="video-play-btn" id="videoPlayBtn">
+            <div class="video-play-circle">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Bottom gradient + label -->
+          <div class="video-overlay-grad"></div>
+          <div class="video-label">
+            <span class="video-label-dot"></span>
+            <span class="video-label-txt">60 sec intro · watch now</span>
+          </div>
+        </div>
+
+        <!-- Quick-link cards below the video -->
+        <div class="about-quick">
+          <a href="#work" class="about-quick-card">
+            <div class="about-quick-label">Featured At</div>
+            <div class="about-quick-name">SuperAGI · TPM</div>
+          </a>
+          <a href="#workflows" class="about-quick-card">
+            <div class="about-quick-label">Built</div>
+            <div class="about-quick-name">AI Workflow Systems</div>
+          </a>
+          <a href="#projects" class="about-quick-card">
+            <div class="about-quick-label">Published</div>
+            <div class="about-quick-name">IEEE Research · 2024</div>
+          </a>
+          <a href="#education" class="about-quick-card">
+            <div class="about-quick-label">Studying</div>
+            <div class="about-quick-name">M.Sc. Digital Innovation</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT — Introduction content -->
+      <div class="about-content fade-up" style="transition-delay:.1s">
+        <div class="about-name">Ved Gawade · Ulm, Germany</div>
+        <h2 class="about-title">Technical Program Manager.<br>AI Operator.<br>Systems Builder.</h2>
+        <p class="about-bio">
+          I build systems that help teams move faster. From AI workflow automation and product operations to cross-functional execution and startup environments — I turn complexity into execution.
+          <br><br>
+          Previously at SuperAGI shipping AI-driven products. Currently pursuing M.Sc. Digital Innovation Management at HNU while building operational systems for early-stage teams.
+        </p>
+
+        <div class="about-checks">
+          <div class="about-check">
+            <div class="about-check-icon">✓</div>
+            Technical Program Management
+          </div>
+          <div class="about-check">
+            <div class="about-check-icon">✓</div>
+            AI Workflow Automation &amp; Agentic Systems
+          </div>
+          <div class="about-check">
+            <div class="about-check-icon">✓</div>
+            Product Operations &amp; Sprint Execution
+          </div>
+          <div class="about-check">
+            <div class="about-check-icon">✓</div>
+            Cross-functional Leadership
+          </div>
+          <div class="about-check">
+            <div class="about-check-icon">✓</div>
+            Agile Delivery &amp; Process Design
+          </div>
+          <div class="about-check">
+            <div class="about-check-icon">✓</div>
+            Founder Mindset · 0→1 Operator
+          </div>
+        </div>
+
+        <div style="display:flex;gap:.875rem;flex-wrap:wrap">
+          <a href="./ved-gawade-cv.pdf" download class="btn-p" style="font-size:.85rem;padding:11px 22px">↓ Download CV</a>
+          <a href="mailto:vedgawade1219@gmail.com" class="btn-s" style="font-size:.85rem;padding:11px 22px">Get in Touch</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -903,6 +1268,172 @@ footer{border-top:1px solid var(--border);padding:1.75rem 0;position:relative;z-
   </div>
 </section>
 
+
+<!-- ═══════════ WORKFLOWS / SYSTEMS ═══════════ -->
+<!-- ─────────────────────────────────────────────────────────
+     HOW TO ADD A WORKFLOW CARD:
+     Copy one <div class="wf-card"> block and paste it into .wf-grid.
+     Update: data-title, data-stack, data-desc, and data-img attributes.
+     To add a screenshot: set data-img="./screenshots/your-file.png"
+     The modal will automatically pick up title, stack, desc, and img.
+───────────────────────────────────────────────────────────── -->
+<section id="workflows" class="section">
+  <div class="container">
+    <div class="section-label fade-up"><span class="num">03.5 //</span> Systems</div>
+    <div class="sec-head fade-up">
+      <h2 class="sec-h2" style="margin-bottom:0">Built systems <em>that scale.</em></h2>
+      <p class="sec-note">Workflow automations, AI pipelines, and operational systems I&apos;ve designed and shipped.</p>
+    </div>
+
+    <!-- ═══ WORKFLOW GRID ═══
+         Each card: data-title, data-stack, data-desc, data-img (optional screenshot path)
+         Leave data-img empty or omit for placeholder view.
+    ═══════════════════════ -->
+    <div class="wf-grid">
+
+      <!-- CARD 1 -->
+      <div class="wf-card fade-up"
+           data-title="AI SDR Pipeline"
+           data-stack="n8n + OpenAI + Apollo"
+           data-desc="End-to-end outbound sales automation pipeline. Pulls prospect data from Apollo, enriches with GPT-4, personalises email sequences, and auto-sends via SMTP. Reduced SDR manual workload by ~70%."
+           data-img=""
+      >
+        <div class="wf-placeholder"><div class="wf-placeholder-icon">⚡</div><div class="wf-placeholder-txt">Screenshot coming soon</div></div>
+        <div class="wf-grad"></div>
+        <div class="wf-top-bar"></div>
+        <div class="wf-info">
+          <div class="wf-stack">n8n + OpenAI + Apollo</div>
+          <div class="wf-title">AI SDR Pipeline</div>
+        </div>
+        <div class="wf-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="wf-card fade-up" style="transition-delay:.06s"
+           data-title="Lead Enrichment Engine"
+           data-stack="Apollo + GPT-4 + Notion"
+           data-desc="Automated lead enrichment system. Ingests raw company lists, runs GPT-powered qualification scoring, ICP matching, and pushes enriched profiles to a Notion CRM database — all without manual intervention."
+           data-img=""
+      >
+        <div class="wf-placeholder"><div class="wf-placeholder-icon">🔍</div><div class="wf-placeholder-txt">Screenshot coming soon</div></div>
+        <div class="wf-grad"></div>
+        <div class="wf-top-bar"></div>
+        <div class="wf-info">
+          <div class="wf-stack">Apollo + GPT-4 + Notion</div>
+          <div class="wf-title">Lead Enrichment Engine</div>
+        </div>
+        <div class="wf-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="wf-card fade-up" style="transition-delay:.12s"
+           data-title="Investor Intelligence System"
+           data-stack="Anthropic + Notion + Apps Script"
+           data-desc="Built for on.chained — a regulatory intel and investor profiling pipeline. Pulls SEC filings, runs Claude-powered analysis to extract investment patterns, and populates a structured Notion database for deal sourcing."
+           data-img=""
+      >
+        <div class="wf-placeholder"><div class="wf-placeholder-icon">🧠</div><div class="wf-placeholder-txt">Screenshot coming soon</div></div>
+        <div class="wf-grad"></div>
+        <div class="wf-top-bar"></div>
+        <div class="wf-info">
+          <div class="wf-stack">Anthropic + Notion + Apps Script</div>
+          <div class="wf-title">Investor Intelligence System</div>
+        </div>
+        <div class="wf-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="wf-card fade-up" style="transition-delay:.18s"
+           data-title="CRM Automation Layer"
+           data-stack="HubSpot + Zapier + GPT"
+           data-desc="Automated CRM hygiene and pipeline management. Auto-tags incoming leads, generates follow-up drafts using GPT, routes to correct pipeline stage, and sends Slack alerts for high-priority prospects."
+           data-img=""
+      >
+        <div class="wf-placeholder"><div class="wf-placeholder-icon">⚙️</div><div class="wf-placeholder-txt">Screenshot coming soon</div></div>
+        <div class="wf-grad"></div>
+        <div class="wf-top-bar"></div>
+        <div class="wf-info">
+          <div class="wf-stack">HubSpot + Zapier + GPT</div>
+          <div class="wf-title">CRM Automation Layer</div>
+        </div>
+        <div class="wf-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="wf-card fade-up" style="transition-delay:.24s"
+           data-title="AI Reporting Pipeline"
+           data-stack="Notion + Zapier + GPT-4"
+           data-desc="Internal ops reporting automation at SuperAGI. Replaced 6+ hours/week of manual status update writing with an automated pipeline that pulls ClickUp data, summarises with GPT, and posts formatted reports to Slack."
+           data-img=""
+      >
+        <div class="wf-placeholder"><div class="wf-placeholder-icon">📊</div><div class="wf-placeholder-txt">Screenshot coming soon</div></div>
+        <div class="wf-grad"></div>
+        <div class="wf-top-bar"></div>
+        <div class="wf-info">
+          <div class="wf-stack">Notion + Zapier + GPT-4</div>
+          <div class="wf-title">AI Reporting Pipeline</div>
+        </div>
+        <div class="wf-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="wf-card fade-up" style="transition-delay:.30s"
+           data-title="Agentic Meeting Intelligence"
+           data-stack="SuperAGI + LangGraph + Notion"
+           data-desc="AI-powered meeting agent built during SuperAGI tenure. Joins calls, generates live transcripts, extracts action items with ownership attribution, and auto-creates tasks in ClickUp. Reduced post-meeting admin to near zero."
+           data-img=""
+      >
+        <div class="wf-placeholder"><div class="wf-placeholder-icon">🤖</div><div class="wf-placeholder-txt">Screenshot coming soon</div></div>
+        <div class="wf-grad"></div>
+        <div class="wf-top-bar"></div>
+        <div class="wf-info">
+          <div class="wf-stack">SuperAGI + LangGraph + Notion</div>
+          <div class="wf-title">Agentic Meeting Intelligence</div>
+        </div>
+        <div class="wf-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </div>
+
+    </div><!-- end .wf-grid -->
+
+    <div class="divider-row fade-up" style="margin-top:2.5rem;transition-delay:.2s">
+      <div class="divider-line"></div>
+      <span class="divider-txt">More systems available on request</span>
+      <div class="divider-line"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WORKFLOW MODAL — rendered once, populated by JS -->
+<div class="wf-modal-overlay" id="wfModalOverlay">
+  <div class="wf-modal" id="wfModal">
+    <div class="wf-modal-img-wrap" id="wfModalImgWrap">
+      <!-- Image or placeholder injected by JS -->
+    </div>
+    <button class="wf-modal-close" id="wfModalClose" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="wf-modal-body">
+      <div class="wf-modal-stack" id="wfModalStack"></div>
+      <div class="wf-modal-title" id="wfModalTitle"></div>
+      <div class="wf-modal-desc"  id="wfModalDesc"></div>
+      <div class="wf-modal-tags"  id="wfModalTags"></div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════ THINKING ═══════════ -->
 <section id="thinking" class="section">
   <div class="container">
@@ -1046,8 +1577,8 @@ footer{border-top:1px solid var(--border);padding:1.75rem 0;position:relative;z-
       <h2 class="cta-h2 fade-up" style="transition-delay:.06s">Open to the right <em>opportunity.</em></h2>
       <p class="cta-sub fade-up" style="transition-delay:.12s">Not looking for just any role. Looking for a team that's building something real, moving fast & needs someone who can hold the complexity together — and ship.</p>
       <div class="cta-btns fade-up" style="transition-delay:.18s">
-        <a href="mailto:vedgawade1219@gmail.com" class="btn-p" style="font-size:.9rem;padding:13px 28px">Send me a message →</a>
-        <a href="https://www.linkedin.com/in/ved-gawade/" target="_blank" class="btn-s" style="font-size:.9rem;padding:13px 28px">View LinkedIn ↗</a>
+        <!-- ▼ CHANGE THIS HREF to your actual CV PDF path e.g. "./ved-gawade-cv.pdf" -->
+        <a href="./ved-gawade-cv.pdf" download class="btn-p" style="font-size:.9rem;padding:13px 28px">↓ Download CV</a>
       </div>
       <div class="cta-meta fade-up" style="transition-delay:.24s">
         <span>Ulm, Germany</span>
@@ -1299,6 +1830,75 @@ const langObs=new IntersectionObserver(entries=>{
   });
 },{threshold:.5});
 document.querySelectorAll('.lang-fill').forEach(b=>langObs.observe(b));
+
+/* ── VIDEO PLAY BUTTON ─────────────────────────────────── */
+(function(){
+  const wrap    = document.getElementById('videoWrap');
+  const playBtn = document.getElementById('videoPlayBtn');
+  const iframe  = document.getElementById('videoIframe');
+  if(!wrap||!playBtn||!iframe)return;
+  playBtn.addEventListener('click',()=>{
+    // Load the iframe src from data-src (avoids autoload)
+    if(!iframe.src||iframe.src===window.location.href){
+      iframe.src = iframe.getAttribute('data-src');
+    }
+    wrap.classList.add('playing');
+  });
+})();
+
+/* ── WORKFLOW MODAL ────────────────────────────────────── */
+(function(){
+  const overlay  = document.getElementById('wfModalOverlay');
+  const modal    = document.getElementById('wfModal');
+  const closeBtn = document.getElementById('wfModalClose');
+  const imgWrap  = document.getElementById('wfModalImgWrap');
+  const titleEl  = document.getElementById('wfModalTitle');
+  const stackEl  = document.getElementById('wfModalStack');
+  const descEl   = document.getElementById('wfModalDesc');
+  const tagsEl   = document.getElementById('wfModalTags');
+  if(!overlay)return;
+
+  function openModal(card){
+    const title = card.getAttribute('data-title')||'';
+    const stack = card.getAttribute('data-stack')||'';
+    const desc  = card.getAttribute('data-desc') ||'';
+    const img   = card.getAttribute('data-img')  ||'';
+
+    titleEl.textContent = title;
+    stackEl.textContent = stack;
+    descEl.textContent  = desc;
+
+    // Build image or placeholder
+    if(img){
+      imgWrap.innerHTML = `<img class="wf-modal-img" src="${img}" alt="${title}" loading="lazy">`;
+    } else {
+      imgWrap.innerHTML = `<div class="wf-modal-placeholder">/ screenshot · ${title.toLowerCase()}</div>`;
+    }
+
+    // Build tags from stack string
+    tagsEl.innerHTML = stack.split('+').map(s=>
+      `<span class="cap-tag">${s.trim()}</span>`
+    ).join('');
+
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow='';
+  }
+
+  // Wire up all wf-cards
+  document.querySelectorAll('.wf-card').forEach(card=>{
+    card.addEventListener('click',()=>openModal(card));
+  });
+
+  closeBtn.addEventListener('click',closeModal);
+  overlay.addEventListener('click',e=>{if(e.target===overlay)closeModal();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+})();
+
 </script>
 </body>
 </html>
