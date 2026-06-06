@@ -657,11 +657,22 @@ html.light .about-quick-card:hover{background:rgba(255,255,255,.98)}
 }
 /* Screenshot image — zooms on hover */
 .wf-img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  transition:transform .55s cubic-bezier(.16,1,.3,1),opacity .3s;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(1.1);
+  transition:
+      transform .55s cubic-bezier(.16,1,.3,1),
+      opacity .3s,
+      filter .3s;
   z-index:1;
 }
-.wf-card:hover .wf-img{transform:scale(1.06)}
+.wf-card:hover .wf-img{
+  transform:scale(1.05);
+  filter:brightness(1.2);
+}
 /* Placeholder shown when no image is set */
 .wf-placeholder{
   position:absolute;inset:0;z-index:1;
@@ -1296,17 +1307,22 @@ html.light .wf-title{color:#0F172A}
 
       <!-- CARD 1 -->
       <div class="wf-card fade-up"
-           data-title="AI SDR Pipeline"
-           data-stack="n8n + OpenAI + Apollo"
-           data-desc="End-to-end outbound sales automation pipeline. Pulls prospect data from Apollo, enriches with GPT-4, personalises email sequences, and auto-sends via SMTP. Reduced SDR manual workload by ~70%."
-           data-img=""
+           data-title="AI Asset Qualification Pipeline"
+           data-stack="N8N + GEMINI + SHEETS + TELEGRAM"
+           data-desc="An automated document intelligence workflow that processes uploaded asset qualification documents using Gemini AI, extracts structured information, stores results in Google Sheets, and automatically sends notifications through Telegram.
+
+The system removes manual review work by transforming unstructured documents into actionable structured data."
+           data-img="./assets/images/asset-qualification-workflow.png"
       >
-        <div class="wf-placeholder"><div class="wf-placeholder-icon">⚡</div><div class="wf-placeholder-txt">Screenshot coming soon</div></div>
-        <div class="wf-grad"></div>
+<img
+  src="./assets/images/asset-qualification-workflow.png"
+  alt="AI Asset Qualification Pipeline"
+  class="wf-img"
+/>        <div class="wf-grad"></div>
         <div class="wf-top-bar"></div>
         <div class="wf-info">
-          <div class="wf-stack">n8n + OpenAI + Apollo</div>
-          <div class="wf-title">AI SDR Pipeline</div>
+          <div class="wf-stack">N8N + GEMINI + SHEETS + TELEGRAM</div>
+          <div class="wf-title">AI Asset Qualification Pipeline</div>
         </div>
         <div class="wf-arrow">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
