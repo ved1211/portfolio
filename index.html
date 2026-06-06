@@ -876,7 +876,7 @@ html.light .wf-title{color:#0F172A}
           -->
           <img
             class="video-thumb"
-            src="./video-thumb.jpg"
+            src="./assets/images/Thumbnail.png"
             alt="Ved Gawade — Introduction"
             loading="lazy"
             onerror="this.style.display='none'"
@@ -887,13 +887,16 @@ html.light .wf-title{color:#0F172A}
             YouTube:  https://www.youtube.com/embed/VIDEO_ID?autoplay=1&rel=0
             Loom:     https://www.loom.com/embed/VIDEO_ID?autoplay=1
           -->
-          <iframe
-            id="videoIframe"
-            class="video-iframe"
-            data-src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&rel=0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-            allowfullscreen
-          ></iframe>
+          <video
+  id="videoIframe"
+  class="video-iframe"
+  src="./assets/video/intro.mp4"
+  controls
+  playsinline
+  preload="none"
+  controlsList="nodownload"
+></video>
+></video>
 
           <!-- Play button overlay -->
           <div class="video-play-btn" id="videoPlayBtn">
@@ -971,7 +974,7 @@ html.light .wf-title{color:#0F172A}
         </div>
 
         <div style="display:flex;gap:.875rem;flex-wrap:wrap">
-          <a href="./ved-gawade-cv.pdf" download class="btn-p" style="font-size:.85rem;padding:11px 22px">↓ Download CV</a>
+          <a href="/assets/CV/CV_Ved.pdf" download class="btn-p" style="font-size:.85rem;padding:11px 22px">↓ Download CV</a>
           <a href="mailto:vedgawade1219@gmail.com" class="btn-s" style="font-size:.85rem;padding:11px 22px">Get in Touch</a>
         </div>
       </div>
@@ -1578,7 +1581,7 @@ html.light .wf-title{color:#0F172A}
       <p class="cta-sub fade-up" style="transition-delay:.12s">Not looking for just any role. Looking for a team that's building something real, moving fast & needs someone who can hold the complexity together — and ship.</p>
       <div class="cta-btns fade-up" style="transition-delay:.18s">
         <!-- ▼ CHANGE THIS HREF to your actual CV PDF path e.g. "./ved-gawade-cv.pdf" -->
-        <a href="./ved-gawade-cv.pdf" download class="btn-p" style="font-size:.9rem;padding:13px 28px">↓ Download CV</a>
+        <a href="/assets/CV/CV_Ved.pdf" download class="btn-p" style="font-size:.9rem;padding:13px 28px">↓ Download CV</a>
       </div>
       <div class="cta-meta fade-up" style="transition-delay:.24s">
         <span>Ulm, Germany</span>
@@ -1839,10 +1842,8 @@ document.querySelectorAll('.lang-fill').forEach(b=>langObs.observe(b));
   if(!wrap||!playBtn||!iframe)return;
   playBtn.addEventListener('click',()=>{
     // Load the iframe src from data-src (avoids autoload)
-    if(!iframe.src||iframe.src===window.location.href){
-      iframe.src = iframe.getAttribute('data-src');
-    }
     wrap.classList.add('playing');
+iframe.play();
   });
 })();
 
