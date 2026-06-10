@@ -184,6 +184,13 @@ button{font-family:inherit;cursor:none;border:none;background:none}
 ═══════════════════════════════════════════════════ */
 #nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,8,22,0.55);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(255,255,255,0.035);padding:10px 20px;transition:background .3s,border-color .3s}
 #nav.scrolled{background:rgba(6,8,22,0.88);border-bottom-color:rgba(255,255,255,0.07)}
+html.light #nav{background:rgba(248,250,252,0.75);border-bottom-color:rgba(15,23,42,0.08)}
+html.light #nav.scrolled{background:rgba(248,250,252,0.94);border-bottom-color:rgba(15,23,42,0.12)}
+html.light .nav-logo{color:var(--text)}
+html.light .nav-link{color:#64748B}
+html.light .nav-link:hover{color:var(--text)}
+html.light .nav-cta{color:var(--accent);border-color:rgba(37,99,235,0.3)}
+html.light .hamburger span{background:var(--text)}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .nav-logo{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:15px;color:var(--text);letter-spacing:-.3px;transition:color .2s}
 .nav-logo span{color:var(--gold)}
@@ -217,8 +224,8 @@ button{font-family:inherit;cursor:none;border:none;background:none}
 /* ═══════════════════════════════════════════════════
    SECTION EYEBROW
 ═══════════════════════════════════════════════════ */
-.section-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--gold);letter-spacing:.2em;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;text-transform:uppercase}
-.section-label .num{color:#475569;font-size:.56rem}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.18em;margin-bottom:1.25rem;display:flex;align-items:center;gap:.6rem;text-transform:uppercase}
+.section-label .num{color:#64748B;font-size:.66rem}
 
 /* ═══════════════════════════════════════════════════
    SECTION TITLE
@@ -850,7 +857,7 @@ pre,code{overflow-x:auto}
 <!-- ═══════════ NAV ═══════════ -->
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo" onclick="scrollTo({top:0,behavior:'smooth'});return false">Ved<span>.</span></a>
+    <a href="#about-me" class="nav-logo" onclick="scrollTo({top:0,behavior:'smooth'});return false">Ved<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#work"      class="nav-link">Experience</a></li>
       <li><a href="#projects"  class="nav-link">Projects</a></li>
@@ -899,7 +906,7 @@ pre,code{overflow-x:auto}
     </h1>
 
     <p class="hero-sub">
-      Operations mind. Systems thinker. The person teams call when something important needs to actually get done.
+      Operations mind. Systems thinker. The person teams call when the work actually needs to get done.
     </p>
 
     <div class="hero-badges">
@@ -1547,7 +1554,7 @@ The system removes manual review work by transforming unstructured documents int
 <section id="stack" class="section">
   <div class="container">
     <div class="section-label fade-up"><span class="num">05 //</span> Stack</div>
-    <h2 class="sec-h2 fade-up">Tools are a means.<br><em>Systems are the end.</em></h2>
+    <h2 class="sec-h2 fade-up">Tools are means.<br><em>Systems are the end.</em></h2>
 
     <div class="stack-table fade-up">
       <div class="stack-headers">
