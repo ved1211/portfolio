@@ -31,16 +31,18 @@
   --nav-bg:       rgba(8,9,12,0.72);
   --glass-bg:     rgba(255,255,255,0.028);
   --glass-border: rgba(255,255,255,0.075);
-  /* ── CORAL → PERIWINKLE GRADIENT (screenshot 2) ── */
-  --grad:         linear-gradient(120deg,#FF9E7D 0%,#F98BA6 34%,#C99BE4 64%,#8AA6F2 100%);
-  --grad-soft:    linear-gradient(120deg,rgba(255,158,125,.16),rgba(201,155,228,.12) 55%,rgba(138,166,242,.14));
-  --accent:       #E393C0;
-  --accent2:      #8AA6F2;
-  --accent-warm:  #FF9E7D;
-  --accent-dim:   rgba(227,147,192,0.16);
-  --gold:         #E393C0;
-  --gold-dim:     rgba(227,147,192,0.16);
-  --gold-rgb:     227,147,192;
+  /* ── TITANIUM / IRIDESCENT CHROME ──
+     Polished silver through steel, with restrained violet + teal
+     iridescence at the edges. Light-on-dark, so it reads as metal. */
+  --grad:         linear-gradient(120deg,#EAF0F7 0%,#B9CBDF 26%,#8FA6C0 48%,#9A8FCB 66%,#79B6C8 84%,#E3EBF3 100%);
+  --grad-soft:    linear-gradient(120deg,rgba(185,203,223,.14),rgba(154,143,203,.10) 55%,rgba(121,182,200,.12));
+  --accent:       #AFC3D8;   /* titanium */
+  --accent2:      #79B6C8;   /* teal iridescence */
+  --accent-warm:  #9A8FCB;   /* violet iridescence */
+  --accent-dim:   rgba(175,195,216,0.16);
+  --gold:         #AFC3D8;
+  --gold-dim:     rgba(175,195,216,0.16);
+  --gold-rgb:     175,195,216;
   --canvas-op:    1;
 }
 
@@ -49,27 +51,30 @@
    Warm off-white · White cards · Blue accent ONLY
 ═══════════════════════════════════════════════════ */
 html.light {
-  /* ── CLEAN WHITE — ElevenLabs (screenshot 1) ── */
-  --bg:           #FBFBF9;
-  --bg2:          #F4F4F1;
-  --surface:      rgba(10,10,10,0.022);
-  --border:       rgba(10,10,10,0.10);
-  --border-hover: rgba(10,10,10,0.20);
-  --text:         #0A0A0A;
-  --text-sec:     #3A3A3C;
-  --muted:        #77777A;
-  --dim:          #C9C9C6;
-  --nav-bg:       rgba(251,251,249,0.72);
+  /* ── CLEAN WHITE, COOL-NEUTRAL — titanium in daylight ── */
+  --bg:           #F7F8FA;
+  --bg2:          #EDF0F4;
+  --surface:      rgba(13,17,22,0.022);
+  --border:       rgba(13,17,22,0.10);
+  --border-hover: rgba(13,17,22,0.20);
+  --text:         #0D1116;
+  --text-sec:     #38414B;
+  --muted:        #737C86;
+  --dim:          #C3C9D1;
+  --nav-bg:       rgba(247,248,250,0.72);
   --glass-bg:     rgba(255,255,255,0.85);
-  --glass-border: rgba(10,10,10,0.09);
-  --accent:       #C86AA0;
-  --accent2:      #6E86D8;
-  --accent-warm:  #E8825F;
-  --accent-dim:   rgba(200,106,160,0.12);
-  --gold:         #C86AA0;
-  --gold-dim:     rgba(200,106,160,0.12);
-  --gold-rgb:     200,106,160;
-  --canvas-op:    0.55;
+  --glass-border: rgba(13,17,22,0.09);
+  /* Gradient inverts to dark chrome so gradient TEXT stays readable on white */
+  --grad:         linear-gradient(120deg,#5C7186 0%,#3E5A73 28%,#4B5686 54%,#37788C 78%,#5C7186 100%);
+  --grad-soft:    linear-gradient(120deg,rgba(62,90,115,.10),rgba(75,86,134,.08) 55%,rgba(55,120,140,.10));
+  --accent:       #3E5A73;
+  --accent2:      #37788C;
+  --accent-warm:  #4B5686;
+  --accent-dim:   rgba(62,90,115,0.12);
+  --gold:         #3E5A73;
+  --gold-dim:     rgba(62,90,115,0.12);
+  --gold-rgb:     62,90,115;
+  --canvas-op:    0.45;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -82,24 +87,26 @@ html.light {
 #canvas{display:none}
 .orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0}
 
-/* Soft ambient gradient glows behind content — coral / periwinkle */
-.orb-1{width:900px;height:900px;background:radial-gradient(circle,rgba(255,158,125,.10) 0%,rgba(249,139,166,.05) 45%,transparent 68%);filter:blur(120px);top:-360px;left:-220px;animation:driftA 30s ease-in-out infinite alternate}
-.orb-2{width:760px;height:760px;background:radial-gradient(circle,rgba(138,166,242,.11) 0%,rgba(201,155,228,.05) 50%,transparent 68%);filter:blur(140px);bottom:-200px;right:-240px;animation:driftB 34s ease-in-out infinite alternate}
-.orb-3{width:520px;height:520px;background:radial-gradient(circle,rgba(201,155,228,.08) 0%,transparent 62%);filter:blur(110px);top:44%;left:-120px;animation:driftA 26s ease-in-out infinite alternate-reverse}
+/* Soft ambient glows behind content — cool titanium, deliberately faint */
+.orb-1{width:900px;height:900px;background:radial-gradient(circle,rgba(175,195,216,.07) 0%,rgba(154,143,203,.035) 45%,transparent 68%);filter:blur(120px);top:-360px;left:-220px;animation:driftA 30s ease-in-out infinite alternate}
+.orb-2{width:760px;height:760px;background:radial-gradient(circle,rgba(121,182,200,.07) 0%,rgba(143,166,192,.035) 50%,transparent 68%);filter:blur(140px);bottom:-200px;right:-240px;animation:driftB 34s ease-in-out infinite alternate}
+.orb-3{width:520px;height:520px;background:radial-gradient(circle,rgba(154,143,203,.05) 0%,transparent 62%);filter:blur(110px);top:44%;left:-120px;animation:driftA 26s ease-in-out infinite alternate-reverse}
 .orb-4,.orb-5,.orb-6,.orb-b1,.orb-b2,.orb-b3,.orb-b4,.orb-b5,.orb-b6{display:none}
 
 /* Light theme — near invisible ambient tint */
-html.light .orb-1{background:radial-gradient(circle,rgba(232,130,95,.08) 0%,transparent 65%)}
-html.light .orb-2{background:radial-gradient(circle,rgba(110,134,216,.08) 0%,transparent 65%)}
-html.light .orb-3{background:radial-gradient(circle,rgba(200,106,160,.06) 0%,transparent 62%)}
+html.light .orb-1{background:radial-gradient(circle,rgba(62,90,115,.06) 0%,transparent 65%)}
+html.light .orb-2{background:radial-gradient(circle,rgba(55,120,140,.06) 0%,transparent 65%)}
+html.light .orb-3{background:radial-gradient(circle,rgba(75,86,134,.05) 0%,transparent 62%)}
+/* Light gradient is dark chrome, so the primary button needs light text */
+html.light .btn-p{color:#F7F8FA}
 html.light body{background:var(--bg)}
 html.light .glass{background:var(--glass-bg);border-color:var(--glass-border)}
 html.light .glass:hover{box-shadow:0 18px 48px rgba(10,10,10,.08)}
 html.light .card-accent-bar{background:var(--grad)}
 html.light .theme-toggle:hover{border-color:var(--border-hover);background:rgba(10,10,10,.03)}
-html.light .theme-toggle-track{background:rgba(200,106,160,.14);border-color:rgba(200,106,160,.22)}
+html.light .theme-toggle-track{background:rgba(62,90,115,.14);border-color:rgba(62,90,115,.22)}
 html.light .theme-toggle-thumb{transform:translateX(14px);background:var(--accent)}
-html.light #mob-menu{background:rgba(251,251,249,.98)}
+html.light #mob-menu{background:rgba(247,248,250,.98)}
 html.light .proj-card:hover{box-shadow:0 14px 40px rgba(10,10,10,.08)}
 html.light .principle-row:hover{background:rgba(10,10,10,.028)}
 html.light .cap-tag{background:rgba(10,10,10,.03);border-color:rgba(10,10,10,.09)}
@@ -281,9 +288,9 @@ html.light #hero::before{
 }
 html.light #hero::after{
   background:linear-gradient(102deg,
-    rgba(251,251,249,0.86) 0%,
-    rgba(251,251,249,0.64) 34%,
-    rgba(251,251,249,0.24) 56%,
+    rgba(247,248,250,0.86) 0%,
+    rgba(247,248,250,0.64) 34%,
+    rgba(247,248,250,0.24) 56%,
     transparent 75%
   );
 }
@@ -1772,9 +1779,10 @@ The system removes manual review work by transforming unstructured documents int
      JAVASCRIPT
 ═══════════════════════════════════════════════════ -->
 <script>
-/* ── LIVE 3D GRADIENT ORB + PARTICLES (Three.js) ─────────
-   A large coral→periwinkle gradient sphere that drifts and
-   reacts to the cursor, wrapped in a soft particle field. ── */
+/* ── LIVE 3D TITANIUM ORB + PARTICLES (Three.js) ─────────
+   A large machined-metal sphere that drifts and reacts to the
+   cursor, wrapped in a soft particle field. It fades out past the
+   hero so it never competes with page text. ── */
 (function(){
   const canvasEl = document.getElementById('webgl');
   if(!canvasEl || typeof THREE === 'undefined'){ if(canvasEl) canvasEl.style.display='none'; return; }
@@ -1812,25 +1820,31 @@ The system removes manual review work by transforming unstructured documents int
       vPos = p;
       gl_Position = projectionMatrix * modelViewMatrix * vec4(p,1.0);
     }`;
+  /* Titanium: a dark steel body lit by one key light, with a polished
+     specular hit and restrained violet/teal iridescence at grazing angles.
+     Kept deliberately dark so page text stays readable over it. */
   const frag = `
     precision highp float;
     varying vec3 vNormal; varying vec3 vPos; varying float vDisp;
-    vec3 grad(float t){
-      vec3 coral=vec3(1.000,0.620,0.490);
-      vec3 pink =vec3(0.976,0.545,0.650);
-      vec3 lilac=vec3(0.788,0.608,0.894);
-      vec3 peri =vec3(0.541,0.651,0.949);
-      vec3 c=mix(coral,pink,smoothstep(0.00,0.34,t));
-      c=mix(c,lilac,smoothstep(0.34,0.64,t));
-      c=mix(c,peri ,smoothstep(0.64,1.00,t));
-      return c;
-    }
     void main(){
-      float t = clamp((vPos.y+1.35)/2.7 + vDisp*0.35, 0.0, 1.0);
-      vec3 col = grad(t);
-      vec3 vd = normalize(cameraPosition - vPos);
-      float fres = pow(1.0 - max(dot(normalize(vNormal), vd), 0.0), 2.2);
-      col += fres * 0.30;
+      vec3 N = normalize(vNormal);
+      vec3 V = normalize(cameraPosition - vPos);
+      float fres = pow(1.0 - max(dot(N,V), 0.0), 2.6);
+
+      // Brushed titanium body — dark slate into cool steel
+      float t = clamp((vPos.y + 1.35)/2.7 + vDisp*0.30, 0.0, 1.0);
+      vec3 body = mix(vec3(0.085,0.100,0.125), vec3(0.50,0.57,0.66), smoothstep(0.0,1.0,t));
+
+      // Key light specular — the polished highlight
+      vec3 L = normalize(vec3(0.55,0.85,0.65));
+      float spec = pow(max(dot(reflect(-L,N),V), 0.0), 32.0);
+      float diff = max(dot(N,L), 0.0);
+
+      // Iridescent rim — hue shifts with view angle, tinted cool
+      vec3 irid = 0.5 + 0.5*cos(6.2831*(fres*1.5 + vec3(0.0,0.33,0.67)) + 1.6);
+      irid = mix(vec3(0.72,0.80,0.90), irid, 0.42);
+
+      vec3 col = body*(0.35 + 0.65*diff) + fres*irid*0.70 + spec*vec3(0.95,0.97,1.0)*0.85;
       gl_FragColor = vec4(col, 1.0);
     }`;
   const orbMat = new THREE.ShaderMaterial({ uniforms, vertexShader:vert, fragmentShader:frag });
@@ -1845,7 +1859,8 @@ The system removes manual review work by transforming unstructured documents int
   const pGeo = new THREE.BufferGeometry();
   const pos = new Float32Array(N*3);
   const col = new Float32Array(N*3);
-  const stops = [[1.0,0.62,0.49],[0.976,0.545,0.65],[0.788,0.608,0.894],[0.541,0.651,0.949]];
+  // Titanium dust — silver through steel, with faint violet/teal iridescence
+  const stops = [[0.918,0.941,0.969],[0.725,0.796,0.875],[0.604,0.561,0.796],[0.475,0.714,0.784]];
   function sample(t){
     t=Math.min(Math.max(t,0),1); const s=t*3; const i=Math.min(Math.floor(s),2); const f=s-i;
     const a=stops[i], b=stops[i+1];
@@ -1877,6 +1892,31 @@ The system removes manual review work by transforming unstructured documents int
   }
   window.addEventListener('resize', onResize, {passive:true});
 
+  /* ── Scroll fade ──
+     The canvas is fixed, so without this the orb would sit behind every
+     section and wash out the text. It's a hero showpiece: full strength
+     at the top, almost gone once the hero is scrolled past. */
+  const heroEl = document.getElementById('hero');
+  let heroH = (heroEl ? heroEl.offsetHeight : window.innerHeight) || window.innerHeight;
+  let lastOp = -1;
+  function applyScrollFade(){
+    const k = Math.min(Math.max(window.scrollY / (heroH*0.75), 0), 1);
+    const themeBase = document.documentElement.classList.contains('light') ? 0.45 : 1;
+    const op = +(themeBase * (1 - k*0.94)).toFixed(3);
+    if(op !== lastOp){ lastOp = op; canvasEl.style.opacity = op; }
+  }
+  // Measured, not read every frame — offsetHeight forces a reflow
+  function measureHero(){
+    heroH = (heroEl ? heroEl.offsetHeight : window.innerHeight) || window.innerHeight;
+    applyScrollFade();
+  }
+  measureHero();
+  window.addEventListener('resize', measureHero, {passive:true});
+  // Belt and braces: the tick drives this too, but the tick pauses when the
+  // tab is hidden — this keeps the fade correct on scroll regardless.
+  window.addEventListener('scroll', applyScrollFade, {passive:true});
+  window.__orbFade = function(){ lastOp = -1; applyScrollFade(); };  // theme toggle re-applies
+
   /* ── Loop ── */
   const clock = new THREE.Clock();
   let running = true;
@@ -1887,6 +1927,7 @@ The system removes manual review work by transforming unstructured documents int
     requestAnimationFrame(tick);
     const dt = Math.min(clock.getDelta(), 0.05);
     uniforms.uTime.value += reduce ? 0 : dt;
+    applyScrollFade();   // driven here so it never depends on scroll events firing
 
     target.x += (mouse.x - target.x) * 0.05;
     target.y += (mouse.y - target.y) * 0.05;
@@ -1928,8 +1969,8 @@ const themeLabel=document.getElementById('themeLabel');
 const saved=localStorage.getItem('vg-theme');
 /* Obsidian dark is the intended default; only go light if explicitly chosen */
 if(saved==='light')applyLight();
-function applyLight(){html_el.classList.add('light');themeIcon.textContent='☀️';themeLabel.textContent='LIGHT'}
-function applyDark(){html_el.classList.remove('light');themeIcon.textContent='🌙';themeLabel.textContent='DARK'}
+function applyLight(){html_el.classList.add('light');themeIcon.textContent='☀️';themeLabel.textContent='LIGHT';if(window.__orbFade)window.__orbFade()}
+function applyDark(){html_el.classList.remove('light');themeIcon.textContent='🌙';themeLabel.textContent='DARK';if(window.__orbFade)window.__orbFade()}
 function toggleTheme(){
   if(html_el.classList.contains('light')){applyDark();localStorage.setItem('vg-theme','dark')}
   else{applyLight();localStorage.setItem('vg-theme','light')}
