@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ved Gawade | AI Automation &amp; Product Operations</title>
-<meta name="description" content="I build AI systems that give teams their week back. Automation pipelines, product operations and technical program management. Based in Ulm, open to working-student roles across Bavaria, Baden-Wurttemberg and remote Germany.">
+<meta name="description" content="I build AI systems that give teams their week back. Automation pipelines, product operations and technical program management. Based in Munich, open to working-student roles across Bavaria, Baden-Wurttemberg and remote Germany.">
 <meta name="author" content="Ved Gawade">
 <link rel="canonical" href="https://ved1211.github.io/portfolio/">
 <meta property="og:type" content="website">
@@ -281,6 +281,8 @@ section { position: relative; }
   transition: opacity .8s ease;
 }
 body.loaded #spine { opacity: 1; }
+/* The horizontal rail slides underneath the spine; get the spine out of its way. */
+body.loaded.rail-pinned #spine { opacity: 0; pointer-events: none; }
 .spine-track {
   position: absolute;
   left: 5px; top: 6px; bottom: 6px;
@@ -521,6 +523,20 @@ body.loaded .hero-h1 .w > i { transform: none; }
 }
 .h-progress i { position: absolute; inset: 0; background: var(--signal); transform: scaleX(0); transform-origin: left; }
 
+/* Rail viewport: fades cards out at both edges instead of guillotining them,
+   and keeps the leftmost card clear of the fixed spine. */
+.h-viewport {
+  --edge: 92px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--edge), #000 calc(100% - 72px), transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 var(--edge), #000 calc(100% - 72px), transparent 100%);
+}
+/* Below 1024 the rail is a native swipe scroller, so no mask and no clipping. */
+@media (max-width: 1179px) { .h-viewport { --edge: 32px; } }
+@media (max-width: 1024px) {
+  .h-viewport { overflow: visible; -webkit-mask-image: none; mask-image: none; }
+}
+
 .h-rail { display: flex; gap: 22px; padding-left: max(32px, calc((100vw - 1120px) / 2 + 32px)); will-change: transform; }
 
 .sys {
@@ -697,6 +713,82 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
   .h-sticky { position: static; height: auto; }
   .h-rail { flex-wrap: wrap; transform: none !important; padding-left: 0; }
 }
+
+/* ── Greeter + Blueprint game ──────────────────────────── */
+#greet {
+  position: fixed; right: 22px; bottom: 22px; z-index: 190;
+  width: 322px; max-width: calc(100vw - 32px);
+  background: var(--card); border: 1px solid var(--rule);
+  border-radius: 14px; box-shadow: var(--shadow);
+  padding: 16px 16px 14px;
+  transform: translateY(18px); opacity: 0; pointer-events: none;
+  transition: opacity .5s ease, transform .5s cubic-bezier(.16,1,.3,1);
+}
+#greet.in { opacity: 1; transform: none; pointer-events: auto; }
+.greet-top { display: flex; gap: 11px; align-items: flex-start; }
+.bot { flex: 0 0 38px; width: 38px; height: 38px; }
+.bot-eye { transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .bot-eye { animation: blink 5.5s infinite; }
+  @keyframes blink { 0%,92%,100% { transform: scaleY(1); } 95% { transform: scaleY(.12); } }
+}
+.greet-say { font-size: .88rem; line-height: 1.5; color: var(--ink-2); }
+.greet-say b { color: var(--ink); font-weight: 600; }
+.greet-btns { display: flex; gap: 8px; margin-top: 13px; }
+.greet-btns button {
+  flex: 1 1 auto; font: inherit; font-size: .78rem; cursor: pointer;
+  padding: 9px 10px; border-radius: 8px; border: 1px solid var(--rule);
+  background: transparent; color: var(--ink-2); transition: all .18s ease;
+}
+.greet-btns button:hover { border-color: var(--ink); color: var(--ink); }
+.greet-btns .g-main { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.greet-btns .g-main:hover { background: var(--signal); border-color: var(--signal); color: #fff; }
+#greet-x {
+  position: absolute; top: 8px; right: 10px; background: none; border: 0;
+  color: var(--ink-4); font-size: 1rem; line-height: 1; cursor: pointer; padding: 4px;
+}
+#greet-x:hover { color: var(--ink); }
+
+/* Game shell */
+#bp { position: fixed; inset: 0; z-index: 240; display: none; }
+#bp.on { display: block; }
+.bp-scrim { position: absolute; inset: 0; background: rgba(23,21,15,.62); backdrop-filter: blur(3px); }
+.bp-box {
+  position: relative; margin: auto; top: 50%; transform: translateY(-50%);
+  width: min(760px, calc(100vw - 32px)); max-height: calc(100vh - 40px); overflow: auto;
+  background: var(--card); border: 1px solid var(--rule); border-radius: 16px;
+  box-shadow: 0 30px 80px -30px rgba(0,0,0,.55); padding: 26px;
+}
+.bp-x { position: absolute; top: 12px; right: 14px; background: none; border: 0; color: var(--ink-3); font-size: 1.2rem; cursor: pointer; padding: 4px 8px; }
+.bp-x:hover { color: var(--ink); }
+.bp-h { font-family: 'Newsreader', Georgia, serif; font-size: 1.6rem; letter-spacing: -.01em; margin: 0 0 4px; }
+.bp-h em { font-style: italic; color: var(--signal); }
+.bp-sub { font-size: .86rem; color: var(--ink-3); margin: 0 0 20px; }
+.bp-grid { display: grid; grid-template-columns: 300px 1fr; gap: 24px; align-items: start; }
+@media (max-width: 680px) { .bp-grid { grid-template-columns: 1fr; } }
+.bp-stage { background: var(--paper-2); border: 1px solid var(--rule-soft); border-radius: 10px; padding: 8px; }
+.bp-svg { display: block; width: 100%; height: auto; }
+.bp-ghost { fill: none; stroke: var(--ink-4); stroke-width: 1.4; stroke-dasharray: 4 4; opacity: .5; }
+.bp-solid { opacity: 0; transition: opacity .45s ease; }
+.bp-solid.up { opacity: 1; }
+.bp-steps { display: flex; flex-direction: column; gap: 8px; }
+.bp-step {
+  display: flex; align-items: center; gap: 10px; text-align: left;
+  font: inherit; font-size: .87rem; cursor: pointer; width: 100%;
+  padding: 11px 13px; border-radius: 9px; border: 1px solid var(--rule);
+  background: transparent; color: var(--ink); transition: all .16s ease;
+}
+.bp-step:hover:not(:disabled) { border-color: var(--ink); transform: translateX(2px); }
+.bp-step .bp-n { font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: var(--ink-4); }
+.bp-step.done { background: var(--signal-bg); border-color: var(--signal); color: var(--ink-3); cursor: default; }
+.bp-step.done .bp-n { color: var(--signal); }
+.bp-step.bad { animation: bpshake .32s; border-color: var(--signal); }
+@keyframes bpshake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+@media (prefers-reduced-motion: reduce) { .bp-step.bad { animation: none; } }
+.bp-msg { min-height: 40px; margin-top: 14px; font-size: .84rem; line-height: 1.5; color: var(--ink-2); }
+.bp-msg b { color: var(--signal); }
+.bp-foot { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--rule-soft); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.bp-score { font-family: 'JetBrains Mono', monospace; font-size: .74rem; color: var(--ink-3); margin-right: auto; }
 </style>
 </head>
 <body>
@@ -795,8 +887,8 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
       </div>
       <p class="avail-body">
         AI automation, product operations and technical program management.
-        Based in <b>Ulm</b>, on-site across Bavaria &amp; Baden-Württemberg
-        (Munich, Stuttgart, Nürnberg, Ingolstadt, Walldorf, Frankfurt),
+        Based in <b>Munich</b>, on-site across Bavaria &amp; Baden-Württemberg
+        (Stuttgart, Nürnberg, Ingolstadt, Walldorf, Frankfurt),
         or <b>remote anywhere in Germany</b>. English-speaking teams.
       </p>
     </div>
@@ -849,11 +941,11 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
         <div class="case-rows">
           <div class="case-row">
             <div class="case-k">Problem</div>
-            <div class="case-v">A small startup team was tracking regulation, asset documentation and investor research by hand, across scattered docs. Every answer meant someone re-reading everything.</div>
+            <div class="case-v">A startup team tracked regulation, asset documentation and investor research by hand. Every answer meant re-reading everything.</div>
           </div>
           <div class="case-row">
             <div class="case-k">Built</div>
-            <div class="case-v">Three production pipelines on the Anthropic API: a regulatory intelligence feed, an asset documentation workflow, and an investor profiler. All of it wired into Notion and Apps Script, so the output landed where the team already worked.</div>
+            <div class="case-v">Three production pipelines on the Anthropic API, wired into Notion so the output landed where the team already worked.</div>
           </div>
           <div class="case-row">
             <div class="case-k">Result</div>
@@ -876,11 +968,11 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
         <div class="case-rows">
           <div class="case-row">
             <div class="case-k">Problem</div>
-            <div class="case-v">The team was burning six-plus hours a week writing manual status updates. Work that produced no product, and that nobody enjoyed doing.</div>
+            <div class="case-v">The team burned six-plus hours a week writing status updates by hand.</div>
           </div>
           <div class="case-row">
             <div class="case-k">Built</div>
-            <div class="case-v">An automated reporting pipeline that pulls task state, drafts the update with GPT, and posts it into Notion on a schedule. No new tool for anyone to learn.</div>
+            <div class="case-v">A pipeline that pulls task state, drafts the update with GPT and posts it on a schedule. No new tool to learn.</div>
           </div>
           <div class="case-row">
             <div class="case-k">Result</div>
@@ -897,17 +989,17 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
       <div class="case-idx">03 /</div>
       <div>
         <div class="case-h">
-          <h3 class="case-title">Shipping AI products across four surfaces</h3>
+          <h3 class="case-title">Shipping AI products across six surfaces</h3>
           <span class="case-org">SuperAGI · Palo Alto</span>
         </div>
         <div class="case-rows">
           <div class="case-row">
             <div class="case-k">Problem</div>
-            <div class="case-v">The AI product spanned CRM integrations, SDR workflows, a Chrome plugin and a mobile app. Blockers stacked up in the gap between engineering and product, and delivery dates moved.</div>
+            <div class="case-v">Six products in flight at once. Blockers stacked up in the gap between engineering and product, and dates moved.</div>
           </div>
           <div class="case-row">
             <div class="case-k">Built</div>
-            <div class="case-v">End-to-end program management from architecture planning through launch, plus a two-week sprint system in ClickUp and Notion, and the ceremonies to hold it together across frontend, backend and leadership.</div>
+            <div class="case-v">Two-week sprints, 40+ tracked action items, and one weekly report to 10+ stakeholders on progress, risk and blockers.</div>
           </div>
           <div class="case-row">
             <div class="case-k">Result</div>
@@ -936,43 +1028,45 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
         <p class="sec-lede rv" style="margin-bottom:0">Smaller automations I've designed, built and handed over. Walkthroughs available on request.</p>
       </div>
 
+      <div class="h-viewport">
       <div class="h-rail" id="hRail">
         <article class="sys">
           <div class="sys-i">01 / QUALIFICATION</div>
           <h3 class="sys-n">AI Asset Qualification Pipeline</h3>
-          <p class="sys-d">Scores inbound assets against criteria and pushes the verdict straight to the team channel, before anyone opens a spreadsheet.</p>
+          <p class="sys-d">Scores inbound assets and posts the verdict to the team channel, before anyone opens a spreadsheet.</p>
           <div class="sys-s">n8n · Gemini · Sheets · Telegram</div>
         </article>
         <article class="sys">
           <div class="sys-i">02 / ENRICHMENT</div>
           <h3 class="sys-n">Lead Enrichment Engine</h3>
-          <p class="sys-d">Turns a bare company name into a researched, structured profile that is ready for outreach without a human pass.</p>
+          <p class="sys-d">Turns a bare company name into a structured profile, ready for outreach without a human pass.</p>
           <div class="sys-s">Apollo · GPT-4 · Notion</div>
         </article>
         <article class="sys">
           <div class="sys-i">03 / INTELLIGENCE</div>
           <h3 class="sys-n">Investor Intelligence System</h3>
-          <p class="sys-d">Profiles investors from public signal and keeps every record current without anyone maintaining it by hand.</p>
+          <p class="sys-d">Profiles investors from public signal and keeps every record current on its own.</p>
           <div class="sys-s">Anthropic · Notion · Apps Script</div>
         </article>
         <article class="sys">
           <div class="sys-i">04 / CRM</div>
           <h3 class="sys-n">CRM Automation Layer</h3>
-          <p class="sys-d">Removes the copy-paste between pipeline stages, so the CRM stays accurate on its own instead of through discipline.</p>
+          <p class="sys-d">Removes the copy-paste between pipeline stages, so the CRM stays accurate without discipline.</p>
           <div class="sys-s">HubSpot · Zapier · GPT</div>
         </article>
         <article class="sys">
           <div class="sys-i">05 / MEETINGS</div>
           <h3 class="sys-n">Agentic Meeting Intelligence</h3>
-          <p class="sys-d">Pulls decisions and owners out of meetings and files them where the work actually lives, not in a doc nobody reopens.</p>
+          <p class="sys-d">Pulls decisions and owners out of meetings and files them where the work lives.</p>
           <div class="sys-s">SuperAGI · LangGraph · Notion</div>
         </article>
         <article class="sys">
           <div class="sys-i">06 / MONITORING</div>
           <h3 class="sys-n">Regulatory Intel Feed</h3>
-          <p class="sys-d">Watches for regulatory change in a narrow domain and summarises only the part that actually affects the business.</p>
+          <p class="sys-d">Watches for regulatory change and summarises only the part that affects the business.</p>
           <div class="sys-s">Claude API · Notion</div>
         </article>
+      </div>
       </div>
 
       <div class="wrap">
@@ -1000,12 +1094,11 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
         <div>
           <div class="job-role">Technical Program Manager <span>· SuperAGI</span></div>
           <p class="job-d">
-            Ran technical programs for AI products end to end, covering CRM integrations, AI SDR
-            workflows, a Chrome plugin and a mobile app, from architecture planning to launch.
-            Introduced a two-week sprint system in ClickUp and Notion, and stayed the point of
-            contact between engineering and product so blockers got resolved instead of escalated.
+            Ran delivery across six products: Meeting Agents, CRM, AI SDR, Chrome plugin, billing
+            and mobile. Introduced two-week sprints, and stayed the point of contact between
+            engineering and product so blockers got resolved instead of escalated.
           </p>
-          <span class="job-win">↑ 30% task completion · 7 AI products shipped</span>
+          <span class="job-win">↑ 30% task completion · 6 products · 40+ action items tracked</span>
         </div>
       </article>
 
@@ -1014,11 +1107,10 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
         <div>
           <div class="job-role">Website Marketing Manager <span>· TUM Business Game</span></div>
           <p class="job-d">
-            Leading web architecture and tracking for Europe's premier student-led case competition,
-            optimising the funnel for application conversion and keeping the site fast through peak
-            traffic. Working across design and communications to automate what used to be manual.
+            Designed and built the site for Europe's premier student-led case competition, and run
+            all content and releases through the CMS.
           </p>
-          <span class="job-win">Currently active</span>
+          <span class="job-win">Astro · TypeScript · Vercel · Currently active</span>
         </div>
       </article>
 
@@ -1027,9 +1119,8 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
         <div>
           <div class="job-role">Junior Project Manager <span>· Greenox Tech</span></div>
           <p class="job-d">
-            Delivered a client's Phase 1 with real-time Kanban and milestone tracking, coordinating
-            design, engineering and sales through structured status reporting and clear ownership
-            of action items.
+            Aligned design, engineering and sales on one delivery plan, and ran the weekly syncs
+            that drove open items to closure.
           </p>
           <span class="job-win">↑ 25% GTM delivery · ↑ 20% team velocity</span>
         </div>
@@ -1040,9 +1131,8 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
         <div>
           <div class="job-role">Founding Member <span>· Maestro Music Institute</span></div>
           <p class="job-d">
-            Built a remote music education platform from zero: business strategy, student acquisition,
-            scheduling, CRM and the operational systems that let it grow without collapsing under its
-            own admin. Mentored students through Trinity College of Music graded exams.
+            Set up the CRM, scheduling and student records that took the institute from one
+            instructor to a full academy, and prepared 400+ students for Trinity College London exams.
           </p>
           <span class="job-win">400+ students · 4 years operating</span>
         </div>
@@ -1053,10 +1143,8 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
         <div>
           <div class="job-role">Chairperson, then Treasurer <span>· Entrepreneurship Cell</span></div>
           <p class="job-d">
-            Three years through the ranks to Chairperson, directing strategy for the university's
-            entrepreneurship ecosystem with a 25-member executive board, and running Mumbai's largest
-            24-hour student business hackathon. Also built and ran the E-Cell portal in React and
-            MongoDB, which scaled to 2,000+ users and absorbed a 5,000-user surge in one month.
+            Three years to Chairperson, directing a 25-member board and running Mumbai's largest
+            24-hour student hackathon. Built the E-Cell portal that carried it, on React and MongoDB.
           </p>
           <span class="job-win">25-member board · 2,000+ portal users</span>
         </div>
@@ -1078,14 +1166,12 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
       <div class="bio rv">
         <h2 class="sec-h2" style="margin-bottom:26px">Engineer by training, <em>operator by instinct.</em></h2>
         <p>
-          I studied Electronics &amp; Computer Science in Mumbai and published IoT and AI navigation
-          research at <strong>IEEE AECE 2024</strong>. But the part of engineering I kept returning to
-          wasn't the hardware. It was noticing where a team's time was leaking, and building the
-          thing that stopped it.
+          I studied Electronics &amp; Computer Science in Mumbai and published research at
+          <strong>IEEE AECE 2024</strong>. The part of engineering I kept returning to wasn't the
+          hardware. It was noticing where a team's time was leaking, and building the thing that
+          stopped it.
         </p>
         <p>
-          That's the job I've done at every stop since: at SuperAGI shipping AI products, at Greenox
-          running delivery, and at Maestro building the operational spine of a company from nothing.
           <strong>I'm technical enough to build the pipeline and organised enough to make the team
           actually adopt it.</strong>
         </p>
@@ -1123,9 +1209,7 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
           <div class="skill-h">Languages</div>
           <div class="langs">
             <div class="lang"><span>English</span><span class="lang-lv">C1 · Advanced</span></div>
-            <div class="lang"><span>German</span><span class="lang-lv">A2 · Learning</span></div>
-            <div class="lang"><span>Hindi</span><span class="lang-lv">Native</span></div>
-            <div class="lang" style="border-bottom:none"><span>Marathi</span><span class="lang-lv">Native</span></div>
+            <div class="lang" style="border-bottom:none"><span>German</span><span class="lang-lv">B1</span></div>
           </div>
         </div>
       </div>
@@ -1144,7 +1228,7 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
 
     <div class="rv">
       <article class="edu">
-        <div class="job-when">Oct 2025 – Jul 2027<span class="job-where">Neu-Ulm, Germany</span></div>
+        <div class="job-when">Oct 2025 – Sep 2027<span class="job-where">Neu-Ulm, Germany</span></div>
         <div>
           <div class="edu-deg">M.Sc. Digital Innovation Management</div>
           <div class="edu-school">Hochschule Neu-Ulm (HNU)</div>
@@ -1157,7 +1241,16 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
         <div>
           <div class="edu-deg">B.E. Electronics &amp; Computer Science</div>
           <div class="edu-school">SIES Graduate School of Technology · University of Mumbai</div>
-          <div class="edu-meta">CGPI 8.76 / 10 · Focus on AI, machine learning, deep learning, NLP and software engineering.</div>
+          <div class="edu-meta">German grade 1.6 · CGPA 8.76 / 10 · Focus on AI, machine learning, software engineering and project management.</div>
+        </div>
+      </article>
+
+      <article class="edu">
+        <div class="job-when">Project<span class="job-where">Paltech, Germany</span></div>
+        <div>
+          <div class="edu-deg">EU Cyber Resilience Act compliance analysis</div>
+          <div class="edu-school">Assessed an autonomous field robot against EU Regulation 2024/2847, clause by clause</div>
+          <div class="edu-meta">Mapped every requirement to its status, evidence and open actions, and delivered an audit-ready requirements register.</div>
         </div>
       </article>
 
@@ -1210,8 +1303,8 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
     </div>
 
     <footer>
-      <span>© 2026 Ved Gawade · Ulm, Germany</span>
-      <span>Available 20h/week · Bavaria, Baden-Württemberg &amp; remote</span>
+      <span>© 2026 Ved Gawade · Munich, Germany</span>
+      <span>Available 20h/week · Bavaria, Baden-Württemberg &amp; remote · <a href="#play">Build a house</a></span>
     </footer>
   </div>
 </section>
@@ -1516,11 +1609,17 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
 
     /* horizontal rail */
     if (hOuter && hRail && hSpan > 0) {
-      var top = hOuter.offsetTop;
+      /* offsetTop is relative to the nearest positioned ancestor (#systems is
+         relative), so it reads 0, so measure against the document instead. */
+      var top = hOuter.getBoundingClientRect().top + y;
       var prog = (y - top) / hSpan;
       prog = prog < 0 ? 0 : prog > 1 ? 1 : prog;
       hRail.style.transform = 'translate3d(' + (-hSpan * prog) + 'px,0,0)';
       if (hFill) hFill.style.transform = 'scaleX(' + prog.toFixed(4) + ')';
+      /* while the rail is actually sliding, the spine would sit on top of it */
+      body.classList.toggle('rail-pinned', prog > 0.001 && prog < 0.999);
+    } else if (body.classList.contains('rail-pinned')) {
+      body.classList.remove('rail-pinned');
     }
 
     /* spine */
@@ -1614,6 +1713,226 @@ footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; display: flex;
   }
 
   paintTheme();
+})();
+</script>
+
+<!-- ═══════════ GREETER ═══════════ -->
+<aside id="greet" aria-live="polite" hidden>
+  <button id="greet-x" aria-label="Dismiss">✕</button>
+  <div class="greet-top">
+    <svg class="bot" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <rect x="9" y="13" width="22" height="17" rx="5" fill="var(--ink)"/>
+      <circle class="bot-eye" cx="16" cy="21" r="2.5" fill="var(--paper)"/>
+      <circle class="bot-eye" cx="24" cy="21" r="2.5" fill="var(--paper)"/>
+      <path d="M20 13V8" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="20" cy="6.5" r="2.2" fill="var(--signal)"/>
+      <path d="M6 20h3M31 20h3" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <p class="greet-say" id="greet-say">
+      Hello. You can read the <b>serious version</b> of this site, or you can
+      build a house with me in about thirty seconds. Both are on brand.
+    </p>
+  </div>
+  <div class="greet-btns">
+    <button class="g-main" id="greet-work">Show me the work</button>
+    <button id="greet-play">Let's build</button>
+  </div>
+</aside>
+
+<!-- ═══════════ BLUEPRINT GAME ═══════════ -->
+<div id="bp" role="dialog" aria-modal="true" aria-labelledby="bp-h">
+  <div class="bp-scrim" data-bp-close></div>
+  <div class="bp-box">
+    <button class="bp-x" data-bp-close aria-label="Close">✕</button>
+    <h2 class="bp-h" id="bp-h">Blueprint<em>.</em></h2>
+    <p class="bp-sub">Six steps, one workable order. Every wrong call is rework, and rework is the whole job.</p>
+
+    <div class="bp-grid">
+      <div class="bp-stage">
+        <svg class="bp-svg" viewBox="0 0 300 250" aria-hidden="true">
+          <defs>
+            <pattern id="bpg" width="15" height="15" patternUnits="userSpaceOnUse">
+              <path d="M15 0H0V15" fill="none" stroke="var(--rule-soft)" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect width="300" height="250" fill="url(#bpg)"/>
+          <!-- ghost blueprint -->
+          <rect class="bp-ghost" x="42" y="196" width="216" height="18"/>
+          <rect class="bp-ghost" x="60" y="104" width="180" height="92"/>
+          <path class="bp-ghost" d="M46 104 150 40 254 104"/>
+          <path class="bp-ghost" d="M150 104v22l-30 20 30 20"/>
+          <rect class="bp-ghost" x="80" y="126" width="34" height="30"/>
+          <rect class="bp-ghost" x="186" y="126" width="34" height="30"/>
+          <rect class="bp-ghost" x="132" y="156" width="36" height="40"/>
+          <!-- solid pieces -->
+          <g id="p0" class="bp-solid"><rect x="42" y="196" width="216" height="18" fill="var(--ink)"/></g>
+          <g id="p1" class="bp-solid"><rect x="60" y="104" width="180" height="92" fill="none" stroke="var(--ink)" stroke-width="3"/></g>
+          <g id="p2" class="bp-solid"><path d="M46 104 150 40 254 104" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/></g>
+          <g id="p3" class="bp-solid"><path d="M150 104v22l-30 20 30 20" fill="none" stroke="var(--signal)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+          <g id="p4" class="bp-solid">
+            <rect x="80" y="126" width="34" height="30" fill="var(--signal-bg)" stroke="var(--ink)" stroke-width="2"/>
+            <rect x="186" y="126" width="34" height="30" fill="var(--signal-bg)" stroke="var(--ink)" stroke-width="2"/>
+          </g>
+          <g id="p5" class="bp-solid">
+            <rect x="132" y="156" width="36" height="40" fill="var(--ink)"/>
+            <circle cx="160" cy="176" r="2.6" fill="var(--signal)"/>
+          </g>
+        </svg>
+      </div>
+
+      <div>
+        <div class="bp-steps" id="bp-steps"></div>
+        <div class="bp-msg" id="bp-msg">Pick what you would do first.</div>
+      </div>
+    </div>
+
+    <div class="bp-foot">
+      <span class="bp-score" id="bp-score">REWORK 0</span>
+      <button class="btn btn-2" id="bp-reset" type="button"><span>Reset</span></button>
+      <a class="btn btn-1" href="#contact" data-bp-close><span>Skip to the real thing</span></a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── Greeter + Blueprint: sequence the build, pay for rework ── */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Ordered build. Each wrong pick has a reason worth reading. */
+  var STEPS = [
+    { t: 'Pour the foundation', why: '' },
+    { t: 'Raise the frame',     why: 'Nothing to stand on yet. The frame needs a foundation under it.' },
+    { t: 'Fit the roof',        why: 'A roof needs walls to sit on. Shipping ahead of the dependency looks exactly like this.' },
+    { t: 'Run the wiring',      why: 'Wiring an open shell means doing it again after the first rain.' },
+    { t: 'Hang the windows',    why: 'Glaze before the wiring is in and you pull the glass straight back out.' },
+    { t: 'Hand over the keys',  why: 'Handing over an unfinished build is how you get it back.' }
+  ];
+
+  var bp     = document.getElementById('bp');
+  var elWrap = document.getElementById('bp-steps');
+  var elMsg  = document.getElementById('bp-msg');
+  var elScore= document.getElementById('bp-score');
+  if (!bp || !elWrap) return;
+
+  var next = 0, rework = 0, order = [];
+
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function render() {
+    elWrap.innerHTML = '';
+    order.forEach(function (idx) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'bp-step' + (idx < next ? ' done' : '');
+      b.disabled = idx < next;
+      b.innerHTML = '<span class="bp-n">' + (idx < next ? String(idx + 1).padStart(2, '0') : '--') +
+                    '</span><span>' + STEPS[idx].t + '</span>';
+      b.addEventListener('click', function () { pick(idx, b); });
+      elWrap.appendChild(b);
+    });
+  }
+
+  function paintPieces() {
+    for (var i = 0; i < STEPS.length; i++) {
+      var g = document.getElementById('p' + i);
+      if (g) g.classList.toggle('up', i < next);
+    }
+  }
+
+  function pick(idx, btn) {
+    if (idx === next) {
+      next++;
+      elMsg.textContent = next === STEPS.length ? '' : 'Good. What follows?';
+      render(); paintPieces();
+      if (next === STEPS.length) finish();
+    } else {
+      rework++;
+      elScore.textContent = 'REWORK ' + rework;
+      elMsg.innerHTML = '<b>Rework.</b> ' + STEPS[Math.max(idx, 1)].why;
+      if (!reduce) {
+        btn.classList.add('bad');
+        setTimeout(function () { btn.classList.remove('bad'); }, 340);
+      }
+    }
+  }
+
+  function finish() {
+    var line = rework === 0
+      ? 'Zero rework. You sequenced the dependencies before touching anything, which is the entire job I get hired for.'
+      : rework <= 2
+        ? 'Built, with ' + rework + ' bit' + (rework > 1 ? 's' : '') + ' of rework. That is a normal sprint, honestly.'
+        : rework + ' reworks. Every one of those is a real week somewhere. This is the cost I get paid to remove.';
+    elMsg.innerHTML = '<b>Handed over.</b> ' + line;
+  }
+
+  function reset() {
+    next = 0; rework = 0;
+    elScore.textContent = 'REWORK 0';
+    elMsg.textContent = 'Pick what you would do first.';
+    order = shuffle(STEPS.map(function (_, i) { return i; }));
+    render(); paintPieces();
+  }
+
+  var lastFocus = null;
+  function open() {
+    lastFocus = document.activeElement;
+    reset();
+    bp.classList.add('on');
+    document.body.style.overflow = 'hidden';
+    var f = bp.querySelector('.bp-step'); if (f) f.focus();
+  }
+  function close() {
+    bp.classList.remove('on');
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  bp.addEventListener('click', function (e) {
+    if (e.target.closest('[data-bp-close]')) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && bp.classList.contains('on')) close();
+  });
+  var rs = document.getElementById('bp-reset');
+  if (rs) rs.addEventListener('click', reset);
+
+  /* ── Greeter: once per session, never blocks the page ── */
+  var greet = document.getElementById('greet');
+  var seen = false;
+  try { seen = sessionStorage.getItem('vg-greet') === '1'; } catch (e) {}
+
+  function hideGreet() {
+    if (!greet) return;
+    greet.classList.remove('in');
+    setTimeout(function () { greet.hidden = true; }, 500);
+    try { sessionStorage.setItem('vg-greet', '1'); } catch (e) {}
+  }
+
+  if (greet && !seen) {
+    setTimeout(function () {
+      greet.hidden = false;
+      requestAnimationFrame(function () { greet.classList.add('in'); });
+    }, reduce ? 400 : 2200);
+  }
+
+  var gx = document.getElementById('greet-x');
+  var gw = document.getElementById('greet-work');
+  var gp = document.getElementById('greet-play');
+  if (gx) gx.addEventListener('click', hideGreet);
+  if (gw) gw.addEventListener('click', hideGreet);
+  if (gp) gp.addEventListener('click', function () { hideGreet(); open(); });
+
+  /* Anything linking to #play opens the game (footer entry point) */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href="#play"]');
+    if (a) { e.preventDefault(); open(); }
+  });
 })();
 </script>
 
