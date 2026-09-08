@@ -1,0 +1,60 @@
+/* ═══════════════════════════════════════════════════════════
+   VED GAWADE / 2026
+   Concept: the site behaves like one of the pipelines it describes.
+   Live flow field behind the page, a workflow spine that runs as you
+   scroll, and one section that moves sideways instead of down.
+   Cool green-grey paper · deep forest ink · one brass accent.
+═══════════════════════════════════════════════════════════ */
+
+:root {
+  --paper:      #F2F4F0;
+  --paper-2:    #E4EAE2;
+  --card:       #FBFCF9;
+  --ink:        #131C17;
+  --ink-2:      #3B4A42;
+  --ink-3:      #6B7C72;
+  --ink-4:      #9AA9A0;
+  --rule:       rgba(19,28,23,0.13);
+  --rule-soft:  rgba(19,28,23,0.07);
+  --signal:     #A15C10;
+  --signal-bg:  rgba(161,92,16,0.09);
+  --shadow:     0 1px 2px rgba(19,28,23,.05), 0 14px 40px -22px rgba(19,28,23,.32);
+  --field-ink:  19,28,23;
+  --field-sig:  161,92,16;
+}
+
+html.dark {
+  --paper:      #0C110E;
+  --paper-2:    #131A15;
+  --card:       #151D18;
+  --ink:        #E9EFE9;
+  --ink-2:      #AFBCB3;
+  --ink-3:      #7D8B82;
+  --ink-4:      #55625A;
+  --rule:       rgba(233,239,233,0.15);
+  --rule-soft:  rgba(233,239,233,0.075);
+  --signal:     #DFA050;
+  --signal-bg:  rgba(223,160,80,0.11);
+  --shadow:     0 1px 2px rgba(0,0,0,.3), 0 14px 40px -22px rgba(0,0,0,.8);
+  --field-ink:  233,239,233;
+  --field-sig:  223,160,80;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background .4s ease, color .4s ease;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--signal); color: #FFF; }
+a { color: inherit; text-decoration: none; }
