@@ -58,7 +58,10 @@ export function createVoxelGame(canvas: HTMLCanvasElement): VoxelGame {
 
   // ── blueprint ghost ────────────────────────────────────
   const ghostGeo = new EdgesGeometry(new BoxGeometry(CELL, CELL, CELL));
-  const ghostMat = new LineBasicMaterial({ transparent: true, opacity: 0.28 });
+  // The whole plan at once is visual noise, so the plan sits faint and only
+  // what you can legally place next is picked out.
+  const ghostMat = new LineBasicMaterial({ transparent: true, opacity: 0.1 });
+  const ghostNext = new LineBasicMaterial({ transparent: true, opacity: 0.85 });
   const ghosts = new Map<string, LineSegments>();
   plan.forEach((_m, k) => {
     const [x, y, z] = k.split(',').map(Number);
@@ -81,6 +84,7 @@ export function createVoxelGame(canvas: HTMLCanvasElement): VoxelGame {
     const ink = new Color(cssColor('--ink', '#131C17'));
     scene.fog = new Fog(new Color(cssColor('--paper-2', '#E4EAE2')), 14, 40);
     ghostMat.color = ink;
+    ghostNext.color = new Color(cssColor('--signal', '#A15C10'));
     const gm = grid.material as LineBasicMaterial;
     gm.transparent = true;
     gm.opacity = dark ? 0.18 : 0.25;
@@ -148,10 +152,20 @@ export function createVoxelGame(canvas: HTMLCanvasElement): VoxelGame {
 
   function say(text: string, bad = false) { messageCb?.(text, bad); }
 
+  /** Faint for the whole plan, bright for cells that can legally go next. */
+  function markPlaceable() {
+    ghosts.forEach((g, k) => {
+      if (!g.visible) return;
+      const [x, y, z] = k.split(',').map(Number);
+      g.material = supported(x, y, z) ? ghostNext : ghostMat;
+    });
+  }
+
   function report() {
     let correct = 0;
     placed.forEach((_m, k) => { if (plan.has(k)) correct++; });
     const pct = Math.round((correct / plan.size) * 100);
+    markPlaceable();
     progressCb?.(pct, rework, correct === plan.size);
     if (correct === plan.size) {
       say(rework === 0
