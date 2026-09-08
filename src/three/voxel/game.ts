@@ -43,7 +43,7 @@ export function createVoxelGame(canvas: HTMLCanvasElement): VoxelGame {
   const sun = new DirectionalLight(0xffffff, 1.5);
   sun.position.set(6, 12, 8);
   scene.add(sun);
-  const rim = new DirectionalLight(new Color(cssColor('--signal', '#A15C10')), 0.35);
+  const rim = new DirectionalLight(new Color(cssColor('--signal', '#0F7A52')), 0.35);
   rim.position.set(-8, 4, -6);
   scene.add(rim);
 
@@ -81,10 +81,10 @@ export function createVoxelGame(canvas: HTMLCanvasElement): VoxelGame {
 
   function paintTheme() {
     const dark = isDark();
-    const ink = new Color(cssColor('--ink', '#131C17'));
-    scene.fog = new Fog(new Color(cssColor('--paper-2', '#E4EAE2')), 14, 40);
+    const ink = new Color(cssColor('--ink', '#151815'));
+    scene.fog = new Fog(new Color(cssColor('--paper-2', '#E7EAE4')), 14, 40);
     ghostMat.color = ink;
-    ghostNext.color = new Color(cssColor('--signal', '#A15C10'));
+    ghostNext.color = new Color(cssColor('--signal', '#0F7A52'));
     const gm = grid.material as LineBasicMaterial;
     gm.transparent = true;
     gm.opacity = dark ? 0.18 : 0.25;

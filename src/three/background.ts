@@ -93,13 +93,13 @@ export function initBackground(canvas: HTMLCanvasElement) {
   // ── colours follow the theme ───────────────────────────
   function paint() {
     const dark = isDark();
-    const ink = new Color(cssColor('--ink', '#131C17'));
+    const ink = new Color(cssColor('--ink', '#151815'));
     nodeMat.color = ink;
     lineMat.color = ink;
-    pulseMat.color = new Color(cssColor('--signal', '#A15C10'));
+    pulseMat.color = new Color(cssColor('--signal', '#0F7A52'));
     nodeMat.opacity = dark ? 0.34 : 0.3;
     lineMat.opacity = dark ? 0.1 : 0.09;
-    scene.fog = new Fog(new Color(cssColor('--paper', '#F2F4F0')), 30, 86);
+    scene.fog = new Fog(new Color(cssColor('--paper', '#F4F5F2')), 30, 86);
   }
   paint();
   onThemeChange(paint);

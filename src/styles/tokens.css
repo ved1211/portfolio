@@ -3,41 +3,41 @@
    Concept: the site behaves like one of the pipelines it describes.
    Live flow field behind the page, a workflow spine that runs as you
    scroll, and one section that moves sideways instead of down.
-   Cool green-grey paper · deep forest ink · one brass accent.
+   Stone paper · near-black ink · one emerald accent.
 ═══════════════════════════════════════════════════════════ */
 
 :root {
-  --paper:      #F2F4F0;
-  --paper-2:    #E4EAE2;
-  --card:       #FBFCF9;
-  --ink:        #131C17;
-  --ink-2:      #3B4A42;
-  --ink-3:      #6B7C72;
-  --ink-4:      #9AA9A0;
-  --rule:       rgba(19,28,23,0.13);
-  --rule-soft:  rgba(19,28,23,0.07);
-  --signal:     #A15C10;
-  --signal-bg:  rgba(161,92,16,0.09);
-  --shadow:     0 1px 2px rgba(19,28,23,.05), 0 14px 40px -22px rgba(19,28,23,.32);
-  --field-ink:  19,28,23;
-  --field-sig:  161,92,16;
+  --paper:      #F4F5F2;
+  --paper-2:    #E7EAE4;
+  --card:       #FDFEFC;
+  --ink:        #151815;
+  --ink-2:      #414640;
+  --ink-3:      #717A70;
+  --ink-4:      #A0A79E;
+  --rule:       rgba(21,24,21,0.13);
+  --rule-soft:  rgba(21,24,21,0.07);
+  --signal:     #0F7A52;
+  --signal-bg:  rgba(15,122,82,0.09);
+  --shadow:     0 1px 2px rgba(21,24,21,.05), 0 14px 40px -22px rgba(21,24,21,.32);
+  --field-ink:  21,24,21;
+  --field-sig:  15,122,82;
 }
 
 html.dark {
-  --paper:      #0C110E;
-  --paper-2:    #131A15;
-  --card:       #151D18;
-  --ink:        #E9EFE9;
-  --ink-2:      #AFBCB3;
-  --ink-3:      #7D8B82;
-  --ink-4:      #55625A;
-  --rule:       rgba(233,239,233,0.15);
-  --rule-soft:  rgba(233,239,233,0.075);
-  --signal:     #DFA050;
-  --signal-bg:  rgba(223,160,80,0.11);
+  --paper:      #0A0D0B;
+  --paper-2:    #111512;
+  --card:       #131815;
+  --ink:        #E9EEE9;
+  --ink-2:      #AFB9B0;
+  --ink-3:      #7E887F;
+  --ink-4:      #556058;
+  --rule:       rgba(233,238,233,0.15);
+  --rule-soft:  rgba(233,238,233,0.075);
+  --signal:     #34D399;
+  --signal-bg:  rgba(52,211,153,0.11);
   --shadow:     0 1px 2px rgba(0,0,0,.3), 0 14px 40px -22px rgba(0,0,0,.8);
-  --field-ink:  233,239,233;
-  --field-sig:  223,160,80;
+  --field-ink:  233,238,233;
+  --field-sig:  52,211,153;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
