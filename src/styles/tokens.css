@@ -21,6 +21,21 @@
   --shadow:     0 1px 2px rgba(21,24,21,.05), 0 14px 40px -22px rgba(21,24,21,.32);
   --field-ink:  21,24,21;
   --field-sig:  15,122,82;
+
+  /* Charts on the case study pages. Steps were checked with a colour-blind
+     simulation in both themes; amber always means "waiting or ageing". */
+  --viz-ready:    #A0A79E;
+  --viz-progress: #006944;
+  --viz-review:   #ED9E2F;
+  --viz-qa:       #309C6E;
+  --viz-done:     #BCE2CD;
+  --viz-before:   #8D958C;
+  --viz-after:    #107A52;
+  --viz-age-1:    #E9A53E;
+  --viz-age-2:    #D58207;
+  --viz-age-3:    #B66100;
+  --warn:         #995600;
+  --warn-bg:      rgba(233,165,62,0.14);
 }
 
 html.dark {
@@ -38,6 +53,19 @@ html.dark {
   --shadow:     0 1px 2px rgba(0,0,0,.3), 0 14px 40px -22px rgba(0,0,0,.8);
   --field-ink:  233,238,233;
   --field-sig:  52,211,153;
+
+  --viz-ready:    #6C746D;
+  --viz-progress: #22AC77;
+  --viz-review:   #BB7400;
+  --viz-qa:       #05764E;
+  --viz-done:     #16412E;
+  --viz-before:   #5F6560;
+  --viz-after:    #22AC77;
+  --viz-age-1:    #8A5600;
+  --viz-age-2:    #BE7700;
+  --viz-age-3:    #EBA42C;
+  --warn:         #EFB146;
+  --warn-bg:      rgba(239,177,70,0.12);
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }

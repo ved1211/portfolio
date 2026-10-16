@@ -1,0 +1,344 @@
+key,type,stream,priority,summary,created
+FLW-101,Story,Payments,Medium,Add SEPA direct debit,2025-11-20 13:12:00
+FLW-102,Story,Onboarding,Medium,Email verification reminder,2025-12-12 17:27:00
+FLW-103,Story,Payments,Low,Refund flow for partial orders,2025-12-03 13:42:00
+FLW-104,Story,Payments,Medium,Show VAT on invoices,2025-11-29 11:07:00
+FLW-105,Story,Onboarding,Medium,Welcome checklist,2025-12-13 14:41:00
+FLW-106,Story,Reporting,Medium,Chart for weekly usage,2025-12-06 15:52:00
+FLW-107,Story,Payments,High,Saved cards for returning customers,2025-11-13 09:34:00
+FLW-108,Bug,Payments,High,Wrong total in 3-d secure challenge screen,2025-12-06 11:08:00
+FLW-109,Story,Reporting,Medium,Export report as CSV,2025-11-11 10:12:00
+FLW-110,Bug,Onboarding,Low,Fix progress bar on setup,2025-11-13 10:32:00
+FLW-111,Story,Onboarding,High,Welcome checklist,2025-11-06 14:23:00
+FLW-112,Story,Payments,Medium,Refund flow for partial orders,2025-12-04 15:11:00
+FLW-113,Bug,Payments,Medium,Fix refund flow for partial orders,2025-11-30 10:21:00
+FLW-114,Story,Payments,High,Payment receipt email,2025-11-26 14:37:00
+FLW-115,Story,Payments,Medium,3-D Secure challenge screen,2025-11-16 08:48:00
+FLW-116,Bug,Payments,Low,Wrong total in refund flow for partial orders,2025-12-08 09:47:00
+FLW-117,Story,Payments,High,3-D Secure challenge screen,2025-11-08 16:27:00
+FLW-118,Tech Debt,Onboarding,Low,Upgrade library for single sign-on option,2025-11-08 16:06:00
+FLW-119,Tech Debt,Payments,Low,Add tests for currency rounding rules,2025-11-12 11:53:00
+FLW-120,Story,Reporting,Medium,Scheduled report delivery,2025-12-07 08:41:00
+FLW-121,Bug,Onboarding,Low,Timeout on progress bar on setup,2025-12-14 09:53:00
+FLW-122,Bug,Reporting,Medium,Wrong total in monthly summary email,2025-11-24 12:20:00
+FLW-123,Story,Payments,Medium,Retry failed card payments,2025-11-17 11:39:00
+FLW-124,Bug,Reporting,High,Wrong total in chart for weekly usage,2025-11-23 10:54:00
+FLW-125,Bug,Payments,Highest,Broken layout in payment receipt email,2025-11-30 15:57:00
+FLW-126,Tech Debt,Payments,Medium,Refactor 3-d secure challenge screen,2025-12-03 12:51:00
+FLW-127,Story,Payments,High,Show VAT on invoices,2025-11-14 10:19:00
+FLW-128,Bug,Payments,Medium,Timeout on refund flow for partial orders,2025-12-11 14:15:00
+FLW-129,Story,Onboarding,High,Sample data for new accounts,2025-11-15 09:43:00
+FLW-130,Story,Reporting,Medium,Chart for weekly usage,2025-12-14 08:31:00
+FLW-131,Story,Payments,Medium,3-D Secure challenge screen,2025-12-14 08:39:00
+FLW-132,Tech Debt,Onboarding,Medium,Remove dead code in single sign-on option,2025-11-30 14:26:00
+FLW-133,Story,Onboarding,Medium,Shorter sign-up form,2025-11-14 13:53:00
+FLW-134,Story,Payments,Medium,Currency rounding rules,2025-11-28 08:53:00
+FLW-135,Story,Payments,Low,3-D Secure challenge screen,2025-11-16 13:40:00
+FLW-136,Tech Debt,Onboarding,High,Upgrade library for welcome checklist,2025-12-09 11:02:00
+FLW-137,Story,Onboarding,Medium,Welcome checklist,2025-12-10 10:02:00
+FLW-138,Story,Onboarding,Low,Invite teammates by link,2025-11-11 10:34:00
+FLW-139,Story,Onboarding,High,Single sign-on option,2025-11-28 15:57:00
+FLW-140,Story,Onboarding,Medium,Progress bar on setup,2025-11-08 10:21:00
+FLW-141,Bug,Onboarding,Medium,Broken layout in progress bar on setup,2025-12-15 15:20:00
+FLW-142,Story,Reporting,Medium,Export report as CSV,2025-12-16 13:30:00
+FLW-143,Bug,Payments,Medium,Broken layout in payment receipt email,2025-12-16 17:06:00
+FLW-144,Story,Payments,Medium,Retry failed card payments,2025-12-16 17:20:00
+FLW-145,Bug,Payments,Medium,Crash in show vat on invoices,2025-12-17 09:46:00
+FLW-146,Story,Payments,High,Refund flow for partial orders,2025-12-17 15:50:00
+FLW-147,Tech Debt,Onboarding,High,Refactor company profile step,2025-12-19 14:30:00
+FLW-148,Story,Onboarding,Medium,Invite teammates by link,2025-12-19 16:23:00
+FLW-149,Story,Onboarding,Medium,Company profile step,2025-12-23 17:18:00
+FLW-150,Bug,Onboarding,Medium,Fix welcome checklist,2025-12-23 16:14:00
+FLW-151,Story,Reporting,Low,Scheduled report delivery,2025-12-23 17:18:00
+FLW-152,Tech Debt,Onboarding,Low,Add tests for welcome checklist,2025-12-23 10:48:00
+FLW-153,Bug,Onboarding,Low,Broken layout in progress bar on setup,2025-12-24 09:15:00
+FLW-154,Story,Payments,Medium,Saved cards for returning customers,2025-12-24 10:16:00
+FLW-155,Story,Reporting,Low,Monthly summary email,2025-12-25 11:09:00
+FLW-156,Story,Onboarding,Medium,Welcome checklist,2025-12-25 08:59:00
+FLW-157,Bug,Payments,Medium,Timeout on add sepa direct debit,2025-12-25 16:31:00
+FLW-158,Bug,Payments,High,Broken layout in currency rounding rules,2025-12-25 08:43:00
+FLW-159,Bug,Payments,Medium,Wrong total in refund flow for partial orders,2025-12-26 12:36:00
+FLW-160,Tech Debt,Onboarding,Low,Remove dead code in single sign-on option,2025-12-26 14:44:00
+FLW-161,Bug,Reporting,Medium,Broken layout in export report as csv,2025-12-26 11:13:00
+FLW-162,Story,Onboarding,High,Progress bar on setup,2025-12-29 16:09:00
+FLW-163,Story,Payments,Medium,Currency rounding rules,2025-12-29 12:05:00
+FLW-164,Bug,Payments,Medium,Fix retry failed card payments,2025-12-29 16:28:00
+FLW-165,Bug,Payments,Highest,Crash in 3-d secure challenge screen,2025-12-30 11:25:00
+FLW-166,Tech Debt,Payments,Medium,Refactor refund flow for partial orders,2025-12-30 12:14:00
+FLW-167,Bug,Onboarding,High,Timeout on progress bar on setup,2025-12-30 16:55:00
+FLW-168,Story,Payments,High,Refund flow for partial orders,2025-12-30 13:38:00
+FLW-169,Story,Payments,Low,Retry failed card payments,2025-12-30 16:34:00
+FLW-170,Story,Onboarding,Medium,Email verification reminder,2026-01-01 10:40:00
+FLW-171,Story,Onboarding,Medium,Invite teammates by link,2026-01-02 14:51:00
+FLW-172,Story,Payments,Medium,Currency rounding rules,2026-01-02 15:31:00
+FLW-173,Tech Debt,Onboarding,Medium,Add tests for progress bar on setup,2026-01-02 15:50:00
+FLW-174,Story,Reporting,Low,Scheduled report delivery,2026-01-02 15:12:00
+FLW-175,Bug,Payments,High,Wrong total in currency rounding rules,2026-01-05 10:20:00
+FLW-176,Bug,Reporting,Medium,Broken layout in export report as csv,2026-01-05 16:07:00
+FLW-177,Story,Reporting,High,Share report with a link,2026-01-06 10:19:00
+FLW-178,Story,Onboarding,High,Email verification reminder,2026-01-06 14:37:00
+FLW-179,Tech Debt,Reporting,Low,Add tests for date range picker,2026-01-07 11:14:00
+FLW-180,Bug,Payments,Medium,Wrong total in saved cards for returning customers,2026-01-07 09:02:00
+FLW-181,Story,Onboarding,Medium,Single sign-on option,2026-01-07 14:12:00
+FLW-182,Story,Reporting,Medium,Scheduled report delivery,2026-01-08 15:38:00
+FLW-183,Story,Reporting,Medium,Scheduled report delivery,2026-01-08 09:06:00
+FLW-184,Story,Reporting,High,Export report as CSV,2026-01-09 10:19:00
+FLW-185,Story,Reporting,Medium,Chart for weekly usage,2026-01-09 10:53:00
+FLW-186,Story,Reporting,High,Date range picker,2026-01-12 15:59:00
+FLW-187,Story,Payments,Medium,Show VAT on invoices,2026-01-12 11:03:00
+FLW-188,Story,Onboarding,Medium,Invite teammates by link,2026-01-13 08:42:00
+FLW-189,Story,Onboarding,Medium,Invite teammates by link,2026-01-13 13:56:00
+FLW-190,Story,Payments,Medium,Currency rounding rules,2026-01-14 15:15:00
+FLW-191,Story,Reporting,High,Export report as CSV,2026-01-14 12:03:00
+FLW-192,Story,Reporting,Low,Export report as CSV,2026-01-15 15:57:00
+FLW-193,Story,Reporting,Low,Scheduled report delivery,2026-01-15 08:47:00
+FLW-194,Story,Reporting,Medium,Date range picker,2026-01-16 13:00:00
+FLW-195,Story,Payments,Medium,Add SEPA direct debit,2026-01-16 10:52:00
+FLW-196,Bug,Onboarding,Low,Wrong total in company profile step,2026-01-16 15:31:00
+FLW-197,Story,Onboarding,Medium,Sample data for new accounts,2026-01-19 14:56:00
+FLW-198,Story,Reporting,Medium,Date range picker,2026-01-20 08:30:00
+FLW-199,Bug,Payments,Medium,Broken layout in payment receipt email,2026-01-21 12:21:00
+FLW-200,Bug,Payments,Medium,Crash in currency rounding rules,2026-01-21 14:33:00
+FLW-201,Story,Reporting,Medium,Monthly summary email,2026-01-21 08:44:00
+FLW-202,Tech Debt,Onboarding,Medium,Refactor company profile step,2026-01-22 13:02:00
+FLW-203,Bug,Payments,Medium,Wrong total in 3-d secure challenge screen,2026-01-22 09:50:00
+FLW-204,Story,Reporting,Medium,Date range picker,2026-01-23 12:50:00
+FLW-205,Story,Onboarding,Low,Progress bar on setup,2026-01-23 15:19:00
+FLW-206,Story,Payments,Medium,Show VAT on invoices,2026-01-26 13:06:00
+FLW-207,Story,Onboarding,Medium,Invite teammates by link,2026-01-26 16:39:00
+FLW-208,Bug,Payments,Medium,Fix currency rounding rules,2026-01-26 14:49:00
+FLW-209,Tech Debt,Reporting,Medium,Refactor chart for weekly usage,2026-01-26 12:06:00
+FLW-210,Story,Payments,High,Retry failed card payments,2026-01-27 10:49:00
+FLW-211,Tech Debt,Onboarding,Medium,Upgrade library for company profile step,2026-01-27 15:08:00
+FLW-212,Story,Onboarding,Medium,Sample data for new accounts,2026-01-27 16:26:00
+FLW-213,Story,Payments,Medium,Add SEPA direct debit,2026-01-27 08:45:00
+FLW-214,Story,Onboarding,Medium,Sample data for new accounts,2026-01-27 13:10:00
+FLW-215,Bug,Payments,Medium,Wrong total in currency rounding rules,2026-01-28 09:43:00
+FLW-216,Story,Payments,Medium,3-D Secure challenge screen,2026-01-29 10:08:00
+FLW-217,Bug,Payments,High,Broken layout in add sepa direct debit,2026-01-29 14:52:00
+FLW-218,Tech Debt,Reporting,Medium,Add tests for export report as csv,2026-01-29 11:22:00
+FLW-219,Story,Reporting,Low,Date range picker,2026-01-30 15:16:00
+FLW-220,Story,Onboarding,Medium,Welcome checklist,2026-02-02 17:12:00
+FLW-221,Tech Debt,Payments,Medium,Upgrade library for add sepa direct debit,2026-02-02 17:22:00
+FLW-222,Story,Onboarding,Medium,Progress bar on setup,2026-02-03 15:53:00
+FLW-223,Story,Onboarding,Medium,Invite teammates by link,2026-02-04 17:24:00
+FLW-224,Tech Debt,Onboarding,Low,Add tests for shorter sign-up form,2026-02-04 11:03:00
+FLW-225,Tech Debt,Onboarding,Low,Remove dead code in company profile step,2026-02-05 16:55:00
+FLW-226,Story,Payments,High,3-D Secure challenge screen,2026-02-05 14:12:00
+FLW-227,Bug,Onboarding,High,Wrong total in single sign-on option,2026-02-09 09:15:00
+FLW-228,Story,Payments,Low,Currency rounding rules,2026-02-11 13:14:00
+FLW-229,Tech Debt,Onboarding,Medium,Upgrade library for invite teammates by link,2026-02-11 14:15:00
+FLW-230,Story,Payments,Medium,Show VAT on invoices,2026-02-12 09:15:00
+FLW-231,Story,Payments,Low,Saved cards for returning customers,2026-02-12 15:24:00
+FLW-232,Bug,Reporting,High,Crash in filter dashboard by team,2026-02-13 11:42:00
+FLW-233,Bug,Onboarding,Medium,Wrong total in sample data for new accounts,2026-02-13 15:01:00
+FLW-234,Story,Reporting,Medium,Scheduled report delivery,2026-02-16 15:19:00
+FLW-235,Story,Reporting,Low,Export report as CSV,2026-02-18 11:27:00
+FLW-236,Story,Payments,Medium,3-D Secure challenge screen,2026-02-18 15:50:00
+FLW-237,Story,Payments,High,Payment receipt email,2026-02-18 12:18:00
+FLW-238,Tech Debt,Reporting,Low,Refactor date range picker,2026-02-18 15:56:00
+FLW-239,Bug,Payments,Medium,Timeout on payment receipt email,2026-02-18 09:36:00
+FLW-240,Bug,Payments,Medium,Timeout on retry failed card payments,2026-02-19 13:08:00
+FLW-241,Bug,Onboarding,High,Timeout on sample data for new accounts,2026-02-20 16:47:00
+FLW-242,Story,Onboarding,Low,Shorter sign-up form,2026-02-20 11:42:00
+FLW-243,Bug,Payments,Medium,Broken layout in 3-d secure challenge screen,2026-02-20 14:40:00
+FLW-244,Tech Debt,Onboarding,Medium,Remove dead code in company profile step,2026-02-20 12:02:00
+FLW-245,Story,Payments,Low,Currency rounding rules,2026-02-20 11:08:00
+FLW-246,Story,Payments,Medium,Add SEPA direct debit,2026-02-23 15:57:00
+FLW-247,Story,Reporting,High,Filter dashboard by team,2026-02-24 16:14:00
+FLW-248,Bug,Payments,Medium,Wrong total in show vat on invoices,2026-02-24 16:55:00
+FLW-249,Bug,Reporting,High,Broken layout in filter dashboard by team,2026-02-24 11:30:00
+FLW-250,Story,Payments,Medium,Retry failed card payments,2026-02-24 14:12:00
+FLW-251,Story,Payments,Medium,3-D Secure challenge screen,2026-02-24 15:04:00
+FLW-252,Story,Reporting,Medium,Export report as CSV,2026-02-26 10:38:00
+FLW-253,Story,Payments,High,Refund flow for partial orders,2026-02-26 10:50:00
+FLW-254,Story,Payments,Medium,Saved cards for returning customers,2026-03-02 15:44:00
+FLW-255,Story,Reporting,Medium,Filter dashboard by team,2026-03-02 11:45:00
+FLW-256,Story,Onboarding,Medium,Shorter sign-up form,2026-03-03 09:17:00
+FLW-257,Story,Payments,High,3-D Secure challenge screen,2026-03-03 14:14:00
+FLW-258,Story,Payments,Medium,Show VAT on invoices,2026-03-03 17:24:00
+FLW-259,Story,Payments,Medium,Currency rounding rules,2026-03-04 09:16:00
+FLW-260,Story,Payments,Medium,Currency rounding rules,2026-03-05 11:07:00
+FLW-261,Story,Onboarding,Low,Invite teammates by link,2026-03-05 09:27:00
+FLW-262,Bug,Payments,Medium,Fix 3-d secure challenge screen,2026-03-05 17:18:00
+FLW-263,Bug,Onboarding,High,Wrong total in single sign-on option,2026-03-05 15:25:00
+FLW-264,Tech Debt,Onboarding,Medium,Refactor company profile step,2026-03-05 11:58:00
+FLW-265,Story,Onboarding,High,Single sign-on option,2026-03-05 11:04:00
+FLW-266,Story,Payments,High,Refund flow for partial orders,2026-03-06 12:02:00
+FLW-267,Story,Reporting,Low,Share report with a link,2026-03-09 16:09:00
+FLW-268,Story,Payments,High,Show VAT on invoices,2026-03-09 09:32:00
+FLW-269,Story,Onboarding,Medium,Single sign-on option,2026-03-10 10:16:00
+FLW-270,Story,Onboarding,Low,Invite teammates by link,2026-03-11 12:14:00
+FLW-271,Bug,Reporting,Medium,Broken layout in filter dashboard by team,2026-03-12 12:25:00
+FLW-272,Tech Debt,Payments,Low,Upgrade library for retry failed card payments,2026-03-13 09:44:00
+FLW-273,Story,Payments,High,Saved cards for returning customers,2026-03-13 16:48:00
+FLW-274,Bug,Onboarding,High,Wrong total in invite teammates by link,2026-03-16 14:29:00
+FLW-275,Story,Onboarding,Low,Email verification reminder,2026-03-16 10:46:00
+FLW-276,Story,Payments,Medium,Refund flow for partial orders,2026-03-17 08:36:00
+FLW-277,Bug,Payments,High,Fix retry failed card payments,2026-03-17 15:11:00
+FLW-278,Bug,Onboarding,Highest,Wrong total in welcome checklist,2026-03-17 09:00:00
+FLW-279,Tech Debt,Onboarding,Medium,Add tests for invite teammates by link,2026-03-17 11:09:00
+FLW-280,Story,Reporting,Medium,Chart for weekly usage,2026-03-17 16:02:00
+FLW-281,Story,Payments,Medium,3-D Secure challenge screen,2026-03-17 17:01:00
+FLW-282,Story,Onboarding,Low,Company profile step,2026-03-18 14:07:00
+FLW-283,Story,Reporting,Medium,Scheduled report delivery,2026-03-18 12:06:00
+FLW-284,Story,Payments,Medium,Payment receipt email,2026-03-19 14:18:00
+FLW-285,Story,Payments,Medium,Add SEPA direct debit,2026-03-19 11:58:00
+FLW-286,Story,Payments,High,Saved cards for returning customers,2026-03-19 12:54:00
+FLW-287,Story,Reporting,High,Share report with a link,2026-03-19 08:39:00
+FLW-288,Story,Payments,Medium,Add SEPA direct debit,2026-03-20 12:14:00
+FLW-289,Story,Onboarding,Medium,Single sign-on option,2026-03-20 10:16:00
+FLW-290,Story,Reporting,Medium,Totals row in tables,2026-03-20 11:51:00
+FLW-291,Story,Onboarding,Low,Single sign-on option,2026-03-23 12:07:00
+FLW-292,Story,Onboarding,High,Email verification reminder,2026-03-23 12:25:00
+FLW-293,Story,Payments,Medium,3-D Secure challenge screen,2026-03-23 12:52:00
+FLW-294,Story,Payments,Medium,Add SEPA direct debit,2026-03-23 10:28:00
+FLW-295,Bug,Payments,Medium,Broken layout in retry failed card payments,2026-03-24 11:52:00
+FLW-296,Story,Payments,Medium,Currency rounding rules,2026-03-24 09:07:00
+FLW-297,Bug,Payments,Medium,Crash in retry failed card payments,2026-03-25 12:22:00
+FLW-298,Story,Onboarding,Low,Email verification reminder,2026-03-30 16:01:00
+FLW-299,Story,Payments,High,Saved cards for returning customers,2026-03-31 12:15:00
+FLW-300,Story,Payments,Medium,Show VAT on invoices,2026-03-31 10:45:00
+FLW-301,Bug,Reporting,Medium,Fix filter dashboard by team,2026-04-01 11:26:00
+FLW-302,Story,Onboarding,Low,Company profile step,2026-04-02 16:58:00
+FLW-303,Story,Payments,Medium,Retry failed card payments,2026-04-03 13:15:00
+FLW-304,Story,Onboarding,Medium,Company profile step,2026-04-03 15:56:00
+FLW-305,Bug,Onboarding,Medium,Timeout on progress bar on setup,2026-04-03 15:17:00
+FLW-306,Bug,Payments,High,Wrong total in add sepa direct debit,2026-04-06 10:18:00
+FLW-307,Bug,Payments,Low,Broken layout in currency rounding rules,2026-04-06 17:02:00
+FLW-308,Story,Payments,Medium,Retry failed card payments,2026-04-06 12:47:00
+FLW-309,Story,Onboarding,High,Email verification reminder,2026-04-06 13:15:00
+FLW-310,Bug,Payments,Highest,Wrong total in refund flow for partial orders,2026-04-07 15:53:00
+FLW-311,Tech Debt,Payments,High,Refactor payment receipt email,2026-04-08 10:23:00
+FLW-312,Story,Payments,Medium,Refund flow for partial orders,2026-04-08 09:34:00
+FLW-313,Bug,Onboarding,Medium,Crash in progress bar on setup,2026-04-08 10:37:00
+FLW-314,Bug,Reporting,High,Crash in monthly summary email,2026-04-08 09:17:00
+FLW-315,Bug,Payments,Highest,Timeout on payment receipt email,2026-04-09 16:30:00
+FLW-316,Tech Debt,Reporting,Medium,Refactor date range picker,2026-04-10 08:49:00
+FLW-317,Story,Payments,High,3-D Secure challenge screen,2026-04-13 11:59:00
+FLW-318,Story,Payments,High,Add SEPA direct debit,2026-04-14 15:22:00
+FLW-319,Bug,Payments,Highest,Timeout on currency rounding rules,2026-04-15 16:27:00
+FLW-320,Tech Debt,Payments,Medium,Refactor refund flow for partial orders,2026-04-15 11:07:00
+FLW-321,Story,Onboarding,Medium,Single sign-on option,2026-04-16 16:10:00
+FLW-322,Story,Onboarding,Medium,Welcome checklist,2026-04-17 09:55:00
+FLW-323,Tech Debt,Payments,Medium,Refactor show vat on invoices,2026-04-17 16:01:00
+FLW-324,Story,Payments,Medium,Refund flow for partial orders,2026-04-17 10:55:00
+FLW-325,Story,Reporting,Medium,Scheduled report delivery,2026-04-20 15:44:00
+FLW-326,Story,Onboarding,High,Invite teammates by link,2026-04-20 09:54:00
+FLW-327,Story,Payments,Medium,Currency rounding rules,2026-04-20 10:47:00
+FLW-328,Story,Reporting,High,Totals row in tables,2026-04-20 09:10:00
+FLW-329,Story,Reporting,Medium,Chart for weekly usage,2026-04-20 12:47:00
+FLW-330,Bug,Reporting,Low,Crash in export report as csv,2026-04-21 14:13:00
+FLW-331,Story,Payments,Medium,Payment receipt email,2026-04-21 10:09:00
+FLW-332,Story,Payments,Medium,Saved cards for returning customers,2026-04-21 13:27:00
+FLW-333,Bug,Payments,High,Broken layout in currency rounding rules,2026-04-22 13:11:00
+FLW-334,Story,Reporting,High,Date range picker,2026-04-22 10:55:00
+FLW-335,Story,Reporting,High,Scheduled report delivery,2026-04-23 16:08:00
+FLW-336,Story,Onboarding,Low,Email verification reminder,2026-04-23 10:08:00
+FLW-337,Story,Payments,Medium,Show VAT on invoices,2026-04-23 10:32:00
+FLW-338,Bug,Onboarding,Highest,Timeout on shorter sign-up form,2026-04-24 16:36:00
+FLW-339,Bug,Onboarding,Medium,Fix single sign-on option,2026-04-24 13:15:00
+FLW-340,Story,Payments,High,Refund flow for partial orders,2026-04-27 11:57:00
+FLW-341,Story,Onboarding,Medium,Email verification reminder,2026-04-27 12:09:00
+FLW-342,Story,Onboarding,Medium,Welcome checklist,2026-04-27 11:18:00
+FLW-343,Tech Debt,Onboarding,Low,Upgrade library for sample data for new accounts,2026-04-27 16:48:00
+FLW-344,Bug,Reporting,Medium,Wrong total in export report as csv,2026-04-28 14:43:00
+FLW-345,Story,Payments,High,Currency rounding rules,2026-04-28 17:02:00
+FLW-346,Bug,Payments,Medium,Wrong total in retry failed card payments,2026-04-28 10:38:00
+FLW-347,Bug,Reporting,Medium,Wrong total in filter dashboard by team,2026-04-29 11:43:00
+FLW-348,Bug,Onboarding,Low,Crash in progress bar on setup,2026-04-29 12:53:00
+FLW-349,Story,Payments,Medium,Add SEPA direct debit,2026-04-29 15:04:00
+FLW-350,Bug,Payments,Medium,Timeout on show vat on invoices,2026-04-30 10:15:00
+FLW-351,Story,Reporting,Medium,Date range picker,2026-04-30 08:50:00
+FLW-352,Bug,Payments,Medium,Broken layout in refund flow for partial orders,2026-04-30 10:38:00
+FLW-353,Bug,Reporting,Medium,Timeout on date range picker,2026-04-30 16:49:00
+FLW-354,Bug,Payments,High,Timeout on payment receipt email,2026-04-30 10:49:00
+FLW-355,Bug,Onboarding,Medium,Broken layout in sample data for new accounts,2026-04-30 13:54:00
+FLW-356,Tech Debt,Payments,Low,Refactor show vat on invoices,2026-05-01 12:45:00
+FLW-357,Story,Reporting,Medium,Date range picker,2026-05-04 12:24:00
+FLW-358,Story,Onboarding,Medium,Invite teammates by link,2026-05-04 10:52:00
+FLW-359,Story,Payments,Medium,Show VAT on invoices,2026-05-04 17:16:00
+FLW-360,Story,Reporting,Medium,Totals row in tables,2026-05-04 14:03:00
+FLW-361,Bug,Onboarding,Medium,Wrong total in progress bar on setup,2026-05-04 14:37:00
+FLW-362,Story,Reporting,High,Export report as CSV,2026-05-06 10:25:00
+FLW-363,Bug,Payments,High,Crash in add sepa direct debit,2026-05-06 10:51:00
+FLW-364,Story,Payments,Medium,Add SEPA direct debit,2026-05-07 10:57:00
+FLW-365,Story,Payments,Medium,Add SEPA direct debit,2026-05-07 14:13:00
+FLW-366,Story,Onboarding,High,Welcome checklist,2026-05-08 15:56:00
+FLW-367,Story,Payments,High,Add SEPA direct debit,2026-05-11 08:35:00
+FLW-368,Bug,Reporting,Medium,Fix monthly summary email,2026-05-11 15:14:00
+FLW-369,Story,Payments,Medium,Refund flow for partial orders,2026-05-12 08:41:00
+FLW-370,Bug,Payments,Medium,Timeout on show vat on invoices,2026-05-13 13:10:00
+FLW-371,Story,Payments,Medium,3-D Secure challenge screen,2026-05-14 13:44:00
+FLW-372,Bug,Reporting,High,Crash in totals row in tables,2026-05-14 09:32:00
+FLW-373,Bug,Onboarding,Highest,Crash in email verification reminder,2026-05-14 09:24:00
+FLW-374,Story,Onboarding,Medium,Invite teammates by link,2026-05-15 16:51:00
+FLW-375,Story,Payments,Medium,Refund flow for partial orders,2026-05-18 13:06:00
+FLW-376,Story,Reporting,Medium,Monthly summary email,2026-05-19 11:21:00
+FLW-377,Bug,Reporting,Medium,Timeout on totals row in tables,2026-05-19 10:32:00
+FLW-378,Tech Debt,Payments,High,Remove dead code in add sepa direct debit,2026-05-19 14:45:00
+FLW-379,Bug,Onboarding,Medium,Crash in company profile step,2026-05-20 14:46:00
+FLW-380,Bug,Onboarding,High,Crash in welcome checklist,2026-05-20 15:38:00
+FLW-381,Story,Reporting,Medium,Share report with a link,2026-05-20 15:04:00
+FLW-382,Bug,Onboarding,High,Wrong total in email verification reminder,2026-05-21 08:35:00
+FLW-383,Story,Payments,Medium,Currency rounding rules,2026-05-22 14:24:00
+FLW-384,Story,Payments,Medium,Saved cards for returning customers,2026-05-22 16:05:00
+FLW-385,Tech Debt,Payments,Medium,Remove dead code in add sepa direct debit,2026-05-22 16:01:00
+FLW-386,Story,Payments,Low,Payment receipt email,2026-05-25 09:40:00
+FLW-387,Story,Payments,Medium,Currency rounding rules,2026-05-26 17:02:00
+FLW-388,Bug,Payments,Low,Wrong total in retry failed card payments,2026-05-26 10:47:00
+FLW-389,Tech Debt,Onboarding,Medium,Remove dead code in invite teammates by link,2026-05-27 13:30:00
+FLW-390,Bug,Payments,High,Wrong total in saved cards for returning customers,2026-05-27 14:19:00
+FLW-391,Story,Payments,Medium,Payment receipt email,2026-05-27 08:49:00
+FLW-392,Story,Payments,Medium,Refund flow for partial orders,2026-05-28 15:07:00
+FLW-393,Bug,Payments,High,Crash in currency rounding rules,2026-05-28 13:42:00
+FLW-394,Story,Payments,Medium,Payment receipt email,2026-05-29 09:13:00
+FLW-395,Story,Reporting,Medium,Date range picker,2026-05-29 14:34:00
+FLW-396,Story,Payments,High,Retry failed card payments,2026-05-29 16:46:00
+FLW-397,Bug,Onboarding,Medium,Timeout on welcome checklist,2026-06-01 09:19:00
+FLW-398,Bug,Reporting,High,Broken layout in chart for weekly usage,2026-06-01 10:07:00
+FLW-399,Tech Debt,Payments,Low,Remove dead code in show vat on invoices,2026-06-01 13:54:00
+FLW-400,Story,Payments,Medium,3-D Secure challenge screen,2026-06-02 13:31:00
+FLW-401,Story,Payments,Medium,Show VAT on invoices,2026-06-04 16:31:00
+FLW-402,Story,Payments,Medium,Currency rounding rules,2026-06-05 16:03:00
+FLW-403,Tech Debt,Payments,Low,Remove dead code in currency rounding rules,2026-06-05 16:52:00
+FLW-404,Story,Onboarding,Medium,Single sign-on option,2026-06-08 10:38:00
+FLW-405,Bug,Onboarding,Medium,Crash in email verification reminder,2026-06-08 10:38:00
+FLW-406,Story,Reporting,Medium,Share report with a link,2026-06-08 10:42:00
+FLW-407,Story,Payments,Low,Refund flow for partial orders,2026-06-09 16:01:00
+FLW-408,Story,Payments,Medium,Refund flow for partial orders,2026-06-09 11:38:00
+FLW-409,Tech Debt,Reporting,Low,Remove dead code in totals row in tables,2026-06-11 11:02:00
+FLW-410,Bug,Reporting,High,Timeout on export report as csv,2026-06-12 11:03:00
+FLW-411,Story,Reporting,High,Monthly summary email,2026-06-15 10:42:00
+FLW-412,Story,Payments,High,Payment receipt email,2026-06-15 13:42:00
+FLW-413,Tech Debt,Onboarding,Medium,Upgrade library for shorter sign-up form,2026-06-15 12:50:00
+FLW-414,Story,Onboarding,Medium,Single sign-on option,2026-06-15 13:04:00
+FLW-415,Story,Payments,Medium,Refund flow for partial orders,2026-06-15 17:06:00
+FLW-416,Story,Payments,Medium,Add SEPA direct debit,2026-06-16 13:45:00
+FLW-417,Bug,Onboarding,Medium,Fix email verification reminder,2026-06-16 16:56:00
+FLW-418,Bug,Reporting,Low,Crash in filter dashboard by team,2026-06-16 14:04:00
+FLW-419,Story,Reporting,Medium,Share report with a link,2026-06-16 12:24:00
+FLW-420,Bug,Onboarding,Medium,Fix progress bar on setup,2026-06-17 13:26:00
+FLW-421,Bug,Reporting,Medium,Wrong total in date range picker,2026-06-18 10:32:00
+FLW-422,Story,Onboarding,Medium,Email verification reminder,2026-06-19 08:32:00
+FLW-423,Bug,Reporting,Medium,Timeout on totals row in tables,2026-06-22 11:06:00
+FLW-424,Tech Debt,Onboarding,Medium,Upgrade library for invite teammates by link,2026-06-22 17:06:00
+FLW-425,Bug,Reporting,High,Wrong total in share report with a link,2026-06-23 12:23:00
+FLW-426,Bug,Onboarding,Medium,Timeout on sample data for new accounts,2026-06-23 12:18:00
+FLW-427,Story,Payments,Medium,Retry failed card payments,2026-06-23 17:15:00
+FLW-428,Tech Debt,Reporting,Medium,Refactor share report with a link,2026-06-24 15:23:00
+FLW-429,Tech Debt,Payments,Low,Remove dead code in 3-d secure challenge screen,2026-06-24 09:27:00
+FLW-430,Tech Debt,Onboarding,Low,Add tests for shorter sign-up form,2026-06-24 10:06:00
+FLW-431,Tech Debt,Onboarding,High,Upgrade library for progress bar on setup,2026-06-24 09:05:00
+FLW-432,Story,Reporting,Medium,Filter dashboard by team,2026-06-25 14:51:00
+FLW-433,Tech Debt,Onboarding,Medium,Add tests for email verification reminder,2026-06-25 11:40:00
+FLW-434,Bug,Onboarding,High,Crash in welcome checklist,2026-06-29 12:07:00
+FLW-435,Story,Onboarding,Low,Email verification reminder,2026-06-30 13:09:00
+FLW-436,Story,Reporting,Low,Filter dashboard by team,2026-07-01 12:38:00
+FLW-437,Bug,Payments,Medium,Fix add sepa direct debit,2026-07-01 12:08:00
+FLW-438,Story,Payments,Low,Payment receipt email,2026-07-01 15:26:00
+FLW-439,Story,Reporting,Medium,Monthly summary email,2026-07-01 15:44:00
+FLW-440,Bug,Onboarding,High,Broken layout in single sign-on option,2026-07-01 15:31:00
+FLW-441,Bug,Onboarding,Medium,Broken layout in email verification reminder,2026-07-02 10:38:00
+FLW-442,Story,Payments,Medium,Retry failed card payments,2026-07-02 17:22:00
+FLW-443,Story,Payments,Medium,3-D Secure challenge screen,2026-07-03 13:10:00

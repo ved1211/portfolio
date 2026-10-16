@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where the work waits | Ved Gawade</title>
+<meta name="description" content="A Kanban flow metrics case study on simulated data: cycle time, throughput, WIP, a cumulative flow diagram and a Monte Carlo delivery forecast, built with Python, DuckDB SQL and Apache ECharts.">
+<meta name="author" content="Ved Gawade">
+<link rel="canonical" href="https://ved1211.github.io/portfolio/projects/delivery-flow/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Where the work waits | Ved Gawade">
+<meta property="og:description" content="Kanban flow metrics on simulated data: where work waits, what WIP limits changed, and when the next 30 items will be done.">
+<meta name="theme-color" content="#F4F5F2">
+<script>
+/* set theme before first paint so dark users never see a white flash */
+(function(){try{var t=localStorage.getItem('vg-theme');
+var d=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+if(d)document.documentElement.className='dark';}catch(e){}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script id="echarts-js" src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js" integrity="sha512-XSmbX3mhrD2ix5fXPTRQb2FwK22sRMVQTpBP2ac8hX7Dh/605hA2QDegVWiAvZPiXIxOV0CbkmUjGionDpbCmw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+</head>
+<body class="pj">
+<div id="cur" aria-hidden="true"></div>
+<div id="cur-dot" aria-hidden="true"></div>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="../../" class="brand">Ved Gawade<span class="dot">.</span></a>
+    <div class="nav-right">
+      <a class="pj-back" href="../../#analysis"><span aria-hidden="true">←</span> All work</a>
+      <button class="tog" id="tog" aria-label="Switch colour theme" title="Switch theme"><span id="togIcon">☾</span></button>
+      <a href="../../assets/CV/Ved-Gawade-CV.pdf" download="Ved-Gawade-CV.pdf" class="nav-cta">Download CV</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="pj-hero">
+  <div class="wrap">
+    <div class="eyebrow mono"><span class="bar"></span>Case study · Delivery flow</div>
+    <h1 class="hero-h1">
+      <span class="w"><i style="--d:.10s">Where</i></span>
+      <span class="w"><i style="--d:.16s">the</i></span>
+      <span class="w"><i style="--d:.22s">work</i></span>
+      <span class="w"><i class="sig" style="--d:.28s">waits.</i></span>
+    </h1>
+    <p class="pj-lede rv">
+      A product team kept missing its dates, and nobody could say where the time went. I built a
+      small pipeline that turns a Jira export into flow metrics, finds the stage where work queues
+      up, and forecasts delivery dates from the team's own history instead of from guesses.
+    </p>
+    <p class="pj-note rv">
+      <b>Simulated data.</b> Built on simulated data, modelled on problems from my work in program
+      delivery. The team, its <span data-v="items">343</span> work items and every number on this page
+      are fictional. No data from SuperAGI or any other employer was used.
+    </p>
+    <dl class="pj-facts rv">
+      <div><dt>Data</dt><dd><span data-v="items">343</span> simulated Jira items, 26 weeks, a 9-person team</dd></div>
+      <div><dt>Tools</dt><dd>Python, SQL in DuckDB, Apache ECharts</dd></div>
+      <div><dt>Code</dt><dd><a href="https://github.com/ved1211/portfolio/tree/main/projects/delivery-flow" target="_blank" rel="noopener">SQL files and README on GitHub ↗</a></dd></div>
+    </dl>
+  </div>
+</header>
+
+<!-- ═══════════ 01 PROBLEM ═══════════ -->
+<section class="pj-sec" id="problem">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">01</span><span class="mono sec-name">The problem</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">A team that is busy all the time, and <em>still late.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        Picture a 9-person product team: a product manager, six developers and two testers, working
+        on three product streams called Payments, Onboarding and Reporting. They track their work on a
+        <strong>Kanban board</strong>, a board with one column for each stage of work where every card
+        is one task. Each card moves from Backlog to Ready, In Progress, Code Review, QA and finally Done.
+      </p>
+      <p>
+        For the first 14 weeks the team had no rule about how much to take on at once. Developers
+        started something new whenever their own work was waiting for review, so <strong>work in
+        progress (WIP)</strong>, the number of items started but not yet finished, kept growing. In week
+        15 the team set <strong>WIP limits</strong>, a maximum number of cards allowed in a column at
+        one time: 5 in In Progress, 4 in Code Review and 3 in QA.
+      </p>
+      <p>
+        Two measures come up on every chart below. <strong>Cycle time</strong> is how many days one
+        item takes from the moment someone starts it to the moment it is done.
+        <strong>Throughput</strong> is how many items the team finishes in a week. The questions are the
+        ones every delivery team is asked: where does work wait, did the WIP limits help, and when will
+        the next 30 items be done?
+      </p>
+      <p>
+        This is close to my own work. As Technical Program Manager at SuperAGI I kept the backlog in
+        Jira, introduced 2-week sprints and coordinated developer pull requests from review to merge
+        (<a href="../../#exp-superagi">see that role</a>). This project is not from that job. It uses
+        simulated data to show how I would measure the same kind of flow.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 02 BOARD ═══════════ -->
+<section class="pj-sec" id="board">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">02</span><span class="mono sec-name">The board, replayed</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">Every day of the 26 weeks, <em>one slider away.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        Drag the slider to see the board at the end of any day, or press play. Each card is one work
+        item. Cards that have been started are coloured by their age, which is how long ago someone
+        started them, compared with how long finished items took. The board opens on the day with the
+        most work in progress.
+      </p>
+    </div>
+
+    <figure class="pj-fig rv" aria-labelledby="boardTitle">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t" id="boardTitle">Kanban board at the end of the day</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="kb-controls">
+        <button class="kb-play" id="kbPlay" type="button" aria-pressed="false">Play</button>
+        <div class="kb-date" id="kbDate" aria-hidden="true">Week 14 <span>· loading</span></div>
+        <div class="kb-slider">
+          <label for="kbDay" class="sr-only">Day shown on the board</label>
+          <input class="kb-range" id="kbDay" type="range" min="0" max="181" step="1" value="95">
+          <span class="kb-mark" id="kbMark" style="left:53.9%">WIP limits start</span>
+        </div>
+      </div>
+      <div class="kb" id="kb" aria-hidden="true"></div>
+      <p class="sr-only" id="kbSummary" aria-live="polite"></p>
+      <div class="kb-legend" aria-hidden="true">
+        <span><i class="kc"></i><span>Started under <span data-v="all50">7.8</span> days ago</span></span>
+        <span><i class="kc a1"></i>Older than half of finished items</span>
+        <span><i class="kc a2"></i>Older than 85%</span>
+        <span><i class="kc a3"></i>Older than 95%</span>
+        <span><i class="kc urg"></i>Urgent bug</span>
+        <span><i class="kc blk"></i>Blocked</span>
+        <span><i class="kb-l later">Limit 5</i>Not in force yet</span>
+      </div>
+      <p class="kb-note">
+        The colours compare each card's age with the cycle times of all finished items in this data set:
+        half finished within <span data-v="all50">7.8</span> days, 85% within <span data-v="all85">13.8</span>
+        and 95% within <span data-v="all95">18.9</span>. Limits with a dashed outline were not in force yet;
+        they show the limits the team adopted in week 15, so you can see how far over them the board ran
+        before. Hover over a card for its details.
+      </p>
+      <p class="pj-take" id="kbTake">
+        In this data set, In Progress was over the later limit on <span data-v="ipOverDays">98</span> of
+        the <span data-v="daysBefore">98</span> days before week <span data-v="changeWeek">15</span>, the Code Review queue first averaged more than its later limit in week
+        <span data-v="crOverWeek">8</span>, and the last day over any limit was
+        <span data-v="lastOver">19 April</span>, <span data-v="lastOverAfter">6</span> days after the limits started.
+      </p>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ 03 CFD ═══════════ -->
+<section class="pj-sec" id="cfd">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">03</span><span class="mono sec-name">Cumulative flow</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">A queue you can see <em>getting thicker.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        A <strong>cumulative flow diagram</strong> stacks the number of items in each stage, day by day.
+        The bottom band grows as work is finished, and the thickness of each band above it is the
+        number of items sitting in that stage. A band that keeps getting thicker is a queue that keeps
+        growing. The chart starts at Ready, the point where the team commits to an item, and the line
+        on it follows the board slider. Click the chart to move the board to that day.
+      </p>
+    </div>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">Items in each stage at the end of each day</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="pj-legend" aria-hidden="true">
+        <span><i style="background:var(--viz-ready)"></i>Ready</span>
+        <span><i style="background:var(--viz-progress)"></i>In Progress</span>
+        <span><i style="background:var(--viz-review)"></i>Code Review</span>
+        <span><i style="background:var(--viz-qa)"></i>QA</span>
+        <span><i style="background:var(--viz-done)"></i>Done since week 1</span>
+      </div>
+      <div class="pj-chart" id="chCfd"></div>
+      <p class="pj-take" id="cfdTake">
+        In this data set, the Code Review band grows from about <span data-v="cr5">2.4</span> items in
+        week 5 to <span data-v="cr14">9.0</span> in week 14, and falls back to about
+        <span data-v="crAfter">2.5</span> once the WIP limits are in place.
+      </p>
+      <details><summary>Show the numbers</summary><div id="cfdTable"></div></details>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ 04 CYCLE TIME ═══════════ -->
+<section class="pj-sec" id="cycle">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">04</span><span class="mono sec-name">Cycle time</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">From "it depends" to <em>a promise you can keep.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        Each dot is one finished item: when it was finished (across) and how many days it took (up).
+        The lines are <strong>percentiles</strong>. A percentile says what share of items finished
+        within a number of days: the 85th percentile line is the time that 85 out of every 100 items
+        beat. Grey dots were started before the WIP limits and green dots after, and each group has
+        its own lines.
+      </p>
+    </div>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">Cycle time of every finished item, in calendar days</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="pj-legend" aria-hidden="true">
+        <span><i style="background:var(--viz-before);border-radius:50%"></i>Started before WIP limits</span>
+        <span><i style="background:var(--viz-after);border-radius:50%"></i>Started after WIP limits</span>
+      </div>
+      <div class="pj-chart" id="chCycle"></div>
+      <div class="pj-stats" id="cycleStats">
+        <div class="pj-stat"><div class="pj-stat-l">Half of items done within</div><div class="pj-stat-v"><span data-v="b50">9.9</span> → <span data-v="a50">6.7</span> days</div><div class="pj-stat-s">50th percentile, before → after</div></div>
+        <div class="pj-stat"><div class="pj-stat-l">85% of items done within</div><div class="pj-stat-v"><span data-v="b85">14.9</span> → <span data-v="a85">7.8</span> days</div><div class="pj-stat-s">85th percentile, before → after</div></div>
+        <div class="pj-stat"><div class="pj-stat-l">95% of items done within</div><div class="pj-stat-v"><span data-v="b95">20.2</span> → <span data-v="a95">9.8</span> days</div><div class="pj-stat-s">95th percentile, before → after</div></div>
+      </div>
+      <p class="pj-take">
+        In this data set, the 85th percentile cycle time fell from <span data-v="b85">14.9</span> days for
+        items started before the limits to <span data-v="a85">7.8</span> days after, so the team could
+        promise "within <span data-v="a85ceil">8</span> days" and keep that promise 85 times out of 100.
+      </p>
+      <details><summary>Show the numbers</summary><div id="cycleTable"></div></details>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ 05 THROUGHPUT & WIP ═══════════ -->
+<section class="pj-sec" id="throughput">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">05</span><span class="mono sec-name">Throughput and WIP</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">Less started at once, <em>the same amount finished.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        The first chart shows how many items the team finished each week. The second shows WIP, the
+        items in In Progress, Code Review and QA at the end of each day. They are separate charts on
+        purpose: they measure different things, and putting them on one chart with two scales would
+        suggest a link that the scales invent.
+      </p>
+    </div>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">Items finished per week</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="pj-legend" aria-hidden="true">
+        <span><i style="background:var(--viz-before)"></i>Weeks 1 to 14, no limits</span>
+        <span><i style="background:var(--viz-after)"></i>Weeks 15 to 26, WIP limits</span>
+      </div>
+      <div class="pj-chart short" id="chThroughput"></div>
+      <p class="pj-take">
+        In this data set, the team finished about <span data-v="tpB">9.2</span> items a week before the
+        limits and <span data-v="tpA">9.7</span> after, so limiting WIP did not slow the team down.
+      </p>
+      <details><summary>Show the numbers</summary><div id="throughputTable"></div></details>
+    </figure>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">Work in progress at the end of each day</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="pj-legend" aria-hidden="true">
+        <span><i style="background:var(--viz-progress)"></i>In Progress</span>
+        <span><i style="background:var(--viz-review)"></i>Code Review</span>
+        <span><i style="background:var(--viz-qa)"></i>QA</span>
+      </div>
+      <div class="pj-chart" id="chWip"></div>
+      <p class="pj-take">
+        In this data set, average WIP fell from <span data-v="wipB">15.4</span> items before the limits to
+        <span data-v="wipA">10.1</span> after, about a third less, while throughput stayed the same.
+      </p>
+      <details><summary>Show the numbers</summary><div id="wipTable"></div></details>
+    </figure>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">Little's Law check</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="pj-prose">
+        <p>
+          <strong>Little's Law</strong> is a rule from queueing theory: over a stable stretch of time,
+          average WIP equals throughput per day multiplied by average cycle time. It is a quick check that
+          the numbers hang together, and a gap between the two sides says something about the queue.
+        </p>
+      </div>
+      <div id="littleTable"></div>
+      <p class="pj-take">
+        In this data set, the two sides match over all 26 weeks (<span data-v="llAllW">13.0</span> items
+        measured against <span data-v="llAllP">12.7</span> predicted); before the limits WIP ran above the
+        formula, which is what a growing queue looks like, and after them it ran below, because the first
+        weeks were still finishing old items that had aged under the old way of working.
+      </p>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ 06 TIME IN STAGE ═══════════ -->
+<section class="pj-sec" id="time">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">06</span><span class="mono sec-name">Where the time goes</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">Code Review is <em>where work waits.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        Each bar splits the average cycle time into the stages an item passed through. Blocked time,
+        when an item was flagged as stuck, is pulled out on its own wherever it happened, so the parts of
+        each bar add up exactly to the average cycle time.
+      </p>
+    </div>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">Average days per item in each stage</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="pj-legend" aria-hidden="true">
+        <span><i style="background:var(--viz-ready)"></i>Blocked</span>
+        <span><i style="background:var(--viz-progress)"></i>In Progress</span>
+        <span><i style="background:var(--viz-review)"></i>Code Review</span>
+        <span><i style="background:var(--viz-qa)"></i>QA</span>
+      </div>
+      <div class="pj-chart short" id="chTime"></div>
+      <p class="pj-take">
+        In this data set, items started before the limits waited <span data-v="crB">2.9</span> days in Code
+        Review on average, the longest wait of any stage and <span data-v="crShareB">26</span>% of their cycle
+        time; after the limits that wait fell to <span data-v="crA">1.6</span> days.
+      </p>
+      <details><summary>Show the numbers</summary><div id="timeTable"></div></details>
+    </figure>
+    <div class="pj-prose rv" style="margin-top:30px">
+      <p>
+        <strong>Flow efficiency</strong> is the share of cycle time in which someone was actually working
+        on an item. Jira cannot see that, so I count In Progress and QA as working time and Code Review and
+        blocked time as waiting. On that generous reading flow efficiency was about
+        <span data-v="effB">69</span>% before the limits and <span data-v="effA">69</span>% after: the limits
+        shortened every stage rather than changing the mix. The real figure is lower, because time in In
+        Progress also includes waiting while a developer juggles several items.
+      </p>
+      <p>
+        Blocks were rare but expensive. <span data-v="blkItems">26</span> of the
+        <span data-v="finished">246</span> finished items were blocked at least once, blocked time was
+        <span data-v="blkShare">5.3</span>% of all cycle time, and one item lost
+        <span data-v="blkLongest">26.5</span> days to blocks.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 07 FORECAST ═══════════ -->
+<section class="pj-sec" id="forecast">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">07</span><span class="mono sec-name">When will it be done?</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">A forecast from data, <em>not from a guess.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        How long would the next batch of items take? Instead of asking the team for an estimate, this runs
+        10,000 <strong>Monte Carlo simulations</strong>. A Monte Carlo simulation answers a question by
+        playing it out many times with random draws: each run picks a week at random from the team's last
+        12 weeks of throughput, adds up the finished items week after week, and records when it reaches
+        the total. The calculation runs in your browser.
+      </p>
+    </div>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">Forecast for a new batch of work</span>
+        <span class="pj-fig-c">Simulated data · weeks <span data-v="fcFrom">15</span> to <span data-v="fcTo">26</span></span>
+      </div>
+      <form class="fc-form" id="fcForm" novalidate>
+        <div class="fc-field">
+          <label for="fcItems">Number of items</label>
+          <input id="fcItems" type="number" inputmode="numeric" min="1" max="500" step="1" value="30" required>
+        </div>
+        <div class="fc-field">
+          <label for="fcStart">Start date</label>
+          <input id="fcStart" type="date" required>
+        </div>
+        <button class="fc-run" type="submit">Run 10,000 simulations</button>
+      </form>
+      <p class="fc-err" id="fcErr" role="alert"></p>
+      <div class="pj-stats" aria-live="polite" id="fcStats">
+        <div class="pj-stat"><div class="pj-stat-l">50% likely done by</div><div class="pj-stat-v" id="fc50">…</div><div class="pj-stat-s">a coin flip</div></div>
+        <div class="pj-stat"><div class="pj-stat-l">85% likely done by</div><div class="pj-stat-v" id="fc85">…</div><div class="pj-stat-s">the date I would commit to</div></div>
+        <div class="pj-stat"><div class="pj-stat-l">95% likely done by</div><div class="pj-stat-v" id="fc95">…</div><div class="pj-stat-s">for a hard deadline</div></div>
+      </div>
+      <div class="pj-chart short" id="chForecast" style="margin-top:14px"></div>
+      <p class="pj-take" id="fcTake">In 85% of the 10,000 runs, the items were done by the date above.</p>
+      <details><summary>Show the numbers</summary><div id="fcTable"></div></details>
+    </figure>
+    <div class="pj-prose fc-why rv">
+      <p>
+        A single date hides how much the team's pace changes from week to week, so it is wrong more often
+        than it looks. A range shows how likely each date is, so you can choose how much risk to accept,
+        and I would commit to the 85% date.
+      </p>
+      <p>
+        The forecast assumes that the coming weeks look like weeks <span data-v="fcFrom">15</span> to
+        <span data-v="fcTo">26</span>, when the team finished between <span data-v="fcMin">6</span> and
+        <span data-v="fcMax">13</span> items a week, and that new items are about the same size as past
+        ones. It should be re-run every week as new data arrives.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 08 FINDINGS ═══════════ -->
+<section class="pj-sec" id="findings">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">08</span><span class="mono sec-name">Findings</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">What this data says, and <em>what I would do next.</em></h2>
+    <div class="pj-cols">
+      <div class="rv">
+        <div class="pj-sub">Three findings</div>
+        <ol class="pj-list">
+          <li>
+            <strong>Code Review is where work waits.</strong> In this data set, items started before the
+            limits spent <span data-v="crB">2.9</span> days in Code Review on average, against
+            <span data-v="qaB">1.8</span> in QA and <span data-v="blkB">0.6</span> blocked. The review queue
+            grew from about <span data-v="cr5">2.4</span> items in week 5 to <span data-v="cr14">9.0</span> in
+            week 14, as more work was started than reviewed.
+          </li>
+          <li>
+            <strong>Limiting WIP cut cycle time without slowing the team.</strong> In this data set, throughput
+            stayed at about <span data-v="tpB">9.2</span> to <span data-v="tpA">9.7</span> items a week while
+            the median cycle time fell from <span data-v="b50">9.9</span> to <span data-v="a50">6.7</span> days.
+            That is what Little's Law predicts when average WIP drops by about a third.
+          </li>
+          <li>
+            <strong>The slowest items were mostly blocked ones.</strong> In this data set,
+            <span data-v="longBlocked">7</span> of the <span data-v="longN">12</span> items that took longer than
+            <span data-v="all95">18.9</span> days had been blocked at least once, while only
+            <span data-v="blkItems">26</span> of all <span data-v="finished">246</span> finished items were ever
+            blocked.
+          </li>
+        </ol>
+      </div>
+      <div class="rv">
+        <div class="pj-sub">What I would recommend as program manager</div>
+        <ol class="pj-list">
+          <li>
+            <strong>Keep the limits and add one working rule.</strong> Before anyone starts a new item, they
+            check the Code Review column first. The size of the review queue becomes a standing point at the
+            daily stand-up.
+          </li>
+          <li>
+            <strong>Watch item age every day.</strong> Any item older than <span data-v="a85ceil">8</span> days,
+            the 85th percentile, is raised at stand-up, and every blocked item gets an owner who chases the
+            blocker the same day.
+          </li>
+          <li>
+            <strong>Plan with forecasts, not single estimates.</strong> I would re-run the forecast every week
+            with the newest throughput and share both the 50% and the 85% date with stakeholders, so a
+            deadline comes with an honest level of risk.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 09 HOW IT IS BUILT ═══════════ -->
+<section class="pj-sec" id="built">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">09</span><span class="mono sec-name">How it is built</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">Five steps, <em>all of them open.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        The analysis is written in SQL and runs in <strong>DuckDB</strong>, a small database that runs SQL
+        directly on files on a laptop, with no server. Python only generates the data, runs the SQL files
+        in order and writes one JSON file, a plain-text data format, for this page. The same pipeline runs
+        on a real Jira export: the README lists the columns it needs.
+      </p>
+    </div>
+    <ol class="pj-steps rv">
+      <li><code>simulate.py</code><span>Simulates the team day by day with a fixed random seed and writes a Jira-style export: issues, status changes and blocked flags. <a href="https://github.com/ved1211/portfolio/blob/main/projects/delivery-flow/analysis/simulate.py" target="_blank" rel="noopener">View ↗</a></span></li>
+      <li><code>import_jira.py</code><span>Turns any Jira export, simulated or real, into three clean tables and maps workflow status names onto six stages. <a href="https://github.com/ved1211/portfolio/blob/main/projects/delivery-flow/analysis/import_jira.py" target="_blank" rel="noopener">View ↗</a></span></li>
+      <li><code>sql/01 to 11</code><span>Eleven SQL files with plain-English comments: throughput, cycle time percentiles, the daily board, time in each stage, flow efficiency, blocked time, item age and the Little's Law check. <a href="https://github.com/ved1211/portfolio/tree/main/projects/delivery-flow/analysis/sql" target="_blank" rel="noopener">View ↗</a></span></li>
+      <li><code>run_analysis.py</code><span>Runs the SQL files in order and writes the results to one JSON file. <a href="https://github.com/ved1211/portfolio/blob/main/projects/delivery-flow/analysis/run_analysis.py" target="_blank" rel="noopener">View ↗</a></span></li>
+      <li><code>This page</code><span>Draws the charts with Apache ECharts. Only the board replay and the forecast are calculated in your browser. <a href="https://github.com/ved1211/portfolio/blob/main/projects/delivery-flow/README.md" target="_blank" rel="noopener">Read the README ↗</a></span></li>
+    </ol>
+    <p class="pj-keys rv">
+      <b>Keywords:</b> Kanban, cycle time, throughput, WIP, cumulative flow diagram, flow efficiency,
+      Little's Law, Monte Carlo forecasting.
+    </p>
+
+    <div class="pj-foot">
+      <a href="../../#analysis">← Back to the portfolio</a>
+      <a href="../../assets/CV/Ved-Gawade-CV.pdf" download="Ved-Gawade-CV.pdf">Download CV ↓</a>
+      <span>© 2026 Ved Gawade · Simulated data, fictional team</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script type="module" src="./page.ts"></script>
+</body>
+</html>

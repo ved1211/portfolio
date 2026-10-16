@@ -3,7 +3,7 @@ import { $, debounce, reduceMotion } from './env';
 /** Normalised page scroll, published for the 3D background. */
 export let scrollProgress = 0;
 
-const SECTION_IDS = ['hero', 'work', 'systems', 'experience', 'about', 'education', 'contact'];
+const SECTION_IDS = ['hero', 'work', 'analysis', 'systems', 'experience', 'about', 'education', 'contact'];
 
 export function initScroll() {
   const nav = $('nav');

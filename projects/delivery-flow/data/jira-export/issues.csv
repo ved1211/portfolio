@@ -1,0 +1,344 @@
+Summary,Issue key,Issue Type,Status,Priority,Component/s,Created,Resolved
+Add SEPA direct debit,FLW-101,Story,Done,Medium,Payments,20/Nov/25 01:12 PM,05/Jan/26 09:41 AM
+Email verification reminder,FLW-102,Story,Done,Medium,Onboarding,12/Dec/25 05:27 PM,27/Jan/26 09:26 AM
+Refund flow for partial orders,FLW-103,Story,Backlog,Low,Payments,03/Dec/25 01:42 PM,
+Show VAT on invoices,FLW-104,Story,Done,Medium,Payments,29/Nov/25 11:07 AM,09/Jan/26 12:10 PM
+Welcome checklist,FLW-105,Story,Done,Medium,Onboarding,13/Dec/25 02:41 PM,20/Jan/26 10:44 AM
+Chart for weekly usage,FLW-106,Story,Done,Medium,Reporting,06/Dec/25 03:52 PM,16/Jan/26 10:17 AM
+Saved cards for returning customers,FLW-107,Story,Done,High,Payments,13/Nov/25 09:34 AM,25/Dec/25 12:05 PM
+Wrong total in 3-d secure challenge screen,FLW-108,Bug,Done,High,Payments,06/Dec/25 11:08 AM,26/Dec/25 10:03 AM
+Export report as CSV,FLW-109,Story,Done,Medium,Reporting,11/Nov/25 10:12 AM,31/Dec/25 12:18 PM
+Fix progress bar on setup,FLW-110,Bug,Ready,Low,Onboarding,13/Nov/25 10:32 AM,
+Welcome checklist,FLW-111,Story,Done,High,Onboarding,06/Nov/25 02:23 PM,19/Dec/25 12:23 PM
+Refund flow for partial orders,FLW-112,Story,Done,Medium,Payments,04/Dec/25 03:11 PM,26/Jan/26 12:16 PM
+Fix refund flow for partial orders,FLW-113,Bug,Done,Medium,Payments,30/Nov/25 10:21 AM,06/Jan/26 10:45 AM
+Payment receipt email,FLW-114,Story,Done,High,Payments,26/Nov/25 02:37 PM,02/Jan/26 12:06 PM
+3-D Secure challenge screen,FLW-115,Story,Done,Medium,Payments,16/Nov/25 08:48 AM,06/Jan/26 10:14 AM
+Wrong total in refund flow for partial orders,FLW-116,Bug,Backlog,Low,Payments,08/Dec/25 09:47 AM,
+3-D Secure challenge screen,FLW-117,Story,Done,High,Payments,08/Nov/25 04:27 PM,24/Dec/25 11:22 AM
+Upgrade library for single sign-on option,FLW-118,Tech Debt,Done,Low,Onboarding,08/Nov/25 04:06 PM,03/Jun/26 11:56 AM
+Add tests for currency rounding rules,FLW-119,Tech Debt,Done,Low,Payments,12/Nov/25 11:53 AM,01/Jun/26 12:11 PM
+Scheduled report delivery,FLW-120,Story,Done,Medium,Reporting,07/Dec/25 08:41 AM,15/Jan/26 11:52 AM
+Timeout on progress bar on setup,FLW-121,Bug,Backlog,Low,Onboarding,14/Dec/25 09:53 AM,
+Wrong total in monthly summary email,FLW-122,Bug,Done,Medium,Reporting,24/Nov/25 12:20 PM,05/Jan/26 11:59 AM
+Retry failed card payments,FLW-123,Story,Done,Medium,Payments,17/Nov/25 11:39 AM,13/Jan/26 12:12 PM
+Wrong total in chart for weekly usage,FLW-124,Bug,Done,High,Reporting,23/Nov/25 10:54 AM,26/Dec/25 12:10 PM
+Broken layout in payment receipt email,FLW-125,Bug,Done,Highest,Payments,30/Nov/25 03:57 PM,18/Dec/25 12:02 PM
+Refactor 3-d secure challenge screen,FLW-126,Tech Debt,Done,Medium,Payments,03/Dec/25 12:51 PM,13/Jan/26 10:06 AM
+Show VAT on invoices,FLW-127,Story,Done,High,Payments,14/Nov/25 10:19 AM,23/Dec/25 11:06 AM
+Timeout on refund flow for partial orders,FLW-128,Bug,Done,Medium,Payments,11/Dec/25 02:15 PM,15/Jan/26 09:53 AM
+Sample data for new accounts,FLW-129,Story,Done,High,Onboarding,15/Nov/25 09:43 AM,31/Dec/25 09:28 AM
+Chart for weekly usage,FLW-130,Story,Done,Medium,Reporting,14/Dec/25 08:31 AM,28/Jan/26 09:45 AM
+3-D Secure challenge screen,FLW-131,Story,Done,Medium,Payments,14/Dec/25 08:39 AM,21/Jan/26 10:44 AM
+Remove dead code in single sign-on option,FLW-132,Tech Debt,Done,Medium,Onboarding,30/Nov/25 02:26 PM,12/Jan/26 09:13 AM
+Shorter sign-up form,FLW-133,Story,Done,Medium,Onboarding,14/Nov/25 01:53 PM,01/Jan/26 10:01 AM
+Currency rounding rules,FLW-134,Story,Done,Medium,Payments,28/Nov/25 08:53 AM,14/Jan/26 09:20 AM
+3-D Secure challenge screen,FLW-135,Story,Backlog,Low,Payments,16/Nov/25 01:40 PM,
+Upgrade library for welcome checklist,FLW-136,Tech Debt,Done,High,Onboarding,09/Dec/25 11:02 AM,26/Dec/25 09:26 AM
+Welcome checklist,FLW-137,Story,Done,Medium,Onboarding,10/Dec/25 10:02 AM,20/Jan/26 10:24 AM
+Invite teammates by link,FLW-138,Story,Done,Low,Onboarding,11/Nov/25 10:34 AM,02/Jun/26 11:12 AM
+Single sign-on option,FLW-139,Story,Done,High,Onboarding,28/Nov/25 03:57 PM,23/Dec/25 09:27 AM
+Progress bar on setup,FLW-140,Story,Done,Medium,Onboarding,08/Nov/25 10:21 AM,12/Jan/26 11:38 AM
+Broken layout in progress bar on setup,FLW-141,Bug,Done,Medium,Onboarding,15/Dec/25 03:20 PM,21/Jan/26 11:10 AM
+Export report as CSV,FLW-142,Story,Done,Medium,Reporting,16/Dec/25 01:30 PM,02/Feb/26 10:41 AM
+Broken layout in payment receipt email,FLW-143,Bug,Done,Medium,Payments,16/Dec/25 05:06 PM,26/Jan/26 09:53 AM
+Retry failed card payments,FLW-144,Story,Done,Medium,Payments,16/Dec/25 05:20 PM,27/Jan/26 09:43 AM
+Crash in show vat on invoices,FLW-145,Bug,Done,Medium,Payments,17/Dec/25 09:46 AM,26/Jan/26 10:05 AM
+Refund flow for partial orders,FLW-146,Story,Done,High,Payments,17/Dec/25 03:50 PM,30/Dec/25 09:47 AM
+Refactor company profile step,FLW-147,Tech Debt,Done,High,Onboarding,19/Dec/25 02:30 PM,30/Dec/25 09:26 AM
+Invite teammates by link,FLW-148,Story,Done,Medium,Onboarding,19/Dec/25 04:23 PM,03/Feb/26 10:46 AM
+Company profile step,FLW-149,Story,Done,Medium,Onboarding,23/Dec/25 05:18 PM,29/Jan/26 09:46 AM
+Fix welcome checklist,FLW-150,Bug,Done,Medium,Onboarding,23/Dec/25 04:14 PM,28/Jan/26 09:41 AM
+Scheduled report delivery,FLW-151,Story,Backlog,Low,Reporting,23/Dec/25 05:18 PM,
+Add tests for welcome checklist,FLW-152,Tech Debt,Backlog,Low,Onboarding,23/Dec/25 10:48 AM,
+Broken layout in progress bar on setup,FLW-153,Bug,Backlog,Low,Onboarding,24/Dec/25 09:15 AM,
+Saved cards for returning customers,FLW-154,Story,Done,Medium,Payments,24/Dec/25 10:16 AM,05/Feb/26 10:43 AM
+Monthly summary email,FLW-155,Story,Backlog,Low,Reporting,25/Dec/25 11:09 AM,
+Welcome checklist,FLW-156,Story,Done,Medium,Onboarding,25/Dec/25 08:59 AM,29/Jan/26 11:43 AM
+Timeout on add sepa direct debit,FLW-157,Bug,Done,Medium,Payments,25/Dec/25 04:31 PM,29/Jan/26 10:54 AM
+Broken layout in currency rounding rules,FLW-158,Bug,Done,High,Payments,25/Dec/25 08:43 AM,01/Jan/26 12:27 PM
+Wrong total in refund flow for partial orders,FLW-159,Bug,Done,Medium,Payments,26/Dec/25 12:36 PM,30/Jan/26 09:37 AM
+Remove dead code in single sign-on option,FLW-160,Tech Debt,Backlog,Low,Onboarding,26/Dec/25 02:44 PM,
+Broken layout in export report as csv,FLW-161,Bug,Done,Medium,Reporting,26/Dec/25 11:13 AM,30/Jan/26 09:48 AM
+Progress bar on setup,FLW-162,Story,Done,High,Onboarding,29/Dec/25 04:09 PM,07/Jan/26 11:29 AM
+Currency rounding rules,FLW-163,Story,Done,Medium,Payments,29/Dec/25 12:05 PM,04/Feb/26 12:02 PM
+Fix retry failed card payments,FLW-164,Bug,Done,Medium,Payments,29/Dec/25 04:28 PM,05/Feb/26 09:56 AM
+Crash in 3-d secure challenge screen,FLW-165,Bug,Done,Highest,Payments,30/Dec/25 11:25 AM,02/Jan/26 10:47 AM
+Refactor refund flow for partial orders,FLW-166,Tech Debt,Done,Medium,Payments,30/Dec/25 12:14 PM,26/Feb/26 12:03 PM
+Timeout on progress bar on setup,FLW-167,Bug,Done,High,Onboarding,30/Dec/25 04:55 PM,09/Jan/26 12:25 PM
+Refund flow for partial orders,FLW-168,Story,Done,High,Payments,30/Dec/25 01:38 PM,09/Jan/26 10:04 AM
+Retry failed card payments,FLW-169,Story,Backlog,Low,Payments,30/Dec/25 04:34 PM,
+Email verification reminder,FLW-170,Story,Done,Medium,Onboarding,01/Jan/26 10:40 AM,04/Feb/26 09:27 AM
+Invite teammates by link,FLW-171,Story,Done,Medium,Onboarding,02/Jan/26 02:51 PM,06/Feb/26 12:04 PM
+Currency rounding rules,FLW-172,Story,Done,Medium,Payments,02/Jan/26 03:31 PM,09/Feb/26 09:07 AM
+Add tests for progress bar on setup,FLW-173,Tech Debt,Done,Medium,Onboarding,02/Jan/26 03:50 PM,12/Feb/26 09:49 AM
+Scheduled report delivery,FLW-174,Story,Backlog,Low,Reporting,02/Jan/26 03:12 PM,
+Wrong total in currency rounding rules,FLW-175,Bug,Done,High,Payments,05/Jan/26 10:20 AM,12/Jan/26 09:26 AM
+Broken layout in export report as csv,FLW-176,Bug,Done,Medium,Reporting,05/Jan/26 04:07 PM,09/Feb/26 09:54 AM
+Share report with a link,FLW-177,Story,Done,High,Reporting,06/Jan/26 10:19 AM,15/Jan/26 10:47 AM
+Email verification reminder,FLW-178,Story,Done,High,Onboarding,06/Jan/26 02:37 PM,19/Jan/26 09:19 AM
+Add tests for date range picker,FLW-179,Tech Debt,Backlog,Low,Reporting,07/Jan/26 11:14 AM,
+Wrong total in saved cards for returning customers,FLW-180,Bug,Done,Medium,Payments,07/Jan/26 09:02 AM,16/Feb/26 12:02 PM
+Single sign-on option,FLW-181,Story,Done,Medium,Onboarding,07/Jan/26 02:12 PM,13/Feb/26 12:06 PM
+Scheduled report delivery,FLW-182,Story,Done,Medium,Reporting,08/Jan/26 03:38 PM,11/Feb/26 11:16 AM
+Scheduled report delivery,FLW-183,Story,Done,Medium,Reporting,08/Jan/26 09:06 AM,16/Feb/26 09:07 AM
+Export report as CSV,FLW-184,Story,Done,High,Reporting,09/Jan/26 10:19 AM,22/Jan/26 11:07 AM
+Chart for weekly usage,FLW-185,Story,Done,Medium,Reporting,09/Jan/26 10:53 AM,13/Feb/26 11:08 AM
+Date range picker,FLW-186,Story,Done,High,Reporting,12/Jan/26 03:59 PM,16/Jan/26 11:20 AM
+Show VAT on invoices,FLW-187,Story,Done,Medium,Payments,12/Jan/26 11:03 AM,13/Feb/26 11:17 AM
+Invite teammates by link,FLW-188,Story,Done,Medium,Onboarding,13/Jan/26 08:42 AM,16/Feb/26 11:19 AM
+Invite teammates by link,FLW-189,Story,Done,Medium,Onboarding,13/Jan/26 01:56 PM,17/Feb/26 11:04 AM
+Currency rounding rules,FLW-190,Story,Done,Medium,Payments,14/Jan/26 03:15 PM,23/Feb/26 10:34 AM
+Export report as CSV,FLW-191,Story,Done,High,Reporting,14/Jan/26 12:03 PM,23/Jan/26 09:17 AM
+Export report as CSV,FLW-192,Story,Backlog,Low,Reporting,15/Jan/26 03:57 PM,
+Scheduled report delivery,FLW-193,Story,Backlog,Low,Reporting,15/Jan/26 08:47 AM,
+Date range picker,FLW-194,Story,Done,Medium,Reporting,16/Jan/26 01:00 PM,26/Feb/26 09:11 AM
+Add SEPA direct debit,FLW-195,Story,Done,Medium,Payments,16/Jan/26 10:52 AM,03/Mar/26 09:29 AM
+Wrong total in company profile step,FLW-196,Bug,Backlog,Low,Onboarding,16/Jan/26 03:31 PM,
+Sample data for new accounts,FLW-197,Story,Done,Medium,Onboarding,19/Jan/26 02:56 PM,25/Feb/26 09:46 AM
+Date range picker,FLW-198,Story,Done,Medium,Reporting,20/Jan/26 08:30 AM,23/Feb/26 10:36 AM
+Broken layout in payment receipt email,FLW-199,Bug,Done,Medium,Payments,21/Jan/26 12:21 PM,23/Feb/26 11:35 AM
+Crash in currency rounding rules,FLW-200,Bug,Done,Medium,Payments,21/Jan/26 02:33 PM,26/Feb/26 09:49 AM
+Monthly summary email,FLW-201,Story,Done,Medium,Reporting,21/Jan/26 08:44 AM,24/Feb/26 11:51 AM
+Refactor company profile step,FLW-202,Tech Debt,Done,Medium,Onboarding,22/Jan/26 01:02 PM,27/Feb/26 11:25 AM
+Wrong total in 3-d secure challenge screen,FLW-203,Bug,Done,Medium,Payments,22/Jan/26 09:50 AM,23/Feb/26 10:05 AM
+Date range picker,FLW-204,Story,Done,Medium,Reporting,23/Jan/26 12:50 PM,25/Feb/26 10:37 AM
+Progress bar on setup,FLW-205,Story,Backlog,Low,Onboarding,23/Jan/26 03:19 PM,
+Show VAT on invoices,FLW-206,Story,Done,Medium,Payments,26/Jan/26 01:06 PM,03/Mar/26 10:45 AM
+Invite teammates by link,FLW-207,Story,Done,Medium,Onboarding,26/Jan/26 04:39 PM,05/Mar/26 10:49 AM
+Fix currency rounding rules,FLW-208,Bug,Done,Medium,Payments,26/Jan/26 02:49 PM,02/Mar/26 09:47 AM
+Refactor chart for weekly usage,FLW-209,Tech Debt,Done,Medium,Reporting,26/Jan/26 12:06 PM,04/Mar/26 11:04 AM
+Retry failed card payments,FLW-210,Story,Done,High,Payments,27/Jan/26 10:49 AM,06/Feb/26 09:17 AM
+Upgrade library for company profile step,FLW-211,Tech Debt,Done,Medium,Onboarding,27/Jan/26 03:08 PM,06/Mar/26 10:04 AM
+Sample data for new accounts,FLW-212,Story,Done,Medium,Onboarding,27/Jan/26 04:26 PM,11/Mar/26 11:41 AM
+Add SEPA direct debit,FLW-213,Story,Done,Medium,Payments,27/Jan/26 08:45 AM,10/Mar/26 09:53 AM
+Sample data for new accounts,FLW-214,Story,Done,Medium,Onboarding,27/Jan/26 01:10 PM,11/Mar/26 10:22 AM
+Wrong total in currency rounding rules,FLW-215,Bug,Done,Medium,Payments,28/Jan/26 09:43 AM,12/Mar/26 12:07 PM
+3-D Secure challenge screen,FLW-216,Story,Done,Medium,Payments,29/Jan/26 10:08 AM,05/Mar/26 10:18 AM
+Broken layout in add sepa direct debit,FLW-217,Bug,Done,High,Payments,29/Jan/26 02:52 PM,05/Feb/26 10:09 AM
+Add tests for export report as csv,FLW-218,Tech Debt,Done,Medium,Reporting,29/Jan/26 11:22 AM,05/Mar/26 10:00 AM
+Date range picker,FLW-219,Story,Backlog,Low,Reporting,30/Jan/26 03:16 PM,
+Welcome checklist,FLW-220,Story,Done,Medium,Onboarding,02/Feb/26 05:12 PM,19/Mar/26 09:55 AM
+Upgrade library for add sepa direct debit,FLW-221,Tech Debt,Done,Medium,Payments,02/Feb/26 05:22 PM,11/Mar/26 09:42 AM
+Progress bar on setup,FLW-222,Story,Done,Medium,Onboarding,03/Feb/26 03:53 PM,12/Mar/26 11:51 AM
+Invite teammates by link,FLW-223,Story,Done,Medium,Onboarding,04/Feb/26 05:24 PM,11/Mar/26 11:07 AM
+Add tests for shorter sign-up form,FLW-224,Tech Debt,Backlog,Low,Onboarding,04/Feb/26 11:03 AM,
+Remove dead code in company profile step,FLW-225,Tech Debt,Backlog,Low,Onboarding,05/Feb/26 04:55 PM,
+3-D Secure challenge screen,FLW-226,Story,Done,High,Payments,05/Feb/26 02:12 PM,19/Feb/26 11:27 AM
+Wrong total in single sign-on option,FLW-227,Bug,Done,High,Onboarding,09/Feb/26 09:15 AM,17/Mar/26 10:54 AM
+Currency rounding rules,FLW-228,Story,Backlog,Low,Payments,11/Feb/26 01:14 PM,
+Upgrade library for invite teammates by link,FLW-229,Tech Debt,Done,Medium,Onboarding,11/Feb/26 02:15 PM,25/Mar/26 11:45 AM
+Show VAT on invoices,FLW-230,Story,Done,Medium,Payments,12/Feb/26 09:15 AM,13/Mar/26 09:18 AM
+Saved cards for returning customers,FLW-231,Story,Backlog,Low,Payments,12/Feb/26 03:24 PM,
+Crash in filter dashboard by team,FLW-232,Bug,Done,High,Reporting,13/Feb/26 11:42 AM,23/Feb/26 10:05 AM
+Wrong total in sample data for new accounts,FLW-233,Bug,Done,Medium,Onboarding,13/Feb/26 03:01 PM,16/Mar/26 11:26 AM
+Scheduled report delivery,FLW-234,Story,Done,Medium,Reporting,16/Feb/26 03:19 PM,30/Mar/26 10:37 AM
+Export report as CSV,FLW-235,Story,Backlog,Low,Reporting,18/Feb/26 11:27 AM,
+3-D Secure challenge screen,FLW-236,Story,Done,Medium,Payments,18/Feb/26 03:50 PM,30/Mar/26 11:35 AM
+Payment receipt email,FLW-237,Story,Done,High,Payments,18/Feb/26 12:18 PM,27/Feb/26 10:11 AM
+Refactor date range picker,FLW-238,Tech Debt,Backlog,Low,Reporting,18/Feb/26 03:56 PM,
+Timeout on payment receipt email,FLW-239,Bug,Done,Medium,Payments,18/Feb/26 09:36 AM,17/Mar/26 09:34 AM
+Timeout on retry failed card payments,FLW-240,Bug,Done,Medium,Payments,19/Feb/26 01:08 PM,20/Mar/26 11:12 AM
+Timeout on sample data for new accounts,FLW-241,Bug,Done,High,Onboarding,20/Feb/26 04:47 PM,27/Feb/26 11:53 AM
+Shorter sign-up form,FLW-242,Story,Backlog,Low,Onboarding,20/Feb/26 11:42 AM,
+Broken layout in 3-d secure challenge screen,FLW-243,Bug,Done,Medium,Payments,20/Feb/26 02:40 PM,31/Mar/26 10:18 AM
+Remove dead code in company profile step,FLW-244,Tech Debt,Done,Medium,Onboarding,20/Feb/26 12:02 PM,25/Mar/26 10:41 AM
+Currency rounding rules,FLW-245,Story,Backlog,Low,Payments,20/Feb/26 11:08 AM,
+Add SEPA direct debit,FLW-246,Story,Done,Medium,Payments,23/Feb/26 03:57 PM,26/Mar/26 12:12 PM
+Filter dashboard by team,FLW-247,Story,Done,High,Reporting,24/Feb/26 04:14 PM,06/Mar/26 09:51 AM
+Wrong total in show vat on invoices,FLW-248,Bug,Done,Medium,Payments,24/Feb/26 04:55 PM,25/Mar/26 10:26 AM
+Broken layout in filter dashboard by team,FLW-249,Bug,Done,High,Reporting,24/Feb/26 11:30 AM,04/Mar/26 10:47 AM
+Retry failed card payments,FLW-250,Story,Done,Medium,Payments,24/Feb/26 02:12 PM,31/Mar/26 09:50 AM
+3-D Secure challenge screen,FLW-251,Story,Done,Medium,Payments,24/Feb/26 03:04 PM,30/Mar/26 10:04 AM
+Export report as CSV,FLW-252,Story,Done,Medium,Reporting,26/Feb/26 10:38 AM,03/Apr/26 12:29 PM
+Refund flow for partial orders,FLW-253,Story,Done,High,Payments,26/Feb/26 10:50 AM,09/Mar/26 11:26 AM
+Saved cards for returning customers,FLW-254,Story,Done,Medium,Payments,02/Mar/26 03:44 PM,07/Apr/26 09:24 AM
+Filter dashboard by team,FLW-255,Story,Done,Medium,Reporting,02/Mar/26 11:45 AM,02/Apr/26 10:56 AM
+Shorter sign-up form,FLW-256,Story,Done,Medium,Onboarding,03/Mar/26 09:17 AM,08/Apr/26 12:29 PM
+3-D Secure challenge screen,FLW-257,Story,Done,High,Payments,03/Mar/26 02:14 PM,16/Mar/26 11:44 AM
+Show VAT on invoices,FLW-258,Story,Done,Medium,Payments,03/Mar/26 05:24 PM,06/Apr/26 10:23 AM
+Currency rounding rules,FLW-259,Story,Done,Medium,Payments,04/Mar/26 09:16 AM,09/Apr/26 09:32 AM
+Currency rounding rules,FLW-260,Story,Done,Medium,Payments,05/Mar/26 11:07 AM,06/Apr/26 11:39 AM
+Invite teammates by link,FLW-261,Story,Backlog,Low,Onboarding,05/Mar/26 09:27 AM,
+Fix 3-d secure challenge screen,FLW-262,Bug,Done,Medium,Payments,05/Mar/26 05:18 PM,08/Apr/26 09:23 AM
+Wrong total in single sign-on option,FLW-263,Bug,Done,High,Onboarding,05/Mar/26 03:25 PM,13/Mar/26 09:57 AM
+Refactor company profile step,FLW-264,Tech Debt,Done,Medium,Onboarding,05/Mar/26 11:58 AM,15/Apr/26 09:37 AM
+Single sign-on option,FLW-265,Story,Done,High,Onboarding,05/Mar/26 11:04 AM,27/Mar/26 09:03 AM
+Refund flow for partial orders,FLW-266,Story,Done,High,Payments,06/Mar/26 12:02 PM,18/Mar/26 09:47 AM
+Share report with a link,FLW-267,Story,Backlog,Low,Reporting,09/Mar/26 04:09 PM,
+Show VAT on invoices,FLW-268,Story,Done,High,Payments,09/Mar/26 09:32 AM,19/Mar/26 09:54 AM
+Single sign-on option,FLW-269,Story,Done,Medium,Onboarding,10/Mar/26 10:16 AM,13/Apr/26 10:38 AM
+Invite teammates by link,FLW-270,Story,Backlog,Low,Onboarding,11/Mar/26 12:14 PM,
+Broken layout in filter dashboard by team,FLW-271,Bug,Done,Medium,Reporting,12/Mar/26 12:25 PM,08/Apr/26 10:34 AM
+Upgrade library for retry failed card payments,FLW-272,Tech Debt,Backlog,Low,Payments,13/Mar/26 09:44 AM,
+Saved cards for returning customers,FLW-273,Story,Done,High,Payments,13/Mar/26 04:48 PM,23/Mar/26 09:24 AM
+Wrong total in invite teammates by link,FLW-274,Bug,Done,High,Onboarding,16/Mar/26 02:29 PM,20/Mar/26 10:38 AM
+Email verification reminder,FLW-275,Story,Backlog,Low,Onboarding,16/Mar/26 10:46 AM,
+Refund flow for partial orders,FLW-276,Story,Done,Medium,Payments,17/Mar/26 08:36 AM,17/Apr/26 09:42 AM
+Fix retry failed card payments,FLW-277,Bug,Done,High,Payments,17/Mar/26 03:11 PM,27/Mar/26 12:04 PM
+Wrong total in welcome checklist,FLW-278,Bug,Done,Highest,Onboarding,17/Mar/26 09:00 AM,26/Mar/26 10:15 AM
+Add tests for invite teammates by link,FLW-279,Tech Debt,Done,Medium,Onboarding,17/Mar/26 11:09 AM,09/Apr/26 10:46 AM
+Chart for weekly usage,FLW-280,Story,Done,Medium,Reporting,17/Mar/26 04:02 PM,13/Apr/26 09:57 AM
+3-D Secure challenge screen,FLW-281,Story,Done,Medium,Payments,17/Mar/26 05:01 PM,14/Apr/26 10:16 AM
+Company profile step,FLW-282,Story,Backlog,Low,Onboarding,18/Mar/26 02:07 PM,
+Scheduled report delivery,FLW-283,Story,Done,Medium,Reporting,18/Mar/26 12:06 PM,16/Apr/26 10:11 AM
+Payment receipt email,FLW-284,Story,Done,Medium,Payments,19/Mar/26 02:18 PM,15/Apr/26 09:46 AM
+Add SEPA direct debit,FLW-285,Story,Done,Medium,Payments,19/Mar/26 11:58 AM,15/Apr/26 12:16 PM
+Saved cards for returning customers,FLW-286,Story,Done,High,Payments,19/Mar/26 12:54 PM,30/Mar/26 09:50 AM
+Share report with a link,FLW-287,Story,Done,High,Reporting,19/Mar/26 08:39 AM,01/Apr/26 10:32 AM
+Add SEPA direct debit,FLW-288,Story,Done,Medium,Payments,20/Mar/26 12:14 PM,22/Apr/26 10:47 AM
+Single sign-on option,FLW-289,Story,Done,Medium,Onboarding,20/Mar/26 10:16 AM,14/Apr/26 09:16 AM
+Totals row in tables,FLW-290,Story,Done,Medium,Reporting,20/Mar/26 11:51 AM,17/Apr/26 11:15 AM
+Single sign-on option,FLW-291,Story,Backlog,Low,Onboarding,23/Mar/26 12:07 PM,
+Email verification reminder,FLW-292,Story,Done,High,Onboarding,23/Mar/26 12:25 PM,02/Apr/26 12:10 PM
+3-D Secure challenge screen,FLW-293,Story,Done,Medium,Payments,23/Mar/26 12:52 PM,28/Apr/26 10:01 AM
+Add SEPA direct debit,FLW-294,Story,Done,Medium,Payments,23/Mar/26 10:28 AM,23/Apr/26 11:21 AM
+Broken layout in retry failed card payments,FLW-295,Bug,Done,Medium,Payments,24/Mar/26 11:52 AM,20/Apr/26 12:22 PM
+Currency rounding rules,FLW-296,Story,Done,Medium,Payments,24/Mar/26 09:07 AM,29/Apr/26 10:33 AM
+Crash in retry failed card payments,FLW-297,Bug,Done,Medium,Payments,25/Mar/26 12:22 PM,17/Apr/26 09:33 AM
+Email verification reminder,FLW-298,Story,Backlog,Low,Onboarding,30/Mar/26 04:01 PM,
+Saved cards for returning customers,FLW-299,Story,Done,High,Payments,31/Mar/26 12:15 PM,20/Apr/26 09:16 AM
+Show VAT on invoices,FLW-300,Story,Done,Medium,Payments,31/Mar/26 10:45 AM,24/Apr/26 09:45 AM
+Fix filter dashboard by team,FLW-301,Bug,Done,Medium,Reporting,01/Apr/26 11:26 AM,23/Apr/26 11:39 AM
+Company profile step,FLW-302,Story,Backlog,Low,Onboarding,02/Apr/26 04:58 PM,
+Retry failed card payments,FLW-303,Story,Done,Medium,Payments,03/Apr/26 01:15 PM,24/Apr/26 11:12 AM
+Company profile step,FLW-304,Story,Done,Medium,Onboarding,03/Apr/26 03:56 PM,30/Apr/26 09:39 AM
+Timeout on progress bar on setup,FLW-305,Bug,Done,Medium,Onboarding,03/Apr/26 03:17 PM,27/Apr/26 11:06 AM
+Wrong total in add sepa direct debit,FLW-306,Bug,Done,High,Payments,06/Apr/26 10:18 AM,21/Apr/26 10:44 AM
+Broken layout in currency rounding rules,FLW-307,Bug,Backlog,Low,Payments,06/Apr/26 05:02 PM,
+Retry failed card payments,FLW-308,Story,Done,Medium,Payments,06/Apr/26 12:47 PM,01/May/26 10:30 AM
+Email verification reminder,FLW-309,Story,Done,High,Onboarding,06/Apr/26 01:15 PM,22/Apr/26 12:09 PM
+Wrong total in refund flow for partial orders,FLW-310,Bug,Done,Highest,Payments,07/Apr/26 03:53 PM,10/Apr/26 11:01 AM
+Refactor payment receipt email,FLW-311,Tech Debt,Done,High,Payments,08/Apr/26 10:23 AM,21/Apr/26 11:06 AM
+Refund flow for partial orders,FLW-312,Story,Done,Medium,Payments,08/Apr/26 09:34 AM,06/May/26 09:36 AM
+Crash in progress bar on setup,FLW-313,Bug,Done,Medium,Onboarding,08/Apr/26 10:37 AM,07/May/26 10:33 AM
+Crash in monthly summary email,FLW-314,Bug,Done,High,Reporting,08/Apr/26 09:17 AM,21/Apr/26 11:09 AM
+Timeout on payment receipt email,FLW-315,Bug,Done,Highest,Payments,09/Apr/26 04:30 PM,16/Apr/26 10:39 AM
+Refactor date range picker,FLW-316,Tech Debt,Done,Medium,Reporting,10/Apr/26 08:49 AM,07/May/26 11:26 AM
+3-D Secure challenge screen,FLW-317,Story,Done,High,Payments,13/Apr/26 11:59 AM,27/Apr/26 11:39 AM
+Add SEPA direct debit,FLW-318,Story,Done,High,Payments,14/Apr/26 03:22 PM,18/May/26 10:04 AM
+Timeout on currency rounding rules,FLW-319,Bug,Done,Highest,Payments,15/Apr/26 04:27 PM,20/Apr/26 09:57 AM
+Refactor refund flow for partial orders,FLW-320,Tech Debt,Done,Medium,Payments,15/Apr/26 11:07 AM,08/May/26 09:45 AM
+Single sign-on option,FLW-321,Story,Done,Medium,Onboarding,16/Apr/26 04:10 PM,15/May/26 09:00 AM
+Welcome checklist,FLW-322,Story,Done,Medium,Onboarding,17/Apr/26 09:55 AM,14/May/26 11:18 AM
+Refactor show vat on invoices,FLW-323,Tech Debt,Done,Medium,Payments,17/Apr/26 04:01 PM,15/May/26 11:33 AM
+Refund flow for partial orders,FLW-324,Story,Done,Medium,Payments,17/Apr/26 10:55 AM,12/May/26 11:46 AM
+Scheduled report delivery,FLW-325,Story,Done,Medium,Reporting,20/Apr/26 03:44 PM,25/May/26 09:36 AM
+Invite teammates by link,FLW-326,Story,Done,High,Onboarding,20/Apr/26 09:54 AM,30/Apr/26 09:58 AM
+Currency rounding rules,FLW-327,Story,Done,Medium,Payments,20/Apr/26 10:47 AM,20/May/26 11:27 AM
+Totals row in tables,FLW-328,Story,Done,High,Reporting,20/Apr/26 09:10 AM,28/Apr/26 09:55 AM
+Chart for weekly usage,FLW-329,Story,Done,Medium,Reporting,20/Apr/26 12:47 PM,20/May/26 12:15 PM
+Crash in export report as csv,FLW-330,Bug,Backlog,Low,Reporting,21/Apr/26 02:13 PM,
+Payment receipt email,FLW-331,Story,Done,Medium,Payments,21/Apr/26 10:09 AM,22/May/26 09:40 AM
+Saved cards for returning customers,FLW-332,Story,Done,Medium,Payments,21/Apr/26 01:27 PM,22/May/26 09:31 AM
+Broken layout in currency rounding rules,FLW-333,Bug,Done,High,Payments,22/Apr/26 01:11 PM,05/May/26 10:45 AM
+Date range picker,FLW-334,Story,Done,High,Reporting,22/Apr/26 10:55 AM,04/May/26 10:50 AM
+Scheduled report delivery,FLW-335,Story,Done,High,Reporting,23/Apr/26 04:08 PM,05/May/26 10:50 AM
+Email verification reminder,FLW-336,Story,Backlog,Low,Onboarding,23/Apr/26 10:08 AM,
+Show VAT on invoices,FLW-337,Story,Done,Medium,Payments,23/Apr/26 10:32 AM,26/May/26 09:38 AM
+Timeout on shorter sign-up form,FLW-338,Bug,Done,Highest,Onboarding,24/Apr/26 04:36 PM,29/Apr/26 11:29 AM
+Fix single sign-on option,FLW-339,Bug,Done,Medium,Onboarding,24/Apr/26 01:15 PM,27/May/26 12:26 PM
+Refund flow for partial orders,FLW-340,Story,Done,High,Payments,27/Apr/26 11:57 AM,06/May/26 09:55 AM
+Email verification reminder,FLW-341,Story,Done,Medium,Onboarding,27/Apr/26 12:09 PM,27/May/26 10:35 AM
+Welcome checklist,FLW-342,Story,Done,Medium,Onboarding,27/Apr/26 11:18 AM,26/May/26 10:53 AM
+Upgrade library for sample data for new accounts,FLW-343,Tech Debt,Backlog,Low,Onboarding,27/Apr/26 04:48 PM,
+Wrong total in export report as csv,FLW-344,Bug,Done,Medium,Reporting,28/Apr/26 02:43 PM,29/May/26 09:05 AM
+Currency rounding rules,FLW-345,Story,Done,High,Payments,28/Apr/26 05:02 PM,11/May/26 09:59 AM
+Wrong total in retry failed card payments,FLW-346,Bug,Done,Medium,Payments,28/Apr/26 10:38 AM,28/May/26 11:16 AM
+Wrong total in filter dashboard by team,FLW-347,Bug,Done,Medium,Reporting,29/Apr/26 11:43 AM,29/May/26 09:39 AM
+Crash in progress bar on setup,FLW-348,Bug,Backlog,Low,Onboarding,29/Apr/26 12:53 PM,
+Add SEPA direct debit,FLW-349,Story,Done,Medium,Payments,29/Apr/26 03:04 PM,03/Jun/26 09:31 AM
+Timeout on show vat on invoices,FLW-350,Bug,Done,Medium,Payments,30/Apr/26 10:15 AM,02/Jun/26 11:58 AM
+Date range picker,FLW-351,Story,Done,Medium,Reporting,30/Apr/26 08:50 AM,01/Jun/26 11:45 AM
+Broken layout in refund flow for partial orders,FLW-352,Bug,Done,Medium,Payments,30/Apr/26 10:38 AM,04/Jun/26 10:07 AM
+Timeout on date range picker,FLW-353,Bug,Done,Medium,Reporting,30/Apr/26 04:49 PM,05/Jun/26 10:41 AM
+Timeout on payment receipt email,FLW-354,Bug,Done,High,Payments,30/Apr/26 10:49 AM,06/May/26 11:35 AM
+Broken layout in sample data for new accounts,FLW-355,Bug,Done,Medium,Onboarding,30/Apr/26 01:54 PM,05/Jun/26 11:05 AM
+Refactor show vat on invoices,FLW-356,Tech Debt,Backlog,Low,Payments,01/May/26 12:45 PM,
+Date range picker,FLW-357,Story,Done,Medium,Reporting,04/May/26 12:24 PM,08/Jun/26 12:01 PM
+Invite teammates by link,FLW-358,Story,Done,Medium,Onboarding,04/May/26 10:52 AM,09/Jun/26 11:22 AM
+Show VAT on invoices,FLW-359,Story,Done,Medium,Payments,04/May/26 05:16 PM,11/Jun/26 10:24 AM
+Totals row in tables,FLW-360,Story,Done,Medium,Reporting,04/May/26 02:03 PM,11/Jun/26 11:01 AM
+Wrong total in progress bar on setup,FLW-361,Bug,Done,Medium,Onboarding,04/May/26 02:37 PM,12/Jun/26 12:04 PM
+Export report as CSV,FLW-362,Story,Done,High,Reporting,06/May/26 10:25 AM,15/May/26 10:25 AM
+Crash in add sepa direct debit,FLW-363,Bug,Done,High,Payments,06/May/26 10:51 AM,12/May/26 09:32 AM
+Add SEPA direct debit,FLW-364,Story,Done,Medium,Payments,07/May/26 10:57 AM,09/Jun/26 10:34 AM
+Add SEPA direct debit,FLW-365,Story,Done,Medium,Payments,07/May/26 02:13 PM,12/Jun/26 09:51 AM
+Welcome checklist,FLW-366,Story,Done,High,Onboarding,08/May/26 03:56 PM,19/May/26 09:21 AM
+Add SEPA direct debit,FLW-367,Story,Done,High,Payments,11/May/26 08:35 AM,22/May/26 11:28 AM
+Fix monthly summary email,FLW-368,Bug,Done,Medium,Reporting,11/May/26 03:14 PM,11/Jun/26 12:00 PM
+Refund flow for partial orders,FLW-369,Story,Done,Medium,Payments,12/May/26 08:41 AM,12/Jun/26 10:35 AM
+Timeout on show vat on invoices,FLW-370,Bug,Done,Medium,Payments,13/May/26 01:10 PM,15/Jun/26 12:11 PM
+3-D Secure challenge screen,FLW-371,Story,Done,Medium,Payments,14/May/26 01:44 PM,15/Jun/26 11:39 AM
+Crash in totals row in tables,FLW-372,Bug,Done,High,Reporting,14/May/26 09:32 AM,21/May/26 10:22 AM
+Crash in email verification reminder,FLW-373,Bug,Done,Highest,Onboarding,14/May/26 09:24 AM,19/May/26 11:02 AM
+Invite teammates by link,FLW-374,Story,Done,Medium,Onboarding,15/May/26 04:51 PM,17/Jun/26 11:05 AM
+Refund flow for partial orders,FLW-375,Story,Done,Medium,Payments,18/May/26 01:06 PM,15/Jun/26 09:13 AM
+Monthly summary email,FLW-376,Story,Done,Medium,Reporting,19/May/26 11:21 AM,16/Jun/26 09:36 AM
+Timeout on totals row in tables,FLW-377,Bug,Done,Medium,Reporting,19/May/26 10:32 AM,16/Jun/26 11:29 AM
+Remove dead code in add sepa direct debit,FLW-378,Tech Debt,Done,High,Payments,19/May/26 02:45 PM,28/May/26 11:09 AM
+Crash in company profile step,FLW-379,Bug,Done,Medium,Onboarding,20/May/26 02:46 PM,17/Jun/26 09:54 AM
+Crash in welcome checklist,FLW-380,Bug,Done,High,Onboarding,20/May/26 03:38 PM,29/May/26 11:46 AM
+Share report with a link,FLW-381,Story,Done,Medium,Reporting,20/May/26 03:04 PM,17/Jun/26 09:35 AM
+Wrong total in email verification reminder,FLW-382,Bug,Done,High,Onboarding,21/May/26 08:35 AM,28/May/26 11:41 AM
+Currency rounding rules,FLW-383,Story,Done,Medium,Payments,22/May/26 02:24 PM,23/Jun/26 10:53 AM
+Saved cards for returning customers,FLW-384,Story,In Progress,Medium,Payments,22/May/26 04:05 PM,
+Remove dead code in add sepa direct debit,FLW-385,Tech Debt,Done,Medium,Payments,22/May/26 04:01 PM,18/Jun/26 09:30 AM
+Payment receipt email,FLW-386,Story,Backlog,Low,Payments,25/May/26 09:40 AM,
+Currency rounding rules,FLW-387,Story,Done,Medium,Payments,26/May/26 05:02 PM,23/Jun/26 11:03 AM
+Wrong total in retry failed card payments,FLW-388,Bug,Backlog,Low,Payments,26/May/26 10:47 AM,
+Remove dead code in invite teammates by link,FLW-389,Tech Debt,Done,Medium,Onboarding,27/May/26 01:30 PM,26/Jun/26 09:29 AM
+Wrong total in saved cards for returning customers,FLW-390,Bug,Done,High,Payments,27/May/26 02:19 PM,04/Jun/26 09:21 AM
+Payment receipt email,FLW-391,Story,Done,Medium,Payments,27/May/26 08:49 AM,24/Jun/26 11:15 AM
+Refund flow for partial orders,FLW-392,Story,Done,Medium,Payments,28/May/26 03:07 PM,26/Jun/26 11:17 AM
+Crash in currency rounding rules,FLW-393,Bug,Done,High,Payments,28/May/26 01:42 PM,02/Jun/26 11:49 AM
+Payment receipt email,FLW-394,Story,Done,Medium,Payments,29/May/26 09:13 AM,25/Jun/26 09:04 AM
+Date range picker,FLW-395,Story,Done,Medium,Reporting,29/May/26 02:34 PM,26/Jun/26 11:46 AM
+Retry failed card payments,FLW-396,Story,Done,High,Payments,29/May/26 04:46 PM,05/Jun/26 12:13 PM
+Timeout on welcome checklist,FLW-397,Bug,Done,Medium,Onboarding,01/Jun/26 09:19 AM,25/Jun/26 10:34 AM
+Broken layout in chart for weekly usage,FLW-398,Bug,Done,High,Reporting,01/Jun/26 10:07 AM,04/Jun/26 11:05 AM
+Remove dead code in show vat on invoices,FLW-399,Tech Debt,Backlog,Low,Payments,01/Jun/26 01:54 PM,
+3-D Secure challenge screen,FLW-400,Story,Done,Medium,Payments,02/Jun/26 01:31 PM,29/Jun/26 11:17 AM
+Show VAT on invoices,FLW-401,Story,Done,Medium,Payments,04/Jun/26 04:31 PM,30/Jun/26 09:44 AM
+Currency rounding rules,FLW-402,Story,Done,Medium,Payments,05/Jun/26 04:03 PM,02/Jul/26 12:19 PM
+Remove dead code in currency rounding rules,FLW-403,Tech Debt,Backlog,Low,Payments,05/Jun/26 04:52 PM,
+Single sign-on option,FLW-404,Story,Done,Medium,Onboarding,08/Jun/26 10:38 AM,01/Jul/26 09:13 AM
+Crash in email verification reminder,FLW-405,Bug,QA,Medium,Onboarding,08/Jun/26 10:38 AM,
+Share report with a link,FLW-406,Story,Code Review,Medium,Reporting,08/Jun/26 10:42 AM,
+Refund flow for partial orders,FLW-407,Story,Backlog,Low,Payments,09/Jun/26 04:01 PM,
+Refund flow for partial orders,FLW-408,Story,QA,Medium,Payments,09/Jun/26 11:38 AM,
+Remove dead code in totals row in tables,FLW-409,Tech Debt,Backlog,Low,Reporting,11/Jun/26 11:02 AM,
+Timeout on export report as csv,FLW-410,Bug,Done,High,Reporting,12/Jun/26 11:03 AM,18/Jun/26 11:13 AM
+Monthly summary email,FLW-411,Story,Done,High,Reporting,15/Jun/26 10:42 AM,19/Jun/26 11:10 AM
+Payment receipt email,FLW-412,Story,Done,High,Payments,15/Jun/26 01:42 PM,22/Jun/26 12:13 PM
+Upgrade library for shorter sign-up form,FLW-413,Tech Debt,QA,Medium,Onboarding,15/Jun/26 12:50 PM,
+Single sign-on option,FLW-414,Story,In Progress,Medium,Onboarding,15/Jun/26 01:04 PM,
+Refund flow for partial orders,FLW-415,Story,In Progress,Medium,Payments,15/Jun/26 05:06 PM,
+Add SEPA direct debit,FLW-416,Story,In Progress,Medium,Payments,16/Jun/26 01:45 PM,
+Fix email verification reminder,FLW-417,Bug,Ready,Medium,Onboarding,16/Jun/26 04:56 PM,
+Crash in filter dashboard by team,FLW-418,Bug,Backlog,Low,Reporting,16/Jun/26 02:04 PM,
+Share report with a link,FLW-419,Story,In Progress,Medium,Reporting,16/Jun/26 12:24 PM,
+Fix progress bar on setup,FLW-420,Bug,Ready,Medium,Onboarding,17/Jun/26 01:26 PM,
+Wrong total in date range picker,FLW-421,Bug,Ready,Medium,Reporting,18/Jun/26 10:32 AM,
+Email verification reminder,FLW-422,Story,Ready,Medium,Onboarding,19/Jun/26 08:32 AM,
+Timeout on totals row in tables,FLW-423,Bug,Ready,Medium,Reporting,22/Jun/26 11:06 AM,
+Upgrade library for invite teammates by link,FLW-424,Tech Debt,Backlog,Medium,Onboarding,22/Jun/26 05:06 PM,
+Wrong total in share report with a link,FLW-425,Bug,Done,High,Reporting,23/Jun/26 12:23 PM,02/Jul/26 10:00 AM
+Timeout on sample data for new accounts,FLW-426,Bug,Backlog,Medium,Onboarding,23/Jun/26 12:18 PM,
+Retry failed card payments,FLW-427,Story,Backlog,Medium,Payments,23/Jun/26 05:15 PM,
+Refactor share report with a link,FLW-428,Tech Debt,Backlog,Medium,Reporting,24/Jun/26 03:23 PM,
+Remove dead code in 3-d secure challenge screen,FLW-429,Tech Debt,Backlog,Low,Payments,24/Jun/26 09:27 AM,
+Add tests for shorter sign-up form,FLW-430,Tech Debt,Backlog,Low,Onboarding,24/Jun/26 10:06 AM,
+Upgrade library for progress bar on setup,FLW-431,Tech Debt,Code Review,High,Onboarding,24/Jun/26 09:05 AM,
+Filter dashboard by team,FLW-432,Story,Backlog,Medium,Reporting,25/Jun/26 02:51 PM,
+Add tests for email verification reminder,FLW-433,Tech Debt,Backlog,Medium,Onboarding,25/Jun/26 11:40 AM,
+Crash in welcome checklist,FLW-434,Bug,Done,High,Onboarding,29/Jun/26 12:07 PM,03/Jul/26 09:30 AM
+Email verification reminder,FLW-435,Story,Backlog,Low,Onboarding,30/Jun/26 01:09 PM,
+Filter dashboard by team,FLW-436,Story,Backlog,Low,Reporting,01/Jul/26 12:38 PM,
+Fix add sepa direct debit,FLW-437,Bug,Backlog,Medium,Payments,01/Jul/26 12:08 PM,
+Payment receipt email,FLW-438,Story,Backlog,Low,Payments,01/Jul/26 03:26 PM,
+Monthly summary email,FLW-439,Story,Backlog,Medium,Reporting,01/Jul/26 03:44 PM,
+Broken layout in single sign-on option,FLW-440,Bug,Code Review,High,Onboarding,01/Jul/26 03:31 PM,
+Broken layout in email verification reminder,FLW-441,Bug,Backlog,Medium,Onboarding,02/Jul/26 10:38 AM,
+Retry failed card payments,FLW-442,Story,Backlog,Medium,Payments,02/Jul/26 05:22 PM,
+3-D Secure challenge screen,FLW-443,Story,Backlog,Medium,Payments,03/Jul/26 01:10 PM,

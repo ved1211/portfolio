@@ -1,0 +1,1472 @@
+Issue key,From Status,To Status,Changed
+FLW-101,Backlog,Ready,18/Dec/25 10:29 AM
+FLW-101,Ready,In Progress,26/Dec/25 04:34 PM
+FLW-101,In Progress,Code Review,31/Dec/25 03:29 PM
+FLW-101,Code Review,QA,02/Jan/26 10:31 AM
+FLW-101,QA,Done,05/Jan/26 09:41 AM
+FLW-102,Backlog,Ready,29/Dec/25 09:45 AM
+FLW-102,Ready,In Progress,12/Jan/26 03:36 PM
+FLW-102,In Progress,Code Review,21/Jan/26 01:05 PM
+FLW-102,Code Review,In Progress,23/Jan/26 10:27 AM
+FLW-102,In Progress,Code Review,23/Jan/26 02:40 PM
+FLW-102,Code Review,QA,26/Jan/26 11:38 AM
+FLW-102,QA,Done,27/Jan/26 09:26 AM
+FLW-104,Backlog,Ready,18/Dec/25 10:07 AM
+FLW-104,Ready,In Progress,31/Dec/25 02:59 PM
+FLW-104,In Progress,Code Review,06/Jan/26 02:07 PM
+FLW-104,Code Review,QA,08/Jan/26 10:46 AM
+FLW-104,QA,Done,09/Jan/26 12:10 PM
+FLW-105,Backlog,Ready,01/Jan/26 09:30 AM
+FLW-105,Ready,In Progress,14/Jan/26 03:44 PM
+FLW-105,In Progress,Code Review,16/Jan/26 01:14 PM
+FLW-105,Code Review,QA,19/Jan/26 01:36 PM
+FLW-105,QA,Done,20/Jan/26 10:44 AM
+FLW-106,Backlog,Ready,25/Dec/25 09:59 AM
+FLW-106,Ready,In Progress,06/Jan/26 02:33 PM
+FLW-106,In Progress,Code Review,14/Jan/26 02:34 PM
+FLW-106,Code Review,QA,15/Jan/26 11:19 AM
+FLW-106,QA,Done,16/Jan/26 10:17 AM
+FLW-107,Backlog,Ready,15/Dec/25 09:58 AM
+FLW-107,Ready,In Progress,15/Dec/25 04:50 PM
+FLW-107,In Progress,Code Review,22/Dec/25 01:57 PM
+FLW-107,Code Review,In Progress,23/Dec/25 11:52 AM
+FLW-107,In Progress,Code Review,23/Dec/25 02:56 PM
+FLW-107,Code Review,QA,24/Dec/25 12:47 PM
+FLW-107,QA,Done,25/Dec/25 12:05 PM
+FLW-108,Backlog,Ready,15/Dec/25 09:53 AM
+FLW-108,Ready,In Progress,19/Dec/25 05:23 PM
+FLW-108,In Progress,Code Review,22/Dec/25 02:33 PM
+FLW-108,Code Review,QA,24/Dec/25 01:12 PM
+FLW-108,QA,Done,26/Dec/25 10:03 AM
+FLW-109,Backlog,Ready,18/Dec/25 10:09 AM
+FLW-109,Ready,In Progress,22/Dec/25 01:51 PM
+FLW-109,In Progress,Code Review,26/Dec/25 02:03 PM
+FLW-109,Code Review,QA,30/Dec/25 11:38 AM
+FLW-109,QA,Done,31/Dec/25 12:18 PM
+FLW-110,Backlog,Ready,02/Apr/26 10:22 AM
+FLW-111,Backlog,Ready,15/Dec/25 09:48 AM
+FLW-111,Ready,In Progress,15/Dec/25 01:51 PM
+FLW-111,In Progress,Code Review,17/Dec/25 12:29 PM
+FLW-111,Code Review,QA,18/Dec/25 01:08 PM
+FLW-111,QA,Done,19/Dec/25 12:23 PM
+FLW-112,Backlog,Ready,25/Dec/25 09:42 AM
+FLW-112,Ready,In Progress,06/Jan/26 03:26 PM
+FLW-112,In Progress,Code Review,16/Jan/26 12:31 PM
+FLW-112,Code Review,In Progress,19/Jan/26 10:21 AM
+FLW-112,In Progress,Code Review,21/Jan/26 12:08 PM
+FLW-112,Code Review,QA,22/Jan/26 11:09 AM
+FLW-112,QA,Done,26/Jan/26 12:16 PM
+FLW-113,Backlog,Ready,22/Dec/25 09:36 AM
+FLW-113,Ready,In Progress,31/Dec/25 01:31 PM
+FLW-113,In Progress,Code Review,02/Jan/26 04:10 PM
+FLW-113,Code Review,QA,05/Jan/26 11:01 AM
+FLW-113,QA,Done,06/Jan/26 10:45 AM
+FLW-114,Backlog,Ready,15/Dec/25 10:02 AM
+FLW-114,Ready,In Progress,16/Dec/25 02:26 PM
+FLW-114,In Progress,Code Review,31/Dec/25 04:13 PM
+FLW-114,Code Review,QA,01/Jan/26 01:12 PM
+FLW-114,QA,Done,02/Jan/26 12:06 PM
+FLW-115,Backlog,Ready,18/Dec/25 09:53 AM
+FLW-115,Ready,In Progress,23/Dec/25 04:25 PM
+FLW-115,In Progress,Code Review,26/Dec/25 03:04 PM
+FLW-115,Code Review,QA,31/Dec/25 12:52 PM
+FLW-115,QA,In Progress,01/Jan/26 09:01 AM
+FLW-115,In Progress,Code Review,01/Jan/26 01:29 PM
+FLW-115,Code Review,QA,05/Jan/26 10:56 AM
+FLW-115,QA,Done,06/Jan/26 10:14 AM
+FLW-117,Backlog,Ready,15/Dec/25 09:54 AM
+FLW-117,Ready,In Progress,15/Dec/25 05:21 PM
+FLW-117,In Progress,Code Review,22/Dec/25 03:27 PM
+FLW-117,Code Review,QA,23/Dec/25 01:24 PM
+FLW-117,QA,Done,24/Dec/25 11:22 AM
+FLW-118,Backlog,Ready,02/Apr/26 09:45 AM
+FLW-118,Ready,In Progress,27/May/26 05:24 PM
+FLW-118,In Progress,Code Review,01/Jun/26 02:10 PM
+FLW-118,Code Review,QA,02/Jun/26 11:09 AM
+FLW-118,QA,Done,03/Jun/26 11:56 AM
+FLW-119,Backlog,Ready,02/Apr/26 09:30 AM
+FLW-119,Ready,In Progress,27/May/26 04:40 PM
+FLW-119,In Progress,Code Review,28/May/26 12:12 PM
+FLW-119,Code Review,QA,29/May/26 11:52 AM
+FLW-119,QA,Done,01/Jun/26 12:11 PM
+FLW-120,Backlog,Ready,25/Dec/25 10:00 AM
+FLW-120,Ready,In Progress,07/Jan/26 05:16 PM
+FLW-120,In Progress,Code Review,09/Jan/26 01:13 PM
+FLW-120,Code Review,QA,13/Jan/26 10:43 AM
+FLW-120,QA,Done,15/Jan/26 11:52 AM
+FLW-122,Backlog,Ready,18/Dec/25 10:05 AM
+FLW-122,Ready,In Progress,26/Dec/25 01:26 PM
+FLW-122,In Progress,Code Review,30/Dec/25 01:29 PM
+FLW-122,Code Review,QA,02/Jan/26 11:37 AM
+FLW-122,QA,Done,05/Jan/26 11:59 AM
+FLW-123,Backlog,Ready,18/Dec/25 10:29 AM
+FLW-123,Ready,In Progress,26/Dec/25 05:29 PM
+FLW-123,In Progress,Code Review,06/Jan/26 12:49 PM
+FLW-123,Code Review,QA,07/Jan/26 11:04 AM
+FLW-123,QA,In Progress,08/Jan/26 10:54 AM
+FLW-123,In Progress,Code Review,09/Jan/26 02:57 PM
+FLW-123,Code Review,QA,12/Jan/26 12:08 PM
+FLW-123,QA,Done,13/Jan/26 12:12 PM
+FLW-124,Backlog,Ready,15/Dec/25 09:31 AM
+FLW-124,Ready,In Progress,16/Dec/25 02:25 PM
+FLW-124,In Progress,Code Review,23/Dec/25 03:46 PM
+FLW-124,Code Review,QA,25/Dec/25 12:16 PM
+FLW-124,QA,Done,26/Dec/25 12:10 PM
+FLW-125,Backlog,Ready,15/Dec/25 09:37 AM
+FLW-125,Ready,In Progress,15/Dec/25 01:46 PM
+FLW-125,In Progress,Code Review,16/Dec/25 12:47 PM
+FLW-125,Code Review,QA,17/Dec/25 11:42 AM
+FLW-125,QA,Done,18/Dec/25 12:02 PM
+FLW-126,Backlog,Ready,25/Dec/25 10:26 AM
+FLW-126,Ready,In Progress,06/Jan/26 05:05 PM
+FLW-126,In Progress,Code Review,08/Jan/26 03:56 PM
+FLW-126,Code Review,QA,12/Jan/26 10:55 AM
+FLW-126,QA,Done,13/Jan/26 10:06 AM
+FLW-127,Backlog,Ready,15/Dec/25 09:55 AM
+FLW-127,Ready,In Progress,15/Dec/25 01:00 PM
+FLW-127,In Progress,Code Review,19/Dec/25 02:07 PM
+FLW-127,Code Review,QA,22/Dec/25 10:26 AM
+FLW-127,QA,Done,23/Dec/25 11:06 AM
+FLW-128,Backlog,Ready,29/Dec/25 09:44 AM
+FLW-128,Ready,In Progress,09/Jan/26 03:42 PM
+FLW-128,In Progress,Code Review,12/Jan/26 04:07 PM
+FLW-128,Code Review,QA,13/Jan/26 10:28 AM
+FLW-128,QA,Done,15/Jan/26 09:53 AM
+FLW-129,Backlog,Ready,15/Dec/25 10:15 AM
+FLW-129,Ready,In Progress,16/Dec/25 05:26 PM
+FLW-129,In Progress,Code Review,22/Dec/25 02:16 PM
+FLW-129,Code Review,QA,24/Dec/25 10:42 AM
+FLW-129,QA,In Progress,26/Dec/25 11:16 AM
+FLW-129,In Progress,Code Review,29/Dec/25 02:40 PM
+FLW-129,Code Review,QA,30/Dec/25 11:24 AM
+FLW-129,QA,Done,31/Dec/25 09:28 AM
+FLW-130,Backlog,Ready,01/Jan/26 10:04 AM
+FLW-130,Ready,In Progress,14/Jan/26 03:33 PM
+FLW-130,In Progress,Code Review,26/Jan/26 12:52 PM
+FLW-130,Code Review,QA,27/Jan/26 12:52 PM
+FLW-130,QA,Done,28/Jan/26 09:45 AM
+FLW-131,Backlog,Ready,01/Jan/26 10:01 AM
+FLW-131,Ready,In Progress,14/Jan/26 03:46 PM
+FLW-131,In Progress,Code Review,19/Jan/26 01:52 PM
+FLW-131,Code Review,QA,20/Jan/26 10:33 AM
+FLW-131,QA,Done,21/Jan/26 10:44 AM
+FLW-132,Backlog,Ready,25/Dec/25 09:49 AM
+FLW-132,Ready,In Progress,31/Dec/25 01:30 PM
+FLW-132,In Progress,Code Review,06/Jan/26 02:40 PM
+FLW-132,Code Review,QA,09/Jan/26 01:48 PM
+FLW-132,QA,Done,12/Jan/26 09:13 AM
+FLW-133,Backlog,Ready,18/Dec/25 09:38 AM
+FLW-133,Ready,In Progress,23/Dec/25 02:34 PM
+FLW-133,In Progress,Code Review,26/Dec/25 02:16 PM
+FLW-133,Code Review,In Progress,30/Dec/25 10:44 AM
+FLW-133,In Progress,Code Review,30/Dec/25 03:20 PM
+FLW-133,Code Review,QA,31/Dec/25 12:14 PM
+FLW-133,QA,Done,01/Jan/26 10:01 AM
+FLW-134,Backlog,Ready,18/Dec/25 09:40 AM
+FLW-134,Ready,In Progress,31/Dec/25 03:32 PM
+FLW-134,In Progress,Code Review,09/Jan/26 01:09 PM
+FLW-134,Code Review,In Progress,12/Jan/26 10:19 AM
+FLW-134,In Progress,Code Review,12/Jan/26 02:31 PM
+FLW-134,Code Review,QA,13/Jan/26 11:02 AM
+FLW-134,QA,Done,14/Jan/26 09:20 AM
+FLW-136,Backlog,Ready,15/Dec/25 10:29 AM
+FLW-136,Ready,In Progress,19/Dec/25 02:11 PM
+FLW-136,In Progress,Code Review,23/Dec/25 02:54 PM
+FLW-136,Code Review,QA,25/Dec/25 10:22 AM
+FLW-136,QA,Done,26/Dec/25 09:26 AM
+FLW-137,Backlog,Ready,29/Dec/25 10:05 AM
+FLW-137,Ready,In Progress,09/Jan/26 04:00 PM
+FLW-137,In Progress,Code Review,14/Jan/26 02:52 PM
+FLW-137,Code Review,QA,16/Jan/26 11:10 AM
+FLW-137,QA,Done,20/Jan/26 10:24 AM
+FLW-138,Backlog,Ready,02/Apr/26 09:35 AM
+FLW-138,Ready,In Progress,27/May/26 02:29 PM
+FLW-138,In Progress,Code Review,29/May/26 01:33 PM
+FLW-138,Code Review,QA,01/Jun/26 01:59 PM
+FLW-138,QA,Done,02/Jun/26 11:12 AM
+FLW-139,Backlog,Ready,15/Dec/25 10:08 AM
+FLW-139,Ready,In Progress,16/Dec/25 03:45 PM
+FLW-139,In Progress,Code Review,19/Dec/25 01:56 PM
+FLW-139,Code Review,QA,22/Dec/25 10:49 AM
+FLW-139,QA,Done,23/Dec/25 09:27 AM
+FLW-140,Backlog,Ready,15/Dec/25 10:27 AM
+FLW-140,Ready,In Progress,22/Dec/25 02:10 PM
+FLW-140,In Progress,Code Review,07/Jan/26 01:00 PM
+FLW-140,Code Review,QA,09/Jan/26 12:30 PM
+FLW-140,QA,Done,12/Jan/26 11:38 AM
+FLW-141,Backlog,Ready,08/Jan/26 09:58 AM
+FLW-141,Ready,In Progress,14/Jan/26 04:20 PM
+FLW-141,In Progress,Code Review,19/Jan/26 03:12 PM
+FLW-141,Code Review,QA,20/Jan/26 12:17 PM
+FLW-141,QA,Done,21/Jan/26 11:10 AM
+FLW-142,Backlog,Ready,08/Jan/26 09:49 AM
+FLW-142,Ready,In Progress,19/Jan/26 04:12 PM
+FLW-142,In Progress,Code Review,29/Jan/26 01:20 PM
+FLW-142,Code Review,QA,30/Jan/26 01:01 PM
+FLW-142,QA,Done,02/Feb/26 10:41 AM
+FLW-143,Backlog,Ready,08/Jan/26 09:59 AM
+FLW-143,Ready,In Progress,19/Jan/26 04:34 PM
+FLW-143,In Progress,Code Review,20/Jan/26 02:52 PM
+FLW-143,Code Review,QA,22/Jan/26 11:40 AM
+FLW-143,QA,Done,26/Jan/26 09:53 AM
+FLW-144,Backlog,Ready,08/Jan/26 10:20 AM
+FLW-144,Ready,In Progress,19/Jan/26 04:13 PM
+FLW-144,In Progress,Code Review,21/Jan/26 03:36 PM
+FLW-144,Code Review,In Progress,23/Jan/26 11:07 AM
+FLW-144,In Progress,Code Review,23/Jan/26 01:04 PM
+FLW-144,Code Review,QA,26/Jan/26 01:58 PM
+FLW-144,QA,Done,27/Jan/26 09:43 AM
+FLW-145,Backlog,Ready,12/Jan/26 10:12 AM
+FLW-145,Ready,In Progress,20/Jan/26 02:26 PM
+FLW-145,In Progress,Code Review,21/Jan/26 02:15 PM
+FLW-145,Code Review,QA,23/Jan/26 10:06 AM
+FLW-145,QA,Done,26/Jan/26 10:05 AM
+FLW-146,Backlog,Ready,18/Dec/25 10:07 AM
+FLW-146,Ready,In Progress,22/Dec/25 05:00 PM
+FLW-146,In Progress,Code Review,26/Dec/25 01:56 PM
+FLW-146,Code Review,QA,29/Dec/25 12:22 PM
+FLW-146,QA,Done,30/Dec/25 09:47 AM
+FLW-147,Backlog,Ready,22/Dec/25 09:31 AM
+FLW-147,Ready,In Progress,22/Dec/25 04:55 PM
+FLW-147,In Progress,Code Review,26/Dec/25 02:59 PM
+FLW-147,Code Review,QA,29/Dec/25 12:38 PM
+FLW-147,QA,Done,30/Dec/25 09:26 AM
+FLW-148,Backlog,Ready,12/Jan/26 09:59 AM
+FLW-148,Ready,In Progress,21/Jan/26 01:43 PM
+FLW-148,In Progress,Code Review,30/Jan/26 04:08 PM
+FLW-148,Code Review,QA,02/Feb/26 10:48 AM
+FLW-148,QA,Done,03/Feb/26 10:46 AM
+FLW-149,Backlog,Ready,15/Jan/26 09:47 AM
+FLW-149,Ready,In Progress,21/Jan/26 01:21 PM
+FLW-149,In Progress,Code Review,27/Jan/26 01:06 PM
+FLW-149,Code Review,QA,28/Jan/26 12:49 PM
+FLW-149,QA,Done,29/Jan/26 09:46 AM
+FLW-150,Backlog,Ready,15/Jan/26 09:32 AM
+FLW-150,Ready,In Progress,21/Jan/26 03:56 PM
+FLW-150,In Progress,Code Review,22/Jan/26 01:48 PM
+FLW-150,Code Review,QA,26/Jan/26 01:40 PM
+FLW-150,QA,Done,28/Jan/26 09:41 AM
+FLW-154,Backlog,Ready,15/Jan/26 09:47 AM
+FLW-154,Ready,In Progress,21/Jan/26 02:50 PM
+FLW-154,In Progress,Code Review,03/Feb/26 12:46 PM
+FLW-154,Code Review,QA,04/Feb/26 12:59 PM
+FLW-154,QA,Done,05/Feb/26 10:43 AM
+FLW-156,Backlog,Ready,15/Jan/26 10:15 AM
+FLW-156,Ready,In Progress,22/Jan/26 02:12 PM
+FLW-156,In Progress,Code Review,27/Jan/26 02:52 PM
+FLW-156,Code Review,QA,28/Jan/26 01:06 PM
+FLW-156,QA,Done,29/Jan/26 11:43 AM
+FLW-157,Backlog,Ready,15/Jan/26 09:57 AM
+FLW-157,Ready,In Progress,22/Jan/26 04:16 PM
+FLW-157,In Progress,Code Review,23/Jan/26 01:14 PM
+FLW-157,Code Review,In Progress,26/Jan/26 12:41 PM
+FLW-157,In Progress,Code Review,26/Jan/26 12:49 PM
+FLW-157,Code Review,QA,27/Jan/26 10:15 AM
+FLW-157,QA,Done,29/Jan/26 10:54 AM
+FLW-158,Backlog,Ready,25/Dec/25 10:15 AM
+FLW-158,Ready,In Progress,26/Dec/25 02:46 PM
+FLW-158,In Progress,Code Review,30/Dec/25 12:44 PM
+FLW-158,Code Review,QA,31/Dec/25 11:39 AM
+FLW-158,QA,Done,01/Jan/26 12:27 PM
+FLW-159,Backlog,Ready,19/Jan/26 09:42 AM
+FLW-159,Ready,In Progress,26/Jan/26 05:21 PM
+FLW-159,In Progress,Code Review,27/Jan/26 02:26 PM
+FLW-159,Code Review,QA,29/Jan/26 12:44 PM
+FLW-159,QA,Done,30/Jan/26 09:37 AM
+FLW-161,Backlog,Ready,15/Jan/26 09:53 AM
+FLW-161,Ready,In Progress,26/Jan/26 03:51 PM
+FLW-161,In Progress,Code Review,27/Jan/26 03:29 PM
+FLW-161,Code Review,QA,29/Jan/26 10:35 AM
+FLW-161,QA,Done,30/Jan/26 09:48 AM
+FLW-162,Backlog,Ready,29/Dec/25 04:14 PM
+FLW-162,Ready,In Progress,29/Dec/25 04:25 PM
+FLW-162,In Progress,Code Review,31/Dec/25 12:21 PM
+FLW-162,Code Review,QA,02/Jan/26 11:10 AM
+FLW-162,QA,In Progress,05/Jan/26 11:37 AM
+FLW-162,In Progress,Code Review,05/Jan/26 01:25 PM
+FLW-162,Code Review,QA,06/Jan/26 12:43 PM
+FLW-162,QA,Done,07/Jan/26 11:29 AM
+FLW-163,Backlog,Ready,22/Jan/26 09:31 AM
+FLW-163,Ready,In Progress,27/Jan/26 04:04 PM
+FLW-163,In Progress,Code Review,30/Jan/26 03:31 PM
+FLW-163,Code Review,In Progress,02/Feb/26 10:52 AM
+FLW-163,In Progress,Code Review,02/Feb/26 12:04 PM
+FLW-163,Code Review,QA,03/Feb/26 11:11 AM
+FLW-163,QA,Done,04/Feb/26 12:02 PM
+FLW-164,Backlog,Ready,22/Jan/26 10:00 AM
+FLW-164,Ready,In Progress,27/Jan/26 04:52 PM
+FLW-164,In Progress,Code Review,02/Feb/26 03:59 PM
+FLW-164,Code Review,In Progress,03/Feb/26 12:21 PM
+FLW-164,In Progress,Code Review,03/Feb/26 02:28 PM
+FLW-164,Code Review,QA,04/Feb/26 01:37 PM
+FLW-164,QA,Done,05/Feb/26 09:56 AM
+FLW-165,Backlog,Ready,30/Dec/25 03:04 PM
+FLW-165,Ready,In Progress,30/Dec/25 03:24 PM
+FLW-165,In Progress,Code Review,31/Dec/25 04:24 PM
+FLW-165,Code Review,QA,01/Jan/26 12:20 PM
+FLW-165,QA,Done,02/Jan/26 10:47 AM
+FLW-166,Backlog,Ready,22/Jan/26 10:27 AM
+FLW-166,Ready,In Progress,27/Jan/26 02:38 PM
+FLW-166,In Progress,Code Review,24/Feb/26 04:16 PM
+FLW-166,Code Review,QA,25/Feb/26 01:47 PM
+FLW-166,QA,Done,26/Feb/26 12:03 PM
+FLW-167,Backlog,Ready,01/Jan/26 10:28 AM
+FLW-167,Ready,In Progress,05/Jan/26 05:04 PM
+FLW-167,In Progress,Code Review,06/Jan/26 04:04 PM
+FLW-167,Code Review,In Progress,07/Jan/26 10:54 AM
+FLW-167,In Progress,Code Review,07/Jan/26 04:21 PM
+FLW-167,Code Review,QA,08/Jan/26 01:34 PM
+FLW-167,QA,Done,09/Jan/26 12:25 PM
+FLW-168,Backlog,Ready,01/Jan/26 09:37 AM
+FLW-168,Ready,In Progress,01/Jan/26 01:10 PM
+FLW-168,In Progress,Code Review,07/Jan/26 12:23 PM
+FLW-168,Code Review,QA,08/Jan/26 12:01 PM
+FLW-168,QA,Done,09/Jan/26 10:04 AM
+FLW-170,Backlog,Ready,22/Jan/26 09:50 AM
+FLW-170,Ready,In Progress,27/Jan/26 01:35 PM
+FLW-170,In Progress,Code Review,30/Jan/26 03:34 PM
+FLW-170,Code Review,QA,03/Feb/26 10:42 AM
+FLW-170,QA,Done,04/Feb/26 09:27 AM
+FLW-171,Backlog,Ready,22/Jan/26 09:45 AM
+FLW-171,Ready,In Progress,28/Jan/26 02:37 PM
+FLW-171,In Progress,Code Review,04/Feb/26 03:29 PM
+FLW-171,Code Review,QA,05/Feb/26 01:46 PM
+FLW-171,QA,Done,06/Feb/26 12:04 PM
+FLW-172,Backlog,Ready,22/Jan/26 10:14 AM
+FLW-172,Ready,In Progress,30/Jan/26 02:05 PM
+FLW-172,In Progress,Code Review,04/Feb/26 01:16 PM
+FLW-172,Code Review,QA,06/Feb/26 11:24 AM
+FLW-172,QA,Done,09/Feb/26 09:07 AM
+FLW-173,Backlog,Ready,22/Jan/26 10:11 AM
+FLW-173,Ready,In Progress,30/Jan/26 01:17 PM
+FLW-173,In Progress,Code Review,09/Feb/26 03:55 PM
+FLW-173,Code Review,In Progress,10/Feb/26 12:38 PM
+FLW-173,In Progress,Code Review,10/Feb/26 02:48 PM
+FLW-173,Code Review,QA,11/Feb/26 10:14 AM
+FLW-173,QA,Done,12/Feb/26 09:49 AM
+FLW-175,Backlog,Ready,05/Jan/26 10:21 AM
+FLW-175,Ready,In Progress,05/Jan/26 02:27 PM
+FLW-175,In Progress,Code Review,08/Jan/26 01:11 PM
+FLW-175,Code Review,QA,09/Jan/26 10:27 AM
+FLW-175,QA,Done,12/Jan/26 09:26 AM
+FLW-176,Backlog,Ready,22/Jan/26 09:47 AM
+FLW-176,Ready,In Progress,30/Jan/26 03:01 PM
+FLW-176,In Progress,Code Review,04/Feb/26 01:40 PM
+FLW-176,Code Review,QA,06/Feb/26 01:21 PM
+FLW-176,QA,Done,09/Feb/26 09:54 AM
+FLW-177,Backlog,Ready,08/Jan/26 09:51 AM
+FLW-177,Ready,In Progress,08/Jan/26 01:18 PM
+FLW-177,In Progress,Code Review,13/Jan/26 02:32 PM
+FLW-177,Code Review,QA,14/Jan/26 01:49 PM
+FLW-177,QA,Done,15/Jan/26 10:47 AM
+FLW-178,Backlog,Ready,08/Jan/26 09:55 AM
+FLW-178,Ready,In Progress,08/Jan/26 01:33 PM
+FLW-178,In Progress,Code Review,15/Jan/26 12:27 PM
+FLW-178,Code Review,QA,16/Jan/26 11:49 AM
+FLW-178,QA,Done,19/Jan/26 09:19 AM
+FLW-180,Backlog,Ready,26/Jan/26 10:13 AM
+FLW-180,Ready,In Progress,03/Feb/26 01:47 PM
+FLW-180,In Progress,Code Review,05/Feb/26 02:29 PM
+FLW-180,Code Review,QA,06/Feb/26 10:44 AM
+FLW-180,QA,In Progress,09/Feb/26 09:18 AM
+FLW-180,In Progress,Code Review,10/Feb/26 12:50 PM
+FLW-180,Code Review,In Progress,11/Feb/26 10:27 AM
+FLW-180,In Progress,Code Review,12/Feb/26 12:29 PM
+FLW-180,Code Review,QA,13/Feb/26 11:43 AM
+FLW-180,QA,Done,16/Feb/26 12:02 PM
+FLW-181,Backlog,Ready,26/Jan/26 09:42 AM
+FLW-181,Ready,In Progress,04/Feb/26 01:45 PM
+FLW-181,In Progress,Code Review,10/Feb/26 12:28 PM
+FLW-181,Code Review,QA,11/Feb/26 10:59 AM
+FLW-181,QA,Done,13/Feb/26 12:06 PM
+FLW-182,Backlog,Ready,29/Jan/26 10:15 AM
+FLW-182,Ready,In Progress,04/Feb/26 03:18 PM
+FLW-182,In Progress,Code Review,05/Feb/26 02:41 PM
+FLW-182,Code Review,In Progress,09/Feb/26 10:38 AM
+FLW-182,In Progress,Code Review,09/Feb/26 03:54 PM
+FLW-182,Code Review,QA,10/Feb/26 01:16 PM
+FLW-182,QA,Done,11/Feb/26 11:16 AM
+FLW-183,Backlog,Ready,29/Jan/26 10:25 AM
+FLW-183,Ready,In Progress,04/Feb/26 03:16 PM
+FLW-183,In Progress,Code Review,12/Feb/26 12:44 PM
+FLW-183,Code Review,QA,13/Feb/26 10:14 AM
+FLW-183,QA,Done,16/Feb/26 09:07 AM
+FLW-184,Backlog,Ready,12/Jan/26 10:19 AM
+FLW-184,Ready,In Progress,12/Jan/26 04:06 PM
+FLW-184,In Progress,Code Review,20/Jan/26 03:08 PM
+FLW-184,Code Review,QA,21/Jan/26 11:00 AM
+FLW-184,QA,Done,22/Jan/26 11:07 AM
+FLW-185,Backlog,Ready,29/Jan/26 09:51 AM
+FLW-185,Ready,In Progress,04/Feb/26 03:51 PM
+FLW-185,In Progress,Code Review,09/Feb/26 12:08 PM
+FLW-185,Code Review,QA,11/Feb/26 12:46 PM
+FLW-185,QA,Done,13/Feb/26 11:08 AM
+FLW-186,Backlog,Ready,12/Jan/26 04:20 PM
+FLW-186,Ready,In Progress,12/Jan/26 04:28 PM
+FLW-186,In Progress,Code Review,14/Jan/26 02:12 PM
+FLW-186,Code Review,QA,15/Jan/26 12:03 PM
+FLW-186,QA,Done,16/Jan/26 11:20 AM
+FLW-187,Backlog,Ready,29/Jan/26 10:10 AM
+FLW-187,Ready,In Progress,05/Feb/26 04:23 PM
+FLW-187,In Progress,Code Review,10/Feb/26 01:45 PM
+FLW-187,Code Review,QA,12/Feb/26 01:39 PM
+FLW-187,QA,Done,13/Feb/26 11:17 AM
+FLW-188,Backlog,Ready,29/Jan/26 09:43 AM
+FLW-188,Ready,In Progress,05/Feb/26 03:33 PM
+FLW-188,In Progress,Code Review,10/Feb/26 03:44 PM
+FLW-188,Code Review,QA,12/Feb/26 12:06 PM
+FLW-188,QA,Done,16/Feb/26 11:19 AM
+FLW-189,Backlog,Ready,02/Feb/26 09:44 AM
+FLW-189,Ready,In Progress,05/Feb/26 01:10 PM
+FLW-189,In Progress,Code Review,12/Feb/26 01:59 PM
+FLW-189,Code Review,QA,16/Feb/26 11:10 AM
+FLW-189,QA,Done,17/Feb/26 11:04 AM
+FLW-190,Backlog,Ready,02/Feb/26 10:14 AM
+FLW-190,Ready,In Progress,10/Feb/26 02:34 PM
+FLW-190,In Progress,Code Review,18/Feb/26 12:09 PM
+FLW-190,Code Review,QA,19/Feb/26 10:07 AM
+FLW-190,QA,Done,23/Feb/26 10:34 AM
+FLW-191,Backlog,Ready,15/Jan/26 10:12 AM
+FLW-191,Ready,In Progress,16/Jan/26 01:24 PM
+FLW-191,In Progress,Code Review,20/Jan/26 02:25 PM
+FLW-191,Code Review,In Progress,21/Jan/26 12:19 PM
+FLW-191,In Progress,Code Review,21/Jan/26 01:15 PM
+FLW-191,Code Review,QA,22/Jan/26 11:41 AM
+FLW-191,QA,Done,23/Jan/26 09:17 AM
+FLW-194,Backlog,Ready,02/Feb/26 09:32 AM
+FLW-194,Ready,In Progress,10/Feb/26 03:40 PM
+FLW-194,In Progress,Code Review,16/Feb/26 02:04 PM
+FLW-194,Code Review,QA,17/Feb/26 11:23 AM
+FLW-194,QA,In Progress,19/Feb/26 09:31 AM
+FLW-194,In Progress,Code Review,24/Feb/26 12:15 PM
+FLW-194,Code Review,QA,25/Feb/26 10:11 AM
+FLW-194,QA,Done,26/Feb/26 09:11 AM
+FLW-195,Backlog,Ready,02/Feb/26 10:10 AM
+FLW-195,Ready,In Progress,10/Feb/26 01:38 PM
+FLW-195,In Progress,Code Review,26/Feb/26 02:51 PM
+FLW-195,Code Review,QA,02/Mar/26 11:03 AM
+FLW-195,QA,Done,03/Mar/26 09:29 AM
+FLW-197,Backlog,Ready,02/Feb/26 10:28 AM
+FLW-197,Ready,In Progress,11/Feb/26 02:05 PM
+FLW-197,In Progress,Code Review,13/Feb/26 03:24 PM
+FLW-197,Code Review,In Progress,16/Feb/26 01:51 PM
+FLW-197,In Progress,Code Review,16/Feb/26 01:52 PM
+FLW-197,Code Review,QA,18/Feb/26 10:27 AM
+FLW-197,QA,In Progress,20/Feb/26 10:38 AM
+FLW-197,In Progress,Code Review,23/Feb/26 01:02 PM
+FLW-197,Code Review,QA,24/Feb/26 11:33 AM
+FLW-197,QA,Done,25/Feb/26 09:46 AM
+FLW-198,Backlog,Ready,05/Feb/26 09:36 AM
+FLW-198,Ready,In Progress,12/Feb/26 03:48 PM
+FLW-198,In Progress,Code Review,16/Feb/26 12:33 PM
+FLW-198,Code Review,QA,18/Feb/26 10:45 AM
+FLW-198,QA,Done,23/Feb/26 10:36 AM
+FLW-199,Backlog,Ready,05/Feb/26 10:05 AM
+FLW-199,Ready,In Progress,13/Feb/26 02:20 PM
+FLW-199,In Progress,Code Review,17/Feb/26 02:49 PM
+FLW-199,Code Review,QA,18/Feb/26 11:42 AM
+FLW-199,QA,Done,23/Feb/26 11:35 AM
+FLW-200,Backlog,Ready,05/Feb/26 10:06 AM
+FLW-200,Ready,In Progress,16/Feb/26 01:48 PM
+FLW-200,In Progress,Code Review,18/Feb/26 12:46 PM
+FLW-200,Code Review,In Progress,20/Feb/26 12:20 PM
+FLW-200,In Progress,Code Review,24/Feb/26 02:50 PM
+FLW-200,Code Review,QA,25/Feb/26 01:35 PM
+FLW-200,QA,Done,26/Feb/26 09:49 AM
+FLW-201,Backlog,Ready,05/Feb/26 10:08 AM
+FLW-201,Ready,In Progress,12/Feb/26 02:59 PM
+FLW-201,In Progress,Code Review,19/Feb/26 12:32 PM
+FLW-201,Code Review,QA,20/Feb/26 12:32 PM
+FLW-201,QA,Done,24/Feb/26 11:51 AM
+FLW-202,Backlog,Ready,09/Feb/26 10:12 AM
+FLW-202,Ready,In Progress,17/Feb/26 02:53 PM
+FLW-202,In Progress,Code Review,19/Feb/26 01:55 PM
+FLW-202,Code Review,In Progress,23/Feb/26 11:31 AM
+FLW-202,In Progress,Code Review,24/Feb/26 02:30 PM
+FLW-202,Code Review,QA,26/Feb/26 11:35 AM
+FLW-202,QA,Done,27/Feb/26 11:25 AM
+FLW-203,Backlog,Ready,09/Feb/26 10:17 AM
+FLW-203,Ready,In Progress,16/Feb/26 02:49 PM
+FLW-203,In Progress,Code Review,17/Feb/26 12:13 PM
+FLW-203,Code Review,QA,19/Feb/26 01:17 PM
+FLW-203,QA,Done,23/Feb/26 10:05 AM
+FLW-204,Backlog,Ready,09/Feb/26 10:25 AM
+FLW-204,Ready,In Progress,17/Feb/26 05:16 PM
+FLW-204,In Progress,Code Review,19/Feb/26 02:37 PM
+FLW-204,Code Review,QA,23/Feb/26 12:38 PM
+FLW-204,QA,Done,25/Feb/26 10:37 AM
+FLW-206,Backlog,Ready,12/Feb/26 09:47 AM
+FLW-206,Ready,In Progress,18/Feb/26 01:54 PM
+FLW-206,In Progress,Code Review,25/Feb/26 12:26 PM
+FLW-206,Code Review,QA,02/Mar/26 12:24 PM
+FLW-206,QA,Done,03/Mar/26 10:45 AM
+FLW-207,Backlog,Ready,12/Feb/26 10:04 AM
+FLW-207,Ready,In Progress,19/Feb/26 01:32 PM
+FLW-207,In Progress,Code Review,02/Mar/26 03:12 PM
+FLW-207,Code Review,QA,04/Mar/26 01:18 PM
+FLW-207,QA,Done,05/Mar/26 10:49 AM
+FLW-208,Backlog,Ready,12/Feb/26 09:36 AM
+FLW-208,Ready,In Progress,19/Feb/26 04:48 PM
+FLW-208,In Progress,Code Review,24/Feb/26 12:23 PM
+FLW-208,Code Review,QA,27/Feb/26 10:21 AM
+FLW-208,QA,Done,02/Mar/26 09:47 AM
+FLW-209,Backlog,Ready,12/Feb/26 10:00 AM
+FLW-209,Ready,In Progress,18/Feb/26 02:53 PM
+FLW-209,In Progress,Code Review,24/Feb/26 04:23 PM
+FLW-209,Code Review,In Progress,27/Feb/26 01:47 PM
+FLW-209,In Progress,Code Review,27/Feb/26 02:25 PM
+FLW-209,Code Review,QA,03/Mar/26 12:18 PM
+FLW-209,QA,Done,04/Mar/26 11:04 AM
+FLW-210,Backlog,Ready,29/Jan/26 10:22 AM
+FLW-210,Ready,In Progress,29/Jan/26 05:04 PM
+FLW-210,In Progress,Code Review,04/Feb/26 04:10 PM
+FLW-210,Code Review,QA,05/Feb/26 11:07 AM
+FLW-210,QA,Done,06/Feb/26 09:17 AM
+FLW-211,Backlog,Ready,16/Feb/26 10:04 AM
+FLW-211,Ready,In Progress,24/Feb/26 01:28 PM
+FLW-211,In Progress,Code Review,02/Mar/26 12:12 PM
+FLW-211,Code Review,In Progress,04/Mar/26 10:24 AM
+FLW-211,In Progress,Code Review,04/Mar/26 03:43 PM
+FLW-211,Code Review,QA,05/Mar/26 12:39 PM
+FLW-211,QA,Done,06/Mar/26 10:04 AM
+FLW-212,Backlog,Ready,19/Feb/26 09:49 AM
+FLW-212,Ready,In Progress,25/Feb/26 04:46 PM
+FLW-212,In Progress,Code Review,09/Mar/26 01:46 PM
+FLW-212,Code Review,QA,10/Mar/26 12:44 PM
+FLW-212,QA,Done,11/Mar/26 11:41 AM
+FLW-213,Backlog,Ready,12/Feb/26 10:28 AM
+FLW-213,Ready,In Progress,24/Feb/26 03:32 PM
+FLW-213,In Progress,Code Review,05/Mar/26 12:17 PM
+FLW-213,Code Review,QA,09/Mar/26 11:17 AM
+FLW-213,QA,Done,10/Mar/26 09:53 AM
+FLW-214,Backlog,Ready,16/Feb/26 09:58 AM
+FLW-214,Ready,In Progress,24/Feb/26 02:25 PM
+FLW-214,In Progress,Code Review,06/Mar/26 02:27 PM
+FLW-214,Code Review,QA,09/Mar/26 10:48 AM
+FLW-214,QA,Done,11/Mar/26 10:22 AM
+FLW-215,Backlog,Ready,19/Feb/26 10:20 AM
+FLW-215,Ready,In Progress,25/Feb/26 03:46 PM
+FLW-215,In Progress,Code Review,04/Mar/26 01:12 PM
+FLW-215,Code Review,QA,06/Mar/26 12:36 PM
+FLW-215,QA,In Progress,09/Mar/26 11:58 AM
+FLW-215,In Progress,Code Review,10/Mar/26 02:07 PM
+FLW-215,Code Review,QA,11/Mar/26 01:41 PM
+FLW-215,QA,Done,12/Mar/26 12:07 PM
+FLW-216,Backlog,Ready,19/Feb/26 09:46 AM
+FLW-216,Ready,In Progress,25/Feb/26 03:17 PM
+FLW-216,In Progress,Code Review,26/Feb/26 03:00 PM
+FLW-216,Code Review,QA,03/Mar/26 10:17 AM
+FLW-216,QA,Done,05/Mar/26 10:18 AM
+FLW-217,Backlog,Ready,29/Jan/26 03:09 PM
+FLW-217,Ready,In Progress,30/Jan/26 04:34 PM
+FLW-217,In Progress,Code Review,03/Feb/26 01:47 PM
+FLW-217,Code Review,QA,04/Feb/26 01:36 PM
+FLW-217,QA,Done,05/Feb/26 10:09 AM
+FLW-218,Backlog,Ready,19/Feb/26 09:38 AM
+FLW-218,Ready,In Progress,25/Feb/26 03:36 PM
+FLW-218,In Progress,Code Review,03/Mar/26 01:26 PM
+FLW-218,Code Review,QA,04/Mar/26 10:00 AM
+FLW-218,QA,Done,05/Mar/26 10:00 AM
+FLW-220,Backlog,Ready,19/Feb/26 10:08 AM
+FLW-220,Ready,In Progress,02/Mar/26 02:37 PM
+FLW-220,In Progress,Code Review,16/Mar/26 04:01 PM
+FLW-220,Code Review,QA,18/Mar/26 11:00 AM
+FLW-220,QA,Done,19/Mar/26 09:55 AM
+FLW-221,Backlog,Ready,19/Feb/26 10:29 AM
+FLW-221,Ready,In Progress,02/Mar/26 03:15 PM
+FLW-221,In Progress,Code Review,06/Mar/26 03:03 PM
+FLW-221,Code Review,QA,09/Mar/26 10:51 AM
+FLW-221,QA,Done,11/Mar/26 09:42 AM
+FLW-222,Backlog,Ready,23/Feb/26 10:05 AM
+FLW-222,Ready,In Progress,03/Mar/26 04:16 PM
+FLW-222,In Progress,Code Review,09/Mar/26 04:01 PM
+FLW-222,Code Review,QA,11/Mar/26 01:08 PM
+FLW-222,QA,Done,12/Mar/26 11:51 AM
+FLW-223,Backlog,Ready,23/Feb/26 09:42 AM
+FLW-223,Ready,In Progress,04/Mar/26 01:52 PM
+FLW-223,In Progress,Code Review,06/Mar/26 03:22 PM
+FLW-223,Code Review,QA,10/Mar/26 10:52 AM
+FLW-223,QA,Done,11/Mar/26 11:07 AM
+FLW-226,Backlog,Ready,05/Feb/26 02:24 PM
+FLW-226,Ready,In Progress,05/Feb/26 02:44 PM
+FLW-226,In Progress,Code Review,16/Feb/26 03:43 PM
+FLW-226,Code Review,QA,17/Feb/26 11:08 AM
+FLW-226,QA,Done,19/Feb/26 11:27 AM
+FLW-227,Backlog,Ready,09/Feb/26 09:37 AM
+FLW-227,Ready,In Progress,10/Feb/26 05:29 PM
+FLW-227,In Progress,Code Review,13/Mar/26 01:39 PM
+FLW-227,Code Review,QA,16/Mar/26 12:01 PM
+FLW-227,QA,Done,17/Mar/26 10:54 AM
+FLW-229,Backlog,Ready,26/Feb/26 10:19 AM
+FLW-229,Ready,In Progress,06/Mar/26 04:58 PM
+FLW-229,In Progress,Code Review,16/Mar/26 01:44 PM
+FLW-229,Code Review,QA,19/Mar/26 01:56 PM
+FLW-229,QA,In Progress,20/Mar/26 09:34 AM
+FLW-229,In Progress,Code Review,20/Mar/26 12:41 PM
+FLW-229,Code Review,QA,24/Mar/26 10:59 AM
+FLW-229,QA,Done,25/Mar/26 11:45 AM
+FLW-230,Backlog,Ready,26/Feb/26 10:14 AM
+FLW-230,Ready,In Progress,06/Mar/26 01:05 PM
+FLW-230,In Progress,Code Review,11/Mar/26 03:48 PM
+FLW-230,Code Review,QA,12/Mar/26 12:54 PM
+FLW-230,QA,Done,13/Mar/26 09:18 AM
+FLW-232,Backlog,Ready,16/Feb/26 09:57 AM
+FLW-232,Ready,In Progress,16/Feb/26 04:19 PM
+FLW-232,In Progress,Code Review,19/Feb/26 04:08 PM
+FLW-232,Code Review,QA,20/Feb/26 10:58 AM
+FLW-232,QA,Done,23/Feb/26 10:05 AM
+FLW-233,Backlog,Ready,26/Feb/26 10:22 AM
+FLW-233,Ready,In Progress,10/Mar/26 03:57 PM
+FLW-233,In Progress,Code Review,12/Mar/26 01:51 PM
+FLW-233,Code Review,QA,13/Mar/26 11:30 AM
+FLW-233,QA,Done,16/Mar/26 11:26 AM
+FLW-234,Backlog,Ready,26/Feb/26 09:46 AM
+FLW-234,Ready,In Progress,11/Mar/26 01:09 PM
+FLW-234,In Progress,Code Review,18/Mar/26 04:29 PM
+FLW-234,Code Review,In Progress,23/Mar/26 12:31 PM
+FLW-234,In Progress,Code Review,24/Mar/26 01:29 PM
+FLW-234,Code Review,QA,27/Mar/26 11:37 AM
+FLW-234,QA,Done,30/Mar/26 10:37 AM
+FLW-236,Backlog,Ready,02/Mar/26 09:30 AM
+FLW-236,Ready,In Progress,12/Mar/26 03:20 PM
+FLW-236,In Progress,Code Review,18/Mar/26 03:55 PM
+FLW-236,Code Review,QA,23/Mar/26 12:50 PM
+FLW-236,QA,In Progress,24/Mar/26 11:16 AM
+FLW-236,In Progress,Code Review,24/Mar/26 03:49 PM
+FLW-236,Code Review,QA,27/Mar/26 10:15 AM
+FLW-236,QA,Done,30/Mar/26 11:35 AM
+FLW-237,Backlog,Ready,19/Feb/26 10:15 AM
+FLW-237,Ready,In Progress,19/Feb/26 01:56 PM
+FLW-237,In Progress,Code Review,25/Feb/26 04:08 PM
+FLW-237,Code Review,QA,26/Feb/26 01:08 PM
+FLW-237,QA,Done,27/Feb/26 10:11 AM
+FLW-239,Backlog,Ready,26/Feb/26 10:05 AM
+FLW-239,Ready,In Progress,11/Mar/26 02:48 PM
+FLW-239,In Progress,Code Review,13/Mar/26 02:15 PM
+FLW-239,Code Review,QA,16/Mar/26 10:20 AM
+FLW-239,QA,Done,17/Mar/26 09:34 AM
+FLW-240,Backlog,Ready,02/Mar/26 10:27 AM
+FLW-240,Ready,In Progress,12/Mar/26 03:42 PM
+FLW-240,In Progress,Code Review,16/Mar/26 12:42 PM
+FLW-240,Code Review,QA,19/Mar/26 12:13 PM
+FLW-240,QA,Done,20/Mar/26 11:12 AM
+FLW-241,Backlog,Ready,23/Feb/26 09:35 AM
+FLW-241,Ready,In Progress,24/Feb/26 01:21 PM
+FLW-241,In Progress,Code Review,25/Feb/26 01:29 PM
+FLW-241,Code Review,QA,26/Feb/26 12:50 PM
+FLW-241,QA,Done,27/Feb/26 11:53 AM
+FLW-243,Backlog,Ready,05/Mar/26 10:03 AM
+FLW-243,Ready,In Progress,16/Mar/26 02:06 PM
+FLW-243,In Progress,Code Review,24/Mar/26 03:55 PM
+FLW-243,Code Review,QA,30/Mar/26 10:55 AM
+FLW-243,QA,Done,31/Mar/26 10:18 AM
+FLW-244,Backlog,Ready,02/Mar/26 09:35 AM
+FLW-244,Ready,In Progress,16/Mar/26 02:15 PM
+FLW-244,In Progress,Code Review,20/Mar/26 03:02 PM
+FLW-244,Code Review,QA,24/Mar/26 11:22 AM
+FLW-244,QA,Done,25/Mar/26 10:41 AM
+FLW-246,Backlog,Ready,09/Mar/26 09:51 AM
+FLW-246,Ready,In Progress,17/Mar/26 03:24 PM
+FLW-246,In Progress,Code Review,20/Mar/26 12:13 PM
+FLW-246,Code Review,QA,25/Mar/26 11:35 AM
+FLW-246,QA,Done,26/Mar/26 12:12 PM
+FLW-247,Backlog,Ready,26/Feb/26 09:39 AM
+FLW-247,Ready,In Progress,27/Feb/26 01:26 PM
+FLW-247,In Progress,Code Review,04/Mar/26 04:19 PM
+FLW-247,Code Review,QA,05/Mar/26 01:14 PM
+FLW-247,QA,Done,06/Mar/26 09:51 AM
+FLW-248,Backlog,Ready,12/Mar/26 10:17 AM
+FLW-248,Ready,In Progress,18/Mar/26 01:16 PM
+FLW-248,In Progress,Code Review,19/Mar/26 03:31 PM
+FLW-248,Code Review,QA,24/Mar/26 10:26 AM
+FLW-248,QA,Done,25/Mar/26 10:26 AM
+FLW-249,Backlog,Ready,26/Feb/26 09:54 AM
+FLW-249,Ready,In Progress,26/Feb/26 03:05 PM
+FLW-249,In Progress,Code Review,02/Mar/26 04:03 PM
+FLW-249,Code Review,QA,03/Mar/26 10:51 AM
+FLW-249,QA,Done,04/Mar/26 10:47 AM
+FLW-250,Backlog,Ready,09/Mar/26 09:45 AM
+FLW-250,Ready,In Progress,17/Mar/26 04:23 PM
+FLW-250,In Progress,Code Review,24/Mar/26 12:41 PM
+FLW-250,Code Review,QA,30/Mar/26 10:15 AM
+FLW-250,QA,Done,31/Mar/26 09:50 AM
+FLW-251,Backlog,Ready,09/Mar/26 09:42 AM
+FLW-251,Ready,In Progress,17/Mar/26 02:04 PM
+FLW-251,In Progress,Code Review,23/Mar/26 12:03 PM
+FLW-251,Code Review,QA,25/Mar/26 11:28 AM
+FLW-251,QA,Done,30/Mar/26 10:04 AM
+FLW-252,Backlog,Ready,12/Mar/26 09:53 AM
+FLW-252,Ready,In Progress,20/Mar/26 04:48 PM
+FLW-252,In Progress,Code Review,30/Mar/26 03:59 PM
+FLW-252,Code Review,QA,02/Apr/26 11:18 AM
+FLW-252,QA,Done,03/Apr/26 12:29 PM
+FLW-253,Backlog,Ready,26/Feb/26 10:56 AM
+FLW-253,Ready,In Progress,27/Feb/26 04:43 PM
+FLW-253,In Progress,Code Review,05/Mar/26 12:50 PM
+FLW-253,Code Review,QA,06/Mar/26 11:09 AM
+FLW-253,QA,Done,09/Mar/26 11:26 AM
+FLW-254,Backlog,Ready,12/Mar/26 10:25 AM
+FLW-254,Ready,In Progress,24/Mar/26 01:50 PM
+FLW-254,In Progress,Code Review,01/Apr/26 12:27 PM
+FLW-254,Code Review,QA,06/Apr/26 10:48 AM
+FLW-254,QA,Done,07/Apr/26 09:24 AM
+FLW-255,Backlog,Ready,12/Mar/26 10:12 AM
+FLW-255,Ready,In Progress,24/Mar/26 05:00 PM
+FLW-255,In Progress,Code Review,27/Mar/26 03:41 PM
+FLW-255,Code Review,QA,01/Apr/26 01:09 PM
+FLW-255,QA,Done,02/Apr/26 10:56 AM
+FLW-256,Backlog,Ready,12/Mar/26 10:02 AM
+FLW-256,Ready,In Progress,24/Mar/26 03:47 PM
+FLW-256,In Progress,Code Review,01/Apr/26 01:28 PM
+FLW-256,Code Review,QA,07/Apr/26 01:10 PM
+FLW-256,QA,Done,08/Apr/26 12:29 PM
+FLW-257,Backlog,Ready,05/Mar/26 10:25 AM
+FLW-257,Ready,In Progress,05/Mar/26 05:17 PM
+FLW-257,In Progress,Code Review,12/Mar/26 03:10 PM
+FLW-257,Code Review,QA,13/Mar/26 11:55 AM
+FLW-257,QA,Done,16/Mar/26 11:44 AM
+FLW-258,Backlog,Ready,19/Mar/26 09:54 AM
+FLW-258,Ready,In Progress,25/Mar/26 01:40 PM
+FLW-258,In Progress,Code Review,31/Mar/26 02:57 PM
+FLW-258,Code Review,QA,03/Apr/26 11:19 AM
+FLW-258,QA,Done,06/Apr/26 10:23 AM
+FLW-259,Backlog,Ready,19/Mar/26 09:40 AM
+FLW-259,Ready,In Progress,25/Mar/26 02:24 PM
+FLW-259,In Progress,Code Review,30/Mar/26 01:56 PM
+FLW-259,Code Review,In Progress,02/Apr/26 12:31 PM
+FLW-259,In Progress,Code Review,02/Apr/26 03:50 PM
+FLW-259,Code Review,QA,08/Apr/26 12:59 PM
+FLW-259,QA,Done,09/Apr/26 09:32 AM
+FLW-260,Backlog,Ready,19/Mar/26 10:29 AM
+FLW-260,Ready,In Progress,25/Mar/26 03:11 PM
+FLW-260,In Progress,Code Review,30/Mar/26 02:23 PM
+FLW-260,Code Review,QA,03/Apr/26 10:01 AM
+FLW-260,QA,Done,06/Apr/26 11:39 AM
+FLW-262,Backlog,Ready,19/Mar/26 09:54 AM
+FLW-262,Ready,In Progress,27/Mar/26 04:22 PM
+FLW-262,In Progress,Code Review,01/Apr/26 04:27 PM
+FLW-262,Code Review,QA,07/Apr/26 12:10 PM
+FLW-262,QA,Done,08/Apr/26 09:23 AM
+FLW-263,Backlog,Ready,05/Mar/26 03:37 PM
+FLW-263,Ready,In Progress,05/Mar/26 03:46 PM
+FLW-263,In Progress,Code Review,11/Mar/26 12:54 PM
+FLW-263,Code Review,QA,12/Mar/26 01:07 PM
+FLW-263,QA,Done,13/Mar/26 09:57 AM
+FLW-264,Backlog,Ready,19/Mar/26 09:54 AM
+FLW-264,Ready,In Progress,25/Mar/26 05:14 PM
+FLW-264,In Progress,Code Review,31/Mar/26 03:59 PM
+FLW-264,Code Review,In Progress,06/Apr/26 01:44 PM
+FLW-264,In Progress,Code Review,08/Apr/26 02:33 PM
+FLW-264,Code Review,QA,14/Apr/26 01:28 PM
+FLW-264,QA,Done,15/Apr/26 09:37 AM
+FLW-265,Backlog,Ready,05/Mar/26 11:14 AM
+FLW-265,Ready,In Progress,05/Mar/26 04:38 PM
+FLW-265,In Progress,Code Review,25/Mar/26 03:55 PM
+FLW-265,Code Review,QA,26/Mar/26 01:24 PM
+FLW-265,QA,Done,27/Mar/26 09:03 AM
+FLW-266,Backlog,Ready,09/Mar/26 09:36 AM
+FLW-266,Ready,In Progress,09/Mar/26 01:22 PM
+FLW-266,In Progress,Code Review,16/Mar/26 03:09 PM
+FLW-266,Code Review,QA,17/Mar/26 01:37 PM
+FLW-266,QA,Done,18/Mar/26 09:47 AM
+FLW-268,Backlog,Ready,09/Mar/26 09:57 AM
+FLW-268,Ready,In Progress,09/Mar/26 05:01 PM
+FLW-268,In Progress,Code Review,16/Mar/26 12:59 PM
+FLW-268,Code Review,QA,18/Mar/26 01:08 PM
+FLW-268,QA,Done,19/Mar/26 09:54 AM
+FLW-269,Backlog,Ready,23/Mar/26 09:50 AM
+FLW-269,Ready,In Progress,30/Mar/26 03:58 PM
+FLW-269,In Progress,Code Review,03/Apr/26 02:41 PM
+FLW-269,Code Review,QA,09/Apr/26 12:34 PM
+FLW-269,QA,Done,13/Apr/26 10:38 AM
+FLW-271,Backlog,Ready,23/Mar/26 10:20 AM
+FLW-271,Ready,In Progress,30/Mar/26 01:58 PM
+FLW-271,In Progress,Code Review,01/Apr/26 03:53 PM
+FLW-271,Code Review,QA,07/Apr/26 12:51 PM
+FLW-271,QA,Done,08/Apr/26 10:34 AM
+FLW-273,Backlog,Ready,16/Mar/26 09:42 AM
+FLW-273,Ready,In Progress,16/Mar/26 01:50 PM
+FLW-273,In Progress,Code Review,19/Mar/26 02:08 PM
+FLW-273,Code Review,QA,20/Mar/26 12:54 PM
+FLW-273,QA,Done,23/Mar/26 09:24 AM
+FLW-274,Backlog,Ready,16/Mar/26 02:44 PM
+FLW-274,Ready,In Progress,16/Mar/26 02:58 PM
+FLW-274,In Progress,Code Review,17/Mar/26 01:49 PM
+FLW-274,Code Review,In Progress,18/Mar/26 01:04 PM
+FLW-274,In Progress,Code Review,18/Mar/26 03:09 PM
+FLW-274,Code Review,QA,19/Mar/26 11:49 AM
+FLW-274,QA,Done,20/Mar/26 10:38 AM
+FLW-276,Backlog,Ready,23/Mar/26 09:55 AM
+FLW-276,Ready,In Progress,30/Mar/26 02:55 PM
+FLW-276,In Progress,Code Review,10/Apr/26 02:17 PM
+FLW-276,Code Review,QA,16/Apr/26 10:01 AM
+FLW-276,QA,Done,17/Apr/26 09:42 AM
+FLW-277,Backlog,Ready,19/Mar/26 09:46 AM
+FLW-277,Ready,In Progress,19/Mar/26 01:45 PM
+FLW-277,In Progress,Code Review,25/Mar/26 12:34 PM
+FLW-277,Code Review,QA,26/Mar/26 12:15 PM
+FLW-277,QA,Done,27/Mar/26 12:04 PM
+FLW-278,Backlog,Ready,17/Mar/26 02:34 PM
+FLW-278,Ready,In Progress,17/Mar/26 02:45 PM
+FLW-278,In Progress,Code Review,19/Mar/26 01:41 PM
+FLW-278,Code Review,QA,20/Mar/26 01:47 PM
+FLW-278,QA,In Progress,23/Mar/26 09:35 AM
+FLW-278,In Progress,Code Review,24/Mar/26 04:16 PM
+FLW-278,Code Review,QA,25/Mar/26 01:46 PM
+FLW-278,QA,Done,26/Mar/26 10:15 AM
+FLW-279,Backlog,Ready,26/Mar/26 10:11 AM
+FLW-279,Ready,In Progress,30/Mar/26 05:08 PM
+FLW-279,In Progress,Code Review,01/Apr/26 02:54 PM
+FLW-279,Code Review,QA,08/Apr/26 10:20 AM
+FLW-279,QA,Done,09/Apr/26 10:46 AM
+FLW-280,Backlog,Ready,26/Mar/26 09:41 AM
+FLW-280,Ready,In Progress,31/Mar/26 02:48 PM
+FLW-280,In Progress,Code Review,07/Apr/26 04:25 PM
+FLW-280,Code Review,QA,10/Apr/26 12:57 PM
+FLW-280,QA,Done,13/Apr/26 09:57 AM
+FLW-281,Backlog,Ready,26/Mar/26 10:14 AM
+FLW-281,Ready,In Progress,31/Mar/26 02:50 PM
+FLW-281,In Progress,Code Review,07/Apr/26 02:17 PM
+FLW-281,Code Review,QA,13/Apr/26 11:45 AM
+FLW-281,QA,Done,14/Apr/26 10:16 AM
+FLW-283,Backlog,Ready,26/Mar/26 10:16 AM
+FLW-283,Ready,In Progress,31/Mar/26 04:11 PM
+FLW-283,In Progress,Code Review,09/Apr/26 01:25 PM
+FLW-283,Code Review,QA,15/Apr/26 10:32 AM
+FLW-283,QA,Done,16/Apr/26 10:11 AM
+FLW-284,Backlog,Ready,26/Mar/26 09:45 AM
+FLW-284,Ready,In Progress,01/Apr/26 04:14 PM
+FLW-284,In Progress,Code Review,07/Apr/26 02:22 PM
+FLW-284,Code Review,QA,14/Apr/26 12:37 PM
+FLW-284,QA,Done,15/Apr/26 09:46 AM
+FLW-285,Backlog,Ready,26/Mar/26 10:21 AM
+FLW-285,Ready,In Progress,31/Mar/26 01:29 PM
+FLW-285,In Progress,Code Review,07/Apr/26 12:47 PM
+FLW-285,Code Review,QA,13/Apr/26 10:10 AM
+FLW-285,QA,Done,15/Apr/26 12:16 PM
+FLW-286,Backlog,Ready,19/Mar/26 01:09 PM
+FLW-286,Ready,In Progress,19/Mar/26 04:58 PM
+FLW-286,In Progress,Code Review,26/Mar/26 12:30 PM
+FLW-286,Code Review,QA,27/Mar/26 10:31 AM
+FLW-286,QA,Done,30/Mar/26 09:50 AM
+FLW-287,Backlog,Ready,19/Mar/26 09:30 AM
+FLW-287,Ready,In Progress,19/Mar/26 02:45 PM
+FLW-287,In Progress,Code Review,30/Mar/26 03:54 PM
+FLW-287,Code Review,QA,31/Mar/26 10:33 AM
+FLW-287,QA,Done,01/Apr/26 10:32 AM
+FLW-288,Backlog,Ready,30/Mar/26 09:32 AM
+FLW-288,Ready,In Progress,01/Apr/26 03:55 PM
+FLW-288,In Progress,Code Review,20/Apr/26 01:43 PM
+FLW-288,Code Review,QA,21/Apr/26 11:52 AM
+FLW-288,QA,Done,22/Apr/26 10:47 AM
+FLW-289,Backlog,Ready,26/Mar/26 09:51 AM
+FLW-289,Ready,In Progress,01/Apr/26 01:19 PM
+FLW-289,In Progress,Code Review,03/Apr/26 01:22 PM
+FLW-289,Code Review,QA,10/Apr/26 11:51 AM
+FLW-289,QA,Done,14/Apr/26 09:16 AM
+FLW-290,Backlog,Ready,26/Mar/26 09:37 AM
+FLW-290,Ready,In Progress,01/Apr/26 02:34 PM
+FLW-290,In Progress,Code Review,08/Apr/26 03:37 PM
+FLW-290,Code Review,QA,15/Apr/26 01:01 PM
+FLW-290,QA,Done,17/Apr/26 11:15 AM
+FLW-292,Backlog,Ready,23/Mar/26 12:45 PM
+FLW-292,Ready,In Progress,24/Mar/26 04:41 PM
+FLW-292,In Progress,Code Review,30/Mar/26 01:39 PM
+FLW-292,Code Review,QA,01/Apr/26 12:55 PM
+FLW-292,QA,Done,02/Apr/26 12:10 PM
+FLW-293,Backlog,Ready,02/Apr/26 09:56 AM
+FLW-293,Ready,In Progress,08/Apr/26 03:31 PM
+FLW-293,In Progress,Code Review,23/Apr/26 02:55 PM
+FLW-293,Code Review,QA,24/Apr/26 10:42 AM
+FLW-293,QA,Done,28/Apr/26 10:01 AM
+FLW-294,Backlog,Ready,02/Apr/26 10:03 AM
+FLW-294,Ready,In Progress,03/Apr/26 05:22 PM
+FLW-294,In Progress,Code Review,10/Apr/26 12:28 PM
+FLW-294,Code Review,In Progress,17/Apr/26 12:52 PM
+FLW-294,In Progress,Code Review,21/Apr/26 03:46 PM
+FLW-294,Code Review,QA,22/Apr/26 10:12 AM
+FLW-294,QA,Done,23/Apr/26 11:21 AM
+FLW-295,Backlog,Ready,02/Apr/26 09:40 AM
+FLW-295,Ready,In Progress,08/Apr/26 02:03 PM
+FLW-295,In Progress,Code Review,10/Apr/26 01:41 PM
+FLW-295,Code Review,QA,17/Apr/26 10:14 AM
+FLW-295,QA,Done,20/Apr/26 12:22 PM
+FLW-296,Backlog,Ready,02/Apr/26 09:33 AM
+FLW-296,Ready,In Progress,08/Apr/26 01:41 PM
+FLW-296,In Progress,Code Review,27/Apr/26 02:36 PM
+FLW-296,Code Review,QA,28/Apr/26 11:31 AM
+FLW-296,QA,Done,29/Apr/26 10:33 AM
+FLW-297,Backlog,Ready,02/Apr/26 10:14 AM
+FLW-297,Ready,In Progress,08/Apr/26 03:04 PM
+FLW-297,In Progress,Code Review,09/Apr/26 12:43 PM
+FLW-297,Code Review,QA,16/Apr/26 12:09 PM
+FLW-297,QA,Done,17/Apr/26 09:33 AM
+FLW-299,Backlog,Ready,02/Apr/26 10:29 AM
+FLW-299,Ready,In Progress,03/Apr/26 04:35 PM
+FLW-299,In Progress,Code Review,16/Apr/26 12:00 PM
+FLW-299,Code Review,QA,17/Apr/26 12:07 PM
+FLW-299,QA,Done,20/Apr/26 09:16 AM
+FLW-300,Backlog,Ready,02/Apr/26 09:47 AM
+FLW-300,Ready,In Progress,10/Apr/26 01:54 PM
+FLW-300,In Progress,Code Review,20/Apr/26 12:13 PM
+FLW-300,Code Review,In Progress,21/Apr/26 10:01 AM
+FLW-300,In Progress,Code Review,21/Apr/26 03:36 PM
+FLW-300,Code Review,QA,22/Apr/26 11:04 AM
+FLW-300,QA,Done,24/Apr/26 09:45 AM
+FLW-301,Backlog,Ready,02/Apr/26 09:49 AM
+FLW-301,Ready,In Progress,10/Apr/26 04:11 PM
+FLW-301,In Progress,Code Review,20/Apr/26 02:05 PM
+FLW-301,Code Review,QA,21/Apr/26 10:13 AM
+FLW-301,QA,Done,23/Apr/26 11:39 AM
+FLW-303,Backlog,Ready,09/Apr/26 09:45 AM
+FLW-303,Ready,In Progress,20/Apr/26 02:12 PM
+FLW-303,In Progress,Code Review,22/Apr/26 02:29 PM
+FLW-303,Code Review,QA,23/Apr/26 01:00 PM
+FLW-303,QA,Done,24/Apr/26 11:12 AM
+FLW-304,Backlog,Ready,09/Apr/26 09:54 AM
+FLW-304,Ready,In Progress,22/Apr/26 03:52 PM
+FLW-304,In Progress,Code Review,24/Apr/26 12:21 PM
+FLW-304,Code Review,In Progress,27/Apr/26 01:21 PM
+FLW-304,In Progress,Code Review,27/Apr/26 01:31 PM
+FLW-304,Code Review,QA,28/Apr/26 11:28 AM
+FLW-304,QA,Done,30/Apr/26 09:39 AM
+FLW-305,Backlog,Ready,09/Apr/26 10:13 AM
+FLW-305,Ready,In Progress,21/Apr/26 05:21 PM
+FLW-305,In Progress,Code Review,22/Apr/26 01:17 PM
+FLW-305,Code Review,QA,23/Apr/26 11:49 AM
+FLW-305,QA,Done,27/Apr/26 11:06 AM
+FLW-306,Backlog,Ready,06/Apr/26 10:30 AM
+FLW-306,Ready,In Progress,07/Apr/26 01:16 PM
+FLW-306,In Progress,Code Review,17/Apr/26 12:33 PM
+FLW-306,Code Review,QA,20/Apr/26 01:39 PM
+FLW-306,QA,Done,21/Apr/26 10:44 AM
+FLW-308,Backlog,Ready,13/Apr/26 10:29 AM
+FLW-308,Ready,In Progress,22/Apr/26 03:06 PM
+FLW-308,In Progress,Code Review,28/Apr/26 02:39 PM
+FLW-308,Code Review,QA,29/Apr/26 01:32 PM
+FLW-308,QA,Done,01/May/26 10:30 AM
+FLW-309,Backlog,Ready,06/Apr/26 01:35 PM
+FLW-309,Ready,In Progress,07/Apr/26 01:17 PM
+FLW-309,In Progress,Code Review,17/Apr/26 03:03 PM
+FLW-309,Code Review,In Progress,20/Apr/26 12:55 PM
+FLW-309,In Progress,Code Review,20/Apr/26 01:13 PM
+FLW-309,Code Review,QA,21/Apr/26 12:51 PM
+FLW-309,QA,Done,22/Apr/26 12:09 PM
+FLW-310,Backlog,Ready,07/Apr/26 05:12 PM
+FLW-310,Ready,In Progress,07/Apr/26 05:22 PM
+FLW-310,In Progress,Code Review,08/Apr/26 02:23 PM
+FLW-310,Code Review,QA,09/Apr/26 11:15 AM
+FLW-310,QA,Done,10/Apr/26 11:01 AM
+FLW-311,Backlog,Ready,09/Apr/26 09:38 AM
+FLW-311,Ready,In Progress,10/Apr/26 05:09 PM
+FLW-311,In Progress,Code Review,17/Apr/26 02:02 PM
+FLW-311,Code Review,QA,20/Apr/26 11:22 AM
+FLW-311,QA,Done,21/Apr/26 11:06 AM
+FLW-312,Backlog,Ready,13/Apr/26 10:11 AM
+FLW-312,Ready,In Progress,29/Apr/26 04:45 PM
+FLW-312,In Progress,Code Review,04/May/26 12:56 PM
+FLW-312,Code Review,QA,05/May/26 12:55 PM
+FLW-312,QA,Done,06/May/26 09:36 AM
+FLW-313,Backlog,Ready,27/Apr/26 09:42 AM
+FLW-313,Ready,In Progress,04/May/26 02:04 PM
+FLW-313,In Progress,Code Review,05/May/26 03:07 PM
+FLW-313,Code Review,QA,06/May/26 10:23 AM
+FLW-313,QA,Done,07/May/26 10:33 AM
+FLW-314,Backlog,Ready,09/Apr/26 09:38 AM
+FLW-314,Ready,In Progress,10/Apr/26 03:06 PM
+FLW-314,In Progress,Code Review,17/Apr/26 02:40 PM
+FLW-314,Code Review,QA,20/Apr/26 11:25 AM
+FLW-314,QA,Done,21/Apr/26 11:09 AM
+FLW-315,Backlog,Ready,09/Apr/26 04:54 PM
+FLW-315,Ready,In Progress,09/Apr/26 05:05 PM
+FLW-315,In Progress,Code Review,14/Apr/26 01:05 PM
+FLW-315,Code Review,QA,15/Apr/26 12:11 PM
+FLW-315,QA,Done,16/Apr/26 10:39 AM
+FLW-316,Backlog,Ready,30/Apr/26 10:07 AM
+FLW-316,Ready,In Progress,04/May/26 03:41 PM
+FLW-316,In Progress,Code Review,05/May/26 03:11 PM
+FLW-316,Code Review,QA,06/May/26 01:58 PM
+FLW-316,QA,Done,07/May/26 11:26 AM
+FLW-317,Backlog,Ready,13/Apr/26 12:14 PM
+FLW-317,Ready,In Progress,20/Apr/26 02:07 PM
+FLW-317,In Progress,Code Review,23/Apr/26 02:53 PM
+FLW-317,Code Review,QA,24/Apr/26 01:12 PM
+FLW-317,QA,Done,27/Apr/26 11:39 AM
+FLW-318,Backlog,Ready,23/Apr/26 09:44 AM
+FLW-318,Ready,In Progress,23/Apr/26 03:05 PM
+FLW-318,In Progress,Code Review,14/May/26 03:56 PM
+FLW-318,Code Review,QA,15/May/26 11:42 AM
+FLW-318,QA,Done,18/May/26 10:04 AM
+FLW-319,Backlog,Ready,15/Apr/26 04:36 PM
+FLW-319,Ready,In Progress,15/Apr/26 04:54 PM
+FLW-319,In Progress,Code Review,16/Apr/26 12:47 PM
+FLW-319,Code Review,QA,17/Apr/26 11:29 AM
+FLW-319,QA,Done,20/Apr/26 09:57 AM
+FLW-320,Backlog,Ready,30/Apr/26 09:43 AM
+FLW-320,Ready,In Progress,04/May/26 02:50 PM
+FLW-320,In Progress,Code Review,06/May/26 03:08 PM
+FLW-320,Code Review,QA,07/May/26 01:56 PM
+FLW-320,QA,Done,08/May/26 09:45 AM
+FLW-321,Backlog,Ready,30/Apr/26 10:07 AM
+FLW-321,Ready,In Progress,05/May/26 05:26 PM
+FLW-321,In Progress,Code Review,13/May/26 03:56 PM
+FLW-321,Code Review,QA,14/May/26 01:34 PM
+FLW-321,QA,Done,15/May/26 09:00 AM
+FLW-322,Backlog,Ready,04/May/26 09:48 AM
+FLW-322,Ready,In Progress,05/May/26 02:32 PM
+FLW-322,In Progress,Code Review,07/May/26 04:03 PM
+FLW-322,Code Review,QA,08/May/26 11:54 AM
+FLW-322,QA,In Progress,12/May/26 11:04 AM
+FLW-322,In Progress,Code Review,12/May/26 01:41 PM
+FLW-322,Code Review,QA,13/May/26 12:30 PM
+FLW-322,QA,Done,14/May/26 11:18 AM
+FLW-323,Backlog,Ready,07/May/26 10:00 AM
+FLW-323,Ready,In Progress,08/May/26 01:42 PM
+FLW-323,In Progress,Code Review,12/May/26 03:06 PM
+FLW-323,Code Review,In Progress,13/May/26 11:28 AM
+FLW-323,In Progress,Code Review,13/May/26 02:49 PM
+FLW-323,Code Review,QA,14/May/26 01:03 PM
+FLW-323,QA,Done,15/May/26 11:33 AM
+FLW-324,Backlog,Ready,04/May/26 10:19 AM
+FLW-324,Ready,In Progress,06/May/26 05:19 PM
+FLW-324,In Progress,Code Review,08/May/26 03:38 PM
+FLW-324,Code Review,QA,11/May/26 11:02 AM
+FLW-324,QA,Done,12/May/26 11:46 AM
+FLW-325,Backlog,Ready,07/May/26 09:49 AM
+FLW-325,Ready,In Progress,15/May/26 03:52 PM
+FLW-325,In Progress,Code Review,20/May/26 03:26 PM
+FLW-325,Code Review,In Progress,21/May/26 01:30 PM
+FLW-325,In Progress,Code Review,21/May/26 01:31 PM
+FLW-325,Code Review,QA,22/May/26 12:17 PM
+FLW-325,QA,Done,25/May/26 09:36 AM
+FLW-326,Backlog,Ready,23/Apr/26 09:55 AM
+FLW-326,Ready,In Progress,24/Apr/26 03:49 PM
+FLW-326,In Progress,Code Review,28/Apr/26 01:09 PM
+FLW-326,Code Review,QA,29/Apr/26 11:16 AM
+FLW-326,QA,Done,30/Apr/26 09:58 AM
+FLW-327,Backlog,Ready,07/May/26 09:32 AM
+FLW-327,Ready,In Progress,08/May/26 04:59 PM
+FLW-327,In Progress,Code Review,15/May/26 04:25 PM
+FLW-327,Code Review,QA,18/May/26 10:37 AM
+FLW-327,QA,Done,20/May/26 11:27 AM
+FLW-328,Backlog,Ready,23/Apr/26 10:03 AM
+FLW-328,Ready,In Progress,23/Apr/26 02:13 PM
+FLW-328,In Progress,Code Review,24/Apr/26 01:42 PM
+FLW-328,Code Review,QA,27/Apr/26 10:31 AM
+FLW-328,QA,Done,28/Apr/26 09:55 AM
+FLW-329,Backlog,Ready,07/May/26 10:04 AM
+FLW-329,Ready,In Progress,13/May/26 01:15 PM
+FLW-329,In Progress,Code Review,15/May/26 02:02 PM
+FLW-329,Code Review,QA,19/May/26 11:10 AM
+FLW-329,QA,Done,20/May/26 12:15 PM
+FLW-331,Backlog,Ready,11/May/26 09:58 AM
+FLW-331,Ready,In Progress,15/May/26 05:14 PM
+FLW-331,In Progress,Code Review,20/May/26 12:53 PM
+FLW-331,Code Review,QA,21/May/26 10:28 AM
+FLW-331,QA,Done,22/May/26 09:40 AM
+FLW-332,Backlog,Ready,11/May/26 10:07 AM
+FLW-332,Ready,In Progress,15/May/26 03:34 PM
+FLW-332,In Progress,Code Review,20/May/26 12:45 PM
+FLW-332,Code Review,QA,21/May/26 12:20 PM
+FLW-332,QA,Done,22/May/26 09:31 AM
+FLW-333,Backlog,Ready,23/Apr/26 09:40 AM
+FLW-333,Ready,In Progress,27/Apr/26 04:24 PM
+FLW-333,In Progress,Code Review,29/Apr/26 12:40 PM
+FLW-333,Code Review,QA,30/Apr/26 10:59 AM
+FLW-333,QA,In Progress,01/May/26 10:09 AM
+FLW-333,In Progress,Code Review,01/May/26 03:03 PM
+FLW-333,Code Review,QA,04/May/26 10:18 AM
+FLW-333,QA,Done,05/May/26 10:45 AM
+FLW-334,Backlog,Ready,23/Apr/26 10:24 AM
+FLW-334,Ready,In Progress,27/Apr/26 04:22 PM
+FLW-334,In Progress,Code Review,30/Apr/26 03:31 PM
+FLW-334,Code Review,QA,01/May/26 01:35 PM
+FLW-334,QA,Done,04/May/26 10:50 AM
+FLW-335,Backlog,Ready,27/Apr/26 10:15 AM
+FLW-335,Ready,In Progress,28/Apr/26 05:07 PM
+FLW-335,In Progress,Code Review,01/May/26 02:43 PM
+FLW-335,Code Review,QA,04/May/26 01:11 PM
+FLW-335,QA,Done,05/May/26 10:50 AM
+FLW-337,Backlog,Ready,14/May/26 09:38 AM
+FLW-337,Ready,In Progress,19/May/26 03:35 PM
+FLW-337,In Progress,Code Review,22/May/26 12:25 PM
+FLW-337,Code Review,QA,25/May/26 01:25 PM
+FLW-337,QA,Done,26/May/26 09:38 AM
+FLW-338,Backlog,Ready,24/Apr/26 05:29 PM
+FLW-338,Ready,In Progress,24/Apr/26 05:40 PM
+FLW-338,In Progress,Code Review,27/Apr/26 03:53 PM
+FLW-338,Code Review,QA,28/Apr/26 12:06 PM
+FLW-338,QA,Done,29/Apr/26 11:29 AM
+FLW-339,Backlog,Ready,18/May/26 09:38 AM
+FLW-339,Ready,In Progress,20/May/26 03:33 PM
+FLW-339,In Progress,Code Review,25/May/26 02:43 PM
+FLW-339,Code Review,QA,26/May/26 11:58 AM
+FLW-339,QA,Done,27/May/26 12:26 PM
+FLW-340,Backlog,Ready,27/Apr/26 12:10 PM
+FLW-340,Ready,In Progress,28/Apr/26 05:02 PM
+FLW-340,In Progress,Code Review,30/Apr/26 01:45 PM
+FLW-340,Code Review,In Progress,01/May/26 10:58 AM
+FLW-340,In Progress,Code Review,04/May/26 03:40 PM
+FLW-340,Code Review,QA,05/May/26 11:44 AM
+FLW-340,QA,Done,06/May/26 09:55 AM
+FLW-341,Backlog,Ready,18/May/26 09:43 AM
+FLW-341,Ready,In Progress,20/May/26 03:57 PM
+FLW-341,In Progress,Code Review,25/May/26 01:53 PM
+FLW-341,Code Review,QA,26/May/26 10:57 AM
+FLW-341,QA,Done,27/May/26 10:35 AM
+FLW-342,Backlog,Ready,18/May/26 09:45 AM
+FLW-342,Ready,In Progress,20/May/26 01:54 PM
+FLW-342,In Progress,Code Review,22/May/26 03:37 PM
+FLW-342,Code Review,QA,25/May/26 12:09 PM
+FLW-342,QA,Done,26/May/26 10:53 AM
+FLW-344,Backlog,Ready,18/May/26 09:37 AM
+FLW-344,Ready,In Progress,25/May/26 03:16 PM
+FLW-344,In Progress,Code Review,26/May/26 02:33 PM
+FLW-344,Code Review,QA,28/May/26 12:14 PM
+FLW-344,QA,Done,29/May/26 09:05 AM
+FLW-345,Backlog,Ready,30/Apr/26 10:26 AM
+FLW-345,Ready,In Progress,30/Apr/26 04:03 PM
+FLW-345,In Progress,Code Review,07/May/26 03:28 PM
+FLW-345,Code Review,QA,08/May/26 10:40 AM
+FLW-345,QA,Done,11/May/26 09:59 AM
+FLW-346,Backlog,Ready,18/May/26 09:45 AM
+FLW-346,Ready,In Progress,20/May/26 05:25 PM
+FLW-346,In Progress,Code Review,26/May/26 02:01 PM
+FLW-346,Code Review,QA,27/May/26 11:27 AM
+FLW-346,QA,Done,28/May/26 11:16 AM
+FLW-347,Backlog,Ready,21/May/26 09:30 AM
+FLW-347,Ready,In Progress,26/May/26 05:02 PM
+FLW-347,In Progress,Code Review,27/May/26 03:44 PM
+FLW-347,Code Review,QA,28/May/26 12:40 PM
+FLW-347,QA,Done,29/May/26 09:39 AM
+FLW-349,Backlog,Ready,21/May/26 10:06 AM
+FLW-349,Ready,In Progress,26/May/26 03:47 PM
+FLW-349,In Progress,Code Review,29/May/26 12:18 PM
+FLW-349,Code Review,In Progress,01/Jun/26 12:35 PM
+FLW-349,In Progress,Code Review,01/Jun/26 02:42 PM
+FLW-349,Code Review,QA,02/Jun/26 10:21 AM
+FLW-349,QA,Done,03/Jun/26 09:31 AM
+FLW-350,Backlog,Ready,25/May/26 10:07 AM
+FLW-350,Ready,In Progress,26/May/26 02:21 PM
+FLW-350,In Progress,Code Review,27/May/26 03:20 PM
+FLW-350,Code Review,QA,01/Jun/26 01:04 PM
+FLW-350,QA,Done,02/Jun/26 11:58 AM
+FLW-351,Backlog,Ready,25/May/26 09:50 AM
+FLW-351,Ready,In Progress,26/May/26 02:12 PM
+FLW-351,In Progress,Code Review,28/May/26 03:50 PM
+FLW-351,Code Review,QA,29/May/26 01:13 PM
+FLW-351,QA,Done,01/Jun/26 11:45 AM
+FLW-352,Backlog,Ready,28/May/26 10:19 AM
+FLW-352,Ready,In Progress,29/May/26 02:25 PM
+FLW-352,In Progress,Code Review,02/Jun/26 02:27 PM
+FLW-352,Code Review,QA,03/Jun/26 10:52 AM
+FLW-352,QA,Done,04/Jun/26 10:07 AM
+FLW-353,Backlog,Ready,28/May/26 10:07 AM
+FLW-353,Ready,In Progress,29/May/26 02:20 PM
+FLW-353,In Progress,Code Review,01/Jun/26 03:49 PM
+FLW-353,Code Review,QA,02/Jun/26 01:12 PM
+FLW-353,QA,In Progress,03/Jun/26 10:24 AM
+FLW-353,In Progress,Code Review,03/Jun/26 03:41 PM
+FLW-353,Code Review,QA,04/Jun/26 10:27 AM
+FLW-353,QA,Done,05/Jun/26 10:41 AM
+FLW-354,Backlog,Ready,30/Apr/26 10:56 AM
+FLW-354,Ready,In Progress,30/Apr/26 04:40 PM
+FLW-354,In Progress,Code Review,04/May/26 01:32 PM
+FLW-354,Code Review,QA,05/May/26 11:10 AM
+FLW-354,QA,Done,06/May/26 11:35 AM
+FLW-355,Backlog,Ready,28/May/26 10:04 AM
+FLW-355,Ready,In Progress,29/May/26 02:39 PM
+FLW-355,In Progress,Code Review,02/Jun/26 02:52 PM
+FLW-355,Code Review,QA,04/Jun/26 01:27 PM
+FLW-355,QA,Done,05/Jun/26 11:05 AM
+FLW-357,Backlog,Ready,28/May/26 10:24 AM
+FLW-357,Ready,In Progress,02/Jun/26 02:16 PM
+FLW-357,In Progress,Code Review,03/Jun/26 01:43 PM
+FLW-357,Code Review,QA,05/Jun/26 11:40 AM
+FLW-357,QA,Done,08/Jun/26 12:01 PM
+FLW-358,Backlog,Ready,28/May/26 10:10 AM
+FLW-358,Ready,In Progress,02/Jun/26 04:04 PM
+FLW-358,In Progress,Code Review,05/Jun/26 12:46 PM
+FLW-358,Code Review,QA,08/Jun/26 12:42 PM
+FLW-358,QA,Done,09/Jun/26 11:22 AM
+FLW-359,Backlog,Ready,01/Jun/26 10:13 AM
+FLW-359,Ready,In Progress,03/Jun/26 04:52 PM
+FLW-359,In Progress,Code Review,08/Jun/26 02:24 PM
+FLW-359,Code Review,QA,09/Jun/26 01:30 PM
+FLW-359,QA,Done,11/Jun/26 10:24 AM
+FLW-360,Backlog,Ready,28/May/26 09:58 AM
+FLW-360,Ready,In Progress,02/Jun/26 05:08 PM
+FLW-360,In Progress,Code Review,05/Jun/26 01:17 PM
+FLW-360,Code Review,QA,08/Jun/26 10:09 AM
+FLW-360,QA,In Progress,09/Jun/26 09:33 AM
+FLW-360,In Progress,Code Review,09/Jun/26 01:17 PM
+FLW-360,Code Review,QA,10/Jun/26 12:10 PM
+FLW-360,QA,Done,11/Jun/26 11:01 AM
+FLW-361,Backlog,Ready,28/May/26 10:02 AM
+FLW-361,Ready,In Progress,02/Jun/26 04:44 PM
+FLW-361,In Progress,Code Review,09/Jun/26 01:34 PM
+FLW-361,Code Review,QA,11/Jun/26 10:26 AM
+FLW-361,QA,Done,12/Jun/26 12:04 PM
+FLW-362,Backlog,Ready,07/May/26 10:18 AM
+FLW-362,Ready,In Progress,07/May/26 01:30 PM
+FLW-362,In Progress,Code Review,13/May/26 02:20 PM
+FLW-362,Code Review,QA,14/May/26 12:49 PM
+FLW-362,QA,Done,15/May/26 10:25 AM
+FLW-363,Backlog,Ready,07/May/26 10:05 AM
+FLW-363,Ready,In Progress,07/May/26 05:02 PM
+FLW-363,In Progress,Code Review,08/May/26 02:27 PM
+FLW-363,Code Review,QA,11/May/26 10:48 AM
+FLW-363,QA,Done,12/May/26 09:32 AM
+FLW-364,Backlog,Ready,01/Jun/26 09:46 AM
+FLW-364,Ready,In Progress,03/Jun/26 04:17 PM
+FLW-364,In Progress,Code Review,05/Jun/26 02:37 PM
+FLW-364,Code Review,QA,08/Jun/26 12:14 PM
+FLW-364,QA,Done,09/Jun/26 10:34 AM
+FLW-365,Backlog,Ready,01/Jun/26 09:47 AM
+FLW-365,Ready,In Progress,05/Jun/26 02:41 PM
+FLW-365,In Progress,Code Review,10/Jun/26 12:07 PM
+FLW-365,Code Review,QA,11/Jun/26 10:32 AM
+FLW-365,QA,Done,12/Jun/26 09:51 AM
+FLW-366,Backlog,Ready,11/May/26 10:08 AM
+FLW-366,Ready,In Progress,12/May/26 03:47 PM
+FLW-366,In Progress,Code Review,15/May/26 03:29 PM
+FLW-366,Code Review,QA,18/May/26 12:22 PM
+FLW-366,QA,Done,19/May/26 09:21 AM
+FLW-367,Backlog,Ready,11/May/26 09:32 AM
+FLW-367,Ready,In Progress,13/May/26 04:38 PM
+FLW-367,In Progress,Code Review,20/May/26 03:04 PM
+FLW-367,Code Review,QA,21/May/26 11:26 AM
+FLW-367,QA,Done,22/May/26 11:28 AM
+FLW-368,Backlog,Ready,04/Jun/26 09:39 AM
+FLW-368,Ready,In Progress,05/Jun/26 03:25 PM
+FLW-368,In Progress,Code Review,08/Jun/26 01:29 PM
+FLW-368,Code Review,QA,09/Jun/26 11:54 AM
+FLW-368,QA,Done,11/Jun/26 12:00 PM
+FLW-369,Backlog,Ready,04/Jun/26 09:58 AM
+FLW-369,Ready,In Progress,05/Jun/26 04:27 PM
+FLW-369,In Progress,Code Review,09/Jun/26 12:51 PM
+FLW-369,Code Review,QA,11/Jun/26 12:04 PM
+FLW-369,QA,Done,12/Jun/26 10:35 AM
+FLW-370,Backlog,Ready,04/Jun/26 10:28 AM
+FLW-370,Ready,In Progress,08/Jun/26 02:28 PM
+FLW-370,In Progress,Code Review,11/Jun/26 02:20 PM
+FLW-370,Code Review,QA,12/Jun/26 10:14 AM
+FLW-370,QA,Done,15/Jun/26 12:11 PM
+FLW-371,Backlog,Ready,04/Jun/26 10:13 AM
+FLW-371,Ready,In Progress,08/Jun/26 01:45 PM
+FLW-371,In Progress,Code Review,10/Jun/26 04:14 PM
+FLW-371,Code Review,QA,12/Jun/26 10:45 AM
+FLW-371,QA,Done,15/Jun/26 11:39 AM
+FLW-372,Backlog,Ready,14/May/26 09:37 AM
+FLW-372,Ready,In Progress,15/May/26 05:23 PM
+FLW-372,In Progress,Code Review,19/May/26 04:26 PM
+FLW-372,Code Review,QA,20/May/26 01:45 PM
+FLW-372,QA,Done,21/May/26 10:22 AM
+FLW-373,Backlog,Ready,14/May/26 10:26 AM
+FLW-373,Ready,In Progress,14/May/26 01:24 PM
+FLW-373,In Progress,Code Review,15/May/26 12:00 PM
+FLW-373,Code Review,QA,18/May/26 11:24 AM
+FLW-373,QA,Done,19/May/26 11:02 AM
+FLW-374,Backlog,Ready,04/Jun/26 10:08 AM
+FLW-374,Ready,In Progress,09/Jun/26 02:02 PM
+FLW-374,In Progress,Code Review,15/Jun/26 02:57 PM
+FLW-374,Code Review,QA,16/Jun/26 10:45 AM
+FLW-374,QA,Done,17/Jun/26 11:05 AM
+FLW-375,Backlog,Ready,04/Jun/26 09:57 AM
+FLW-375,Ready,In Progress,09/Jun/26 04:24 PM
+FLW-375,In Progress,Code Review,11/Jun/26 02:30 PM
+FLW-375,Code Review,QA,12/Jun/26 10:06 AM
+FLW-375,QA,Done,15/Jun/26 09:13 AM
+FLW-376,Backlog,Ready,04/Jun/26 10:19 AM
+FLW-376,Ready,In Progress,10/Jun/26 01:51 PM
+FLW-376,In Progress,Code Review,12/Jun/26 02:37 PM
+FLW-376,Code Review,QA,15/Jun/26 12:19 PM
+FLW-376,QA,Done,16/Jun/26 09:36 AM
+FLW-377,Backlog,Ready,04/Jun/26 09:51 AM
+FLW-377,Ready,In Progress,10/Jun/26 01:31 PM
+FLW-377,In Progress,Code Review,11/Jun/26 03:54 PM
+FLW-377,Code Review,QA,15/Jun/26 10:33 AM
+FLW-377,QA,Done,16/Jun/26 11:29 AM
+FLW-378,Backlog,Ready,21/May/26 09:31 AM
+FLW-378,Ready,In Progress,22/May/26 02:51 PM
+FLW-378,In Progress,Code Review,26/May/26 12:46 PM
+FLW-378,Code Review,QA,27/May/26 10:58 AM
+FLW-378,QA,Done,28/May/26 11:09 AM
+FLW-379,Backlog,Ready,08/Jun/26 10:26 AM
+FLW-379,Ready,In Progress,11/Jun/26 03:32 PM
+FLW-379,In Progress,Code Review,15/Jun/26 01:23 PM
+FLW-379,Code Review,QA,16/Jun/26 01:59 PM
+FLW-379,QA,Done,17/Jun/26 09:54 AM
+FLW-380,Backlog,Ready,21/May/26 09:39 AM
+FLW-380,Ready,In Progress,22/May/26 03:20 PM
+FLW-380,In Progress,Code Review,27/May/26 03:22 PM
+FLW-380,Code Review,QA,28/May/26 12:41 PM
+FLW-380,QA,Done,29/May/26 11:46 AM
+FLW-381,Backlog,Ready,08/Jun/26 09:57 AM
+FLW-381,Ready,In Progress,11/Jun/26 04:44 PM
+FLW-381,In Progress,Code Review,15/Jun/26 12:17 PM
+FLW-381,Code Review,QA,16/Jun/26 11:17 AM
+FLW-381,QA,Done,17/Jun/26 09:35 AM
+FLW-382,Backlog,Ready,21/May/26 10:28 AM
+FLW-382,Ready,In Progress,25/May/26 02:47 PM
+FLW-382,In Progress,Code Review,26/May/26 01:39 PM
+FLW-382,Code Review,QA,27/May/26 01:31 PM
+FLW-382,QA,Done,28/May/26 11:41 AM
+FLW-383,Backlog,Ready,08/Jun/26 09:55 AM
+FLW-383,Ready,In Progress,11/Jun/26 04:36 PM
+FLW-383,In Progress,Code Review,19/Jun/26 01:37 PM
+FLW-383,Code Review,QA,22/Jun/26 01:04 PM
+FLW-383,QA,Done,23/Jun/26 10:53 AM
+FLW-384,Backlog,Ready,11/Jun/26 09:44 AM
+FLW-384,Ready,In Progress,15/Jun/26 01:48 PM
+FLW-385,Backlog,Ready,11/Jun/26 10:00 AM
+FLW-385,Ready,In Progress,12/Jun/26 02:57 PM
+FLW-385,In Progress,Code Review,15/Jun/26 12:37 PM
+FLW-385,Code Review,QA,17/Jun/26 12:08 PM
+FLW-385,QA,Done,18/Jun/26 09:30 AM
+FLW-387,Backlog,Ready,11/Jun/26 10:18 AM
+FLW-387,Ready,In Progress,16/Jun/26 02:36 PM
+FLW-387,In Progress,Code Review,19/Jun/26 03:00 PM
+FLW-387,Code Review,QA,22/Jun/26 01:24 PM
+FLW-387,QA,Done,23/Jun/26 11:03 AM
+FLW-389,Backlog,Ready,11/Jun/26 09:32 AM
+FLW-389,Ready,In Progress,18/Jun/26 02:03 PM
+FLW-389,In Progress,Code Review,24/Jun/26 03:38 PM
+FLW-389,Code Review,QA,25/Jun/26 01:35 PM
+FLW-389,QA,Done,26/Jun/26 09:29 AM
+FLW-390,Backlog,Ready,28/May/26 09:44 AM
+FLW-390,Ready,In Progress,28/May/26 05:02 PM
+FLW-390,In Progress,Code Review,02/Jun/26 12:05 PM
+FLW-390,Code Review,QA,03/Jun/26 12:16 PM
+FLW-390,QA,Done,04/Jun/26 09:21 AM
+FLW-391,Backlog,Ready,11/Jun/26 09:53 AM
+FLW-391,Ready,In Progress,17/Jun/26 02:49 PM
+FLW-391,In Progress,Code Review,22/Jun/26 03:39 PM
+FLW-391,Code Review,QA,23/Jun/26 11:29 AM
+FLW-391,QA,Done,24/Jun/26 11:15 AM
+FLW-392,Backlog,Ready,11/Jun/26 10:05 AM
+FLW-392,Ready,In Progress,19/Jun/26 04:40 PM
+FLW-392,In Progress,Code Review,24/Jun/26 01:46 PM
+FLW-392,Code Review,QA,25/Jun/26 12:03 PM
+FLW-392,QA,Done,26/Jun/26 11:17 AM
+FLW-393,Backlog,Ready,28/May/26 01:48 PM
+FLW-393,Ready,In Progress,28/May/26 04:58 PM
+FLW-393,In Progress,Code Review,29/May/26 01:25 PM
+FLW-393,Code Review,QA,01/Jun/26 10:04 AM
+FLW-393,QA,Done,02/Jun/26 11:49 AM
+FLW-394,Backlog,Ready,15/Jun/26 09:54 AM
+FLW-394,Ready,In Progress,19/Jun/26 03:48 PM
+FLW-394,In Progress,Code Review,22/Jun/26 04:27 PM
+FLW-394,Code Review,In Progress,23/Jun/26 10:37 AM
+FLW-394,In Progress,Code Review,23/Jun/26 03:55 PM
+FLW-394,Code Review,QA,24/Jun/26 11:09 AM
+FLW-394,QA,Done,25/Jun/26 09:04 AM
+FLW-395,Backlog,Ready,18/Jun/26 09:31 AM
+FLW-395,Ready,In Progress,22/Jun/26 01:48 PM
+FLW-395,In Progress,Code Review,24/Jun/26 03:01 PM
+FLW-395,Code Review,QA,25/Jun/26 12:25 PM
+FLW-395,QA,Done,26/Jun/26 11:46 AM
+FLW-396,Backlog,Ready,01/Jun/26 09:53 AM
+FLW-396,Ready,In Progress,01/Jun/26 04:37 PM
+FLW-396,In Progress,Code Review,03/Jun/26 02:40 PM
+FLW-396,Code Review,QA,04/Jun/26 12:59 PM
+FLW-396,QA,Done,05/Jun/26 12:13 PM
+FLW-397,Backlog,Ready,18/Jun/26 10:07 AM
+FLW-397,Ready,In Progress,22/Jun/26 05:26 PM
+FLW-397,In Progress,Code Review,23/Jun/26 03:27 PM
+FLW-397,Code Review,QA,24/Jun/26 10:47 AM
+FLW-397,QA,Done,25/Jun/26 10:34 AM
+FLW-398,Backlog,Ready,01/Jun/26 10:21 AM
+FLW-398,Ready,In Progress,01/Jun/26 02:52 PM
+FLW-398,In Progress,Code Review,02/Jun/26 01:15 PM
+FLW-398,Code Review,QA,03/Jun/26 01:41 PM
+FLW-398,QA,Done,04/Jun/26 11:05 AM
+FLW-400,Backlog,Ready,18/Jun/26 10:18 AM
+FLW-400,Ready,In Progress,23/Jun/26 04:34 PM
+FLW-400,In Progress,Code Review,24/Jun/26 03:02 PM
+FLW-400,Code Review,QA,26/Jun/26 12:54 PM
+FLW-400,QA,Done,29/Jun/26 11:17 AM
+FLW-401,Backlog,Ready,18/Jun/26 10:18 AM
+FLW-401,Ready,In Progress,24/Jun/26 01:50 PM
+FLW-401,In Progress,Code Review,26/Jun/26 01:02 PM
+FLW-401,Code Review,QA,29/Jun/26 01:46 PM
+FLW-401,QA,Done,30/Jun/26 09:44 AM
+FLW-402,Backlog,Ready,18/Jun/26 09:34 AM
+FLW-402,Ready,In Progress,24/Jun/26 04:15 PM
+FLW-402,In Progress,Code Review,26/Jun/26 12:15 PM
+FLW-402,Code Review,QA,29/Jun/26 10:46 AM
+FLW-402,QA,In Progress,30/Jun/26 09:53 AM
+FLW-402,In Progress,Code Review,30/Jun/26 12:24 PM
+FLW-402,Code Review,QA,01/Jul/26 10:48 AM
+FLW-402,QA,Done,02/Jul/26 12:19 PM
+FLW-404,Backlog,Ready,18/Jun/26 10:26 AM
+FLW-404,Ready,In Progress,24/Jun/26 02:56 PM
+FLW-404,In Progress,Code Review,26/Jun/26 12:04 PM
+FLW-404,Code Review,QA,29/Jun/26 10:04 AM
+FLW-404,QA,Done,01/Jul/26 09:13 AM
+FLW-405,Backlog,Ready,22/Jun/26 09:35 AM
+FLW-405,Ready,In Progress,24/Jun/26 03:23 PM
+FLW-405,In Progress,Code Review,02/Jul/26 12:29 PM
+FLW-405,Code Review,QA,03/Jul/26 11:17 AM
+FLW-406,Backlog,Ready,22/Jun/26 09:47 AM
+FLW-406,Ready,In Progress,26/Jun/26 02:33 PM
+FLW-406,In Progress,Code Review,30/Jun/26 01:29 PM
+FLW-406,Code Review,In Progress,02/Jul/26 01:30 PM
+FLW-406,In Progress,Code Review,03/Jul/26 01:27 PM
+FLW-408,Backlog,Ready,22/Jun/26 10:28 AM
+FLW-408,Ready,In Progress,30/Jun/26 04:07 PM
+FLW-408,In Progress,Code Review,02/Jul/26 04:23 PM
+FLW-408,Code Review,QA,03/Jul/26 10:54 AM
+FLW-410,Backlog,Ready,15/Jun/26 10:21 AM
+FLW-410,Ready,In Progress,15/Jun/26 03:31 PM
+FLW-410,In Progress,Code Review,16/Jun/26 12:03 PM
+FLW-410,Code Review,QA,17/Jun/26 12:00 PM
+FLW-410,QA,Done,18/Jun/26 11:13 AM
+FLW-411,Backlog,Ready,15/Jun/26 11:05 AM
+FLW-411,Ready,In Progress,15/Jun/26 05:17 PM
+FLW-411,In Progress,Code Review,17/Jun/26 02:34 PM
+FLW-411,Code Review,QA,18/Jun/26 11:58 AM
+FLW-411,QA,Done,19/Jun/26 11:10 AM
+FLW-412,Backlog,Ready,15/Jun/26 01:47 PM
+FLW-412,Ready,In Progress,15/Jun/26 04:10 PM
+FLW-412,In Progress,Code Review,18/Jun/26 12:27 PM
+FLW-412,Code Review,QA,19/Jun/26 11:39 AM
+FLW-412,QA,Done,22/Jun/26 12:13 PM
+FLW-413,Backlog,Ready,25/Jun/26 10:23 AM
+FLW-413,Ready,In Progress,30/Jun/26 01:19 PM
+FLW-413,In Progress,Code Review,02/Jul/26 02:40 PM
+FLW-413,Code Review,QA,03/Jul/26 11:30 AM
+FLW-414,Backlog,Ready,25/Jun/26 09:31 AM
+FLW-414,Ready,In Progress,01/Jul/26 01:33 PM
+FLW-415,Backlog,Ready,25/Jun/26 09:47 AM
+FLW-415,Ready,In Progress,02/Jul/26 03:14 PM
+FLW-416,Backlog,Ready,25/Jun/26 10:03 AM
+FLW-416,Ready,In Progress,03/Jul/26 02:00 PM
+FLW-417,Backlog,Ready,29/Jun/26 10:13 AM
+FLW-419,Backlog,Ready,25/Jun/26 10:09 AM
+FLW-419,Ready,In Progress,03/Jul/26 03:16 PM
+FLW-420,Backlog,Ready,29/Jun/26 10:12 AM
+FLW-421,Backlog,Ready,02/Jul/26 10:03 AM
+FLW-422,Backlog,Ready,02/Jul/26 09:43 AM
+FLW-423,Backlog,Ready,02/Jul/26 10:25 AM
+FLW-425,Backlog,Ready,25/Jun/26 10:17 AM
+FLW-425,Ready,In Progress,26/Jun/26 04:16 PM
+FLW-425,In Progress,Code Review,30/Jun/26 01:29 PM
+FLW-425,Code Review,QA,01/Jul/26 01:28 PM
+FLW-425,QA,Done,02/Jul/26 10:00 AM
+FLW-431,Backlog,Ready,25/Jun/26 09:48 AM
+FLW-431,Ready,In Progress,26/Jun/26 03:09 PM
+FLW-431,In Progress,Code Review,30/Jun/26 03:18 PM
+FLW-431,Code Review,QA,01/Jul/26 01:12 PM
+FLW-431,QA,In Progress,02/Jul/26 09:07 AM
+FLW-431,In Progress,Code Review,02/Jul/26 01:37 PM
+FLW-431,Code Review,In Progress,03/Jul/26 01:15 PM
+FLW-431,In Progress,Code Review,03/Jul/26 01:36 PM
+FLW-434,Backlog,Ready,29/Jun/26 12:11 PM
+FLW-434,Ready,In Progress,30/Jun/26 02:19 PM
+FLW-434,In Progress,Code Review,01/Jul/26 03:02 PM
+FLW-434,Code Review,QA,02/Jul/26 11:46 AM
+FLW-434,QA,Done,03/Jul/26 09:30 AM
+FLW-440,Backlog,Ready,02/Jul/26 09:49 AM
+FLW-440,Ready,In Progress,02/Jul/26 02:11 PM
+FLW-440,In Progress,Code Review,03/Jul/26 12:36 PM

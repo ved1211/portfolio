@@ -12,6 +12,8 @@ so it deploys anywhere and there is nothing to keep running.
 
 ```
 index.html            markup (content lives here)
+projects/<name>/      case study pages, each its own Vite entry, with their
+                      data pipelines (Python + SQL in DuckDB) and a README
 public/assets/        CV, images — copied to dist as-is
 src/
   main.ts             entry: wires everything up
@@ -34,6 +36,9 @@ npm run dev        # http://localhost:5173
 npm run build      # typechecks, then builds to dist/
 npm run preview    # serve the production build
 ```
+
+The case study data is generated once and committed, so the site build needs
+only Node. To regenerate it, see `projects/delivery-flow/README.md`.
 
 ## Deploy (Vercel)
 
