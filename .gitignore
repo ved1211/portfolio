@@ -3,3 +3,6 @@ dist
 .DS_Store
 *.local
 .vercel
+
+# Private working data (e.g. TUM Business Game exports). Never committed.
+_private/

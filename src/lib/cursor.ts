@@ -22,7 +22,7 @@ export function initCursor() {
 
   document.addEventListener('mouseover', (e) => {
     const t = e.target as HTMLElement | null;
-    const hot = !!t?.closest?.('a, button, .sys, .case, .skill, .crow');
+    const hot = !!t?.closest?.('a, button, label, .sys, .case, .skill.ev, .crow');
     document.body.classList.toggle('cur-hot', hot);
   });
 }

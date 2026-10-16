@@ -233,7 +233,14 @@ body.loaded .hero-h1 .w > i { transform: none; }
 .job-where { display: block; color: var(--ink-3); }
 .job-role { font-size: 1.06rem; font-weight: 600; margin-bottom: 3px; }
 .job-role span { color: var(--signal); font-weight: 500; }
-.job-d { font-size: .915rem; color: var(--ink-2); line-height: 1.62; max-width: 66ch; margin-top: 8px; }
+.job-ctx { font-size: .86rem; color: var(--ink-3); line-height: 1.55; max-width: 66ch; margin-top: 6px; }
+.job-pts { list-style: none; display: grid; gap: 7px; margin-top: 12px; max-width: 66ch; }
+.job-pts li { position: relative; padding-left: 20px; font-size: .915rem; color: var(--ink-2); line-height: 1.62; }
+.job-pts li::before {
+  content: ''; position: absolute; left: 1px; top: .8em;
+  width: 8px; height: 1px; background: var(--ink-4);
+  transition: background .25s ease, width .25s ease;
+}
 .job-win { display: inline-block; margin-top: 11px; font-size: .82rem; font-weight: 500; color: var(--signal); background: var(--signal-bg); padding: 4px 11px; border-radius: 4px; }
 
 /* ── About ────────────────────────────────────────────── */

@@ -4,6 +4,7 @@ import './styles/layout.css';
 import './styles/sections.css';
 import './styles/motion.css';
 import './styles/game.css';
+import './styles/evidence.css';
 
 import { $ } from './lib/env';
 import { initTheme } from './lib/theme';
@@ -12,6 +13,7 @@ import { initCursor } from './lib/cursor';
 import { initNav } from './lib/nav';
 import { initScroll, initReveal, initPipelinePulse } from './lib/scroll';
 import { initGreeter } from './lib/greeter';
+import { initEvidence } from './lib/evidence';
 import { initBackground } from './three/background';
 import { initVoxelUI } from './three/voxel/ui';
 
@@ -22,6 +24,7 @@ initCursor();
 initScroll();
 initReveal();
 initPipelinePulse();
+initEvidence();
 
 const field = $<HTMLCanvasElement>('field');
 const bg = field ? initBackground(field) : undefined;
