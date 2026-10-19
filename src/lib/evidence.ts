@@ -107,7 +107,7 @@ function initTips() {
 function jumpTo(hash: string) {
   const target = hash.startsWith('#') ? document.getElementById(hash.slice(1)) : null;
   if (!target) return;
-  const block = target.closest<HTMLElement>('.job, .edu') ?? target;
+  const block = target.closest<HTMLElement>('.job, .edu, .an-card') ?? target;
   const y = block.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
   const far = Math.abs(y - window.scrollY) > 4;
   window.scrollTo({ top: Math.max(0, y), behavior: reduceMotion ? 'auto' : 'smooth' });

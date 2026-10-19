@@ -268,7 +268,10 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
           </div>
           <h3 class="sys-n">Where the work waits</h3>
           <p class="sys-d">A product team keeps missing its dates, and nobody can say where the work waits.</p>
-          <div class="sys-s">Python · SQL in DuckDB · Apache ECharts · Monte Carlo forecast</div>
+          <div class="sys-s">
+            Python · SQL in <button type="button" class="term" aria-describedby="g-duckdb">DuckDB</button><span hidden id="g-duckdb">DuckDB is a small database that runs SQL directly on files on a laptop, with no server.</span>
+            · Apache ECharts · <button type="button" class="term" aria-describedby="g-montecarlo">Monte Carlo forecast</button><span hidden id="g-montecarlo">A Monte Carlo forecast plays out the future thousands of times with random draws from past data, then reports how often each date was reached.</span>
+          </div>
           <a class="case-link" href="projects/delivery-flow/">Read the case study <span aria-hidden="true">→</span></a>
         </article>
       </div>
@@ -493,7 +496,7 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
 
       <div class="rv skills" id="skills">
         <h3 class="skills-h mono">Skills</h3>
-        <p class="skills-note">Skills with a green dot link to where I used them. Hover, focus or tap one to read the line from my CV.</p>
+        <p class="skills-note">Skills with a green dot link to where I used them. Hover, focus or tap one to see where.</p>
 
         <fieldset class="lens">
           <legend class="lens-l">Highlight the evidence for</legend>
@@ -519,6 +522,8 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
             <li><a class="skill ev fx" data-area="product" href="#exp-gx-1" aria-describedby="ev-requirements-gathering">Requirements Gathering</a><span hidden id="ev-requirements-gathering">Greenox Tech: gathered and documented client requirements.</span></li>
             <li><a class="skill ev fx" data-area="product" href="#exp-sa-3" aria-describedby="ev-release-management">Release Management</a><span hidden id="ev-release-management">SuperAGI: tracked releases across staging and production.</span></li>
             <li><a class="skill ev fx" data-area="product" href="#exp-sa-3" aria-describedby="ev-stakeholder-reporting">Stakeholder Reporting</a><span hidden id="ev-stakeholder-reporting">SuperAGI: reported weekly to 10+ stakeholders on progress, risks and dependencies.</span></li>
+            <li><a class="skill ev fx" data-area="product" href="#proj-delivery-flow" aria-describedby="ev-kanban">Kanban</a><span hidden id="ev-kanban">Delivery flow case study (simulated data): replayed a Kanban board, a board with one column per stage of work, day by day.</span></li>
+            <li><a class="skill ev fx" data-area="product data" href="#proj-delivery-flow" aria-describedby="ev-flow-metrics">Flow Metrics</a><span hidden id="ev-flow-metrics">Delivery flow case study (simulated data): measured how long items take, how many finish each week and how much work is in progress.</span></li>
           </ul>
         </div>
         <div class="skill-block">
@@ -527,8 +532,9 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
             <li><a class="skill ev fx" data-area="data" href="#exp-mm-3" aria-describedby="ev-excel">Excel</a><span hidden id="ev-excel">Maestro Music Institute: built Excel and Power BI dashboards to plan schedules.</span></li>
             <li><a class="skill ev fx" data-area="data" href="#exp-mm-3" aria-describedby="ev-power-bi">Power BI</a><span hidden id="ev-power-bi">Maestro Music Institute: built Excel and Power BI dashboards to plan schedules.</span></li>
             <li><span class="skill fx" data-area="data">Tableau</span></li>
-            <li><span class="skill fx" data-area="data">SQL</span></li>
-            <li><a class="skill ev fx" data-area="data" href="#exp-mm-3" aria-describedby="ev-dashboards">Dashboards</a><span hidden id="ev-dashboards">Maestro Music Institute: built Excel and Power BI dashboards to plan schedules.</span></li>
+            <li><a class="skill ev fx" data-area="data" href="#proj-delivery-flow" aria-describedby="ev-sql">SQL</a><span hidden id="ev-sql">Delivery flow case study (simulated data): wrote the whole analysis as eleven SQL files in DuckDB.</span></li>
+            <li><a class="skill ev fx" data-area="data" href="#proj-delivery-flow" aria-describedby="ev-dashboards">Dashboards</a><span hidden id="ev-dashboards">Delivery flow case study (simulated data): built an interactive flow dashboard. Maestro Music Institute: Excel and Power BI dashboards.</span></li>
+            <li><a class="skill ev fx" data-area="data product" href="#proj-delivery-flow" aria-describedby="ev-monte-carlo-forecasting">Monte Carlo Forecasting</a><span hidden id="ev-monte-carlo-forecasting">Delivery flow case study (simulated data): forecast delivery dates by playing out the team's next weeks 10,000 times.</span></li>
           </ul>
         </div>
         <div class="skill-block">
