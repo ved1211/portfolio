@@ -8,6 +8,8 @@
   transition: transform .8s cubic-bezier(.16,1,.3,1) .1s;
 }
 body.loaded .eyebrow .bar { transform: scaleX(1); }
+/* the role line sits under the name, so it needs less space above and a little more below */
+.eyebrow.hero-role { margin: -8px 0 30px; line-height: 1.6; }
 
 .hero-h1 {
   font-family: 'Newsreader', Georgia, serif;

@@ -18,7 +18,7 @@ public/assets/        CV, images — copied to dist as-is
 src/
   main.ts             entry: wires everything up
   styles/             tokens, chrome, layout, sections, motion, game
-  lib/                theme, boot, cursor, nav, scroll, greeter
+  lib/                theme, boot, cursor, nav, scroll, intro, evidence
   three/
     background.ts     the lattice behind the page
     voxel/            Blueprint, the build-to-plan game

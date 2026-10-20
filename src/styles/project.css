@@ -2,11 +2,6 @@
    Same tokens, type and card language as the home page. Everything here is
    scoped under body.pj so it never touches the home page. */
 
-.sr-only {
-  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
-}
-
 body.pj main { position: relative; z-index: 2; }
 .pj .pj-back { font-size: .855rem; color: var(--ink-2); display: inline-flex; align-items: center; gap: 7px; transition: color .18s ease; }
 .pj .pj-back:hover { color: var(--signal); }

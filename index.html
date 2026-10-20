@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ved Gawade | Operations, Product &amp; Delivery</title>
+<title>Ved Gawade | Product Management, Program Delivery &amp; Growth Marketing</title>
 <meta name="description" content="I work in product management, program delivery and growth marketing. M.Sc. student at the University of Applied Sciences Neu-Ulm and former Technical Program Manager at SuperAGI. Open to working student roles or a full-time internship anywhere in Germany or Europe.">
 <meta name="author" content="Ved Gawade">
 <link rel="canonical" href="https://ved1211.github.io/portfolio/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ved Gawade | Operations, Product &amp; Delivery">
+<meta property="og:title" content="Ved Gawade | Product Management, Program Delivery &amp; Growth Marketing">
 <meta property="og:description" content="M.Sc. student in Digital Innovation Management and former Technical Program Manager at SuperAGI. Open to working student roles or a full-time internship anywhere in Germany or Europe.">
 <meta property="og:url" content="https://ved1211.github.io/portfolio/">
 <meta name="twitter:card" content="summary_large_image">
@@ -87,21 +87,15 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
 <!-- ═══════════ HERO ═══════════ -->
 <header id="hero">
   <div class="wrap">
-    <div class="eyebrow mono"><span class="bar"></span>Operations · Product · Delivery</div>
-
     <h1 class="hero-h1">
-      <span class="w"><i style="--d:.30s">I</i></span>
-      <span class="w"><i style="--d:.36s">turn</i></span>
-      <span class="w"><i style="--d:.42s">messy</i></span>
-      <span class="w"><i style="--d:.48s">work</i></span>
-      <span class="w"><i style="--d:.54s">into</i></span>
-      <span class="w"><i style="--d:.60s">things</i></span>
-      <span class="w"><i class="sig" style="--d:.66s">that</i></span>
-      <span class="w"><i class="sig" style="--d:.72s">ship.</i></span>
+      <span class="w"><i style="--d:.30s">Hi,</i></span>
+      <span class="w"><i style="--d:.38s">I'm</i></span>
+      <span class="w"><i class="sig" style="--d:.46s">Ved.</i></span>
     </h1>
+    <div class="eyebrow hero-role mono"><span class="bar"></span>Product management · Program delivery · Growth marketing</div>
 
     <p class="hero-sub rv">
-      I'm Ved. I find where a team's work gets stuck (reporting, handoffs, content,
+      I find where a team's work gets stuck (reporting, handoffs, content,
       coordination) and build the structure that gets it moving again. Previously
       <strong>Technical Program Manager at SuperAGI</strong>, now doing an M.Sc. in
       Digital Innovation Management in Germany.
@@ -711,39 +705,83 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
 
 
 
-<!-- ═══════════ GREETER ═══════════ -->
-<aside id="greet" aria-live="polite" hidden>
-  <button id="greet-x" aria-label="Dismiss">✕</button>
-  <div class="greet-top">
-    <svg class="bot" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <rect x="9" y="13" width="22" height="17" rx="5" fill="var(--ink)"/>
-      <circle class="bot-eye" cx="16" cy="21" r="2.5" fill="var(--paper)"/>
-      <circle class="bot-eye" cx="24" cy="21" r="2.5" fill="var(--paper)"/>
-      <path d="M20 13V8" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="20" cy="6.5" r="2.2" fill="var(--signal)"/>
-      <path d="M6 20h3M31 20h3" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-    <p class="greet-say" id="greet-say">
-      Hello. You can read the <b>serious version</b> of this site, or you can
-      build a house with me in about thirty seconds. Both are on brand.
-    </p>
+<!-- ═══════════ INTRO: a cartoon Ved walks in and says hello ═══════════ -->
+<aside id="intro" aria-label="A short introduction from Ved" hidden>
+  <div class="intro-bubble">
+    <button class="intro-skip" id="intro-skip" type="button">Skip</button>
+    <p class="intro-say" id="intro-say" aria-hidden="true"></p>
+    <p class="sr-only" id="intro-live" aria-live="polite"></p>
+    <div class="intro-btns" id="intro-btns" hidden>
+      <button class="g-main" id="intro-work" type="button">See my work</button>
+      <button id="intro-play" type="button">Build a house</button>
+    </div>
   </div>
-  <div class="greet-btns">
-    <button class="g-main" id="greet-work">Show me the work</button>
-    <button id="greet-play">Let's build</button>
-  </div>
-</aside>
-<button id="greet-mini" type="button" hidden>
-  <svg class="bot" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-    <rect x="9" y="13" width="22" height="17" rx="5" fill="var(--ink)"/>
-    <circle class="bot-eye" cx="16" cy="21" r="2.5" fill="var(--paper)"/>
-    <circle class="bot-eye" cx="24" cy="21" r="2.5" fill="var(--paper)"/>
-    <path d="M20 13V8" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-    <circle cx="20" cy="6.5" r="2.2" fill="var(--signal)"/>
-    <path d="M6 20h3M31 20h3" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+  <svg class="ved" id="ved" viewBox="0 0 140 220" aria-hidden="true">
+    <ellipse class="ved-shadow" cx="70" cy="212" rx="36" ry="5"/>
+    <g class="ved-all">
+    <g class="ved-leg ved-leg-l">
+      <rect class="jeans" x="50" y="148" width="19" height="52" rx="7"/>
+      <path class="shoe" d="M42 197h24a6 6 0 0 1 6 6v1a5 5 0 0 1-5 5H41a6 6 0 0 1-6-6 6 6 0 0 1 7-6z"/>
+    </g>
+    <g class="ved-leg ved-leg-r">
+      <rect class="jeans" x="71" y="148" width="19" height="52" rx="7"/>
+      <path class="shoe" d="M74 197h24a6 6 0 0 1 7 6 6 6 0 0 1-6 6H73a5 5 0 0 1-5-5v-1a6 6 0 0 1 6-6z"/>
+    </g>
+    <g class="ved-arm ved-arm-l">
+      <rect class="skin" x="30" y="124" width="12" height="33" rx="6"/>
+      <circle class="skin" cx="36" cy="159" r="7"/>
+    </g>
+    <g class="ved-arm ved-arm-r">
+      <rect class="skin" x="98" y="124" width="12" height="33" rx="6"/>
+      <circle class="skin" cx="104" cy="159" r="7"/>
+    </g>
+    <path class="tee" d="M45 107c8-3 16-4 25-4s17 1 25 4l14 7c2 1 3 3 3 5l-1 13c0 2-2 3-4 3h-8l1 26c-10 4-20 5-30 5s-20-1-30-5l1-26h-8c-2 0-4-1-4-3l-1-13c0-2 1-4 3-5z"/>
+    <rect class="skin-shade" x="61" y="90" width="18" height="18" rx="6"/>
+    <path class="collar" d="M60 105c3 6 7 8 10 8s7-2 10-8"/>
+    <g class="ved-head" id="ved-head">
+      <ellipse class="skin" cx="37" cy="64" rx="6.5" ry="9"/>
+      <ellipse class="skin" cx="103" cy="64" rx="6.5" ry="9"/>
+      <path class="ear-line" d="M36 60c2-1 4 0 4 3s-1 5-3 6"/>
+      <path class="ear-line" d="M104 60c-2-1-4 0-4 3s1 5 3 6"/>
+      <path class="skin" d="M38 57c0-25 15-35 32-35s32 10 32 35c0 25-14 41-32 41S38 82 38 57z"/>
+      <path class="hair" d="M38 52C36 38 40 26 49 18c6-8 14-12 23-13 10-1 20 2 26 8 6 6 8 17 6 29-1 4-2 8-3 11-2-8-5-13-10-16-7-4-15-4-21-3-9 1-18 3-24 7-4 3-6 7-8 11z"/>
+      <path class="hair" d="M60 9c6-7 19-10 30-5 6 3 10 8 10 14-6-6-14-9-23-9-6 0-12 0-17 0z"/>
+      <path class="hair-hi" d="M52 21c7-8 19-11 31-9"/>
+      <path class="hair-hi" d="M58 28c8-6 19-8 30-5"/>
+      <path class="hair-hi" d="M70 9c7-3 15-3 22 1"/>
+      <path class="brow" d="M48.5 48.5c4-3 10-3.5 14.5-1.5"/>
+      <path class="brow" d="M77 47c4.5-2 10.5-1.5 14.5 1.5"/>
+      <g class="ved-eyes">
+        <ellipse class="eye" cx="56" cy="60" rx="4.3" ry="5.3"/>
+        <ellipse class="eye" cx="84" cy="60" rx="4.3" ry="5.3"/>
+        <circle class="eye-hi" cx="57.6" cy="58" r="1.4"/>
+        <circle class="eye-hi" cx="85.6" cy="58" r="1.4"/>
+      </g>
+      <circle class="cheek" cx="49" cy="73" r="5"/>
+      <circle class="cheek" cx="91" cy="73" r="5"/>
+      <path class="nose" d="M70.5 63c-2 4-3.5 7-1.5 9 1.5 1 3.5 1 5 0"/>
+      <path class="mouth-smile" d="M60.5 80.5c3 4.5 6 6 9.5 6s6.5-1.5 9.5-6"/>
+      <g class="mouth-open">
+        <ellipse class="mouth" cx="70" cy="83" rx="6.4" ry="4.6"/>
+        <ellipse class="tongue" cx="70" cy="85.4" rx="3.6" ry="1.9"/>
+      </g>
+    </g>
+    </g>
   </svg>
-  <span>Build a house</span>
-</button>
+  <ol hidden id="intro-script">
+    <li>Hi, I'm Ved! I study Digital Innovation Management in Neu&#8209;Ulm.</li>
+    <li>At SuperAGI, I managed delivery across 6 AI products.</li>
+    <li>I rebuilt the TUM Business Game website and test what brings in sign-ups.</li>
+    <li>Now I'm looking for a working student role or internship.</li>
+    <li data-final>See my work, or build a house with me?</li>
+  </ol>
+</aside>
+<div id="dock" hidden>
+  <button id="dock-replay" type="button" aria-label="Replay Ved's introduction" title="Replay the introduction">
+    <svg class="ved dock-face" viewBox="30 4 80 98" aria-hidden="true"></svg>
+  </button>
+  <button id="dock-play" type="button">Build a house</button>
+</div>
 
 <!-- ═══════════ BLUEPRINT GAME ═══════════ -->
 <div id="bp" role="dialog" aria-modal="true" aria-labelledby="bp-h">
