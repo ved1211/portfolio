@@ -32,7 +32,7 @@
 #tip.on { opacity: 1; visibility: visible; transition: opacity .16s ease; }
 #tip .tip-h {
   display: block; margin-top: 7px;
-  font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: .12em; text-transform: uppercase;
+  font-family: var(--font-sans); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase;
   color: color-mix(in srgb, var(--paper) 68%, transparent);
 }
 #tip .tip-h:empty { display: none; }

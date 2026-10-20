@@ -1,8 +1,8 @@
 /* ── Type ─────────────────────────────────────────────── */
 .mono {
-  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: .69rem;
-  letter-spacing: .13em;
+  font-family: var(--font-sans);
+  font-size: .7rem;
+  letter-spacing: .2em;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -30,7 +30,7 @@ section { position: relative; }
 .sec-rule { flex: 1; }
 
 .sec-h2 {
-  font-family: 'Newsreader', Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4.2vw, 3.1rem);
   line-height: 1.08;
   letter-spacing: -0.022em;
@@ -55,7 +55,7 @@ section { position: relative; }
 #nav.stuck { border-bottom-color: var(--rule); }
 .nav-in { height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
-.brand { font-family: 'Newsreader', Georgia, serif; font-size: 1.18rem; letter-spacing: -0.02em; white-space: nowrap; }
+.brand { font-family: var(--font-display); font-size: 1.18rem; letter-spacing: -0.02em; white-space: nowrap; }
 .brand .dot { color: var(--signal); }
 
 .nav-links { display: flex; align-items: center; gap: 30px; }
@@ -98,7 +98,7 @@ section { position: relative; }
   transition: transform .38s cubic-bezier(.76,0,.24,1);
 }
 #mob.open { transform: translateY(0); }
-#mob a { display: block; padding: 13px 32px; font-family: 'Newsreader', Georgia, serif; font-size: 1.45rem; border-bottom: 1px solid var(--rule-soft); }
+#mob a { display: block; padding: 13px 32px; font-family: var(--font-display); font-size: 1.45rem; border-bottom: 1px solid var(--rule-soft); }
 #mob a:last-child { border-bottom: none; }
 
 /* ── Workflow spine ───────────────────────────────────── */
@@ -145,7 +145,7 @@ body.loaded.rail-pinned #spine { opacity: 0; pointer-events: none; }
   position: absolute;
   left: 22px; top: 50%;
   transform: translateY(-50%) translateX(-6px);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-sans);
   font-size: .58rem;
   letter-spacing: .13em;
   text-transform: uppercase;

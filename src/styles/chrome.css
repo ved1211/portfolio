@@ -34,7 +34,7 @@ body.loaded #field { opacity: .6; }
 #boot.done { transform: translateY(-101%); opacity: 0; pointer-events: none; }
 .boot-in { text-align: center; }
 .boot-mark {
-  font-family: 'Newsreader', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.6rem;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
@@ -58,7 +58,7 @@ body.loaded #field { opacity: .6; }
 }
 @keyframes bootline { to { transform: scaleX(1); } }
 .boot-txt {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-sans);
   font-size: .6rem;
   letter-spacing: .18em;
   text-transform: uppercase;

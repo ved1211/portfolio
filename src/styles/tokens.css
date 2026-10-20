@@ -7,6 +7,12 @@
 ═══════════════════════════════════════════════════════════ */
 
 :root {
+  /* Type: a high-contrast serif for names and headings, a tight sans for
+     everything else (labels included), and a plain monospace only for code. */
+  --font-display: 'Bodoni Moda', 'Bodoni 72', Didot, Georgia, serif;
+  --font-sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-code: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
   --paper:      #F4F5F2;
   --paper-2:    #E7EAE4;
   --card:       #FDFEFC;
@@ -75,7 +81,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;

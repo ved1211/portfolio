@@ -36,7 +36,7 @@ export function whenEcharts(): Promise<EC> {
   });
 }
 
-export const FONT = "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+export const FONT = "'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 
 /** Shared look: hairline solid grid, muted axes, text in text colours, card tooltip. */
 export function baseOption(p: Palette, narrow: boolean) {
