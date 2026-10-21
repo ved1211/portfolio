@@ -1,0 +1,41 @@
+{
+  "name": "Ved Gawade portfolio (Sage)",
+  "dataColors": ["#137C54", "#CD7D00", "#316CA5", "#B84F3C", "#00A0A8", "#814A8D", "#708C34"],
+  "foreground": "#151815",
+  "foregroundNeutralSecondary": "#414640",
+  "foregroundNeutralTertiary": "#717A70",
+  "background": "#FDFEFC",
+  "backgroundLight": "#F4F5F2",
+  "backgroundNeutral": "#E7EAE4",
+  "tableAccent": "#137C54",
+  "hyperlink": "#0F7A52",
+  "visitedHyperlink": "#0B5C3E",
+  "good": "#0A5E3F",
+  "neutral": "#995600",
+  "bad": "#9E3A2B",
+  "maximum": "#CFE8DA",
+  "center": "#F6E7C9",
+  "minimum": "#F1D3CB",
+  "null": "#E7EAE4",
+  "textClasses": {
+    "callout": { "fontSize": 26, "fontFace": "Segoe UI Semibold", "color": "#151815" },
+    "title": { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#151815" },
+    "header": { "fontSize": 11, "fontFace": "Segoe UI Semibold", "color": "#414640" },
+    "label": { "fontSize": 10, "fontFace": "Segoe UI", "color": "#414640" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "show": true, "color": { "solid": { "color": "#FDFEFC" } }, "transparency": 0 }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#E7EAE4" } }, "radius": 10 }],
+        "dropShadow": [{ "show": false }]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#F4F5F2" } }, "transparency": 0 }],
+        "outspace": [{ "color": { "solid": { "color": "#F4F5F2" } }, "transparency": 0 }]
+      }
+    }
+  }
+}

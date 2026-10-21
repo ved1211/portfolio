@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supplier performance | Ved Gawade</title>
+<meta name="description" content="A procurement analytics case study on simulated data: a Power BI star schema with Power Query and DAX, supplier OTIF and lead times, a weighted supplier scorecard and single-source risk, checked in SQL.">
+<meta name="author" content="Ved Gawade">
+<link rel="canonical" href="https://ved1211.github.io/portfolio/projects/supplier-performance/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Supplier performance | Ved Gawade">
+<meta property="og:description" content="Procurement analytics on simulated data: which suppliers deliver, who is slipping, and where the business depends on a single source.">
+<meta name="theme-color" content="#F4F5F2">
+<script>
+/* set theme before first paint so dark users never see a white flash */
+(function(){try{var t=localStorage.getItem('vg-theme');
+var d=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+if(d)document.documentElement.className='dark';}catch(e){}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Inter+Tight:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet">
+<script id="echarts-js" src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js" integrity="sha512-XSmbX3mhrD2ix5fXPTRQb2FwK22sRMVQTpBP2ac8hX7Dh/605hA2QDegVWiAvZPiXIxOV0CbkmUjGionDpbCmw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+</head>
+<body class="pj sp">
+<div id="cur" aria-hidden="true"></div>
+<div id="cur-dot" aria-hidden="true"></div>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="../../" class="brand">Ved Gawade<span class="dot">.</span></a>
+    <div class="nav-right">
+      <a class="pj-back" href="../../#analysis"><span aria-hidden="true">←</span> All work</a>
+      <button class="tog" id="tog" aria-label="Switch colour theme" title="Switch theme"><span id="togIcon">☾</span></button>
+      <a href="../../assets/CV/Ved-Gawade-CV.pdf" download="Ved-Gawade-CV.pdf" class="nav-cta">Download CV</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="pj-hero">
+  <div class="wrap">
+    <div class="eyebrow mono"><span class="bar"></span>Case study · Procurement analytics</div>
+    <h1 class="hero-h1">
+      <span class="w"><i style="--d:.10s">Which</i></span>
+      <span class="w"><i style="--d:.16s">suppliers</i></span>
+      <span class="w"><i style="--d:.22s">can</i></span>
+      <span class="w"><i style="--d:.28s">we</i></span>
+      <span class="w"><i class="sig" style="--d:.34s">rely</i></span>
+      <span class="w"><i class="sig" style="--d:.40s">on?</i></span>
+    </h1>
+    <p class="pj-lede rv">
+      A manufacturer buying from <span data-v="suppliers">45</span> suppliers could not see in one place who
+      delivers on time, who is getting worse and where it depends on a single source. I designed the data
+      model for that question, wrote the Power Query steps and DAX measures for a Power BI report, and
+      checked every number a second time in SQL.
+    </p>
+    <p class="pj-note rv">
+      <b>Simulated data.</b> Built on simulated data, modelled on problems from my work in program
+      delivery. The company, its <span data-v="suppliers">45</span> suppliers and every number on this page
+      are fictional. No data from Greenox or any other employer was used.
+    </p>
+    <dl class="pj-facts rv">
+      <div><dt>Data</dt><dd>About <span data-v="linesRound">6,000</span> simulated PO lines, <span data-v="suppliers">45</span> suppliers, 24 months</dd></div>
+      <div><dt>Tools</dt><dd>Power BI, Power Query, DAX, SQL in DuckDB</dd></div>
+      <div><dt>Code</dt><dd><a href="https://github.com/ved1211/portfolio/tree/main/projects/supplier-performance" target="_blank" rel="noopener">Data, DAX and build guide on GitHub ↗</a></dd></div>
+    </dl>
+  </div>
+</header>
+
+<!-- ═══════════ 01 PROBLEM ═══════════ -->
+<section class="pj-sec" id="problem">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">01</span><span class="mono sec-name">The problem</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">Forty-five suppliers, and <em>no single view of them.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        Picture a mid-sized German maker of electronic control units (ECUs), the small computers that run
+        functions in a car. It has two plants, in Augsburg and Chemnitz, and buys around 300 materials in six
+        categories: semiconductors, passive components, printed circuit boards (PCBs), connectors, housings and
+        packaging. Over 24 months it placed <span data-v="lines">5,958</span> purchase order lines with
+        <span data-v="suppliers">45</span> suppliers in <span data-v="countries">11</span> countries.
+      </p>
+      <p>
+        The purchasing team asks four questions. Which suppliers deliver on time and in full? Who is getting
+        worse? Where does the company depend on a single source? And which large suppliers still have an open
+        sustainability risk assessment? <strong>OTIF</strong> (on time in full) is the share of order lines that
+        arrived by the promised date and in the full quantity. <strong>Lead time</strong> is the number of days
+        between placing an order and receiving it.
+      </p>
+      <p>
+        This is close to my own work. At Greenox Tech I managed procurement for the recycling platform, from
+        sourcing parts and placing orders to tracking shipments (<a href="../../#exp-gx-3">see that role</a>). In a
+        case study with SAP and Dimplex I analysed how a central data platform changes procurement reporting and
+        buying decisions (<a href="../../#edu-sap">see the case study</a>), and in a university project with
+        Paltech I mapped each requirement of the EU Cyber Resilience Act to its compliance status, evidence and
+        open actions (<a href="../../#edu-cra">see the project</a>). This project is not from any of them. It uses
+        simulated data to show how I would build the reporting.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 02 MODEL ═══════════ -->
+<section class="pj-sec" id="model">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">02</span><span class="mono sec-name">The data model</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">One fact table, <em>four ways to slice it.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        The report sits on a <strong>star schema</strong>: one table of events in the middle, called the fact
+        table, with one row for every purchase order line, and four dimension tables around it that describe the
+        supplier, the material, the plant and the date. Every relationship runs from one row in a dimension to many
+        rows in the fact, and filters flow in one direction only, from the dimension into the fact. Picking a
+        supplier filters its order lines, never the other way round, so every number has one clear meaning.
+      </p>
+    </div>
+    <figure class="pj-fig rv" aria-labelledby="modelTitle">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t" id="modelTitle">The Power BI data model</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="sp-star">
+        <div class="sp-box" style="grid-area:date"><b>DimDate</b><small>One row per day, 2024 to mid-2026</small>Date, Year, YearQuarter, YearMonth</div>
+        <div class="sp-c v" style="grid-area:c1" aria-hidden="true"><span>1 : many</span></div>
+        <div class="sp-box" style="grid-area:sup"><b>DimSupplier</b><small><span data-v="suppliers">45</span> suppliers</small>Country, Category, ISO 9001, ISO 14001, SingleSource, CountryRiskTier, DueDiligenceStatus</div>
+        <div class="sp-c h" style="grid-area:c2" aria-hidden="true"><span>1 : many</span></div>
+        <div class="sp-box sp-fact" style="grid-area:fact">
+          <b>FactPOLine</b><small>One row per PO line, <span data-v="lines">5,958</span> rows</small>
+          OrderDate, PromisedDate, SupplierID, MaterialID, PlantID, OrderedQty, StandardUnitPriceEUR, PaidUnitPriceEUR, NetValueEUR
+          <span class="sp-added">Added in Power Query: LastReceiptDate, ReceivedQty, RejectedQty, LeadTimeDays, IsDue, OnTime, InFull</span>
+        </div>
+        <div class="sp-c h" style="grid-area:c3" aria-hidden="true"><span>1 : many</span></div>
+        <div class="sp-box" style="grid-area:mat"><b>DimMaterial</b><small>300 materials</small>Category, Critical, SingleSource, ApprovedSuppliers, StandardPriceEUR</div>
+        <div class="sp-c v" style="grid-area:c4" aria-hidden="true"><span>1 : many</span></div>
+        <div class="sp-box" style="grid-area:plant"><b>DimPlant</b><small>2 plants</small>Plant Augsburg, Plant Chemnitz</div>
+      </div>
+      <div class="sp-raw">
+        <div class="sp-box"><b>FactGoodsReceipt</b><small>Raw input, not loaded into the model</small>One row per goods receipt: ReceiptDate, ReceivedQty, RejectedQty</div>
+        <div class="sp-raw-arrow" aria-hidden="true">Group by PO line,<br>then merge <span>→</span></div>
+        <div class="sp-box">Power Query sums the receipts for each PO line (last receipt date, quantity received, quantity rejected) and merges them into <b style="display:inline">FactPOLine</b>.</div>
+      </div>
+      <p class="pj-take">
+        In this model, every number on the page is a measure on one table of <span data-v="lines">5,958</span>
+        order lines, filtered by four dimension tables.
+      </p>
+    </figure>
+    <div class="pj-prose rv" style="margin-top:30px">
+      <p>
+        The data arrives the way an ERP system, the software a manufacturer runs purchasing and production on,
+        would export it: order lines in one file and goods receipts, the record of what physically arrived, in
+        another. One order line can arrive in two receipts. But every delivery measure belongs to the order line,
+        so <strong>Power Query</strong>, the step in Power BI that shapes data before it reaches the model, sums the
+        receipts per line and merges them in. The model ends up with one fact table, and with no relationship
+        between two fact tables to confuse the filters.
+      </p>
+      <p>
+        The measures are written in <strong>DAX</strong>, Power BI's formula language. A measure is a formula that
+        recalculates for whatever is selected on the page, such as OTIF for one supplier in one quarter. All of them
+        are in <a href="https://github.com/ved1211/portfolio/blob/main/projects/supplier-performance/powerbi/measures.dax" target="_blank" rel="noopener">measures.dax</a>
+        with a comment on what each one means, and every one is calculated a second time in SQL so the report can be
+        checked against it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 03 SPEND ═══════════ -->
+<section class="pj-sec" id="spend">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">03</span><span class="mono sec-name">Where the money goes</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">Spend sits with <em>a handful of suppliers.</em></h2>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">The headline numbers, January 2024 to December 2025</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="pj-stats six">
+        <div class="pj-stat"><div class="pj-stat-l">Total spend</div><div class="pj-stat-v">€<span data-v="spendM">209.0</span>M</div><div class="pj-stat-s">€<span data-v="spend24M">101.4</span>M in 2024, €<span data-v="spend25M">107.7</span>M in 2025</div></div>
+        <div class="pj-stat"><div class="pj-stat-l">Spend 2025 against 2024</div><div class="pj-stat-v">+<span data-v="yoy">6.2</span>%</div><div class="pj-stat-s">year over year</div></div>
+        <div class="pj-stat"><div class="pj-stat-l">On time in full</div><div class="pj-stat-v"><span data-v="otif">79.2</span>%</div><div class="pj-stat-s">of <span data-v="due">5,635</span> lines due</div></div>
+        <div class="pj-stat"><div class="pj-stat-l">Average lead time</div><div class="pj-stat-v"><span data-v="lt">41.6</span> days</div><div class="pj-stat-s">spread of <span data-v="ltsd">32.7</span> days</div></div>
+        <div class="pj-stat"><div class="pj-stat-l">Reject rate</div><div class="pj-stat-v"><span data-v="rr">0.90</span>%</div><div class="pj-stat-s">at incoming inspection</div></div>
+        <div class="pj-stat"><div class="pj-stat-l">Price variance</div><div class="pj-stat-v">+<span data-v="pv">0.47</span>%</div><div class="pj-stat-s">paid above standard price</div></div>
+      </div>
+      <p class="pj-take">
+        In this data set, the company spent €<span data-v="spendM">209.0</span>M over two years and
+        <span data-v="otif">79.2</span>% of due order lines arrived on time and in full.
+      </p>
+    </figure>
+    <div class="pj-prose rv" style="margin-top:30px">
+      <p>
+        The <strong>standard price</strong> is the price the company planned to pay for a material, and
+        <strong>price variance</strong> is how far the price actually paid sat above or below it. The
+        <strong>reject rate</strong> is the share of received units that failed incoming inspection, the check a
+        factory runs on parts as they arrive. A <strong>Pareto chart</strong> sorts suppliers from the largest spend
+        to the smallest: the bars show each supplier's share and the line adds the shares up, so you can read off how
+        many suppliers carry most of the money. Both are percentages, so they share one axis.
+      </p>
+    </div>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">Share of spend by supplier, largest first</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="pj-legend" aria-hidden="true">
+        <span><i style="background:var(--viz-after)"></i>Top 10 suppliers</span>
+        <span><i style="background:var(--viz-before)"></i><span>The other <span data-v="otherSuppliers">35</span></span></span>
+        <span><i style="background:var(--ink);height:2px;border-radius:0"></i>Running total</span>
+      </div>
+      <div class="pj-chart" id="chPareto"></div>
+      <p class="pj-take">
+        In this data set, the top 10 of <span data-v="suppliers">45</span> suppliers carry
+        <span data-v="top10">69.0</span>% of spend, and the three largest, all semiconductor suppliers shipping from
+        Asia, carry <span data-v="top3">37.9</span>% between them.
+      </p>
+      <details><summary>Show the numbers</summary><div id="paretoTable"></div></details>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ 04 DELIVERY ═══════════ -->
+<section class="pj-sec" id="delivery">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">04</span><span class="mono sec-name">Delivery</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">Two suppliers are <em>slipping.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        The chart follows OTIF by the quarter in which lines were ordered. The grey line is every supplier except
+        two; the coloured lines are the two whose OTIF fell most between the first half of 2024 and the second half of
+        2025. Only lines whose promised date had passed by the data cut-off count, and a due line that never arrived
+        counts as a failure, so a late supplier cannot look better by not delivering.
+      </p>
+    </div>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">On time in full, by order quarter</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="pj-legend" aria-hidden="true">
+        <span><i style="background:var(--sp-line-a)"></i><span data-v="w1Name">Taldex Connect Kft.</span></span>
+        <span><i style="background:var(--sp-line-b)"></i><span data-v="w2Name">Ulmont Circuits s.r.o.</span></span>
+        <span><i style="background:var(--sp-others)"></i>All other suppliers</span>
+      </div>
+      <div class="pj-chart" id="chOtif"></div>
+      <p class="pj-take">
+        In this data set, <span data-v="w1Name">Taldex Connect Kft.</span> fell from <span data-v="w1First">80.4</span>%
+        OTIF in the first half of 2024 to <span data-v="w1Last">30.8</span>% in the second half of 2025, and
+        <span data-v="w2Name">Ulmont Circuits s.r.o.</span> from <span data-v="w2First">90.2</span>% to
+        <span data-v="w2Last">48.9</span>%, while the other suppliers stayed near 80% apart from a dip in 2025 Q2.
+      </p>
+      <details><summary>Show the numbers</summary><div id="otifTable"></div></details>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ 05 SCORECARD ═══════════ -->
+<section class="pj-sec" id="scorecard">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">05</span><span class="mono sec-name">Supplier scorecard</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">A ranking that shows <em>its own weights.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        The score combines four parts, each from 0 to 100: delivery (OTIF), quality (100 with no rejects, falling to
+        0 at a 2% reject rate), price (100 at or below the standard price, falling to 0 at 10% above it) and risk
+        (points for the invented risk tier, minus points for an open or overdue risk assessment). The sliders set how
+        much each part counts. In Power BI they are <strong>what-if parameters</strong>, sliders that feed a number
+        into the measures; here the same arithmetic runs in your browser.
+      </p>
+    </div>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">Weighted supplier score</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="sc-weights" id="scWeights">
+        <div class="sc-w"><label for="wD">Delivery <output id="wDv" for="wD">40</output></label><input id="wD" type="range" min="0" max="100" step="5" value="40"></div>
+        <div class="sc-w"><label for="wQ">Quality <output id="wQv" for="wQ">30</output></label><input id="wQ" type="range" min="0" max="100" step="5" value="30"></div>
+        <div class="sc-w"><label for="wP">Price <output id="wPv" for="wP">20</output></label><input id="wP" type="range" min="0" max="100" step="5" value="20"></div>
+        <div class="sc-w"><label for="wR">Risk <output id="wRv" for="wR">10</output></label><input id="wR" type="range" min="0" max="100" step="5" value="10"></div>
+      </div>
+      <div class="sc-tools">
+        <p class="sc-note" id="scStatus" aria-live="polite">With these weights, Fendra Connect GmbH ranks first.</p>
+        <div>
+          <button class="sc-btn" id="scReset" type="button">Reset weights</button>
+          <button class="sc-btn" id="scAll" type="button" aria-expanded="false">Show all <span data-v="suppliers">45</span></button>
+        </div>
+      </div>
+      <div class="pj-table-wrap">
+        <table class="pj-table sc-table" id="scTable">
+          <caption class="sr-only">Suppliers ranked by weighted score</caption>
+          <thead><tr>
+            <th scope="col">Rank</th><th scope="col" class="sc-name">Supplier</th><th scope="col">Spend</th>
+            <th scope="col">OTIF</th><th scope="col">Reject rate</th><th scope="col">Price variance</th>
+            <th scope="col">Risk points</th><th scope="col">Score</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="sc-narrow">On a wider screen the table also shows spend, reject rate, price variance and risk points.</p>
+      <p class="pj-take">
+        In this data set, <span data-v="mcuSupplier">Vermar Semiconductor Co., Ltd.</span>, the only source of the main
+        microcontroller, ranks <span data-v="rankDefault">39</span> of <span data-v="suppliers">45</span> with the default
+        weights and <span data-v="rankRisk">44</span> when risk carries 70% of the weight, so where the weights sit
+        decides who looks safe.
+      </p>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ 06 RISK ═══════════ -->
+<section class="pj-sec" id="risk">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">06</span><span class="mono sec-name">Risk</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">Where one problem <em>would hurt most.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        Two risk lenses sit side by side. The <strong>country risk tier</strong> is invented for this data set and
+        describes logistics exposure only: Low for suppliers that deliver by truck within Europe, Medium for
+        transatlantic, High for Asian sea freight. It is not an assessment of any country. The
+        <strong>due-diligence status</strong> imitates the supplier risk assessments that companies covered by the
+        German Supply Chain Due Diligence Act (LkSG) track, and says whether the latest one is done, open or overdue.
+        Nothing here is a statement about what the act requires.
+      </p>
+    </div>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">Spend by risk tier and assessment status, € millions</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="pj-chart short" id="chRisk"></div>
+      <p class="pj-take">
+        In this data set, €<span data-v="highOpenM">70.8</span>M, <span data-v="highOpenShare">33.9</span>% of all spend,
+        sits with <span data-v="highOpenN">3</span> High-tier suppliers whose risk assessments are still open, and
+        €<span data-v="overdueHighM">10.6</span>M with the one High-tier supplier whose assessment is overdue.
+      </p>
+      <details><summary>Show the numbers</summary><div id="riskTable"></div></details>
+    </figure>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">Single-source materials, largest spend first</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="pj-prose">
+        <p>A <strong>single-source</strong> material has only one approved supplier. If that supplier stops, there is no ready alternative.</p>
+      </div>
+      <div id="ssTable"></div>
+      <p class="pj-take">
+        In this data set, <span data-v="ssCount">27</span> materials worth €<span data-v="ssM">35.7</span>M,
+        <span data-v="ssShare">17.1</span>% of spend, have only one approved supplier; the largest is the main
+        microcontroller at €<span data-v="mcuM">10.3</span>M, from a High-tier supplier whose assessment is open.
+      </p>
+    </figure>
+    <figure class="pj-fig rv">
+      <div class="pj-fig-h">
+        <span class="pj-fig-t">Average lead time of semiconductors, by order quarter</span>
+        <span class="pj-fig-c">Simulated data</span>
+      </div>
+      <div class="pj-chart short" id="chSemis"></div>
+      <p class="kb-note" id="semisNote">2025 Q4 is left out: most of its orders had not arrived by the data cut-off, so its average would look shorter than it is.</p>
+      <p class="pj-take">
+        In this data set, semiconductors ordered in 2025 Q2 took <span data-v="semisQ2">145.5</span> days to arrive
+        instead of <span data-v="semisRange">81 to 85</span>, and cost <span data-v="semisPv">7.3</span>% more than
+        standard, the pattern of a shortage in which suppliers ration scarce chips.
+      </p>
+      <details><summary>Show the numbers</summary><div id="semisTable"></div></details>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ 07 POWER BI ═══════════ -->
+<section class="pj-sec" id="powerbi">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">07</span><span class="mono sec-name">The Power BI report</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">The report, <em>built from the guide.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        The Power BI file is the part I build by hand in Power BI Desktop, following the
+        <a href="https://github.com/ved1211/portfolio/blob/main/projects/supplier-performance/powerbi/BUILD_GUIDE.md" target="_blank" rel="noopener">build guide</a>,
+        so that I can explain every step. It has four pages: an overview with the headline numbers and the Pareto chart,
+        the supplier scorecard with the weight sliders, a risk page, and a supplier detail page you reach by drilling
+        through from the scorecard. Screenshots will replace the frames below when it is finished. Until then, every chart
+        on this page is drawn from the SQL output the report has to match.
+      </p>
+    </div>
+    <div class="sp-shots rv" aria-label="Power BI screenshots, not added yet">
+      <div class="sp-shot"><b>Overview</b><span>Screenshot to come</span></div>
+      <div class="sp-shot"><b>Supplier scorecard</b><span>Screenshot to come</span></div>
+      <div class="sp-shot"><b>Risk</b><span>Screenshot to come</span></div>
+      <div class="sp-shot"><b>Supplier detail</b><span>Screenshot to come</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 08 FINDINGS ═══════════ -->
+<section class="pj-sec" id="findings">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">08</span><span class="mono sec-name">Findings</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">What this data says, and <em>what I would do next.</em></h2>
+    <div class="pj-cols">
+      <div class="rv">
+        <div class="pj-sub">Three findings</div>
+        <ol class="pj-list">
+          <li>
+            <strong>Spend and risk sit in the same few places.</strong> In this data set, the three largest suppliers
+            carry <span data-v="top3">37.9</span>% of spend, all three ship semiconductors by Asian sea freight, and
+            <span data-v="top3Open">two</span> of them have open risk assessments.
+          </li>
+          <li>
+            <strong>Two suppliers are getting worse, steadily.</strong> In this data set,
+            <span data-v="w1Name">Taldex Connect Kft.</span> and <span data-v="w2Name">Ulmont Circuits s.r.o.</span> lost
+            <span data-v="w1Drop">49.6</span> and <span data-v="w2Drop">41.3</span> percentage points of OTIF in two years,
+            while the other suppliers held near 80%.
+          </li>
+          <li>
+            <strong>One shortage shows how exposed the main chip is.</strong> In this data set, semiconductor lead times
+            reached <span data-v="semisQ2">145.5</span> days for orders placed in 2025 Q2, and the main microcontroller,
+            €<span data-v="mcuM">10.3</span>M of spend, has only one approved supplier.
+          </li>
+        </ol>
+      </div>
+      <div class="rv">
+        <div class="pj-sub">What I would recommend in purchasing</div>
+        <ol class="pj-list">
+          <li>
+            <strong>Put the two slipping suppliers on a recovery plan.</strong> Agree a weekly delivery review with each,
+            set a date to be back above 80% OTIF, and move volume to an approved second source where one exists.
+          </li>
+          <li>
+            <strong>Qualify a second source for the main microcontroller first.</strong> Then work down the single-source
+            list by spend, starting with the materials whose only supplier is in the High tier.
+          </li>
+          <li>
+            <strong>Close the open and overdue risk assessments by spend.</strong> Start with the High-tier suppliers that
+            hold €<span data-v="highOpenM">70.8</span>M, and show assessment status on the scorecard so it is reviewed
+            together with delivery, not separately.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 09 HOW IT IS BUILT ═══════════ -->
+<section class="pj-sec" id="built">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="mono sec-num">09</span><span class="mono sec-name">How it is built</span><span class="sec-rule"></span></div>
+    <h2 class="sec-h2 rv">Six pieces, <em>all of them open.</em></h2>
+    <div class="pj-prose rv">
+      <p>
+        The data, the Power Query steps, the DAX and a second calculation of every KPI in SQL are all published. The SQL
+        runs in <strong>DuckDB</strong>, a small database that runs SQL directly on files on a laptop, with no server.
+      </p>
+    </div>
+    <ol class="pj-steps rv">
+      <li><code>simulate.py</code><span>Simulates two years of purchasing with a fixed random seed and writes six CSV files shaped like an ERP extract. <a href="https://github.com/ved1211/portfolio/blob/main/projects/supplier-performance/analysis/simulate.py" target="_blank" rel="noopener">View ↗</a></span></li>
+      <li><code>Power Query</code><span>Sets the data types, sums goods receipts per PO line, merges them into the order lines and adds the on-time and in-full columns. <a href="https://github.com/ved1211/portfolio/blob/main/projects/supplier-performance/powerbi/BUILD_GUIDE.md" target="_blank" rel="noopener">Read the guide ↗</a></span></li>
+      <li><code>measures.dax</code><span>Every measure with a plain-English comment, in display folders for spend, delivery, quality, price, risk and score. <a href="https://github.com/ved1211/portfolio/blob/main/projects/supplier-performance/powerbi/measures.dax" target="_blank" rel="noopener">View ↗</a></span></li>
+      <li><code>kpis.sql</code><span>The same KPIs in SQL. A small script runs it and writes the numbers on this page and the "check your build" table in the guide. <a href="https://github.com/ved1211/portfolio/blob/main/projects/supplier-performance/analysis/kpis.sql" target="_blank" rel="noopener">View ↗</a></span></li>
+      <li><code>theme.json</code><span>The portfolio's colours as a Power BI theme, checked for colour-blind readers. <a href="https://github.com/ved1211/portfolio/blob/main/projects/supplier-performance/powerbi/theme.json" target="_blank" rel="noopener">View ↗</a></span></li>
+      <li><code>This page</code><span>Apache ECharts draws the charts from the SQL output; only the score weights are calculated in your browser. <a href="https://github.com/ved1211/portfolio/blob/main/projects/supplier-performance/README.md" target="_blank" rel="noopener">Read the README ↗</a></span></li>
+    </ol>
+    <p class="pj-keys rv">
+      <b>Keywords:</b> Power BI, Power Query, DAX, star schema, data modelling, OTIF, lead time variability, Pareto analysis,
+      supplier scorecard, single-source risk.
+    </p>
+
+    <div class="pj-foot">
+      <a href="../../#analysis">← Back to the portfolio</a>
+      <a href="../../assets/CV/Ved-Gawade-CV.pdf" download="Ved-Gawade-CV.pdf">Download CV ↓</a>
+      <span>© 2026 Ved Gawade · Simulated data, fictional company</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script type="module" src="./page.ts"></script>
+</body>
+</html>

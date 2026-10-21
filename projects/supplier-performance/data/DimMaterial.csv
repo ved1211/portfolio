@@ -1,0 +1,301 @@
+MaterialID,MaterialName,Category,Critical,SingleSource,ApprovedSuppliers,StandardPriceEUR
+M10001,"MCU 32-bit automotive, 2 MB flash",Semiconductors,Yes,Yes,1,6.936
+M10002,"Power management IC, type A83",Semiconductors,Yes,No,3,4.5581
+M10003,"CAN transceiver, type A46",Semiconductors,Yes,No,3,1.2066
+M10004,"Gate driver, type A90",Semiconductors,Yes,No,2,1.2097
+M10005,"MOSFET, type A20",Semiconductors,No,No,2,0.6316
+M10006,"Voltage regulator, type A57",Semiconductors,No,No,2,0.4223
+M10007,"Op-amp, type A10",Semiconductors,No,No,3,0.5996
+M10008,"EEPROM, type A36",Semiconductors,No,No,2,0.2045
+M10009,"Sensor IC, type A40",Semiconductors,No,No,3,1.4295
+M10010,"LIN transceiver, type A81",Semiconductors,No,Yes,1,0.3572
+M10011,"MCU 32-bit, type B37",Semiconductors,No,No,3,3.1984
+M10012,"Power management IC, type B66",Semiconductors,No,No,2,2.6426
+M10013,"CAN transceiver, type B59",Semiconductors,No,Yes,1,0.6888
+M10014,"Gate driver, type B98",Semiconductors,No,No,2,1.2282
+M10015,"MOSFET, type B20",Semiconductors,No,No,3,0.5976
+M10016,"Voltage regulator, type B10",Semiconductors,No,No,2,0.2953
+M10017,"Op-amp, type B21",Semiconductors,No,Yes,1,0.1913
+M10018,"EEPROM, type B72",Semiconductors,No,Yes,1,0.3639
+M10019,"Sensor IC, type B96",Semiconductors,No,No,3,2.1928
+M10020,"LIN transceiver, type B51",Semiconductors,No,No,3,0.43
+M10021,"MCU 32-bit, type C52",Semiconductors,No,Yes,1,6.3113
+M10022,"Power management IC, type C75",Semiconductors,No,No,2,4.3473
+M10023,"CAN transceiver, type C85",Semiconductors,No,No,2,0.6316
+M10024,"Gate driver, type C96",Semiconductors,No,Yes,1,1.7106
+M10025,"MOSFET, type C29",Semiconductors,No,Yes,1,0.6675
+M10026,"Voltage regulator, type C78",Semiconductors,No,No,2,0.2686
+M10027,"Op-amp, type C64",Semiconductors,No,Yes,1,0.229
+M10028,"EEPROM, type C44",Semiconductors,No,Yes,1,0.145
+M10029,"Sensor IC, type C95",Semiconductors,No,No,2,1.4585
+M10030,"LIN transceiver, type C22",Semiconductors,No,No,2,0.4265
+M10031,"MCU 32-bit, type D28",Semiconductors,No,No,2,7.0286
+M10032,"Power management IC, type D60",Semiconductors,No,No,2,3.7308
+M10033,"CAN transceiver, type D21",Semiconductors,No,No,3,0.5092
+M10034,"Gate driver, type D65",Semiconductors,No,No,2,1.0251
+M10035,"MOSFET, type D94",Semiconductors,No,No,2,0.5155
+M10036,"Voltage regulator, type D39",Semiconductors,No,No,2,1.0151
+M10037,"Op-amp, type D74",Semiconductors,No,No,2,0.2185
+M10038,"EEPROM, type D81",Semiconductors,No,No,3,0.4366
+M10039,"Sensor IC, type D96",Semiconductors,No,No,3,3.2556
+M10040,"LIN transceiver, type D15",Semiconductors,No,No,3,0.7273
+M10041,"MCU 32-bit, type E43",Semiconductors,No,Yes,1,7.4062
+M10042,"Power management IC, type E84",Semiconductors,No,No,3,2.4032
+M10043,"CAN transceiver, type E39",Semiconductors,No,No,2,1.063
+M10044,"Gate driver, type E31",Semiconductors,No,Yes,1,2.0173
+M10045,"MOSFET, type E24",Semiconductors,No,Yes,1,0.159
+M10046,"Voltage regulator, type E11",Semiconductors,No,No,2,0.3153
+M10047,"Op-amp, type E76",Semiconductors,No,No,2,0.4791
+M10048,"EEPROM, type E54",Semiconductors,No,No,2,0.3705
+M10049,"Sensor IC, type E56",Semiconductors,No,No,2,2.3736
+M10050,"LIN transceiver, type E48",Semiconductors,No,No,3,0.3509
+M10051,"MCU 32-bit, type F83",Semiconductors,No,No,2,8.0532
+M10052,"Power management IC, type F18",Semiconductors,No,No,2,1.4735
+M10053,"CAN transceiver, type F46",Semiconductors,No,No,3,0.5671
+M10054,"Gate driver, type F47",Semiconductors,No,Yes,1,2.581
+M10055,"MOSFET, type F79",Semiconductors,No,No,3,0.3836
+M10056,"Voltage regulator, type F17",Semiconductors,No,No,3,0.237
+M10057,"Op-amp, type F86",Semiconductors,No,Yes,1,0.2418
+M10058,"EEPROM, type F83",Semiconductors,No,No,2,0.3141
+M10059,"Sensor IC, type F29",Semiconductors,No,No,3,2.4515
+M10060,"LIN transceiver, type F88",Semiconductors,No,No,2,0.6556
+M10061,"PCB 4-layer control board, type A23",PCBs,No,No,3,4.2793
+M10062,"PCB 6-layer main board, type A58",PCBs,Yes,No,3,17.7524
+M10063,"Flex PCB, type A85",PCBs,Yes,No,3,3.585
+M10064,"PCB 2-layer sensor board, type A13",PCBs,No,No,2,1.1793
+M10065,"PCB 4-layer control board, type B24",PCBs,No,Yes,1,4.6012
+M10066,"PCB 6-layer main board, type B81",PCBs,No,No,2,13.1193
+M10067,"Flex PCB, type B61",PCBs,No,No,3,5.4179
+M10068,"PCB 2-layer sensor board, type B84",PCBs,No,No,3,1.113
+M10069,"PCB 4-layer control board, type C26",PCBs,No,No,2,4.5926
+M10070,"PCB 6-layer main board, type C58",PCBs,No,No,3,16.1166
+M10071,"Flex PCB, type C58",PCBs,No,No,2,2.9675
+M10072,"PCB 2-layer sensor board, type C50",PCBs,No,No,2,1.4261
+M10073,"PCB 4-layer control board, type D30",PCBs,No,No,2,4.9678
+M10074,"PCB 6-layer main board, type D12",PCBs,No,No,2,19.1596
+M10075,"Flex PCB, type D93",PCBs,No,No,3,1.6222
+M10076,"PCB 2-layer sensor board, type D58",PCBs,No,Yes,1,1.4928
+M10077,"PCB 4-layer control board, type E98",PCBs,No,No,2,6.8346
+M10078,"PCB 6-layer main board, type E81",PCBs,No,No,2,8.3425
+M10079,"Flex PCB, type E76",PCBs,No,No,2,4.3535
+M10080,"PCB 2-layer sensor board, type E66",PCBs,No,No,2,2.0097
+M10081,"PCB 4-layer control board, type F85",PCBs,No,No,2,5.1423
+M10082,"PCB 6-layer main board, type F91",PCBs,No,No,2,18.8781
+M10083,"Flex PCB, type F49",PCBs,No,No,2,2.8992
+M10084,"PCB 2-layer sensor board, type F83",PCBs,No,No,2,3.15
+M10085,"PCB 4-layer control board, type G36",PCBs,No,Yes,1,6.5712
+M10086,"PCB 6-layer main board, type G19",PCBs,No,No,3,11.0446
+M10087,"Flex PCB, type G60",PCBs,No,No,3,2.6182
+M10088,"PCB 2-layer sensor board, type G68",PCBs,No,No,2,2.424
+M10089,"PCB 4-layer control board, type H53",PCBs,No,No,2,8.4717
+M10090,"PCB 6-layer main board, type H14",PCBs,No,No,3,16.6981
+M10091,"Flex PCB, type H74",PCBs,No,No,2,2.0506
+M10092,"PCB 2-layer sensor board, type H88",PCBs,No,Yes,1,1.1869
+M10093,"PCB 4-layer control board, type I13",PCBs,No,No,2,6.3808
+M10094,"PCB 6-layer main board, type I79",PCBs,No,Yes,1,11.3117
+M10095,"Flex PCB, type I22",PCBs,No,No,3,4.1817
+M10096,"Die-cast aluminium housing, type A92",Housings,No,No,3,6.3754
+M10097,"Plastic cover, type A16",Housings,No,No,3,1.4346
+M10098,"Heat sink, type A63",Housings,No,No,3,1.9487
+M10099,"Seal gasket, type A58",Housings,No,No,3,0.8077
+M10100,"Mounting bracket, type A24",Housings,No,No,2,1.1461
+M10101,"Die-cast aluminium housing, type B50",Housings,No,No,2,11.0039
+M10102,"Plastic cover, type B28",Housings,No,No,2,2.0469
+M10103,"Heat sink, type B37",Housings,No,Yes,1,1.6564
+M10104,"Seal gasket, type B86",Housings,No,No,2,0.5324
+M10105,"Mounting bracket, type B70",Housings,No,No,2,0.8527
+M10106,"Die-cast aluminium housing, type C78",Housings,No,No,2,11.9396
+M10107,"Plastic cover, type C55",Housings,No,No,2,2.5407
+M10108,"Heat sink, type C42",Housings,No,No,2,2.3875
+M10109,"Seal gasket, type C31",Housings,No,No,2,0.6438
+M10110,"Mounting bracket, type C75",Housings,No,No,3,0.7797
+M10111,"Die-cast aluminium housing, type D22",Housings,No,No,3,12.5028
+M10112,"Plastic cover, type D98",Housings,No,No,3,1.3042
+M10113,"Heat sink, type D54",Housings,No,No,2,2.1785
+M10114,"Seal gasket, type D85",Housings,No,No,2,0.6353
+M10115,"Mounting bracket, type D52",Housings,No,No,2,1.0574
+M10116,"Die-cast aluminium housing, type E89",Housings,No,No,3,16.9299
+M10117,"Plastic cover, type E75",Housings,No,No,2,1.9171
+M10118,"Heat sink, type E48",Housings,No,No,2,5.1573
+M10119,"Seal gasket, type E92",Housings,No,No,2,0.4095
+M10120,"Mounting bracket, type E96",Housings,No,No,3,0.6455
+M10121,"Die-cast aluminium housing, type F48",Housings,No,No,3,14.3188
+M10122,"Plastic cover, type F20",Housings,No,No,2,0.8274
+M10123,"Heat sink, type F86",Housings,No,No,3,6.0021
+M10124,"Seal gasket, type F52",Housings,No,No,3,0.4354
+M10125,"Mounting bracket, type F39",Housings,No,No,3,0.9877
+M10126,"Die-cast aluminium housing, type G45",Housings,No,Yes,1,6.2661
+M10127,"Plastic cover, type G89",Housings,No,No,2,0.835
+M10128,"Heat sink, type G88",Housings,No,No,3,1.6852
+M10129,"Seal gasket, type G79",Housings,No,No,3,0.2817
+M10130,"Mounting bracket, type G87",Housings,No,No,2,0.4411
+M10131,"Die-cast aluminium housing, type H58",Housings,No,No,2,14.9667
+M10132,"Plastic cover, type H88",Housings,No,No,3,1.8177
+M10133,"Heat sink, type H43",Housings,No,No,2,1.9242
+M10134,"Seal gasket, type H34",Housings,No,No,3,0.478
+M10135,"Mounting bracket, type H59",Housings,No,No,2,1.1344
+M10136,"Automotive connector 48-pin, type A95",Connectors,No,No,3,2.9445
+M10137,"Automotive connector 24-pin, type A16",Connectors,No,No,3,1.5248
+M10138,"Board header, type A22",Connectors,No,No,3,0.7529
+M10139,"Crimp terminal, type A74",Connectors,No,No,2,0.0242
+M10140,"Sealed plug, type A82",Connectors,No,No,3,0.5988
+M10141,"Automotive connector 48-pin, type B11",Connectors,No,No,2,2.7145
+M10142,"Automotive connector 24-pin, type B85",Connectors,No,No,3,2.2212
+M10143,"Board header, type B19",Connectors,No,No,2,0.5616
+M10144,"Crimp terminal, type B58",Connectors,No,No,2,0.0229
+M10145,"Sealed plug, type B63",Connectors,No,No,2,0.9138
+M10146,"Automotive connector 48-pin, type C25",Connectors,No,No,2,2.1218
+M10147,"Automotive connector 24-pin, type C13",Connectors,No,No,2,1.6423
+M10148,"Board header, type C47",Connectors,No,No,3,0.6019
+M10149,"Crimp terminal, type C77",Connectors,No,No,2,0.0672
+M10150,"Sealed plug, type C20",Connectors,No,No,2,0.7752
+M10151,"Automotive connector 48-pin, type D98",Connectors,No,No,2,4.0884
+M10152,"Automotive connector 24-pin, type D62",Connectors,No,No,3,1.1213
+M10153,"Board header, type D13",Connectors,No,No,2,0.6379
+M10154,"Crimp terminal, type D54",Connectors,No,No,2,0.033
+M10155,"Sealed plug, type D70",Connectors,No,No,2,1.0723
+M10156,"Automotive connector 48-pin, type E95",Connectors,No,No,2,2.4149
+M10157,"Automotive connector 24-pin, type E69",Connectors,No,No,2,1.6261
+M10158,"Board header, type E39",Connectors,No,No,2,0.403
+M10159,"Crimp terminal, type E82",Connectors,No,No,2,0.051
+M10160,"Sealed plug, type E16",Connectors,No,No,3,0.4743
+M10161,"Automotive connector 48-pin, type F29",Connectors,No,No,2,5.2916
+M10162,"Automotive connector 24-pin, type F16",Connectors,No,No,2,2.1029
+M10163,"Board header, type F79",Connectors,No,No,3,0.1719
+M10164,"Crimp terminal, type F51",Connectors,No,No,3,0.0635
+M10165,"Sealed plug, type F75",Connectors,No,No,2,0.6037
+M10166,"Automotive connector 48-pin, type G42",Connectors,No,No,3,4.7557
+M10167,"Automotive connector 24-pin, type G34",Connectors,No,No,2,1.0514
+M10168,"Board header, type G74",Connectors,No,No,2,0.1706
+M10169,"Crimp terminal, type G66",Connectors,No,No,2,0.0588
+M10170,"Sealed plug, type G15",Connectors,No,No,2,0.7087
+M10171,"Automotive connector 48-pin, type H63",Connectors,No,No,2,4.9772
+M10172,"Automotive connector 24-pin, type H16",Connectors,No,No,3,1.8822
+M10173,"Board header, type H67",Connectors,No,No,2,0.3621
+M10174,"Crimp terminal, type H19",Connectors,No,No,2,0.0504
+M10175,"Sealed plug, type H67",Connectors,No,No,2,1.059
+M10176,"Automotive connector 48-pin, type I16",Connectors,No,No,2,2.717
+M10177,"Automotive connector 24-pin, type I64",Connectors,No,No,2,0.953
+M10178,"Board header, type I11",Connectors,No,No,2,0.2411
+M10179,"Crimp terminal, type I55",Connectors,No,No,2,0.0329
+M10180,"Sealed plug, type I32",Connectors,No,No,2,0.4052
+M10181,"Automotive connector 48-pin, type J63",Connectors,No,No,3,2.3577
+M10182,"Automotive connector 24-pin, type J18",Connectors,No,No,3,1.0855
+M10183,"Board header, type J33",Connectors,No,No,3,0.1687
+M10184,"Crimp terminal, type J41",Connectors,No,No,3,0.0522
+M10185,"Sealed plug, type J53",Connectors,No,No,2,0.547
+M10186,"MLCC capacitor, type A44",Passive components,No,Yes,1,0.0043
+M10187,"Chip resistor, type A15",Passive components,No,No,3,0.0018
+M10188,"Power inductor, type A58",Passive components,No,Yes,1,0.089
+M10189,"Electrolytic capacitor, type A75",Passive components,No,No,3,0.1451
+M10190,"Ferrite bead, type A21",Passive components,No,No,3,0.0262
+M10191,"Crystal oscillator, type A26",Passive components,No,No,3,0.1729
+M10192,"MLCC capacitor, type B19",Passive components,No,No,3,0.0038
+M10193,"Chip resistor, type B27",Passive components,No,No,3,0.0071
+M10194,"Power inductor, type B89",Passive components,No,No,2,0.0529
+M10195,"Electrolytic capacitor, type B23",Passive components,No,No,2,0.0542
+M10196,"Ferrite bead, type B10",Passive components,No,No,3,0.0086
+M10197,"Crystal oscillator, type B50",Passive components,No,No,2,0.2075
+M10198,"MLCC capacitor, type C48",Passive components,No,No,2,0.0181
+M10199,"Chip resistor, type C25",Passive components,No,No,3,0.0073
+M10200,"Power inductor, type C65",Passive components,No,No,2,0.138
+M10201,"Electrolytic capacitor, type C96",Passive components,No,No,3,0.1589
+M10202,"Ferrite bead, type C82",Passive components,No,No,3,0.0249
+M10203,"Crystal oscillator, type C53",Passive components,No,No,2,0.3825
+M10204,"MLCC capacitor, type D32",Passive components,No,No,2,0.0125
+M10205,"Chip resistor, type D56",Passive components,No,No,2,0.0045
+M10206,"Power inductor, type D37",Passive components,No,No,3,0.1538
+M10207,"Electrolytic capacitor, type D93",Passive components,No,No,3,0.0702
+M10208,"Ferrite bead, type D98",Passive components,No,No,2,0.0082
+M10209,"Crystal oscillator, type D72",Passive components,No,No,3,0.5907
+M10210,"MLCC capacitor, type E75",Passive components,No,No,3,0.0143
+M10211,"Chip resistor, type E14",Passive components,No,No,2,0.001
+M10212,"Power inductor, type E43",Passive components,No,No,2,0.1524
+M10213,"Electrolytic capacitor, type E56",Passive components,No,No,2,0.174
+M10214,"Ferrite bead, type E55",Passive components,No,No,3,0.0082
+M10215,"Crystal oscillator, type E53",Passive components,No,No,2,0.3357
+M10216,"MLCC capacitor, type F36",Passive components,No,No,3,0.0075
+M10217,"Chip resistor, type F52",Passive components,No,No,2,0.0015
+M10218,"Power inductor, type F71",Passive components,No,No,3,0.0584
+M10219,"Electrolytic capacitor, type F43",Passive components,No,No,3,0.1101
+M10220,"Ferrite bead, type F67",Passive components,No,No,3,0.0237
+M10221,"Crystal oscillator, type F38",Passive components,No,No,2,0.353
+M10222,"MLCC capacitor, type G74",Passive components,No,No,3,0.0028
+M10223,"Chip resistor, type G11",Passive components,No,No,2,0.0055
+M10224,"Power inductor, type G29",Passive components,No,No,2,0.2934
+M10225,"Electrolytic capacitor, type G72",Passive components,No,No,2,0.094
+M10226,"Ferrite bead, type G60",Passive components,No,Yes,1,0.0055
+M10227,"Crystal oscillator, type G21",Passive components,No,No,2,0.1694
+M10228,"MLCC capacitor, type H91",Passive components,No,No,2,0.0293
+M10229,"Chip resistor, type H98",Passive components,No,No,3,0.0084
+M10230,"Power inductor, type H19",Passive components,No,No,2,0.1012
+M10231,"Electrolytic capacitor, type H24",Passive components,No,No,3,0.2984
+M10232,"Ferrite bead, type H31",Passive components,No,Yes,1,0.0075
+M10233,"Crystal oscillator, type H27",Passive components,No,No,2,0.4986
+M10234,"MLCC capacitor, type I96",Passive components,No,No,3,0.0092
+M10235,"Chip resistor, type I59",Passive components,No,No,2,0.0017
+M10236,"Power inductor, type I64",Passive components,No,No,2,0.2263
+M10237,"Electrolytic capacitor, type I80",Passive components,No,No,2,0.1039
+M10238,"Ferrite bead, type I20",Passive components,No,No,2,0.0062
+M10239,"Crystal oscillator, type I22",Passive components,No,No,2,0.528
+M10240,"MLCC capacitor, type J71",Passive components,No,No,2,0.0037
+M10241,"Chip resistor, type J12",Passive components,No,No,2,0.0092
+M10242,"Power inductor, type J33",Passive components,No,No,3,0.1279
+M10243,"Electrolytic capacitor, type J50",Passive components,No,No,3,0.2366
+M10244,"Ferrite bead, type J38",Passive components,No,No,2,0.0122
+M10245,"Crystal oscillator, type J81",Passive components,No,No,2,0.2207
+M10246,"MLCC capacitor, type K67",Passive components,No,No,3,0.0041
+M10247,"Chip resistor, type K90",Passive components,No,No,3,0.0014
+M10248,"Power inductor, type K27",Passive components,No,No,3,0.1242
+M10249,"Electrolytic capacitor, type K73",Passive components,No,No,2,0.1177
+M10250,"Ferrite bead, type K33",Passive components,No,No,2,0.0073
+M10251,"Crystal oscillator, type K27",Passive components,No,No,3,0.5284
+M10252,"MLCC capacitor, type L88",Passive components,No,No,2,0.0102
+M10253,"Chip resistor, type L61",Passive components,No,No,2,0.0092
+M10254,"Power inductor, type L70",Passive components,No,No,3,0.241
+M10255,"Electrolytic capacitor, type L89",Passive components,No,No,2,0.2835
+M10256,"ESD tray, type A16",Packaging,No,No,3,0.9316
+M10257,"Shipping carton, type A64",Packaging,No,No,3,0.9468
+M10258,"Foam insert, type A54",Packaging,No,No,3,0.2886
+M10259,"Label roll, type A21",Packaging,No,No,3,4.4102
+M10260,"Returnable plastic crate, type A98",Packaging,No,No,2,7.4037
+M10261,"ESD tray, type B22",Packaging,No,No,3,0.769
+M10262,"Shipping carton, type B63",Packaging,No,No,3,1.4588
+M10263,"Foam insert, type B62",Packaging,No,No,3,0.4027
+M10264,"Label roll, type B12",Packaging,No,No,2,6.9915
+M10265,"Returnable plastic crate, type B19",Packaging,No,No,2,4.6605
+M10266,"ESD tray, type C87",Packaging,No,No,2,1.5035
+M10267,"Shipping carton, type C50",Packaging,No,No,3,1.1819
+M10268,"Foam insert, type C81",Packaging,No,No,2,0.2759
+M10269,"Label roll, type C69",Packaging,No,No,3,4.3067
+M10270,"Returnable plastic crate, type C60",Packaging,No,No,2,7.6709
+M10271,"ESD tray, type D35",Packaging,No,No,2,1.6459
+M10272,"Shipping carton, type D75",Packaging,No,No,2,0.4452
+M10273,"Foam insert, type D70",Packaging,No,No,3,0.2473
+M10274,"Label roll, type D21",Packaging,No,No,2,6.621
+M10275,"Returnable plastic crate, type D47",Packaging,No,No,2,5.3751
+M10276,"ESD tray, type E98",Packaging,No,No,3,1.5345
+M10277,"Shipping carton, type E13",Packaging,No,No,3,0.9183
+M10278,"Foam insert, type E19",Packaging,No,No,2,0.4562
+M10279,"Label roll, type E33",Packaging,No,No,2,11.0841
+M10280,"Returnable plastic crate, type E70",Packaging,No,No,2,5.3219
+M10281,"ESD tray, type F14",Packaging,No,No,2,2.1953
+M10282,"Shipping carton, type F78",Packaging,No,No,3,0.4231
+M10283,"Foam insert, type F54",Packaging,No,No,2,0.5003
+M10284,"Label roll, type F17",Packaging,No,No,3,5.6221
+M10285,"Returnable plastic crate, type F12",Packaging,No,No,2,6.0129
+M10286,"ESD tray, type G84",Packaging,No,No,2,1.401
+M10287,"Shipping carton, type G32",Packaging,No,No,2,0.4424
+M10288,"Foam insert, type G77",Packaging,No,No,3,0.3458
+M10289,"Label roll, type G20",Packaging,No,No,2,4.69
+M10290,"Returnable plastic crate, type G15",Packaging,No,Yes,1,5.4264
+M10291,"ESD tray, type H79",Packaging,No,No,2,1.2442
+M10292,"Shipping carton, type H65",Packaging,No,No,3,0.9322
+M10293,"Foam insert, type H28",Packaging,No,No,3,0.4685
+M10294,"Label roll, type H20",Packaging,No,No,2,11.5695
+M10295,"Returnable plastic crate, type H11",Packaging,No,No,2,3.1114
+M10296,"ESD tray, type I54",Packaging,No,No,2,1.1368
+M10297,"Shipping carton, type I61",Packaging,No,No,3,1.3684
+M10298,"Foam insert, type I10",Packaging,No,No,2,0.2302
+M10299,"Label roll, type I98",Packaging,No,No,2,6.5669
+M10300,"Returnable plastic crate, type I45",Packaging,No,No,2,4.2729

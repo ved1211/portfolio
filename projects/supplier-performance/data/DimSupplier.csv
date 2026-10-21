@@ -1,0 +1,46 @@
+SupplierID,SupplierName,Country,CountryCode,Category,ISO9001,ISO14001,SingleSource,CountryRiskTier,DueDiligenceStatus,LastAssessmentDate
+S001,"Vermar Semiconductor Co., Ltd.",Taiwan,TW,Semiconductors,Yes,Yes,Yes,High,Open,
+S002,"Belsen Semiconductor Co., Ltd.",Taiwan,TW,Semiconductors,Yes,No,No,High,Done,2025-04-04
+S003,Miraven Semiconductor Sdn. Bhd.,Malaysia,MY,Semiconductors,Yes,Yes,Yes,High,Open,
+S004,"Ostmar Semiconductor Co., Ltd.",China,CN,Semiconductors,Yes,No,Yes,High,Done,2025-04-20
+S005,Brantek Semiconductor Inc.,United States,US,Semiconductors,Yes,Yes,No,Medium,Open,
+S006,Rosdex Semiconductor Inc.,United States,US,Semiconductors,Yes,Yes,No,Medium,Done,2025-06-01
+S007,Selnor Semiconductor GmbH,Germany,DE,Semiconductors,Yes,No,No,Low,Open,
+S008,Pramar Semiconductor B.V.,Netherlands,NL,Semiconductors,Yes,Yes,No,Low,Done,2025-05-23
+S009,"Selmont Circuits Co., Ltd.",China,CN,PCBs,Yes,No,Yes,High,Overdue,2024-04-19
+S010,"Zenric Circuits Co., Ltd.",China,CN,PCBs,Yes,No,No,High,Done,2025-10-25
+S011,"Galdex Circuits Co., Ltd.",Taiwan,TW,PCBs,Yes,Yes,Yes,High,Open,
+S012,Kelric Circuits GmbH,Germany,DE,PCBs,Yes,Yes,No,Low,Done,2025-02-07
+S013,Dorsen Circuits GmbH,Austria,AT,PCBs,Yes,Yes,Yes,Low,Done,2025-05-06
+S014,Ulmont Circuits s.r.o.,Czech Republic,CZ,PCBs,Yes,Yes,No,Low,Open,
+S015,Galmar Circuits Sp. z o.o.,Poland,PL,PCBs,Yes,No,No,Low,Done,2025-10-14
+S016,Arric Metalworks GmbH,Germany,DE,Housings,Yes,No,No,Low,Open,
+S017,Zennor Metalworks GmbH,Germany,DE,Housings,Yes,Yes,Yes,Low,Done,2025-05-01
+S018,Torsen Metalworks GmbH,Germany,DE,Housings,Yes,Yes,No,Low,Overdue,2024-10-12
+S019,Wenric Metalworks s.r.o.,Czech Republic,CZ,Housings,Yes,Yes,No,Low,Done,2025-07-13
+S020,Ulmar Metalworks s.r.o.,Czech Republic,CZ,Housings,Yes,No,No,Low,Open,
+S021,Pratek Metalworks Sp. z o.o.,Poland,PL,Housings,Yes,Yes,No,Low,Done,2025-06-05
+S022,Miravex Metalworks Sp. z o.o.,Poland,PL,Housings,Yes,Yes,Yes,Low,Done,2025-11-03
+S023,Mirasen Metalworks S.r.l.,Italy,IT,Housings,No,Yes,No,Low,Overdue,2024-06-01
+S024,Istmar Connect GmbH,Germany,DE,Connectors,Yes,Yes,No,Low,Done,2025-06-18
+S025,Fendra Connect GmbH,Germany,DE,Connectors,Yes,Yes,No,Low,Done,2025-07-28
+S026,Ulvane Connect GmbH,Germany,DE,Connectors,Yes,No,No,Low,Done,2025-05-16
+S027,Lunsen Connect s.r.o.,Czech Republic,CZ,Connectors,Yes,No,No,Low,Done,2025-02-26
+S028,Taldex Connect Kft.,Hungary,HU,Connectors,Yes,Yes,No,Low,Done,2025-07-29
+S029,Miralix Connect Inc.,United States,US,Connectors,Yes,No,No,Medium,Done,2025-10-09
+S030,"Zenlon Connect Co., Ltd.",China,CN,Connectors,Yes,Yes,No,High,Done,2025-10-06
+S031,"Seltra Electronics Co., Ltd.",China,CN,Passive components,Yes,No,No,High,Done,2025-05-15
+S032,"Nevdex Electronics Co., Ltd.",China,CN,Passive components,Yes,Yes,No,High,Done,2025-11-02
+S033,"Belnor Electronics Co., Ltd.",Taiwan,TW,Passive components,Yes,Yes,No,High,Done,2025-04-21
+S034,Belmar Electronics Sdn. Bhd.,Malaysia,MY,Passive components,Yes,Yes,Yes,High,Done,2025-03-11
+S035,Vervane Electronics GmbH,Germany,DE,Passive components,Yes,Yes,Yes,Low,Done,2025-05-18
+S036,Galsen Electronics GmbH,Germany,DE,Passive components,Yes,No,No,Low,Done,2025-07-02
+S037,Talven Electronics GmbH,Austria,AT,Passive components,Yes,Yes,No,Low,Done,2025-06-14
+S038,Rosvane Electronics Kft.,Hungary,HU,Passive components,Yes,No,No,Low,Open,
+S039,Wenlix Packaging GmbH,Germany,DE,Packaging,Yes,No,No,Low,Done,2025-09-19
+S040,Daldra Packaging GmbH,Germany,DE,Packaging,Yes,Yes,No,Low,Done,2025-05-19
+S041,Evdra Packaging GmbH,Germany,DE,Packaging,Yes,No,No,Low,Done,2025-03-25
+S042,Corvex Packaging Sp. z o.o.,Poland,PL,Packaging,No,Yes,No,Low,Open,
+S043,Pravex Packaging Sp. z o.o.,Poland,PL,Packaging,Yes,No,No,Low,Done,2025-10-15
+S044,Evmar Packaging s.r.o.,Czech Republic,CZ,Packaging,Yes,No,No,Low,Done,2025-05-10
+S045,Isttek Packaging B.V.,Netherlands,NL,Packaging,Yes,No,Yes,Low,Done,2025-10-24

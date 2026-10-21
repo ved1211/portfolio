@@ -1,0 +1,252 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// Supplier performance: every measure in the report
+// SIMULATED DATA: a fictional ECU manufacturer, not any real company.
+//
+// How to use this file: in Power BI Desktop, select the _Measures table, click
+// "New measure", and paste one block at a time (from the measure name down to
+// the line before the next comment). Each block says which display folder it
+// goes in and how to format it. Every definition matches analysis/kpis.sql, so
+// the numbers can be checked against the SQL output in BUILD_GUIDE.md.
+//
+// Tables and columns used:
+//   FactPOLine  one row per PO line, with the receipt summary merged in by
+//               Power Query: LastReceiptDate, ReceivedQty, RejectedQty,
+//               LeadTimeDays, IsDue, OnTime, InFull
+//   DimSupplier, DimMaterial, DimPlant, DimDate
+// ═══════════════════════════════════════════════════════════════════════════
+
+
+// ─── Display folder: Spend ──────────────────────────────────────────────────
+
+// Total Spend · format: Currency, €, 0 decimals
+// What we paid for everything ordered: ordered quantity times the price paid,
+// counted on the order date.
+Total Spend =
+SUM ( FactPOLine[NetValueEUR] )
+
+// Standard Spend · format: Currency, €, 0 decimals
+// What the same orders would have cost at the standard price. Used by Price Variance %.
+Standard Spend =
+SUM ( FactPOLine[StandardValueEUR] )
+
+// Spend % · format: Percentage, 1 decimal
+// This row's share of the spend on everything selected. On a supplier table it
+// shows how much of the total each supplier carries.
+Spend % =
+DIVIDE ( [Total Spend], CALCULATE ( [Total Spend], ALLSELECTED ( DimSupplier ) ) )
+
+// Spend PY · format: Currency, €, 0 decimals
+// Spend in the same period one year earlier. Needs DimDate marked as the date table.
+Spend PY =
+CALCULATE ( [Total Spend], SAMEPERIODLASTYEAR ( DimDate[Date] ) )
+
+// Spend YoY % · format: Percentage, 1 decimal
+// Change against the same period last year. Use it with a year, quarter or month
+// in the filter or on the axis; across the whole date range it has no meaning.
+Spend YoY % =
+DIVIDE ( [Total Spend] - [Spend PY], [Spend PY] )
+
+// Cumulative Spend % · format: Percentage, 0 decimals
+// For the Pareto chart: the share of spend carried by this supplier and every
+// supplier with more spend than it. Plot it as a line next to Spend % bars,
+// sorted by spend from largest to smallest.
+Cumulative Spend % =
+VAR CurrentSpend = [Total Spend]
+VAR Suppliers =
+    ADDCOLUMNS ( ALLSELECTED ( DimSupplier[SupplierName] ), "@Spend", [Total Spend] )
+VAR SpendSoFar =
+    SUMX ( FILTER ( Suppliers, [@Spend] >= CurrentSpend ), [@Spend] )
+RETURN
+    DIVIDE ( SpendSoFar, CALCULATE ( [Total Spend], ALLSELECTED ( DimSupplier ) ) )
+
+
+// ─── Display folder: Delivery ───────────────────────────────────────────────
+
+// Due Lines · format: Whole number
+// PO lines whose promised date has passed by the data cut-off. Only these lines
+// can be judged on time or late.
+Due Lines =
+CALCULATE ( COUNTROWS ( FactPOLine ), FactPOLine[IsDue] = TRUE () )
+
+// OTIF Lines · format: Whole number
+// Due lines that arrived on or before the promised date and in the full quantity.
+OTIF Lines =
+CALCULATE (
+    COUNTROWS ( FactPOLine ),
+    FactPOLine[IsDue] = TRUE (),
+    FactPOLine[OnTime] = TRUE (),
+    FactPOLine[InFull] = TRUE ()
+)
+
+// OTIF % · format: Percentage, 1 decimal
+// On time in full: the share of due PO lines that arrived on time and complete.
+// A due line that has not arrived at all counts as a failure.
+OTIF % =
+DIVIDE ( [OTIF Lines], [Due Lines] )
+
+// Average Lead Time · format: Decimal, 1 decimal, suffix " days"
+// Average days from order date to the last goods receipt, for lines that arrived.
+Average Lead Time =
+AVERAGE ( FactPOLine[LeadTimeDays] )
+
+// Lead Time Variability · format: Decimal, 1 decimal, suffix " days"
+// How much lead times spread around the average (population standard deviation).
+// A high number means planners cannot trust the average.
+Lead Time Variability =
+STDEV.P ( FactPOLine[LeadTimeDays] )
+
+// OTIF % by Promised Date · format: Percentage, 1 decimal · optional
+// The same OTIF, but judged in the month a line was due instead of the month it
+// was ordered. Needs the inactive relationship FactPOLine[PromisedDate] ->
+// DimDate[Date]; USERELATIONSHIP switches it on for this measure only.
+OTIF % by Promised Date =
+CALCULATE ( [OTIF %], USERELATIONSHIP ( FactPOLine[PromisedDate], DimDate[Date] ) )
+
+
+// ─── Display folder: Quality ────────────────────────────────────────────────
+
+// Received Qty · format: Whole number
+Received Qty =
+SUM ( FactPOLine[ReceivedQty] )
+
+// Rejected Qty · format: Whole number
+// Units rejected at incoming inspection.
+Rejected Qty =
+SUM ( FactPOLine[RejectedQty] )
+
+// Reject Rate % · format: Percentage, 2 decimals
+// Share of received units rejected at incoming inspection.
+Reject Rate % =
+DIVIDE ( [Rejected Qty], [Received Qty] )
+
+
+// ─── Display folder: Price ──────────────────────────────────────────────────
+
+// Price Variance EUR · format: Currency, €, 0 decimals
+// How much more (positive) or less (negative) we paid than the standard price.
+Price Variance EUR =
+[Total Spend] - [Standard Spend]
+
+// Price Variance % · format: Percentage, 2 decimals
+// The same difference as a share of spend at standard price.
+Price Variance % =
+DIVIDE ( [Price Variance EUR], [Standard Spend] )
+
+
+// ─── Display folder: Risk ───────────────────────────────────────────────────
+
+// Single-Source Spend at Risk · format: Currency, €, 0 decimals
+// Spend on materials that only one approved supplier can deliver. If that
+// supplier stops, there is no ready alternative.
+Single-Source Spend at Risk =
+CALCULATE ( [Total Spend], DimMaterial[SingleSource] = "Yes" )
+
+// Single-Source Spend % · format: Percentage, 1 decimal
+Single-Source Spend % =
+DIVIDE ( [Single-Source Spend at Risk], [Total Spend] )
+
+// Spend with Overdue Assessment · format: Currency, €, 0 decimals
+// Spend with suppliers whose sustainability risk assessment is overdue.
+Spend with Overdue Assessment =
+CALCULATE ( [Total Spend], DimSupplier[DueDiligenceStatus] = "Overdue" )
+
+
+// ─── Display folder: Score ──────────────────────────────────────────────────
+// Each part runs from 0 (worst) to 100 (best). The weights come from four
+// what-if parameters (see the end of this file).
+
+// Delivery Score · format: Decimal, 1 decimal
+Delivery Score =
+[OTIF %] * 100
+
+// Quality Score · format: Decimal, 1 decimal
+// 100 with no rejects, falling to 0 at a 2% reject rate or worse.
+Quality Score =
+100 * MAX ( 0, 1 - DIVIDE ( [Reject Rate %], 0.02 ) )
+
+// Price Score · format: Decimal, 1 decimal
+// 100 when paying the standard price or less, falling to 0 at 10% above it.
+Price Score =
+100 * MIN ( 1, MAX ( 0, 1 - DIVIDE ( [Price Variance %], 0.10 ) ) )
+
+// Risk Score · format: Decimal, 1 decimal
+// The average Risk Points (a calculated column on DimSupplier) of the suppliers
+// with spend in the current selection. For one supplier it is that supplier's points.
+Risk Score =
+AVERAGEX (
+    FILTER ( VALUES ( DimSupplier[SupplierID] ), [Total Spend] > 0 ),
+    CALCULATE ( MAX ( DimSupplier[Risk Points] ) )
+)
+
+// Supplier Score · format: Decimal, 1 decimal
+// Weighted average of the four parts, using the weights on the sliders. Blank when
+// there is nothing to judge delivery on, so a supplier without due lines is not
+// scored as if it had failed.
+Supplier Score =
+VAR wD = [Delivery Weight Value]
+VAR wQ = [Quality Weight Value]
+VAR wP = [Price Weight Value]
+VAR wR = [Risk Weight Value]
+VAR TotalWeight = wD + wQ + wP + wR
+VAR D = [Delivery Score]
+RETURN
+    IF (
+        ISBLANK ( D ) || TotalWeight = 0,
+        BLANK (),
+        DIVIDE ( wD * D + wQ * [Quality Score] + wP * [Price Score] + wR * [Risk Score], TotalWeight )
+    )
+
+// Supplier Rank · format: Whole number
+// 1 = best score among the suppliers in the current selection.
+Supplier Rank =
+IF (
+    ISBLANK ( [Supplier Score] ),
+    BLANK (),
+    RANKX ( ALLSELECTED ( DimSupplier[SupplierName] ), [Supplier Score], , DESC, DENSE )
+)
+
+// Weights Total · format: Whole number
+// A small card next to the sliders, so it is clear the weights are relative.
+Weights Total =
+[Delivery Weight Value] + [Quality Weight Value] + [Price Weight Value] + [Risk Weight Value]
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+// Calculated column on DimSupplier (Table tools > New column, with DimSupplier selected)
+// ═══════════════════════════════════════════════════════════════════════════
+
+// Risk Points
+// Invented tier points (Low 100, Medium 70, High 40) plus a due-diligence penalty
+// (Open -15, Overdue -40), never below 0. A column, not a measure, because it is a
+// fixed property of each supplier and does not change with filters.
+Risk Points =
+VAR TierPoints =
+    SWITCH ( DimSupplier[CountryRiskTier], "Low", 100, "Medium", 70, "High", 40, 0 )
+VAR Penalty =
+    SWITCH ( DimSupplier[DueDiligenceStatus], "Open", -15, "Overdue", -40, 0 )
+RETURN
+    MAX ( 0, TierPoints + Penalty )
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+// What-if parameters (Modeling > New parameter > Numeric range)
+// Power BI writes these for you when you fill in the dialog: name, minimum 0,
+// maximum 100, increment 5, default as below, "Add slicer to this page" ticked.
+// They are shown here so you know what Power BI created.
+// ═══════════════════════════════════════════════════════════════════════════
+
+// Table: Delivery Weight          Default 40
+Delivery Weight = GENERATESERIES ( 0, 100, 5 )
+Delivery Weight Value = SELECTEDVALUE ( 'Delivery Weight'[Delivery Weight], 40 )
+
+// Table: Quality Weight           Default 30
+Quality Weight = GENERATESERIES ( 0, 100, 5 )
+Quality Weight Value = SELECTEDVALUE ( 'Quality Weight'[Quality Weight], 30 )
+
+// Table: Price Weight             Default 20
+Price Weight = GENERATESERIES ( 0, 100, 5 )
+Price Weight Value = SELECTEDVALUE ( 'Price Weight'[Price Weight], 20 )
+
+// Table: Risk Weight              Default 10
+Risk Weight = GENERATESERIES ( 0, 100, 5 )
+Risk Weight Value = SELECTEDVALUE ( 'Risk Weight'[Risk Weight], 10 )

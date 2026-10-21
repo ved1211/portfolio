@@ -1,0 +1,139 @@
+/* ── Supplier performance case study ───────────────────────
+   Page-only additions on top of src/styles/project.css. Scoped under
+   body.sp so nothing leaks into the other pages that share the bundle. */
+
+body.sp {
+  /* The delivery chart's three lines, checked all-pairs with a colour-blind
+     simulation in both themes. Grey is "everyone else" on purpose. */
+  --sp-others: #717A70;
+  --sp-line-a: #CD7D00;
+  --sp-line-b: #814A8D;
+  /* Heatmap: one hue, light to dark. */
+  --sp-heat-lo: #E3F0E8;
+  --sp-heat-hi: #137C54;
+  /* Scorecard tints, the same three stops as the Power BI theme. */
+  --sp-score-lo: #F1D3CB;
+  --sp-score-mid: #F6E7C9;
+  --sp-score-hi: #CFE8DA;
+}
+html.dark body.sp {
+  --sp-others: #5F6560;
+  --sp-line-a: #C97F14;
+  --sp-line-b: #9961A6;
+  --sp-heat-lo: #17231C;
+  --sp-heat-hi: #32AA78;
+  --sp-score-lo: #3B2622;
+  --sp-score-mid: #3A3221;
+  --sp-score-hi: #1E3A2C;
+}
+
+/* ── Star schema diagram ─────────────────────────────────── */
+.sp-star {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 46px minmax(0, 1.25fr) 46px minmax(0, 1fr);
+  grid-template-areas:
+    ".   .  date  .  ."
+    ".   .  c1    .  ."
+    "sup c2 fact  c3 mat"
+    ".   .  c4    .  ."
+    ".   .  plant .  .";
+  align-items: center;
+  margin-top: 8px;
+}
+.sp-box {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: .8rem;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+.sp-box b { display: block; font-family: var(--font-code); font-size: .82rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.sp-box small { display: block; color: var(--ink-3); font-size: .74rem; margin-bottom: 6px; }
+.sp-box code { font-family: var(--font-code); font-size: .72rem; color: var(--ink-2); }
+.sp-fact { border-color: var(--signal); background: var(--signal-bg); }
+.sp-fact .sp-added { display: block; margin-top: 8px; padding-top: 8px; border-top: 1px dashed color-mix(in srgb, var(--signal) 45%, transparent); }
+.sp-c { position: relative; align-self: stretch; justify-self: stretch; min-height: 28px; }
+.sp-c::before { content: ''; position: absolute; background: var(--ink-4); }
+.sp-c.h::before { left: 0; right: 0; top: 50%; height: 1px; }
+.sp-c.v::before { top: 0; bottom: 0; left: 50%; width: 1px; }
+.sp-c span {
+  position: absolute; font-size: .62rem; letter-spacing: .06em; color: var(--ink-3);
+  background: var(--card); padding: 1px 4px; white-space: nowrap;
+}
+.sp-c.h span { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.sp-c.v span { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.sp-raw { margin-top: 18px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.6fr); gap: 12px; align-items: center; }
+.sp-raw .sp-box { border-style: dashed; }
+.sp-raw-arrow { font-size: .76rem; color: var(--ink-3); text-align: center; line-height: 1.4; }
+
+/* ── KPI tiles: six in two rows ──────────────────────────── */
+.sp .pj-stats.six { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* ── Scorecard ───────────────────────────────────────────── */
+.sc-weights { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px 22px; margin: 6px 0 14px; }
+.sc-w label { display: flex; justify-content: space-between; gap: 8px; font-size: .8rem; font-weight: 500; color: var(--ink-2); margin-bottom: 6px; }
+.sc-w output { font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 600; }
+.sc-w input { width: 100%; accent-color: var(--signal); cursor: pointer; }
+.sc-w input:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+.sc-tools { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.sc-note { font-size: .8rem; color: var(--ink-3); }
+.sc-btn {
+  font: inherit; font-size: .8rem; font-weight: 500; cursor: pointer; padding: 6px 13px; border-radius: 100px;
+  border: 1px solid var(--rule); background: transparent; color: var(--ink-2); transition: border-color .2s ease, color .2s ease;
+}
+.sc-btn:hover { border-color: var(--ink-3); color: var(--ink); }
+.sc-btn:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+.sc-table td.sc-name, .sc-table th.sc-name { text-align: left; white-space: normal; min-width: 170px; }
+.sc-table .sc-sub { display: block; font-size: .7rem; color: var(--ink-3); }
+.sc-table td.sc-score { font-weight: 600; color: var(--ink); border-radius: 4px; }
+.sc-table tbody tr:hover td { background-color: color-mix(in srgb, var(--rule-soft) 60%, transparent); }
+
+/* ── Power BI screenshots, to come ───────────────────────── */
+.sp-shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+.sp-shot {
+  aspect-ratio: 16 / 10; border: 1px dashed var(--rule); border-radius: 10px; background: var(--paper);
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 14px 16px;
+}
+.sp-shot b { font-size: .86rem; color: var(--ink); font-weight: 600; }
+.sp-shot span { font-size: .76rem; color: var(--ink-3); margin-top: 2px; }
+.sp-shot img { width: 100%; height: auto; border-radius: 8px; }
+
+@media (max-width: 900px) {
+  .sc-weights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .sp-star {
+    grid-template-columns: 1fr;
+    grid-template-areas: "fact" "c1" "date" "c2" "sup" "c3" "mat" "c4" "plant";
+  }
+  .sp-c { min-height: 34px; }
+  .sp-c.h::before { left: 50%; right: auto; top: 0; bottom: 0; height: auto; width: 1px; }
+  .sp-raw { grid-template-columns: 1fr; }
+  .sp .pj-stats.six { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sp-shots { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  .sc-weights { grid-template-columns: 1fr; }
+}
+
+/* Text columns in the single-source table read left to right; only spend is a number. */
+#ssTable .pj-table th, #ssTable .pj-table td { text-align: left; }
+#ssTable .pj-table th:last-child, #ssTable .pj-table td:last-child { text-align: right; }
+
+/* On a phone the scorecard keeps the columns that decide the ranking. */
+.sc-narrow { display: none; font-size: .76rem; color: var(--ink-3); margin-top: 8px; }
+@media (max-width: 600px) {
+  .sc-table th:nth-child(3), .sc-table td:nth-child(3),
+  .sc-table th:nth-child(5), .sc-table td:nth-child(5),
+  .sc-table th:nth-child(6), .sc-table td:nth-child(6),
+  .sc-table th:nth-child(7), .sc-table td:nth-child(7) { display: none; }
+  .sc-table td.sc-name, .sc-table th.sc-name { min-width: 0; }
+  .sc-narrow { display: block; }
+}
+#ssTable .pj-table th.sc-name { font-weight: 500; color: var(--ink); white-space: normal; }
+#ssTable .pj-table .sc-sub { display: block; font-size: .7rem; font-weight: 400; color: var(--ink-3); }
+#ssTable .pj-table thead th { white-space: normal; vertical-align: bottom; }
+@media (max-width: 600px) { #ssTable .pj-table th, #ssTable .pj-table td { padding: 6px 6px; } }

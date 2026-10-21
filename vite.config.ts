@@ -12,6 +12,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         deliveryFlow: resolve(__dirname, 'projects/delivery-flow/index.html'),
+        supplierPerformance: resolve(__dirname, 'projects/supplier-performance/index.html'),
       },
       output: {
         manualChunks: { three: ['three'] },
