@@ -43,6 +43,7 @@
 }
 
 @media (max-width: 900px) {
+  .hero-grid { gap: 36px; grid-template-columns: minmax(0, 1fr) 200px; }
   .about-grid { grid-template-columns: 1fr; gap: 46px; }
   .metrics { grid-template-columns: repeat(2, 1fr); }
   .metric { border-bottom: 1px solid var(--rule-soft); }
@@ -74,8 +75,8 @@
 
   .ctas .btn { flex: 1 1 auto; justify-content: center; }
   .sec-head { margin-bottom: 38px; }
-  .pipe-step { min-width: 100%; border-right: none; border-bottom: 1px solid var(--rule-soft); }
-  .pipe-step:last-child { border-bottom: none; }
+  .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+  .hero-photo { order: -1; width: 112px; aspect-ratio: 1; }
 }
 
 @media (max-width: 420px) {

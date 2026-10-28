@@ -12,7 +12,7 @@ import { initTheme } from './lib/theme';
 import { initBoot } from './lib/boot';
 import { initCursor } from './lib/cursor';
 import { initNav } from './lib/nav';
-import { initScroll, initReveal, initPipelinePulse } from './lib/scroll';
+import { initScroll, initReveal } from './lib/scroll';
 import { initIntro } from './lib/intro';
 import { initEvidence } from './lib/evidence';
 import { initBackground } from './three/background';
@@ -24,7 +24,6 @@ initNav();
 initCursor();
 initScroll();
 initReveal();
-initPipelinePulse();
 initEvidence();
 
 const field = $<HTMLCanvasElement>('field');

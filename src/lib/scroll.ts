@@ -1,4 +1,4 @@
-import { $, debounce, reduceMotion } from './env';
+import { $, debounce } from './env';
 
 /** Normalised page scroll, published for the 3D background. */
 export let scrollProgress = 0;
@@ -76,26 +76,11 @@ export function initScroll() {
   onScroll();
 }
 
-function countUp(el: HTMLElement) {
-  const target = parseFloat(el.dataset.count ?? '');
-  const prefix = el.dataset.prefix ?? '';
-  if (Number.isNaN(target)) return;
-  if (reduceMotion) { el.textContent = prefix + target; return; }
-  const start = performance.now();
-  const step = (now: number) => {
-    const k = Math.min(1, (now - start) / 1100);
-    el.textContent = prefix + Math.round(target * (1 - Math.pow(1 - k, 3)));
-    if (k < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
-
 export function initReveal() {
   const items = document.querySelectorAll<HTMLElement>('.rv');
 
   if (!('IntersectionObserver' in window)) {
     items.forEach((el) => el.classList.add('in'));
-    document.querySelectorAll<HTMLElement>('[data-count]').forEach(countUp);
     return;
   }
 
@@ -108,20 +93,9 @@ export function initReveal() {
       const idx = Math.min(sibs.indexOf(el), 5);
       el.style.transitionDelay = `${idx > 0 ? idx * 0.07 : 0}s`;
       el.classList.add('in');
-      el.querySelectorAll<HTMLElement>('[data-count]').forEach(countUp);
       io.unobserve(el);
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
 
   items.forEach((el) => io.observe(el));
-}
-
-export function initPipelinePulse() {
-  const steps = document.querySelectorAll<HTMLElement>('#pipe .pipe-step');
-  if (!steps.length || reduceMotion) return;
-  let i = 0;
-  window.setInterval(() => {
-    steps.forEach((s, n) => s.classList.toggle('hot', n === i));
-    i = (i + 1) % (steps.length + 1);
-  }, 900);
 }
