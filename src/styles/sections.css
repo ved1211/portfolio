@@ -219,7 +219,7 @@ body.loaded .eyebrow .bar { transform: scaleX(1); }
 
 /* ── Contact ──────────────────────────────────────────── */
 #contact { padding: 112px 0 90px; }
-.contact-h { font-family: var(--font-display); font-size: clamp(2.2rem, 5.4vw, 4rem); line-height: 1.06; letter-spacing: -0.028em; max-width: 17ch; margin-bottom: 26px; }
+.contact-h { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.2rem, 5.4vw, 4rem); line-height: 1.06; letter-spacing: -0.028em; max-width: 17ch; margin-bottom: 26px; }
 .contact-lede { font-size: 1.03rem; color: var(--ink-2); max-width: 52ch; margin-bottom: 42px; }
 
 .mail {
