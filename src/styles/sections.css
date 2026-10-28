@@ -139,7 +139,7 @@ body.loaded .hero-h1 .w > i { transform: none; }
 .case-link:hover { border-bottom-color: var(--signal); }
 
 /* ── Dashboards and analysis ──────────────────────────── */
-.an-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.an-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 34px; }
 .an-card {
   height: 100%;
   background: var(--card);
