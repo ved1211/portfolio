@@ -113,8 +113,6 @@ section { position: relative; }
   transition: opacity .8s ease;
 }
 body.loaded #spine { opacity: 1; }
-/* The horizontal rail slides underneath the spine; get the spine out of its way. */
-body.loaded.rail-pinned #spine { opacity: 0; pointer-events: none; }
 .spine-track {
   position: absolute;
   left: 5px; top: 6px; bottom: 6px;

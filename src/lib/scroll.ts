@@ -3,49 +3,16 @@ import { $, debounce } from './env';
 /** Normalised page scroll, published for the 3D background. */
 export let scrollProgress = 0;
 
-const SECTION_IDS = ['hero', 'work', 'analysis', 'systems', 'experience', 'about', 'education', 'contact'];
+const SECTION_IDS = ['hero', 'work', 'analysis', 'experience', 'about', 'education', 'contact'];
 
 export function initScroll() {
   const nav = $('nav');
-  const hOuter = $('hOuter');
-  const hRail = $('hRail');
-  const hFill = $('hFill');
   const spineFill = $('spineFill');
   const nodes = Array.from(document.querySelectorAll<HTMLElement>('.spine-node'));
-  const body = document.body;
-  let hSpan = 0;
-
-  function measure() {
-    if (!hOuter || !hRail) return;
-    if (window.innerWidth <= 1024) {
-      hOuter.style.height = '';
-      hRail.style.transform = '';
-      hSpan = 0;
-      return;
-    }
-    hRail.style.transform = 'none';
-    const last = hRail.children[hRail.children.length - 1] as HTMLElement | undefined;
-    const overhang = last ? last.getBoundingClientRect().right - window.innerWidth : 0;
-    hSpan = Math.max(0, overhang + 48);
-    hOuter.style.height = `${window.innerHeight + hSpan}px`;
-  }
 
   function onScroll() {
     const y = window.scrollY;
     nav?.classList.toggle('stuck', y > 8);
-
-    // Horizontal rail. #systems is positioned, so offsetTop reads 0 here;
-    // measure against the document instead.
-    if (hOuter && hRail && hSpan > 0) {
-      const top = hOuter.getBoundingClientRect().top + y;
-      const prog = Math.min(1, Math.max(0, (y - top) / hSpan));
-      hRail.style.transform = `translate3d(${-hSpan * prog}px,0,0)`;
-      if (hFill) hFill.style.transform = `scaleX(${prog.toFixed(4)})`;
-      // The spine would otherwise sit on top of the sliding cards.
-      body.classList.toggle('rail-pinned', prog > 0.001 && prog < 0.999);
-    } else {
-      body.classList.remove('rail-pinned');
-    }
 
     const docH = document.documentElement.scrollHeight - window.innerHeight;
     scrollProgress = docH > 0 ? Math.min(1, Math.max(0, y / docH)) : 0;
@@ -70,9 +37,8 @@ export function initScroll() {
     requestAnimationFrame(() => { onScroll(); ticking = false; });
   }, { passive: true });
 
-  window.addEventListener('resize', debounce(() => { measure(); onScroll(); }, 180));
-  window.addEventListener('load', () => { measure(); onScroll(); });
-  measure();
+  window.addEventListener('resize', debounce(onScroll, 180));
+  window.addEventListener('load', onScroll);
   onScroll();
 }
 

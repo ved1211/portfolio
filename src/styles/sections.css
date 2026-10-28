@@ -164,40 +164,10 @@ body.loaded .hero-h1 .w > i { transform: none; }
 @media (max-width: 900px) { .an-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 620px) { .an-grid { grid-template-columns: 1fr; } }
 
-/* ── Systems: horizontal ──────────────────────────────── */
-#systems { border-top: 1px solid var(--rule-soft); }
-.h-outer { position: relative; }
-.h-sticky {
-  position: sticky; top: 0;
-  height: 100vh;
-  display: flex; flex-direction: column; justify-content: center;
-  overflow: hidden;
-}
-.h-head { padding: 0 0 34px; }
-.h-progress {
-  height: 1px; background: var(--rule);
-  margin: 30px 0 0; position: relative; overflow: hidden;
-}
-.h-progress i { position: absolute; inset: 0; background: var(--signal); transform: scaleX(0); transform-origin: left; }
+.also { font-size: .95rem; color: var(--ink-2); max-width: 70ch; margin-top: 30px; }
 
-/* Rail viewport: fades cards out at both edges instead of guillotining them,
-   and keeps the leftmost card clear of the fixed spine. */
-.h-viewport {
-  --edge: 92px;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--edge), #000 calc(100% - 72px), transparent 100%);
-          mask-image: linear-gradient(90deg, transparent 0, #000 var(--edge), #000 calc(100% - 72px), transparent 100%);
-}
-/* Below 1024 the rail is a native swipe scroller, so no mask and no clipping. */
-@media (max-width: 1179px) { .h-viewport { --edge: 32px; } }
-@media (max-width: 1024px) {
-  .h-viewport { overflow: visible; -webkit-mask-image: none; mask-image: none; }
-}
-
-.h-rail { display: flex; gap: 22px; padding-left: max(32px, calc((100vw - 1120px) / 2 + 32px)); will-change: transform; }
-
+/* ── Card text shared by Analysis (and the parked Systems grid) ── */
 .sys {
-  flex: 0 0 340px;
   background: var(--card);
   border: 1px solid var(--rule-soft);
   border-radius: 12px;
@@ -211,10 +181,6 @@ body.loaded .hero-h1 .w > i { transform: none; }
 .sys-n { font-family: var(--font-display); font-weight: 500; font-size: 1.4rem; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 12px; }
 .sys-d { font-size: .875rem; color: var(--ink-2); line-height: 1.55; margin-bottom: 20px; flex: 1; }
 .sys-s { font-family: var(--font-sans); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-4); padding-top: 14px; border-top: 1px solid var(--rule-soft); }
-
-.h-hint { display: flex; align-items: center; gap: 9px; color: var(--ink-4); margin-top: 26px; }
-.h-hint i { display: inline-block; width: 30px; height: 1px; background: var(--ink-4); position: relative; }
-.h-hint i::after { content: ''; position: absolute; right: 0; top: -2px; width: 5px; height: 5px; border-top: 1px solid var(--ink-4); border-right: 1px solid var(--ink-4); transform: rotate(45deg); }
 
 /* ── Experience ───────────────────────────────────────── */
 .job { display: grid; grid-template-columns: 190px 1fr; gap: 0 32px; padding: 32px 0; border-top: 1px solid var(--rule-soft); }
