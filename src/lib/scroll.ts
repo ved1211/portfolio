@@ -1,4 +1,4 @@
-import { $, debounce } from './env';
+import { $, debounce, reduceMotion } from './env';
 
 export function initScroll() {
   const nav = $('nav');
@@ -19,26 +19,40 @@ export function initScroll() {
   onScroll();
 }
 
+/**
+ * A short fade for blocks below the fold. Content is visible by default: CSS
+ * only hides a .rv block once html.rv-on is set, which happens here, after
+ * everything already on screen is marked shown. No script, no hiding.
+ */
 export function initReveal() {
-  const items = document.querySelectorAll<HTMLElement>('.rv');
-
-  if (!('IntersectionObserver' in window)) {
-    items.forEach((el) => el.classList.add('in'));
-    return;
-  }
+  const items = Array.from(document.querySelectorAll<HTMLElement>('.rv'));
+  if (!items.length || reduceMotion || !('IntersectionObserver' in window)) return;
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      const el = entry.target as HTMLElement;
-      const sibs = Array.from(el.parentElement?.children ?? [])
-        .filter((n) => n.classList.contains('rv'));
-      const idx = Math.min(sibs.indexOf(el), 5);
-      el.style.transitionDelay = `${idx > 0 ? idx * 0.07 : 0}s`;
-      el.classList.add('in');
-      io.unobserve(el);
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+  }, { rootMargin: '0px 0px 10% 0px' }); // any pixel, slightly before it scrolls in
 
-  items.forEach((el) => io.observe(el));
+  const vh = window.innerHeight;
+  items.forEach((el) => {
+    const r = el.getBoundingClientRect();
+    if (r.top < vh && r.bottom > 0) el.classList.add('in');
+    else io.observe(el);
+  });
+  document.documentElement.classList.add('rv-on');
+
+  // A nav link or #hash jump shows its whole section at once, before the scroll lands.
+  const showSection = (hash: string) => {
+    const target = hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    target?.closest('section, header')?.querySelectorAll('.rv').forEach((el) => el.classList.add('in'));
+  };
+  document.addEventListener('click', (e) => {
+    const a = (e.target as HTMLElement).closest?.<HTMLAnchorElement>('a[href^="#"]');
+    if (a) showSection(a.getAttribute('href') ?? '');
+  }, true);
+  window.addEventListener('hashchange', () => showSection(location.hash));
+  showSection(location.hash);
 }

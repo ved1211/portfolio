@@ -1,10 +1,13 @@
 /* ── Reveal ───────────────────────────────────────────── */
-.rv { opacity: 0; transform: translateY(18px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
-.rv.in { opacity: 1; transform: none; }
+/* Visible by default. Only once the reveal script runs (html.rv-on) does a
+   block below the fold wait, and then it fades in within 250 ms. */
+@media (prefers-reduced-motion: no-preference) {
+  html.rv-on .rv { transition: opacity .25s ease-out; }
+  html.rv-on .rv:not(.in) { opacity: 0; }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
-  .rv { opacity: 1; transform: none; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
   .hero-h1 .w > i { transform: none; }
   .eyebrow .bar { transform: scaleX(1); }
   html { scroll-behavior: auto; }
@@ -54,7 +57,8 @@
 @media (hover: none) { #cur, #cur-dot { display: none; } }
 
 @media print {
-  #nav, #mob, #field, #boot, .ctas, .tog, #cur, #cur-dot { display: none !important; }
+  #nav, #mob, #field, .ctas, .tog, #cur, #cur-dot { display: none !important; }
   body { background: #fff; color: #000; }
   .band { padding: 24px 0; }
+  .rv { opacity: 1 !important; }
 }

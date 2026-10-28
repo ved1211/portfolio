@@ -19,51 +19,7 @@ body.loaded #field { opacity: .6; }
 }
 
 /* everything above the field */
-#nav, #mob, main, footer, #cur, #cur-dot, #boot { position: relative; z-index: 2; }
-
-/* ── Boot ─────────────────────────────────────────────── */
-#boot {
-  position: fixed;
-  inset: 0;
-  z-index: 300;
-  background: var(--paper);
-  display: grid;
-  place-items: center;
-  transition: transform .8s cubic-bezier(.76,0,.24,1), opacity .5s ease .3s;
-}
-#boot.done { transform: translateY(-101%); opacity: 0; pointer-events: none; }
-.boot-in { text-align: center; }
-.boot-mark {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-}
-.boot-mark span { color: var(--signal); }
-.boot-track {
-  width: 160px; height: 1px;
-  background: var(--rule);
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto 12px;
-}
-.boot-track::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--signal);
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: bootline .85s cubic-bezier(.65,0,.35,1) forwards;
-}
-@keyframes bootline { to { transform: scaleX(1); } }
-.boot-txt {
-  font-family: var(--font-sans);
-  font-size: .6rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--ink-4);
-}
+#nav, #mob, main, footer, #cur, #cur-dot { position: relative; z-index: 2; }
 
 /* ── Cursor ───────────────────────────────────────────── */
 #cur, #cur-dot {

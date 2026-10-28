@@ -9,7 +9,6 @@ import './styles/intro.css';
 
 import { $ } from './lib/env';
 import { initTheme } from './lib/theme';
-import { initBoot } from './lib/boot';
 import { initCursor } from './lib/cursor';
 import { initNav } from './lib/nav';
 import { initScroll, initReveal } from './lib/scroll';
@@ -19,7 +18,7 @@ import { initBackground } from './three/background';
 import { initVoxelUI } from './three/voxel/ui';
 
 initTheme();
-initBoot();
+document.body.classList.add('loaded');
 initNav();
 initCursor();
 initScroll();
