@@ -1,34 +1,23 @@
 import { $, reduceMotion } from './env';
 
-const KEY = 'vg-intro';
-
 /**
  * A cartoon Ved walks in from the right, says four short lines (about
- * 14 seconds), offers the work or the game, then waits in the corner.
- * It plays once a visit; the face in the corner replays it.
+ * 14 seconds) and offers the work or the game. It only plays when someone
+ * clicks "Just for fun" in the footer.
  */
 export function initIntro(openGame: () => void) {
   const root = $('intro');
-  const dock = $('dock');
+  const trigger = $('fun-link');
   const ved = document.getElementById('ved') as SVGSVGElement | null;
   const say = $('intro-say');
   const live = $('intro-live');
   const btns = $('intro-btns');
-  if (!root || !dock || !ved || !say || !btns) return;
+  if (!root || !trigger || !ved || !say || !btns) return;
 
   const lines = Array.from(document.querySelectorAll<HTMLElement>('#intro-script li')).map((li) => ({
     text: (li.textContent ?? '').trim(),
     final: li.hasAttribute('data-final'),
   }));
-
-  // The corner button shows the same face, copied from the figure.
-  const head = document.getElementById('ved-head');
-  const face = dock.querySelector('.dock-face');
-  if (head && face) {
-    const copy = head.cloneNode(true) as Element;
-    copy.removeAttribute('id');
-    face.appendChild(copy);
-  }
 
   let timers: number[] = [];
   let typing = 0;
@@ -39,20 +28,13 @@ export function initIntro(openGame: () => void) {
     window.clearInterval(typing);
   };
 
-  function showDock() {
-    dock!.hidden = false;
-    requestAnimationFrame(() => dock!.classList.add('in'));
-  }
-
   function end() {
     const hadFocus = root!.contains(document.activeElement);
     stop();
     root!.classList.remove('walking', 'talking', 'waving', 'speaking');
     root!.classList.add('leaving');
     later(() => { root!.hidden = true; root!.classList.remove('leaving'); }, reduceMotion ? 0 : 420);
-    try { sessionStorage.setItem(KEY, '1'); } catch { /* private mode */ }
-    showDock();
-    if (hadFocus) $('dock-replay')?.focus();
+    if (hadFocus) trigger!.focus();
   }
 
   function speak(i: number) {
@@ -84,8 +66,6 @@ export function initIntro(openGame: () => void) {
 
   function play() {
     stop();
-    dock!.classList.remove('in');
-    dock!.hidden = true;
     root!.classList.remove('leaving', 'speaking');
     root!.hidden = false;
     say!.textContent = '';
@@ -108,22 +88,10 @@ export function initIntro(openGame: () => void) {
     document.getElementById('work')?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
   });
   $('intro-play')?.addEventListener('click', () => { end(); openGame(); });
-  $('dock-replay')?.addEventListener('click', play);
-  $('dock-play')?.addEventListener('click', openGame);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !root.hidden) end(); });
 
-  let seen = false;
-  try { seen = sessionStorage.getItem(KEY) === '1'; } catch { /* private mode */ }
-  const start = () => (seen ? showDock() : later(play, reduceMotion ? 400 : 1500));
-
-  // Wait for the loading screen to lift and the headline to land.
-  if (document.body.classList.contains('loaded')) start();
-  else {
-    const mo = new MutationObserver(() => {
-      if (!document.body.classList.contains('loaded')) return;
-      mo.disconnect();
-      start();
-    });
-    mo.observe(document.body, { attributes: true, attributeFilter: ['class'] });
-  }
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    play();
+  });
 }
