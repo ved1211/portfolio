@@ -260,7 +260,7 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
 
     <div class="an-grid">
       <div class="rv">
-        <article class="an-card fx" id="proj-delivery-flow" data-area="data product">
+        <article class="an-card" id="proj-delivery-flow">
           <div class="an-top">
             <span class="sys-i">01 / DELIVERY FLOW</span>
             <span class="an-tag">Simulated data</span>
@@ -275,7 +275,7 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
         </article>
       </div>
       <div class="rv">
-        <article class="an-card fx" id="proj-supplier-performance" data-area="data product">
+        <article class="an-card" id="proj-supplier-performance">
           <div class="an-top">
             <span class="sys-i">02 / SUPPLIER PERFORMANCE</span>
             <span class="an-tag">Simulated data</span>
@@ -392,104 +392,38 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
       </div>
 
       <div class="rv skills" id="skills">
-        <h3 class="skills-h mono">Skills</h3>
-        <p class="skills-note">Skills with a green dot link to where I used them. Hover, focus or tap one to see where.</p>
-
-        <fieldset class="lens">
-          <legend class="lens-l">Highlight the evidence for</legend>
-          <div class="lens-opts">
-            <input type="radio" autocomplete="off" name="lens" id="lens-all" value="all" checked><label for="lens-all">Everything</label>
-            <input type="radio" autocomplete="off" name="lens" id="lens-product" value="product"><label for="lens-product">Product and Delivery</label>
-            <input type="radio" autocomplete="off" name="lens" id="lens-data" value="data"><label for="lens-data">Data</label>
-            <input type="radio" autocomplete="off" name="lens" id="lens-marketing" value="marketing"><label for="lens-marketing">Marketing</label>
-          </div>
-        </fieldset>
-        <p class="lens-status" id="lensStatus" aria-live="polite"></p>
-        <a class="lens-jump" id="lensJump" href="#experience" hidden>See the highlighted experience <span aria-hidden="true">↑</span></a>
-
+        <h3 class="skills-h">Skills</h3>
         <div class="skill-block">
-          <h4 class="skill-h">Product and Delivery</h4>
+          <h4 class="skill-h">Delivery</h4>
           <ul class="skill-list">
-            <li><a class="skill ev fx" data-area="product" href="#exp-sa-1" aria-describedby="ev-prds">PRDs</a><span hidden id="ev-prds">SuperAGI: wrote PRDs for the Chrome Plugin and CRM.</span></li>
-            <li><a class="skill ev fx" data-area="product" href="#exp-sa-1" aria-describedby="ev-product-backlog">Product Backlog</a><span hidden id="ev-product-backlog">SuperAGI: maintained the backlog in Jira and Notion across 6 AI products.</span></li>
-            <li><a class="skill ev fx" data-area="product" href="#exp-sa-2" aria-describedby="ev-agile-scrum">Agile Scrum</a><span hidden id="ev-agile-scrum">SuperAGI: introduced Agile Scrum with 2-week sprints.</span></li>
-            <li><span class="skill fx" data-area="product">Sprint Planning</span></li>
-            <li><a class="skill ev fx" data-area="product" href="#exp-sa-2" aria-describedby="ev-moscow">MoSCoW</a><span hidden id="ev-moscow">SuperAGI: prioritised client requirements and bugs using MoSCoW and RICE.</span></li>
-            <li><a class="skill ev fx" data-area="product" href="#exp-sa-2" aria-describedby="ev-rice">RICE</a><span hidden id="ev-rice">SuperAGI: prioritised client requirements and bugs using MoSCoW and RICE.</span></li>
-            <li><a class="skill ev fx" data-area="product" href="#exp-gx-1" aria-describedby="ev-requirements-gathering">Requirements Gathering</a><span hidden id="ev-requirements-gathering">Greenox Tech: gathered and documented client requirements.</span></li>
-            <li><a class="skill ev fx" data-area="product" href="#exp-sa-3" aria-describedby="ev-release-management">Release Management</a><span hidden id="ev-release-management">SuperAGI: tracked releases across staging and production.</span></li>
-            <li><a class="skill ev fx" data-area="product" href="#exp-sa-3" aria-describedby="ev-stakeholder-reporting">Stakeholder Reporting</a><span hidden id="ev-stakeholder-reporting">SuperAGI: reported weekly to 10+ stakeholders on progress, risks and dependencies.</span></li>
-            <li><a class="skill ev fx" data-area="product" href="#proj-delivery-flow" aria-describedby="ev-kanban">Kanban</a><span hidden id="ev-kanban">Delivery flow case study (simulated data): replayed a Kanban board, a board with one column per stage of work, day by day.</span></li>
-            <li><a class="skill ev fx" data-area="product data" href="#proj-delivery-flow" aria-describedby="ev-flow-metrics">Flow Metrics</a><span hidden id="ev-flow-metrics">Delivery flow case study (simulated data): measured how long items take, how many finish each week and how much work is in progress.</span></li>
+            <li><span class="skill">Agile Scrum</span></li>
+            <li><span class="skill">Sprint planning</span></li>
+            <li><span class="skill">PRDs &amp; backlog</span></li>
+            <li><span class="skill">RICE / MoSCoW</span></li>
+            <li><span class="skill">Stakeholder reporting</span></li>
           </ul>
         </div>
         <div class="skill-block">
-          <h4 class="skill-h">Data and Reporting</h4>
+          <h4 class="skill-h">Data</h4>
           <ul class="skill-list">
-            <li><a class="skill ev fx" data-area="data" href="#exp-mm-3" aria-describedby="ev-excel">Excel</a><span hidden id="ev-excel">Maestro Music Institute: built Excel and Power BI dashboards to plan schedules.</span></li>
-            <li><a class="skill ev fx" data-area="data" href="#exp-mm-3" aria-describedby="ev-power-bi">Power BI</a><span hidden id="ev-power-bi">Maestro Music Institute: built Excel and Power BI dashboards to plan schedules.</span></li>
-            <li><span class="skill fx" data-area="data">Tableau</span></li>
-            <li><a class="skill ev fx" data-area="data" href="#proj-delivery-flow" aria-describedby="ev-sql">SQL</a><span hidden id="ev-sql">Delivery flow case study (simulated data): wrote the whole analysis as eleven SQL files in DuckDB.</span></li>
-            <li><a class="skill ev fx" data-area="data" href="#proj-delivery-flow" aria-describedby="ev-dashboards">Dashboards</a><span hidden id="ev-dashboards">Delivery flow case study (simulated data): built an interactive flow dashboard. Maestro Music Institute: Excel and Power BI dashboards.</span></li>
-            <li><a class="skill ev fx" data-area="data product" href="#proj-delivery-flow" aria-describedby="ev-monte-carlo-forecasting">Monte Carlo Forecasting</a><span hidden id="ev-monte-carlo-forecasting">Delivery flow case study (simulated data): forecast delivery dates by playing out the team's next weeks 10,000 times.</span></li>
-          </ul>
-        </div>
-        <div class="skill-block">
-          <h4 class="skill-h">Marketing and Growth</h4>
-          <ul class="skill-list">
-            <li><a class="skill ev fx" data-area="marketing" href="#exp-tum-2" aria-describedby="ev-aarrr-funnel">AARRR Funnel</a><span hidden id="ev-aarrr-funnel">TUM Business Game: mapped the participant journey with the AARRR funnel, from first visit to registration.</span></li>
-            <li><a class="skill ev fx" data-area="marketing" href="#exp-tum-2" aria-describedby="ev-seo">SEO</a><span hidden id="ev-seo">TUM Business Game: improved on-page SEO for the competition website.</span></li>
-            <li><a class="skill ev fx" data-area="marketing data" href="#exp-tum-2" aria-describedby="ev-utm-tracking">UTM Tracking</a><span hidden id="ev-utm-tracking">TUM Business Game: set up UTM tracking across social media to measure which channels drove visitors and sign-ups.</span></li>
-            <li><a class="skill ev fx" data-area="marketing data" href="#exp-tum-3" aria-describedby="ev-a-b-testing">A/B Testing</a><span hidden id="ev-a-b-testing">TUM Business Game: A/B tested post formats and call-to-action wording.</span></li>
-            <li><span class="skill fx" data-area="marketing">Content Marketing</span></li>
-          </ul>
-        </div>
-        <div class="skill-block">
-          <h4 class="skill-h">Research</h4>
-          <ul class="skill-list">
-            <li><span class="skill fx" data-area="product marketing">Market and Competitor Research</span></li>
-            <li><a class="skill ev fx" data-area="product" href="#edu-cra" aria-describedby="ev-gap-analysis">Gap Analysis</a><span hidden id="ev-gap-analysis">Paltech project: mapped each requirement to its compliance status, evidence and open actions.</span></li>
-            <li><a class="skill ev fx" data-area="product" href="#edu-cra" aria-describedby="ev-requirements-mapping">Requirements Mapping</a><span hidden id="ev-requirements-mapping">Paltech project: mapped each requirement of the Cyber Resilience Act to its status, evidence and open actions.</span></li>
-            <li><a class="skill ev fx" data-area="product" href="#edu-cra" aria-describedby="ev-eu-compliance-cyber-resilience-act">EU Compliance (Cyber Resilience Act)</a><span hidden id="ev-eu-compliance-cyber-resilience-act">Paltech project: assessed an autonomous field robot against EU Regulation 2024/2847 clause by clause.</span></li>
+            <li><span class="skill">SQL</span></li>
+            <li><span class="skill">Power BI</span></li>
+            <li><span class="skill">Excel</span></li>
+            <li><span class="skill">Dashboards</span></li>
+            <li><span class="skill">A/B testing</span></li>
           </ul>
         </div>
         <div class="skill-block">
           <h4 class="skill-h">Tools</h4>
           <ul class="skill-list">
-            <li><a class="skill ev fx" data-area="product" href="#exp-sa-1" aria-describedby="ev-jira">Jira</a><span hidden id="ev-jira">SuperAGI: maintained the backlog in Jira and Notion across 6 AI products.</span></li>
-            <li><span class="skill fx" data-area="product">Confluence</span></li>
-            <li><a class="skill ev fx" data-area="product" href="#exp-sa-1" aria-describedby="ev-notion">Notion</a><span hidden id="ev-notion">SuperAGI: maintained the backlog in Jira and Notion across 6 AI products.</span></li>
-            <li><span class="skill fx" data-area="product marketing">Figma</span></li>
-            <li><span class="skill fx" data-area="marketing">Canva</span></li>
-            <li><span class="skill fx" data-area="">Slack</span></li>
-            <li><span class="skill fx" data-area="">Zapier</span></li>
-            <li><span class="skill fx" data-area="">Make</span></li>
-            <li><span class="skill fx" data-area="">n8n</span></li>
-            <li><span class="skill fx" data-area="product">Azure DevOps</span></li>
+            <li><span class="skill">Jira</span></li>
+            <li><span class="skill">Confluence</span></li>
+            <li><span class="skill">Notion</span></li>
+            <li><span class="skill">n8n / Zapier</span></li>
+            <li><span class="skill">Claude Code</span></li>
           </ul>
         </div>
-        <div class="skill-block">
-          <h4 class="skill-h">Technical</h4>
-          <ul class="skill-list">
-            <li><a class="skill ev fx" data-area="product" href="#exp-tum-1" aria-describedby="ev-claude-code">Claude Code</a><span hidden id="ev-claude-code">TUM Business Game: built the new competition website with Claude Code.</span></li>
-            <li><a class="skill ev fx" data-area="marketing" href="#exp-tum-1" aria-describedby="ev-astro">Astro</a><span hidden id="ev-astro">TUM Business Game: rebuilt the competition website with Astro, TypeScript, Tailwind CSS and Keystatic CMS.</span></li>
-            <li><a class="skill ev fx" data-area="marketing" href="#exp-tum-1" aria-describedby="ev-typescript">TypeScript</a><span hidden id="ev-typescript">TUM Business Game: rebuilt the competition website with Astro, TypeScript, Tailwind CSS and Keystatic CMS.</span></li>
-            <li><a class="skill ev fx" data-area="marketing" href="#exp-tum-1" aria-describedby="ev-tailwind-css">Tailwind CSS</a><span hidden id="ev-tailwind-css">TUM Business Game: rebuilt the competition website with Astro, TypeScript, Tailwind CSS and Keystatic CMS.</span></li>
-            <li><a class="skill ev fx" data-area="marketing" href="#exp-tum-1" aria-describedby="ev-keystatic-cms">Keystatic CMS</a><span hidden id="ev-keystatic-cms">TUM Business Game: set up a CMS so non-technical board members can publish content themselves.</span></li>
-            <li><a class="skill ev fx" data-area="marketing" href="#exp-tum-1" aria-describedby="ev-vercel">Vercel</a><span hidden id="ev-vercel">TUM Business Game: deployed the new competition website on Vercel.</span></li>
-            <li><span class="skill fx" data-area="">Git</span></li>
-            <li><span class="skill fx" data-area="">GitHub</span></li>
-            <li><span class="skill fx" data-area="">REST APIs</span></li>
-            <li><span class="skill fx" data-area="">C/C++</span></li>
-          </ul>
-        </div>
-        <div class="skill-block" style="margin-bottom:0">
-          <h4 class="skill-h">Languages</h4>
-          <div class="langs">
-            <div class="lang"><span>English</span><span class="lang-lv">C1 · Advanced</span></div>
-            <div class="lang" style="border-bottom:none"><span>German</span><span class="lang-lv">B1</span></div>
-          </div>
-        </div>
+        <p class="langs-line">Languages: English (C1), German (B1)</p>
       </div>
     </div>
   </div>
@@ -527,7 +461,7 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
         </div>
       </article>
 
-      <article class="edu fx" id="edu-sap" data-area="data">
+      <article class="edu" id="edu-sap">
         <div class="job-when">Case study<span class="job-where">SAP &amp; Dimplex</span></div>
         <div>
           <h3 class="edu-deg"><button type="button" class="term" aria-describedby="g-datasphere">SAP Datasphere</button><span hidden id="g-datasphere">SAP Datasphere is SAP's cloud service for bringing a company's data together in one place for reporting and analysis.</span> adoption in procurement</h3>
@@ -536,7 +470,7 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
         </div>
       </article>
 
-      <article class="edu fx" id="edu-cra" data-area="product">
+      <article class="edu" id="edu-cra">
         <div class="job-when">University project<span class="job-where">Paltech, Germany</span></div>
         <div>
           <h3 class="edu-deg">EU <button type="button" class="term" aria-describedby="g-cra">Cyber Resilience Act</button><span hidden id="g-cra">The Cyber Resilience Act (EU Regulation 2024/2847) is an EU law that sets cybersecurity requirements for products with digital elements.</span> compliance analysis</h3>

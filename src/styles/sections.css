@@ -164,7 +164,6 @@ body.loaded .hero-h1 .w > i { transform: none; }
 }
 .an-tag.real { color: var(--signal); border-color: color-mix(in srgb, var(--signal) 45%, transparent); }
 .an-card .case-link { margin-top: 16px; }
-.an-card.fx-hit { border-color: var(--signal); }
 
 @media (max-width: 900px) { .an-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 620px) { .an-grid { grid-template-columns: 1fr; } }
@@ -211,11 +210,7 @@ body.loaded .hero-h1 .w > i { transform: none; }
 .skill-h { font-family: var(--font-sans); font-size: .655rem; letter-spacing: .13em; text-transform: uppercase; color: var(--ink-4); padding-bottom: 9px; margin-bottom: 13px; border-bottom: 1px solid var(--rule-soft); }
 .skill-list { display: flex; flex-wrap: wrap; gap: 7px; }
 .skill { font-size: .845rem; color: var(--ink-2); border: 1px solid var(--rule); padding: 5px 12px; border-radius: 100px; transition: border-color .2s ease, color .2s ease, transform .2s ease; }
-.skill:hover { border-color: var(--signal); color: var(--signal); transform: translateY(-2px); }
 
-.langs { display: grid; gap: 9px; }
-.lang { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: .885rem; padding-bottom: 8px; border-bottom: 1px solid var(--rule-soft); }
-.lang-lv { color: var(--ink-3); font-size: .8rem; }
 
 /* ── Education ────────────────────────────────────────── */
 .edu { display: grid; grid-template-columns: 190px 1fr; gap: 0 32px; padding: 28px 0; border-top: 1px solid var(--rule-soft); }

@@ -1,15 +1,7 @@
-import { $, reduceMotion } from './env';
+import { reduceMotion } from './env';
 
 /** Fixed nav height plus breathing room, for anything we scroll into view. */
 const NAV_OFFSET = 88;
-
-const LENS_LABEL: Record<string, string> = {
-  product: 'Product and Delivery',
-  data: 'Data',
-  marketing: 'Marketing',
-};
-
-const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
 
 /**
  * One bubble for every `.term` (a technical term explained in a sentence) and
@@ -130,54 +122,6 @@ function jumpTo(hash: string) {
   window.setTimeout(fade, 1800); // browsers without scrollend
 }
 
-/**
- * "Highlight the evidence for": marks skills, experience points and projects
- * whose data-area matches, and dims the rest. "Everything" clears it.
- */
-function initLens() {
-  const radios = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="lens"]'));
-  if (!radios.length) return;
-  const status = $('lensStatus');
-  const jump = $('lensJump');
-  const items = Array.from(document.querySelectorAll<HTMLElement>('.fx'));
-  const roles = Array.from(document.querySelectorAll<HTMLElement>('.job'));
-
-  function apply(lens: string) {
-    const on = lens in LENS_LABEL;
-    let skills = 0, points = 0, projects = 0;
-
-    items.forEach((el) => {
-      const hit = on && (el.dataset.area ?? '').split(/\s+/).includes(lens);
-      el.classList.toggle('fx-hit', hit);
-      el.classList.toggle('fx-dim', on && !hit);
-      if (!hit) return;
-      if (el.classList.contains('skill')) skills++;
-      else if (el.tagName === 'LI') points++;
-      else projects++;
-    });
-    roles.forEach((r) => r.classList.toggle('fx-dim', on && !r.querySelector('.fx-hit')));
-
-    if (status) {
-      const parts = [
-        skills && plural(skills, 'skill', 'skills'),
-        points && plural(points, 'experience point', 'experience points'),
-        projects && plural(projects, 'project', 'projects'),
-      ].filter(Boolean) as string[];
-      const list = parts.length > 1 ? `${parts.slice(0, -1).join(', ')} and ${parts[parts.length - 1]}` : parts[0];
-      status.textContent = on
-        ? `${LENS_LABEL[lens]}: ${list} highlighted. Everything else is dimmed.`
-        : 'Showing everything.';
-    }
-    if (jump) jump.hidden = !on || points === 0;
-  }
-
-  radios.forEach((r) => r.addEventListener('change', () => { if (r.checked) apply(r.value); }));
-  // A browser may restore the last choice on reload without firing change.
-  const restored = radios.find((r) => r.checked);
-  if (restored && restored.value !== 'all') apply(restored.value);
-}
-
 export function initEvidence() {
   initTips();
-  initLens();
 }

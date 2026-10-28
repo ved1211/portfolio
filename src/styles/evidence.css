@@ -37,42 +37,11 @@
 }
 #tip .tip-h:empty { display: none; }
 
-/* skills */
-.skills-h { color: var(--ink-3); margin-bottom: 8px; }
-.skills-note { font-size: .84rem; color: var(--ink-3); line-height: 1.5; margin-bottom: 20px; max-width: 46ch; }
+/* skills: three plain groups */
+.skills-h { font-size: 1rem; font-weight: 600; margin-bottom: 18px; }
 ul.skill-list { list-style: none; }
-.skill { display: inline-flex; align-items: center; gap: 7px; transition: border-color .2s ease, color .2s ease, background .25s ease, opacity .3s ease, transform .2s ease; }
-.skill.ev { color: var(--ink); border-color: color-mix(in srgb, var(--signal) 40%, var(--rule)); }
-.skill.ev::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--signal); flex-shrink: 0; }
-.skill:not(.ev):hover { border-color: var(--rule); color: var(--ink-2); transform: none; }
-
-/* filter */
-.lens { border: 0; margin: 0 0 6px; padding: 0; min-width: 0; }
-.lens-l { font-size: .8rem; font-weight: 500; color: var(--ink-2); margin-bottom: 9px; padding: 0; }
-.lens-opts { display: flex; flex-wrap: wrap; gap: 7px; }
-.lens-opts input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
-.lens-opts label {
-  font-size: .8rem; font-weight: 500; color: var(--ink-2); cursor: pointer;
-  padding: 6px 13px; border: 1px solid var(--rule); border-radius: 100px;
-  transition: background .2s ease, color .2s ease, border-color .2s ease;
-}
-.lens-opts label:hover { border-color: var(--ink-3); color: var(--ink); }
-.lens-opts input:checked + label { background: var(--ink); border-color: var(--ink); color: var(--paper); }
-.lens-opts input:focus-visible + label { outline: 2px solid var(--signal); outline-offset: 2px; }
-.lens-status { font-size: .82rem; color: var(--ink-3); line-height: 1.5; min-height: 1.5em; margin: 8px 0 4px; }
-.lens-jump { display: inline-block; font-size: .82rem; color: var(--signal); margin-bottom: 18px; border-bottom: 1px solid transparent; transition: border-color .2s ease; }
-.lens-jump:hover { border-bottom-color: var(--signal); }
-.lens-jump[hidden] { display: none; }
-.skills > div.skill-block:first-of-type { margin-top: 16px; }
-
-/* what the filter does to the page */
-.job, .edu, .job-pts li { transition: opacity .3s ease, color .25s ease, background .6s ease, box-shadow .6s ease; }
-.fx-dim, .job.fx-dim { opacity: .4; }
-.job.fx-dim .job-pts li.fx-dim { opacity: 1; }
-.skill.fx-hit { border-color: var(--signal); color: var(--signal); background: var(--signal-bg); }
-.job-pts li.fx-hit { color: var(--ink); }
-.job-pts li.fx-hit::before { background: var(--signal); width: 12px; }
-.edu.fx-hit .edu-deg { color: var(--signal); }
+.skill { display: inline-flex; align-items: center; }
+.langs-line { font-size: .9rem; color: var(--ink-2); }
 
 /* where an evidence link lands */
 .job, .edu { scroll-margin-top: 88px; }
