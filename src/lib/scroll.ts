@@ -1,33 +1,10 @@
 import { $, debounce } from './env';
 
-/** Normalised page scroll, published for the 3D background. */
-export let scrollProgress = 0;
-
-const SECTION_IDS = ['hero', 'work', 'analysis', 'experience', 'about', 'education', 'contact'];
-
 export function initScroll() {
   const nav = $('nav');
-  const spineFill = $('spineFill');
-  const nodes = Array.from(document.querySelectorAll<HTMLElement>('.spine-node'));
 
   function onScroll() {
-    const y = window.scrollY;
-    nav?.classList.toggle('stuck', y > 8);
-
-    const docH = document.documentElement.scrollHeight - window.innerHeight;
-    scrollProgress = docH > 0 ? Math.min(1, Math.max(0, y / docH)) : 0;
-    if (spineFill) spineFill.style.height = `${(nodes.length - 1) * 35 * scrollProgress}px`;
-
-    const mid = y + window.innerHeight * 0.4;
-    let active = 0;
-    SECTION_IDS.forEach((id, i) => {
-      const el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top + y <= mid) active = i;
-    });
-    nodes.forEach((n, i) => {
-      n.classList.toggle('on', i === active);
-      n.classList.toggle('past', i < active);
-    });
+    nav?.classList.toggle('stuck', window.scrollY > 8);
   }
 
   let ticking = false;

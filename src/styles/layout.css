@@ -25,7 +25,6 @@ section { position: relative; }
   padding-bottom: 18px;
   border-bottom: 1px solid var(--rule);
 }
-.sec-num { color: var(--signal); }
 .sec-name { color: var(--ink-3); }
 .sec-rule { flex: 1; }
 
@@ -38,7 +37,8 @@ section { position: relative; }
   max-width: 20ch;
   margin-bottom: 14px;
 }
-.sec-h2 em { font-style: italic; color: var(--signal); }
+/* headings stay one plain style, even where the markup still says <em> */
+.sec-h2 em, .contact-h em { font-style: inherit; color: inherit; }
 .sec-lede { color: var(--ink-2); font-size: 1.02rem; max-width: 56ch; margin-bottom: 46px; }
 
 /* ── Nav ──────────────────────────────────────────────── */
@@ -100,63 +100,3 @@ section { position: relative; }
 #mob.open { transform: translateY(0); }
 #mob a { display: block; padding: 13px 32px; font-family: var(--font-display); font-size: 1.45rem; border-bottom: 1px solid var(--rule-soft); }
 #mob a:last-child { border-bottom: none; }
-
-/* ── Workflow spine ───────────────────────────────────── */
-#spine {
-  position: fixed;
-  left: 34px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 60;
-  display: none;
-  opacity: 0;
-  transition: opacity .8s ease;
-}
-body.loaded #spine { opacity: 1; }
-.spine-track {
-  position: absolute;
-  left: 5px; top: 6px; bottom: 6px;
-  width: 1px;
-  background: var(--rule);
-}
-.spine-fill {
-  position: absolute;
-  left: 5px; top: 6px;
-  width: 1px;
-  height: 0;
-  background: var(--signal);
-  transition: height .18s linear;
-}
-.spine-node {
-  position: relative;
-  display: block;
-  width: 11px; height: 11px;
-  margin-bottom: 24px;
-  border-radius: 50%;
-  border: 1px solid var(--rule);
-  background: var(--paper);
-  transition: border-color .3s ease, background .3s ease, transform .3s ease;
-}
-.spine-node:last-child { margin-bottom: 0; }
-.spine-node::after {
-  content: attr(data-label);
-  position: absolute;
-  left: 22px; top: 50%;
-  transform: translateY(-50%) translateX(-6px);
-  font-family: var(--font-sans);
-  font-size: .58rem;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .25s ease, transform .25s ease;
-}
-.spine-node:hover::after { opacity: 1; transform: translateY(-50%) translateX(0); }
-.spine-node.on {
-  border-color: var(--signal);
-  background: var(--signal);
-  transform: scale(1.25);
-}
-.spine-node.past { border-color: var(--signal); }

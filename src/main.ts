@@ -26,8 +26,17 @@ initScroll();
 initReveal();
 initEvidence();
 
+/**
+ * The dotted background: 'dim' draws a faint lattice, 'off' leaves the page
+ * plain. Change the default here; ?bg=dim or ?bg=off in the URL previews either.
+ */
+const BACKGROUND_DEFAULT: 'dim' | 'off' = 'dim';
+const bgParam = new URLSearchParams(location.search).get('bg');
+const background = bgParam === 'dim' || bgParam === 'off' ? bgParam : BACKGROUND_DEFAULT;
+
 const field = $<HTMLCanvasElement>('field');
-const bg = field ? initBackground(field) : undefined;
+if (field && background === 'off') field.remove();
+const bg = field && background === 'dim' ? initBackground(field) : undefined;
 
 const voxel = initVoxelUI();
 initIntro(voxel.open);

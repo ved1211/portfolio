@@ -14,7 +14,9 @@ import { isDark, onThemeChange } from '../lib/theme';
 
 const SPAN_X = 46, SPAN_Y = 26, SPAN_Z = 24;
 const COLS = 15, ROWS = 9, LAYERS = 4;
-const PULSES = 30;
+// Toned down: fewer, dimmer dots and no moving green pulses. Raise PULSES to bring them back.
+const KEEP = 0.4;      // share of lattice points drawn
+const PULSES = 0;
 
 type Edge = { ax: number; ay: number; az: number; bx: number; by: number; bz: number };
 
@@ -40,7 +42,7 @@ export function initBackground(canvas: HTMLCanvasElement) {
       grid[z][y] = [];
       for (let x = 0; x < COLS; x++) {
         // A sparse lattice reads as a network; a full one reads as wallpaper.
-        if (Math.random() < 0.34) { grid[z][y][x] = null; continue; }
+        if (Math.random() > KEEP) { grid[z][y][x] = null; continue; }
         const p = [
           (x / (COLS - 1) - 0.5) * SPAN_X + (Math.random() - 0.5) * 1.1,
           (y / (ROWS - 1) - 0.5) * SPAN_Y + (Math.random() - 0.5) * 1.1,
@@ -81,7 +83,7 @@ export function initBackground(canvas: HTMLCanvasElement) {
   // ── pulses ─────────────────────────────────────────────
   const pulseMat = new MeshBasicMaterial({ transparent: true, opacity: 0.7, blending: AdditiveBlending, depthWrite: false });
   const pulses = new InstancedMesh(new SphereGeometry(0.13, 8, 8), pulseMat, PULSES);
-  scene.add(pulses);
+  if (PULSES) scene.add(pulses);
 
   const state = Array.from({ length: PULSES }, () => ({
     edge: (Math.random() * edges.length) | 0,
@@ -97,8 +99,8 @@ export function initBackground(canvas: HTMLCanvasElement) {
     nodeMat.color = ink;
     lineMat.color = ink;
     pulseMat.color = new Color(cssColor('--signal', '#0F7A52'));
-    nodeMat.opacity = dark ? 0.34 : 0.3;
-    lineMat.opacity = dark ? 0.1 : 0.09;
+    nodeMat.opacity = dark ? 0.2 : 0.16;
+    lineMat.opacity = dark ? 0.045 : 0.04;
     scene.fog = new Fog(new Color(cssColor('--paper', '#F4F5F2')), 30, 86);
   }
   paint();

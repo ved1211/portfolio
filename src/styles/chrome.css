@@ -19,7 +19,7 @@ body.loaded #field { opacity: .6; }
 }
 
 /* everything above the field */
-#nav, #mob, #spine, main, footer, #cur, #cur-dot, #boot { position: relative; z-index: 2; }
+#nav, #mob, main, footer, #cur, #cur-dot, #boot { position: relative; z-index: 2; }
 
 /* ── Boot ─────────────────────────────────────────────── */
 #boot {

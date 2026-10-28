@@ -12,7 +12,6 @@
 }
 
 /* ── Responsive ───────────────────────────────────────── */
-@media (min-width: 1180px) { #spine { display: block; } }
 
 @media (max-width: 900px) {
   .hero-grid { gap: 36px; grid-template-columns: minmax(0, 1fr) 200px; }
@@ -55,7 +54,7 @@
 @media (hover: none) { #cur, #cur-dot { display: none; } }
 
 @media print {
-  #nav, #mob, #spine, #field, #boot, .ctas, .tog, #cur, #cur-dot { display: none !important; }
+  #nav, #mob, #field, #boot, .ctas, .tog, #cur, #cur-dot { display: none !important; }
   body { background: #fff; color: #000; }
   .band { padding: 24px 0; }
 }
