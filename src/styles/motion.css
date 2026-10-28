@@ -61,12 +61,6 @@
   .metrics { margin-top: 58px; }
   .metric { padding: 24px 18px 24px 0; }
 
-  .case { grid-template-columns: 1fr; gap: 0; padding: 36px 0; }
-  .case::before { left: -14px; right: -14px; }
-  .case-idx { padding-top: 0; margin-bottom: 10px; }
-  .case-row { grid-template-columns: 1fr; gap: 3px; }
-  .case-k { padding-top: 0; }
-
   .job, .edu { grid-template-columns: 1fr; gap: 0; }
   .job-when { padding-top: 0; margin-bottom: 10px; line-height: 1.5; }
   .job-where { display: inline; }

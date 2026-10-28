@@ -138,89 +138,57 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
       <span class="sec-rule"></span>
     </div>
 
-    <h2 class="sec-h2 rv">Three things I built, and <em>what changed.</em></h2>
-    <p class="sec-lede rv">Same pattern every time. Find where the work is stuck, build the thing that moves it.</p>
+    <h2 class="sec-h2 rv">Selected work</h2>
 
-    <article class="case rv">
-      <div class="case-idx">01 /</div>
-      <div>
-        <div class="case-h">
-          <h3 class="case-title">An AI operating system, in five days</h3>
-          <span class="case-org">on.chained · Web3 / RWA</span>
+    <div class="work-grid">
+      <article class="work rv">
+        <!-- TODO: add the screenshot at public/assets/work/onchained.png, then replace the placeholder below with
+             <img class="work-img" src="assets/work/onchained.png" alt="The on.chained pipelines writing results into Notion" width="1200" height="750" loading="lazy"> -->
+        <div class="work-img ph" aria-hidden="true"></div>
+        <div class="work-body">
+          <p class="work-org">on.chained</p>
+          <h3 class="work-title">AI operating system for a Web3 startup</h3>
+          <dl class="work-rows">
+            <div><dt>Problem</dt><dd>The team tracked regulation, asset documents and investor research by hand.</dd></div>
+            <div><dt>What I did</dt><dd>Built 3 AI pipelines on the Claude API that write results straight into Notion.</dd></div>
+            <div><dt>Result</dt><dd><b class="work-n">5 days</b> from brief to live.</dd></div>
+          </dl>
+          <div class="tags"><span class="tag">Claude API</span><span class="tag">Notion</span><span class="tag">Apps Script</span></div>
         </div>
-        <div class="case-rows">
-          <div class="case-row">
-            <div class="case-k">Problem</div>
-            <div class="case-v">A startup team tracked regulation, asset documentation and investor research by hand. Every answer meant re-reading everything.</div>
-          </div>
-          <div class="case-row">
-            <div class="case-k">Built</div>
-            <div class="case-v">Three production pipelines on the Anthropic API, wired into Notion so the output landed where the team already worked.</div>
-          </div>
-          <div class="case-row">
-            <div class="case-k">Result</div>
-            <div class="case-v out">Live and running in <b>5 days</b>, built unprompted as a working artifact rather than a cover letter.</div>
-          </div>
-        </div>
-        <div class="tags">
-          <span class="tag">Claude API</span><span class="tag">Notion</span><span class="tag">Apps Script</span><span class="tag">0→1</span>
-        </div>
-      </div>
-    </article>
+      </article>
 
-    <article class="case rv">
-      <div class="case-idx">02 /</div>
-      <div>
-        <div class="case-h">
-          <h3 class="case-title">The status update that writes itself</h3>
-          <span class="case-org">Internal ops tool</span>
+      <article class="work rv">
+        <!-- TODO: add the recording at public/assets/work/status-update.gif, then replace the placeholder below with
+             <img class="work-img" src="assets/work/status-update.gif" alt="The status update being drafted and posted" width="1200" height="750" loading="lazy"> -->
+        <div class="work-img ph" aria-hidden="true"></div>
+        <div class="work-body">
+          <p class="work-org">Internal ops tool</p>
+          <h3 class="work-title">The status update that writes itself</h3>
+          <dl class="work-rows">
+            <div><dt>Problem</dt><dd>The team spent 6+ hours a week writing status updates by hand.</dd></div>
+            <div><dt>What I did</dt><dd>A pipeline that pulls task status, drafts the update with GPT and posts it on a schedule.</dd></div>
+            <div><dt>Result</dt><dd><b class="work-n">6 hrs/week</b> saved. Used across the company within 2 weeks.</dd></div>
+          </dl>
+          <div class="tags"><span class="tag">GPT API</span><span class="tag">Zapier</span><span class="tag">Notion</span></div>
         </div>
-        <div class="case-rows">
-          <div class="case-row">
-            <div class="case-k">Problem</div>
-            <div class="case-v">The team burned six-plus hours a week writing status updates by hand.</div>
-          </div>
-          <div class="case-row">
-            <div class="case-k">Built</div>
-            <div class="case-v">A pipeline that pulls task state, drafts the update with GPT and posts it on a schedule. No new tool to learn.</div>
-          </div>
-          <div class="case-row">
-            <div class="case-k">Result</div>
-            <div class="case-v out"><b>6 hrs/week</b> back into product work. Adopted org-wide within <b>2 weeks</b> of deployment.</div>
-          </div>
-        </div>
-        <div class="tags">
-          <span class="tag">GPT API</span><span class="tag">Zapier</span><span class="tag">Notion</span><span class="tag">Ops automation</span>
-        </div>
-      </div>
-    </article>
+      </article>
 
-    <article class="case rv">
-      <div class="case-idx">03 /</div>
-      <div>
-        <div class="case-h">
-          <h3 class="case-title">Keeping six product teams on one page</h3>
-          <span class="case-org">SuperAGI · Palo Alto</span>
+      <article class="work rv">
+        <!-- TODO: add the screenshot at public/assets/work/superagi.png, then replace the placeholder below with
+             <img class="work-img" src="assets/work/superagi.png" alt="The weekly delivery report at SuperAGI" width="1200" height="750" loading="lazy"> -->
+        <div class="work-img ph" aria-hidden="true"></div>
+        <div class="work-body">
+          <p class="work-org">SuperAGI</p>
+          <h3 class="work-title">Six product teams, one plan</h3>
+          <dl class="work-rows">
+            <div><dt>Problem</dt><dd>6 products in parallel, and blockers got lost between engineering and product.</dd></div>
+            <div><dt>What I did</dt><dd>Set up a shared meeting rhythm, templates and one weekly report for 10+ stakeholders.</dd></div>
+            <div><dt>Result</dt><dd><b class="work-n">+30%</b> task completion, 40+ action items tracked daily.</dd></div>
+          </dl>
+          <div class="tags"><span class="tag">Agile Scrum</span><span class="tag">Jira</span><span class="tag">Stakeholder reporting</span></div>
         </div>
-        <div class="case-rows">
-          <div class="case-row">
-            <div class="case-k">Problem</div>
-            <div class="case-v">Six products in flight at once. Blockers stacked up in the gap between engineering and product, and dates moved.</div>
-          </div>
-          <div class="case-row">
-            <div class="case-k">Built</div>
-            <div class="case-v">Meeting structures across six product teams, the recurring templates they ran on, and one weekly report to 10+ stakeholders on progress, risks and open issues.</div>
-          </div>
-          <div class="case-row">
-            <div class="case-k">Result</div>
-            <div class="case-v out"><b>40+ action items</b>, dependencies and deadlines visible to everyone, daily. Contributed to PRDs and coordinated developer pull requests.</div>
-          </div>
-        </div>
-        <div class="tags">
-          <span class="tag">Stakeholder reporting</span><span class="tag">Agile / Scrum</span><span class="tag">Notion</span><span class="tag">Jira</span><span class="tag">PRDs</span>
-        </div>
-      </div>
-    </article>
+      </article>
+    </div>
   </div>
 </section>
 
