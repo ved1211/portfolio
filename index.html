@@ -79,9 +79,66 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
           <a href="assets/CV/Ved-Gawade-CV.pdf" download="Ved-Gawade-CV.pdf" class="btn btn-2"><span>Download CV</span></a>
         </div>
       </div>
-      <!-- TODO: add the photo at public/assets/ved.jpg, then replace the placeholder below with
-           <img class="hero-photo" src="assets/ved.jpg" alt="Ved Gawade" width="640" height="800"> -->
-      <div class="hero-photo ph" aria-hidden="true"></div>
+      <!-- A cartoon Ved walks in, waves and points down to the work, once on load (CSS only).
+           With reduced motion he just stands there pointing. -->
+      <div class="hero-ved go" id="hero-ved">
+        <p class="hv-say hv-hi" aria-hidden="true">Hi, I&rsquo;m Ved!</p>
+        <a class="hv-say hv-down" href="#work">Scroll down for my work <span class="hv-arrow" aria-hidden="true">&darr;</span></a>
+        <div class="hv-stage" aria-hidden="true">
+          <svg class="ved" viewBox="0 0 140 220" aria-hidden="true">
+            <ellipse class="ved-shadow" cx="70" cy="212" rx="36" ry="5"/>
+            <g class="ved-all">
+            <g class="ved-leg ved-leg-l">
+              <rect class="jeans" x="50" y="148" width="19" height="52" rx="7"/>
+              <path class="shoe" d="M42 197h24a6 6 0 0 1 6 6v1a5 5 0 0 1-5 5H41a6 6 0 0 1-6-6 6 6 0 0 1 7-6z"/>
+            </g>
+            <g class="ved-leg ved-leg-r">
+              <rect class="jeans" x="71" y="148" width="19" height="52" rx="7"/>
+              <path class="shoe" d="M74 197h24a6 6 0 0 1 7 6 6 6 0 0 1-6 6H73a5 5 0 0 1-5-5v-1a6 6 0 0 1 6-6z"/>
+            </g>
+            <g class="ved-arm ved-arm-l">
+              <rect class="skin" x="30" y="124" width="12" height="33" rx="6"/>
+              <circle class="skin" cx="36" cy="159" r="7"/>
+            </g>
+            <g class="ved-arm ved-arm-r">
+              <rect class="skin" x="98" y="124" width="12" height="33" rx="6"/>
+              <circle class="skin" cx="104" cy="159" r="7"/>
+            </g>
+            <path class="tee" d="M45 107c8-3 16-4 25-4s17 1 25 4l14 7c2 1 3 3 3 5l-1 13c0 2-2 3-4 3h-8l1 26c-10 4-20 5-30 5s-20-1-30-5l1-26h-8c-2 0-4-1-4-3l-1-13c0-2 1-4 3-5z"/>
+            <rect class="skin-shade" x="61" y="90" width="18" height="18" rx="6"/>
+            <path class="collar" d="M60 105c3 6 7 8 10 8s7-2 10-8"/>
+            <g class="ved-head">
+              <ellipse class="skin" cx="37" cy="64" rx="6.5" ry="9"/>
+              <ellipse class="skin" cx="103" cy="64" rx="6.5" ry="9"/>
+              <path class="ear-line" d="M36 60c2-1 4 0 4 3s-1 5-3 6"/>
+              <path class="ear-line" d="M104 60c-2-1-4 0-4 3s1 5 3 6"/>
+              <path class="skin" d="M38 57c0-25 15-35 32-35s32 10 32 35c0 25-14 41-32 41S38 82 38 57z"/>
+              <path class="hair" d="M38 52C36 38 40 26 49 18c6-8 14-12 23-13 10-1 20 2 26 8 6 6 8 17 6 29-1 4-2 8-3 11-2-8-5-13-10-16-7-4-15-4-21-3-9 1-18 3-24 7-4 3-6 7-8 11z"/>
+              <path class="hair" d="M60 9c6-7 19-10 30-5 6 3 10 8 10 14-6-6-14-9-23-9-6 0-12 0-17 0z"/>
+              <path class="hair-hi" d="M52 21c7-8 19-11 31-9"/>
+              <path class="hair-hi" d="M58 28c8-6 19-8 30-5"/>
+              <path class="hair-hi" d="M70 9c7-3 15-3 22 1"/>
+              <path class="brow" d="M48.5 48.5c4-3 10-3.5 14.5-1.5"/>
+              <path class="brow" d="M77 47c4.5-2 10.5-1.5 14.5 1.5"/>
+              <g class="ved-eyes">
+                <ellipse class="eye" cx="56" cy="60" rx="4.3" ry="5.3"/>
+                <ellipse class="eye" cx="84" cy="60" rx="4.3" ry="5.3"/>
+                <circle class="eye-hi" cx="57.6" cy="58" r="1.4"/>
+                <circle class="eye-hi" cx="85.6" cy="58" r="1.4"/>
+              </g>
+              <circle class="cheek" cx="49" cy="73" r="5"/>
+              <circle class="cheek" cx="91" cy="73" r="5"/>
+              <path class="nose" d="M70.5 63c-2 4-3.5 7-1.5 9 1.5 1 3.5 1 5 0"/>
+              <path class="mouth-smile" d="M60.5 80.5c3 4.5 6 6 9.5 6s6.5-1.5 9.5-6"/>
+              <g class="mouth-open">
+                <ellipse class="mouth" cx="70" cy="83" rx="6.4" ry="4.6"/>
+                <ellipse class="tongue" cx="70" cy="85.4" rx="3.6" ry="1.9"/>
+              </g>
+            </g>
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
 
     <div class="metrics">
@@ -472,7 +529,7 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
 
 
 
-<!-- ═══════════ JUST FOR FUN: a cartoon Ved walks in and offers the house game.
+<!-- ═══════════ JUST FOR FUN: the cartoon Ved walks in and offers the house game.
      Only plays from the "Just for fun" link in the footer. ═══════════ -->
 <aside id="intro" aria-label="A short introduction from Ved" hidden>
   <div class="intro-bubble">
@@ -484,58 +541,7 @@ if(d)document.documentElement.className='dark';}catch(e){}})();
       <button id="intro-play" type="button">Build a house</button>
     </div>
   </div>
-  <svg class="ved" id="ved" viewBox="0 0 140 220" aria-hidden="true">
-    <ellipse class="ved-shadow" cx="70" cy="212" rx="36" ry="5"/>
-    <g class="ved-all">
-    <g class="ved-leg ved-leg-l">
-      <rect class="jeans" x="50" y="148" width="19" height="52" rx="7"/>
-      <path class="shoe" d="M42 197h24a6 6 0 0 1 6 6v1a5 5 0 0 1-5 5H41a6 6 0 0 1-6-6 6 6 0 0 1 7-6z"/>
-    </g>
-    <g class="ved-leg ved-leg-r">
-      <rect class="jeans" x="71" y="148" width="19" height="52" rx="7"/>
-      <path class="shoe" d="M74 197h24a6 6 0 0 1 7 6 6 6 0 0 1-6 6H73a5 5 0 0 1-5-5v-1a6 6 0 0 1 6-6z"/>
-    </g>
-    <g class="ved-arm ved-arm-l">
-      <rect class="skin" x="30" y="124" width="12" height="33" rx="6"/>
-      <circle class="skin" cx="36" cy="159" r="7"/>
-    </g>
-    <g class="ved-arm ved-arm-r">
-      <rect class="skin" x="98" y="124" width="12" height="33" rx="6"/>
-      <circle class="skin" cx="104" cy="159" r="7"/>
-    </g>
-    <path class="tee" d="M45 107c8-3 16-4 25-4s17 1 25 4l14 7c2 1 3 3 3 5l-1 13c0 2-2 3-4 3h-8l1 26c-10 4-20 5-30 5s-20-1-30-5l1-26h-8c-2 0-4-1-4-3l-1-13c0-2 1-4 3-5z"/>
-    <rect class="skin-shade" x="61" y="90" width="18" height="18" rx="6"/>
-    <path class="collar" d="M60 105c3 6 7 8 10 8s7-2 10-8"/>
-    <g class="ved-head" id="ved-head">
-      <ellipse class="skin" cx="37" cy="64" rx="6.5" ry="9"/>
-      <ellipse class="skin" cx="103" cy="64" rx="6.5" ry="9"/>
-      <path class="ear-line" d="M36 60c2-1 4 0 4 3s-1 5-3 6"/>
-      <path class="ear-line" d="M104 60c-2-1-4 0-4 3s1 5 3 6"/>
-      <path class="skin" d="M38 57c0-25 15-35 32-35s32 10 32 35c0 25-14 41-32 41S38 82 38 57z"/>
-      <path class="hair" d="M38 52C36 38 40 26 49 18c6-8 14-12 23-13 10-1 20 2 26 8 6 6 8 17 6 29-1 4-2 8-3 11-2-8-5-13-10-16-7-4-15-4-21-3-9 1-18 3-24 7-4 3-6 7-8 11z"/>
-      <path class="hair" d="M60 9c6-7 19-10 30-5 6 3 10 8 10 14-6-6-14-9-23-9-6 0-12 0-17 0z"/>
-      <path class="hair-hi" d="M52 21c7-8 19-11 31-9"/>
-      <path class="hair-hi" d="M58 28c8-6 19-8 30-5"/>
-      <path class="hair-hi" d="M70 9c7-3 15-3 22 1"/>
-      <path class="brow" d="M48.5 48.5c4-3 10-3.5 14.5-1.5"/>
-      <path class="brow" d="M77 47c4.5-2 10.5-1.5 14.5 1.5"/>
-      <g class="ved-eyes">
-        <ellipse class="eye" cx="56" cy="60" rx="4.3" ry="5.3"/>
-        <ellipse class="eye" cx="84" cy="60" rx="4.3" ry="5.3"/>
-        <circle class="eye-hi" cx="57.6" cy="58" r="1.4"/>
-        <circle class="eye-hi" cx="85.6" cy="58" r="1.4"/>
-      </g>
-      <circle class="cheek" cx="49" cy="73" r="5"/>
-      <circle class="cheek" cx="91" cy="73" r="5"/>
-      <path class="nose" d="M70.5 63c-2 4-3.5 7-1.5 9 1.5 1 3.5 1 5 0"/>
-      <path class="mouth-smile" d="M60.5 80.5c3 4.5 6 6 9.5 6s6.5-1.5 9.5-6"/>
-      <g class="mouth-open">
-        <ellipse class="mouth" cx="70" cy="83" rx="6.4" ry="4.6"/>
-        <ellipse class="tongue" cx="70" cy="85.4" rx="3.6" ry="1.9"/>
-      </g>
-    </g>
-    </g>
-  </svg>
+  <!-- the figure is the hero's Ved, copied in by src/lib/intro.ts -->
   <ol hidden id="intro-script">
     <li>Hi, I'm Ved! I study Digital Innovation Management in Neu&#8209;Ulm.</li>
     <li>At SuperAGI, I managed delivery across 6 AI products.</li>

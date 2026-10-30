@@ -12,7 +12,7 @@ import { initTheme } from './lib/theme';
 import { initCursor } from './lib/cursor';
 import { initNav } from './lib/nav';
 import { initScroll, initReveal } from './lib/scroll';
-import { initIntro } from './lib/intro';
+import { initIntro, initHeroVed } from './lib/intro';
 import { initEvidence } from './lib/evidence';
 import { initBackground } from './three/background';
 import { initVoxelUI } from './three/voxel/ui';
@@ -23,6 +23,7 @@ initNav();
 initCursor();
 initScroll();
 initReveal();
+initHeroVed();
 initEvidence();
 
 /**

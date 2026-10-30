@@ -44,7 +44,6 @@
   .ctas .btn { flex: 1 1 auto; justify-content: center; }
   .sec-head { margin-bottom: 38px; }
   .hero-grid { grid-template-columns: 1fr; gap: 28px; }
-  .hero-photo { order: -1; width: 112px; aspect-ratio: 1; }
 }
 
 @media (max-width: 420px) {

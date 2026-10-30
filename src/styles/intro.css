@@ -1,5 +1,6 @@
-/* ── Intro: a cartoon Ved walks in and says hello ─────────
-   Plays only from the "Just for fun" link in the footer.
+/* ── Cartoon Ved ──────────────────────────────────────────
+   He stands in the hero (see the end of this file), and the "Just for fun"
+   link in the footer has him walk in and say hello.
    The figure's colours are fixed (it is a person, not UI), except the
    outline, which only shows in dark mode so the black T-shirt stays visible. */
 :root {
@@ -117,3 +118,92 @@ html.dark {
 }
 
 @media print { #intro { display: none !important; } }
+
+/* ── Hero: Ved walks in, waves and points down to the work ──
+   Once on load, CSS only: walks in (1.4 s), says hi and waves, then points
+   down (done at 3.6 s). The resting pose below is where that ends, so with
+   reduced motion he simply stands there pointing. */
+.hero-ved {
+  position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden;
+  background: var(--paper-2); border: 1px solid var(--rule-soft); border-radius: 12px;
+}
+.hv-stage { position: absolute; inset: 0; }
+.hero-ved .ved {
+  position: absolute; right: 12%; bottom: 3%;
+  width: auto; height: 72%; aspect-ratio: 140 / 220; transition: none;
+}
+.hero-ved .ved-arm-r { transform: rotate(-35deg); }
+.hero-ved .ved-head { transform: rotate(4deg); }
+.hero-ved .ved-eyes { translate: 1px 2px; }
+
+.hv-say {
+  position: absolute; top: 16px; right: 30%; z-index: 1; max-width: calc(70% - 14px);
+  font-size: .85rem; line-height: 1.4; color: var(--ink);
+  background: var(--card); border: 1px solid var(--rule); border-radius: 12px;
+  box-shadow: var(--shadow); padding: 9px 12px;
+}
+.hv-say::after {
+  content: ''; position: absolute; right: 14px; bottom: -7px; width: 12px; height: 12px;
+  background: var(--card); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  transform: rotate(45deg);
+}
+.hv-hi { opacity: 0; pointer-events: none; }
+.hv-down { text-decoration: none; transition: border-color .18s ease; }
+.hv-down:hover { border-color: var(--ink); }
+.hv-down:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+.hv-arrow { display: inline-block; }
+
+/* narrow column, then a wide strip under the buttons on phones */
+@media (max-width: 900px) {
+  .hero-ved .ved { height: 62%; }
+  .hv-say { font-size: .78rem; }
+}
+@media (max-width: 760px) {
+  .hero-ved { aspect-ratio: auto; height: 220px; }
+  .hero-ved .ved { height: 86%; right: 10%; }
+  .hv-say { top: 34px; left: 14px; right: auto; max-width: calc(90% - 150px); font-size: .85rem; }
+  .hv-say::after { top: 14px; right: -7px; bottom: auto; border-bottom: 0; border-top: 1px solid var(--rule); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hv-stage { cursor: pointer; }
+  .hero-ved.go .ved { animation: hv-walk 1.4s cubic-bezier(.25,.1,.3,1) both; }
+  .hero-ved.go .ved-all { animation: ved-bob .35s ease-in-out 4 alternate; }
+  .hero-ved.go .ved-leg-l { animation: hv-step .7s ease-in-out 2; }
+  .hero-ved.go .ved-leg-r { animation: hv-step .7s ease-in-out 2 reverse; }
+  .hero-ved.go .ved-arm-l { animation: hv-swing .7s ease-in-out 2; }
+  .hero-ved.go .ved-arm-r { animation: hv-arm-r 3.6s ease-in-out both; }
+  .hero-ved.go .mouth-open { animation: ved-talk .24s steps(1) 1.5s 4; }
+  .hero-ved.go .mouth-smile { animation: ved-talk .24s steps(1) 1.5s 4 reverse; }
+  .hero-ved.go .ved-head { animation: hv-look .4s ease-out 3.2s both; }
+  .hero-ved.go .ved-eyes { animation: hv-look .4s ease-out 3.2s both, ved-blink 5s ease-in-out 4s infinite; }
+  .hero-ved.go .hv-hi { animation: hv-hi 1.9s ease-out 1.4s both; }
+  .hero-ved.go .hv-down { animation: hv-pop .25s ease-out 3.3s both; }
+  .hero-ved.go .hv-arrow { animation: hv-nudge .6s ease-in-out 3.7s 3; }
+}
+/* from off the right edge of the box */
+@keyframes hv-walk { from { transform: translateX(135%); } }
+@keyframes hv-step { 25% { transform: rotate(15deg); } 75% { transform: rotate(-15deg); } }
+@keyframes hv-swing { 25% { transform: rotate(-14deg); } 75% { transform: rotate(14deg); } }
+/* swing while walking, wave from 1.6 s, then point down-right */
+@keyframes hv-arm-r {
+  0% { transform: rotate(0); }
+  5% { transform: rotate(14deg); }
+  15% { transform: rotate(-14deg); }
+  19.5% { transform: rotate(0); }
+  24.5% { transform: rotate(14deg); }
+  34% { transform: rotate(-14deg); }
+  39%, 44.5% { transform: rotate(0); }
+  55.5%, 72%, 89% { transform: rotate(-150deg); }
+  64%, 80.5% { transform: rotate(-118deg); }
+  100% { transform: rotate(-35deg); }
+}
+/* head and eyes turn down toward the work (they end on their resting pose) */
+@keyframes hv-look { from { transform: none; translate: none; } }
+@keyframes hv-hi {
+  0% { opacity: 0; transform: translateY(6px); }
+  10%, 88% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: none; }
+}
+@keyframes hv-pop { from { opacity: 0; transform: translateY(6px); } }
+@keyframes hv-nudge { 50% { transform: translateY(3px); } }

@@ -1,6 +1,21 @@
 import { $, reduceMotion } from './env';
 
 /**
+ * The cartoon Ved in the hero walks in, waves and points down to the work once
+ * on load. That part is CSS only; a click on him plays it again.
+ */
+export function initHeroVed() {
+  const hero = $('hero-ved');
+  const stage = hero?.querySelector('.hv-stage');
+  if (!hero || !stage || reduceMotion) return;
+  stage.addEventListener('click', () => {
+    hero.classList.remove('go');
+    void hero.offsetWidth; // restart the CSS animations
+    hero.classList.add('go');
+  });
+}
+
+/**
  * A cartoon Ved walks in from the right, says four short lines (about
  * 14 seconds) and offers the work or the game. It only plays when someone
  * clicks "Just for fun" in the footer.
@@ -8,11 +23,13 @@ import { $, reduceMotion } from './env';
 export function initIntro(openGame: () => void) {
   const root = $('intro');
   const trigger = $('fun-link');
-  const ved = document.getElementById('ved') as SVGSVGElement | null;
+  // The figure lives in the hero; the cartoon walks in with a copy of it.
+  const ved = document.querySelector('#hero-ved .ved')?.cloneNode(true) as SVGSVGElement | undefined;
   const say = $('intro-say');
   const live = $('intro-live');
   const btns = $('intro-btns');
   if (!root || !trigger || !ved || !say || !btns) return;
+  root.append(ved);
 
   const lines = Array.from(document.querySelectorAll<HTMLElement>('#intro-script li')).map((li) => ({
     text: (li.textContent ?? '').trim(),
