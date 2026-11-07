@@ -82,6 +82,7 @@ body {
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.6;
+  font-optical-sizing: none; /* big Bodoni otherwise thins its hairlines until "+" and "/" nearly vanish */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background .4s ease, color .4s ease;

@@ -21,8 +21,6 @@ body.loaded .eyebrow .bar { transform: scaleX(1); }
   max-width: 14ch;
   margin-bottom: 22px;
 }
-/* neutral box until a real image is in place */
-.ph { background: var(--paper-2); border: 1px solid var(--rule-soft); }
 .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
 .chips li { font-size: .82rem; color: var(--ink-2); border: 1px solid var(--rule); border-radius: 100px; padding: 4px 12px; }
 
@@ -94,7 +92,7 @@ body.loaded .eyebrow .bar { transform: scaleX(1); }
 .metric-n span { color: var(--signal); }
 .metric-l { font-size: .83rem; color: var(--ink-3); line-height: 1.45; max-width: 22ch; }
 
-/* ── Selected work: image on top, three lines below ───── */
+/* ── Selected work: three lines per card, an image on top once there is one ── */
 .work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 34px; }
 .work {
   background: var(--card);
@@ -104,25 +102,34 @@ body.loaded .eyebrow .bar { transform: scaleX(1); }
   display: flex; flex-direction: column;
 }
 .work-img { display: block; width: 100%; aspect-ratio: 16 / 10; height: auto; object-fit: cover; border-bottom: 1px solid var(--rule-soft); }
-.work-img.ph { border: 0; border-bottom: 1px solid var(--rule-soft); }
 .work-body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
-.work-org { font-size: .8rem; color: var(--ink-3); margin-bottom: 4px; }
-.work-title { font-family: var(--font-display); font-weight: 500; font-size: 1.35rem; line-height: 1.2; letter-spacing: -0.015em; margin-bottom: 16px; }
-.work-rows { display: grid; gap: 12px; margin-bottom: 20px; flex: 1; }
-.work-rows dt { font-size: .75rem; font-weight: 600; color: var(--ink-3); margin-bottom: 1px; }
+.work-org { font-size: .8rem; color: var(--ink-3); margin-bottom: 6px; }
+/* Bodoni's hairlines break up at this size, so card text stays in the body font */
+.work-title { font-weight: 600; font-size: 1.12rem; line-height: 1.3; letter-spacing: -0.01em; margin-bottom: 18px; }
+.work-rows { display: grid; gap: 14px; align-content: start; margin-bottom: 20px; flex: 1; }
+.work-rows dt { font-size: .75rem; font-weight: 600; color: var(--ink-3); margin-bottom: 2px; }
 .work-rows dd { font-size: .9rem; color: var(--ink-2); line-height: 1.55; }
 .work-n {
   display: block;
-  font-family: var(--font-display); font-weight: 400;
-  font-size: clamp(2rem, 3.2vw, 2.5rem); line-height: 1.05; letter-spacing: -0.03em;
+  font-weight: 600; font-size: 1.5rem; line-height: 1.25; letter-spacing: -0.02em;
   color: var(--signal);
+}
+
+/* Three across: each row lines up from card to card (image, org, title, three rows, tags) */
+@media (min-width: 901px) {
+  .work-grid { row-gap: 0; }
+  .work, .work-body, .work-rows { display: grid; grid-template-rows: subgrid; }
+  .work { grid-row: span 7; }
+  .work-img { grid-row: 1; }
+  .work-body { grid-row: 2 / span 6; }
+  .work-rows { grid-row: span 3; }
+  .work .tags { align-items: flex-start; align-content: flex-start; }
 }
 
 @media (max-width: 900px) and (min-width: 621px) {
   .work-grid { grid-template-columns: 1fr; }
-  .work { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+  .work:has(.work-img) { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
   .work-img { height: 100%; aspect-ratio: auto; min-height: 220px; border-bottom: 0; border-right: 1px solid var(--rule-soft); }
-  .work-img.ph { border-bottom: 0; border-right: 1px solid var(--rule-soft); }
 }
 @media (max-width: 620px) { .work-grid { grid-template-columns: 1fr; } }
 
